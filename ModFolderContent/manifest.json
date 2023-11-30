@@ -1,0 +1,10 @@
+{
+    "name": "ByTheBook",
+    "version_number": "0.0.1",
+    "website_url": "",
+    "description": "Adds the 'Private Eye License' sync disk to the Weapons Locker. Allows for canvasing crime scenes without trespassing.",
+    "dependencies": [
+      "BepInEx-BepInExPack_IL2CPP-6.0.667",
+      "Piepieonline-DDSLoader-1.0.2"
+    ]
+  }

@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>ByTheBook</AssemblyName>
+    <Description>A collection of modifications for the more scrupulous detective.</Description>
+    <Version>0.0.1</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+			https://api.nuget.org/v3/index.json;
+			https://nuget.bepinex.dev/v3/index.json
+		</RestoreAdditionalProjectSources>
+    <BepInExPath>$(APPDATA)\r2modmanPlus-local\ShadowsofDoubt\profiles\Default\BepInEx\</BepInExPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>lib\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+
+    <Reference Include="$(BepInExPath)/interop/*.dll" />
+  </ItemGroup>
+
+  	<ItemGroup>
+		  <Folder Include="ModFolderContent\" />
+	  </ItemGroup>
+
+  <ItemGroup>
+    <!-- DDS Localication Content -->
+    <DDSContentFiles Include="$(ProjectDir)AdditionalContent\**\*.*"/>
+    <ModFolderContent Include="$(ProjectDir)ModFolderContent\**\*.*"/>
+  </ItemGroup>
+  
+    	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(BepInExPath)plugins/$(ProjectName)&quot;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(BepInExPath)plugins/$(ProjectName)&quot;" />
+       
+        <Copy
+          SourceFiles="@(ModFolderContent)"
+          DestinationFolder="$(BepInExPath)plugins\$(ProjectName)"
+        />
+
+         <MakeDir Directories="$(BepInExPath)plugins\$(ProjectName)\AdditionalContent" Condition="!Exists('$(BepInExPath)plugins\$(ProjectName)\AdditionalContent')"  />
+        <Copy 
+          SourceFiles="@(DDSContentFiles)"
+          DestinationFolder="$(BepInExPath)plugins\$(ProjectName)\AdditionalContent\%(RecursiveDir)"
+        />
+      </Target>
+</Project>

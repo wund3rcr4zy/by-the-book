@@ -1,0 +1,9 @@
+# Metadata
+.git
+.vs 
+
+# Binaries
+bin
+lib
+obj
+
