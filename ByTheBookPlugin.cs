@@ -63,7 +63,7 @@ namespace ByTheBook
 
         public bool IsUpgradeEnabled(ByTheBookSyncEffects effect) 
         {
-            return enabledUpgrades.Contains(effect);
+            return Game.Instance.giveAllUpgrades || enabledUpgrades.Contains(effect);
         }
     }
 }
