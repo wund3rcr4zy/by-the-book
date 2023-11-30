@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>ByTheBook</AssemblyName>
     <Description>A collection of modifications for the more scrupulous detective.</Description>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -59,6 +59,8 @@
 
     <ZipDirectory
             SourceDirectory="$(ProjectDir)release\$(ProjectName)-$(Version)"
-            DestinationFile="$(ProjectDir)release\$(ProjectName)-$(Version).zip" />
+            DestinationFile="$(ProjectDir)release\$(ProjectName)-$(Version).zip"
+            Overwrite="TRUE"
+    />
   </Target>
 </Project>

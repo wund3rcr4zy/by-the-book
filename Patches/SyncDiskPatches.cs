@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static UpgradesController;
 
 namespace ByTheBook.Patches
 {
@@ -58,7 +59,7 @@ namespace ByTheBook.Patches
                 // TODO: figure out why the SyncDiskPreset is not present on the Upgrade.
                 // This issue is the root of other hackiness required in the code and why this mod
                 // can only support 1 sync disk as of now.
-                if (newUpgrade != null && newUpgrade.preset == null)
+                if (newUpgrade?.upgrade == PrivateEyeSyncDiskPreset.NAME && newUpgrade?.preset == null)
                 {
                     ByTheBookPlugin.Logger.LogWarning($"SyncDiskElementControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");
                     newUpgrade.preset = PrivateEyeSyncDiskPreset.Instance;

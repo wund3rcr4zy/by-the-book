@@ -18,12 +18,12 @@ namespace ByTheBook.Patches
             public static void Prefix(StateSaveData load)
             {
                 ByTheBookPlugin.Instance.DisableUpgrade(ByTheBookSyncEffects.PrivateEye);
-                foreach (var huh in load.upgrades)
+                foreach (var upgrade in load.upgrades)
                 {
-                    if (huh != null && huh.preset == null) 
+                    if (upgrade?.upgrade == PrivateEyeSyncDiskPreset.NAME && upgrade?.preset == null) 
                     {
                         ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");
-                        huh.preset = PrivateEyeSyncDiskPreset.Instance;
+                        upgrade.preset = PrivateEyeSyncDiskPreset.Instance;
                         ByTheBookPlugin.Instance.EnableUpgrade(ByTheBookSyncEffects.PrivateEye);
                         break;
                     }
