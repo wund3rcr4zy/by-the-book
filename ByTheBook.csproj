@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>ByTheBook</AssemblyName>
     <Description>A collection of modifications for the more scrupulous detective.</Description>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -36,17 +36,29 @@
     <ModFolderContent Include="$(ProjectDir)ModFolderContent\**\*.*" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ModFolderContent Remove="ModFolderContent\CHANGELOG.md" />
-    <ModFolderContent Remove="ModFolderContent\README.md" />
-  </ItemGroup>
   
-    	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(BepInExPath)plugins/$(ProjectName)&quot;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(BepInExPath)plugins/$(ProjectName)&quot;" />
-       
-        <Copy SourceFiles="@(ModFolderContent)" DestinationFolder="$(BepInExPath)plugins\$(ProjectName)" />
+  <!-- <Target Name="CopyArtifactsToBepinExDir" AfterTargets="PostBuildEvent">
+    <MakeDir Directories="$(BepInExPath)plugins\$(ProjectName)" Condition="!Exists('$(BepInExPath)plugins\$(ProjectName)')" />
+    <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(BepInExPath)plugins/$(ProjectName)&quot;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(BepInExPath)plugins/$(ProjectName)&quot;" />
+    
+    <Copy SourceFiles="@(ModFolderContent)" DestinationFolder="$(BepInExPath)plugins\$(ProjectName)" SkipUnchangedFiles="true" />
 
-         <MakeDir Directories="$(BepInExPath)plugins\$(ProjectName)\AdditionalContent" Condition="!Exists('$(BepInExPath)plugins\$(ProjectName)\AdditionalContent')" />
-        <Copy SourceFiles="@(DDSContentFiles)" DestinationFolder="$(BepInExPath)plugins\$(ProjectName)\AdditionalContent\%(RecursiveDir)" />
-      </Target>
+    <MakeDir Directories="$(BepInExPath)plugins\$(ProjectName)\AdditionalContent" Condition="!Exists('$(BepInExPath)plugins\$(ProjectName)\AdditionalContent')" />
+    <Copy SourceFiles="@(DDSContentFiles)" DestinationFolder="$(BepInExPath)plugins\$(ProjectName)\AdditionalContent\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target> -->
+
+  <Target Name="CreateReleaseZip" AfterTargets="PostBuildEvent">
+    <MakeDir Directories="$(ProjectDir)release" Condition="!Exists('$(ProjectDir)release')" />
+    <MakeDir Directories="$(ProjectDir)release\$(ProjectName)-$(Version)" Condition="!Exists('$(ProjectDir)release\$(ProjectName)-$(Version)')" />
+    <MakeDir Directories="$(ProjectDir)release\$(ProjectName)-$(Version)\plugins" Condition="!Exists('$(ProjectDir)release\$(ProjectName)-$(Version)\plugins')" />
+
+    <Copy SourceFiles="@(DDSContentFiles)" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)\plugins\AdditionalContent\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ModFolderContent)" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
+
+    <ZipDirectory
+            SourceDirectory="$(ProjectDir)release\$(ProjectName)-$(Version)"
+            DestinationFile="$(ProjectDir)release\$(ProjectName)-$(Version).zip" />
+  </Target>
 </Project>
