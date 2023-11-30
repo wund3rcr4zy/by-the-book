@@ -19,7 +19,7 @@ namespace ByTheBook.Patches
             [HarmonyPostfix]
             public static void Postfix()
             {
-                ByTheBookPlugin.Logger.LogInfo($"BTB: Toolbox Post LoadAll.");
+                ByTheBookPlugin.Logger.LogDebug($"Toolbox Post LoadAll.");
 
                 if (diskPreset == null)
                 {
@@ -34,7 +34,7 @@ namespace ByTheBook.Patches
                     {
                         foreach (var pv in policeVendingMenu)
                         {
-                            ByTheBookPlugin.Logger.LogInfo($"BTB: Attempted to add WarrantSync Disk to machine.");
+                            ByTheBookPlugin.Logger.LogInfo($"Attempted to add WarrantSync Disk to machine.");
                             pv.syncDisks.Add(diskPreset);
                         }
                     }

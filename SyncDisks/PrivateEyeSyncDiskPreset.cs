@@ -32,8 +32,8 @@ namespace ByTheBook.SyncDisks
 
             privateEyeSyncDiskPreset.syncDiskNumber = (int)ByTheBook.SyncDisks.ByTheBookSyncEffects.PrivateEye;
 
-            privateEyeSyncDiskPreset.price = 1;
-            privateEyeSyncDiskPreset.rarity = Rarity.common;
+            privateEyeSyncDiskPreset.price = 500;
+            privateEyeSyncDiskPreset.rarity = Rarity.medium;
 
             privateEyeSyncDiskPreset.mainEffect1 = (Effect)ByTheBookSyncEffects.PrivateEye;
             privateEyeSyncDiskPreset.mainEffect1Name = $"{NAME}_effect1_name";

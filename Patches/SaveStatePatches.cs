@@ -17,15 +17,14 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix(StateSaveData load)
             {
-                ByTheBookPlugin.Logger.LogInfo($"PREFIX: saved SyncDiskInstall: {load.syncDiskInstall}");
-
-                ByTheBookPlugin.Logger.LogInfo($"Num upgrades: {load.upgrades.Count}");
+                ByTheBookPlugin.Instance.DisableUpgrade(ByTheBookSyncEffects.PrivateEye);
                 foreach (var huh in load.upgrades)
                 {
                     if (huh != null && huh.preset == null) 
                     {
                         ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");
                         huh.preset = PrivateEyeSyncDiskPreset.Instance;
+                        ByTheBookPlugin.Instance.EnableUpgrade(ByTheBookSyncEffects.PrivateEye);
                         break;
                     }
                 }
