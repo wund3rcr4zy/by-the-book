@@ -1,10 +1,8 @@
 ﻿using ByTheBook.SyncDisks;
+using ByTheBook.Upgrades;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Immutable;
+
 
 namespace ByTheBook.Patches
 {
@@ -17,15 +15,25 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix(StateSaveData load)
             {
-                ByTheBookPlugin.Instance.DisableUpgrade(ByTheBookSyncEffects.PrivateEye);
+                ByTheBookUpgradeManager.Instance.DisableAllUpgrades();
+
                 foreach (var upgrade in load.upgrades)
                 {
-                    if (upgrade?.upgrade == PrivateEyeSyncDiskPreset.NAME && upgrade?.preset == null) 
+                    ImmutableList<ByTheBookSyncEffects> upgradeEffects;
+                    if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgrade.upgrade, out upgradeEffects)) 
                     {
-                        ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");
-                        upgrade.preset = PrivateEyeSyncDiskPreset.Instance;
-                        ByTheBookPlugin.Instance.EnableUpgrade(ByTheBookSyncEffects.PrivateEye);
-                        break;
+                        ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing {upgrade.upgrade} preset. Really need to figure out why this happens.");     
+                        upgrade.preset = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks[upgrade.upgrade];
+
+                        if (UpgradesController.SyncDiskState.notInstalled == upgrade.state)
+                        {
+                            continue;
+                        }
+
+                        foreach (ByTheBookSyncEffects effect in upgradeEffects)
+                        {
+                            ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
+                        }
                     }
                 }
             }

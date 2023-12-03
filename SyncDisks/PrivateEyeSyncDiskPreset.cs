@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ByTheBook.Upgrades;
+using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,45 +16,50 @@ namespace ByTheBook.SyncDisks
 
     public class PrivateEyeSyncDiskPreset : SyncDiskPreset
     {
-        public static SyncDiskPreset Instance { get; private set; }
         public const string NAME = "private-eye";
 
-        public static SyncDiskPreset CreateWarrantSyncDiskPreset()
+        private static PrivateEyeSyncDiskPreset _instance;
+        public static PrivateEyeSyncDiskPreset Instance
         {
-            if (Instance != null)
+            get
             {
-                return Instance;
+                if (_instance == null)
+                {
+                    ByTheBookPlugin.Logger.LogInfo($"BTB: Creating PrivateEye SyncDisk Preset.");
+                    _instance = ScriptableObject.CreateInstance<PrivateEyeSyncDiskPreset>();
+                    Init(_instance);
+                    ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects(NAME, _instance, ImmutableList.Create(ByTheBookSyncEffects.PrivateEye));
+                }
+
+                return _instance;
             }
+        }
 
-            ByTheBookPlugin.Logger.LogInfo($"BTB: Creating Warrant SyncDisk Preset.");
-            SyncDiskPreset privateEyeSyncDiskPreset = ScriptableObject.CreateInstance<SyncDiskPreset>();
-           
-            privateEyeSyncDiskPreset.presetName = NAME;
-            privateEyeSyncDiskPreset.name = privateEyeSyncDiskPreset.presetName;
+        // Seems like constructor work, but I don't think I can trust ScriptableObject.CreateInstance with a constructor.
+        private static void Init(PrivateEyeSyncDiskPreset instance)
+        {
+            instance.presetName = NAME;
+            instance.name = instance.presetName;
 
-            privateEyeSyncDiskPreset.syncDiskNumber = (int)ByTheBook.SyncDisks.ByTheBookSyncEffects.PrivateEye;
+            instance.syncDiskNumber = (int)ByTheBook.SyncDisks.ByTheBookSyncEffects.PrivateEye;
 
-            privateEyeSyncDiskPreset.price = 500;
-            privateEyeSyncDiskPreset.rarity = Rarity.medium;
+            instance.price = 500;
+            instance.rarity = Rarity.medium;
 
-            privateEyeSyncDiskPreset.mainEffect1 = (Effect)ByTheBookSyncEffects.PrivateEye;
-            privateEyeSyncDiskPreset.mainEffect1Name = $"{NAME}_effect1_name";
-            privateEyeSyncDiskPreset.mainEffect1Description = $"{NAME}_effect1_description";
+            instance.mainEffect1 = (Effect)ByTheBookSyncEffects.PrivateEye;
+            instance.mainEffect1Name = $"{NAME}_effect1_name";
+            instance.mainEffect1Description = $"{NAME}_effect1_description";
 
-            privateEyeSyncDiskPreset.mainEffect2 = Effect.none;
-            privateEyeSyncDiskPreset.mainEffect3 = Effect.none;
+            instance.mainEffect2 = Effect.none;
+            instance.mainEffect3 = Effect.none;
 
-            privateEyeSyncDiskPreset.interactable = Resources.FindObjectsOfTypeAll<InteractablePreset>()
+            instance.interactable = Resources.FindObjectsOfTypeAll<InteractablePreset>()
                 .Where(preset => preset.presetName == "SyncDisk")
                 .LastOrDefault();
-         
-            privateEyeSyncDiskPreset.canBeSideJobReward = true;
 
-            privateEyeSyncDiskPreset.manufacturer = Manufacturer.Kaizen;
+            instance.canBeSideJobReward = true;
 
-            Instance = privateEyeSyncDiskPreset;
-            ByTheBookPlugin.Instance.byTheBookSyncDisks.Add(NAME, Instance);
-            return privateEyeSyncDiskPreset;
+            instance.manufacturer = Manufacturer.Kaizen;
         }
     }
 }

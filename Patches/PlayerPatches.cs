@@ -1,4 +1,5 @@
 ﻿using ByTheBook.SyncDisks;
+using ByTheBook.Upgrades;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,8 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix()
             {
-                if (!ByTheBookPlugin.Instance.IsUpgradeEnabled(SyncDisks.ByTheBookSyncEffects.PrivateEye))
+                // TODO: now that the dialog option for a pass is in, this should only be unabled if upgrade status 1.
+                if (!ByTheBookUpgradeManager.Instance.IsUpgradeEnabled(SyncDisks.ByTheBookSyncEffects.PrivateEye))
                 {
                     return;
                 }

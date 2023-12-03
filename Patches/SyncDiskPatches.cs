@@ -1,11 +1,7 @@
 ﻿using ByTheBook.SyncDisks;
+using ByTheBook.Upgrades;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static UpgradesController;
+using System.Collections.Immutable;
 
 namespace ByTheBook.Patches
 {
@@ -22,11 +18,15 @@ namespace ByTheBook.Patches
                     return;
                 }
 
-                // TODO: correctly handle options and allow for more than mainEffect1
-                if (ByTheBookPlugin.Instance.byTheBookSyncDisks.ContainsKey(application.preset.presetName))
+                ImmutableList<ByTheBookSyncEffects> upgradeOptions;
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(application.upgrade, out upgradeOptions))
                 {
-                    ByTheBookPlugin.Instance.EnableUpgrade((ByTheBookSyncEffects)application.preset.mainEffect1);
+                    if (option >= 0 && option <  upgradeOptions.Count) 
+                    {
+                        ByTheBookUpgradeManager.Instance.EnableUpgrade(upgradeOptions[option]);
+                    }
                 }
+                   
             }
         }
 
@@ -36,15 +36,18 @@ namespace ByTheBook.Patches
             [HarmonyPostfix]
             public static void Postfix(UpgradesController.Upgrades removal)
             {
-                if (removal == null || removal.preset == null)
+                if (removal == null || removal.upgrade == null)
                 {
                     return;
                 }
 
-                // TODO: correctly handle options and allow for less hardcoding.
-                if (PrivateEyeSyncDiskPreset.NAME == removal.preset.presetName)
+                ImmutableList<ByTheBookSyncEffects> effectsToRemove;
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(removal.upgrade, out effectsToRemove))
                 {
-                    ByTheBookPlugin.Instance.DisableUpgrade((ByTheBookSyncEffects)removal.preset.mainEffect1);
+                    foreach (ByTheBookSyncEffects effectToDisable in effectsToRemove)
+                    {
+                        ByTheBookUpgradeManager.Instance.DisableUpgrade(effectToDisable);
+                    }
                 }
             }
         }
@@ -57,8 +60,7 @@ namespace ByTheBook.Patches
             public static void Prefix(UpgradesController.Upgrades newUpgrade)
             {
                 // TODO: figure out why the SyncDiskPreset is not present on the Upgrade.
-                // This issue is the root of other hackiness required in the code and why this mod
-                // can only support 1 sync disk as of now.
+                // This issue is the root of other hackiness required in the code.
                 if (newUpgrade?.upgrade == PrivateEyeSyncDiskPreset.NAME && newUpgrade?.preset == null)
                 {
                     ByTheBookPlugin.Logger.LogWarning($"SyncDiskElementControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");

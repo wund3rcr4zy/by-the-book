@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>ByTheBook</AssemblyName>
     <Description>A collection of modifications for the more scrupulous detective.</Description>
-    <Version>0.0.3</Version>
+    <Version>0.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -36,6 +36,18 @@
     <ModFolderContent Include="$(ProjectDir)ModFolderContent\**\*.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <DDSContentFiles Remove="AdditionalContent\DialogDDS\DDSContent\DDS\Blocks\16e1892c-2ded-4f8b-a38d-a6f2322358db.block" />
+    <DDSContentFiles Remove="AdditionalContent\DialogDDS\DDSContent\DDS\Blocks\a3caf795-6987-4e72-9d19-c6d2fc94a7fe.block" />
+    <DDSContentFiles Remove="AdditionalContent\DialogDDS\DDSContent\DDS\Messages\38da3c6d-3065-434b-992a-0cc190d39dd7.msg" />
+    <DDSContentFiles Remove="AdditionalContent\DialogDDS\DDSContent\DDS\Messages\bd452178-7e7a-47d2-adf0-20e9432e4c13.msg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AdditionalContent\DialogDDS\DDSContent\DDS\Trees\" />
+    <Folder Include="release\" />
+  </ItemGroup>
+
   
   <!-- <Target Name="CopyArtifactsToBepinExDir" AfterTargets="PostBuildEvent">
     <MakeDir Directories="$(BepInExPath)plugins\$(ProjectName)" Condition="!Exists('$(BepInExPath)plugins\$(ProjectName)')" />
@@ -57,10 +69,6 @@
     <Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
     <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
 
-    <ZipDirectory
-            SourceDirectory="$(ProjectDir)release\$(ProjectName)-$(Version)"
-            DestinationFile="$(ProjectDir)release\$(ProjectName)-$(Version).zip"
-            Overwrite="TRUE"
-    />
+    <ZipDirectory SourceDirectory="$(ProjectDir)release\$(ProjectName)-$(Version)" DestinationFile="$(ProjectDir)release\$(ProjectName)-$(Version).zip" Overwrite="TRUE" />
   </Target>
 </Project>
