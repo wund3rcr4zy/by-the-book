@@ -1,4 +1,5 @@
-﻿using ByTheBook.SyncDisks;
+﻿using ByTheBook.Dialog;
+using ByTheBook.SyncDisks;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -49,7 +50,7 @@ namespace ByTheBook.Upgrades
             // Need it to be somewhere where it happens once
             switch (effect) 
             {
-                case ByTheBookSyncEffects.PrivateEye:
+                case ByTheBookSyncEffects.GuardGuestPass:
                     PrivateEyeUpgradeStatusChanged(enabled: true);
                     break;
             }
@@ -57,11 +58,22 @@ namespace ByTheBook.Upgrades
 
         private void PrivateEyeUpgradeStatusChanged(bool enabled)
         {
+            ByTheBookPlugin.Instance.Log.LogInfo($"PrivateEyeUpgradeStatusChanged to: {enabled}");
             var enforcers = Resources.FindObjectsOfTypeAll<Citizen>()
-                .Where(citizen => citizen.isEnforcer);
+                .Where(citizen => citizen.isEnforcer)
+                .ToList();
 
+            ByTheBookPlugin.Instance.Log.LogInfo($"Found {enforcers.Count} enforcers to enabled dialog.");
             foreach (var enforcer in enforcers)
-            { 
+            {
+                if (enabled)
+                {
+                    enforcer.evidenceEntry?.AddDialogOption(Evidence.DataKey.voice, GuardGuestPassDialogPreset.Instance, newSideJob: null, roomRef: null, allowPresetDuplicates: false);
+                }
+                else
+                {
+                    enforcer.evidenceEntry?.RemoveDialogOption(Evidence.DataKey.voice, GuardGuestPassDialogPreset.Instance, newSideJob: null, roomRef: null);
+                }
             }    
         }
 
@@ -73,7 +85,7 @@ namespace ByTheBook.Upgrades
             // Need it to be somewhere where it happens once as the EvidenceWitness is setup and it should be available after load.
             switch (effect)
             {
-                case ByTheBookSyncEffects.PrivateEye:
+                case ByTheBookSyncEffects.GuardGuestPass:
                     PrivateEyeUpgradeStatusChanged(enabled: false);
                     break;
             }
@@ -81,7 +93,10 @@ namespace ByTheBook.Upgrades
 
         public void DisableAllUpgrades()
         {
-            enabledUpgrades.Clear();
+            foreach (var effect in enabledUpgrades) 
+            {
+                DisableUpgrade(effect);
+            }
         }
 
         public bool IsUpgradeEnabled(ByTheBookSyncEffects effect)

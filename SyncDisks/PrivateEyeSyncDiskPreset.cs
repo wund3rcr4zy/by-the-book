@@ -1,4 +1,5 @@
 ﻿using ByTheBook.Upgrades;
+using Il2CppSystem.Collections.Generic;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -11,7 +12,8 @@ namespace ByTheBook.SyncDisks
 {
     public enum ByTheBookSyncEffects
     {
-        PrivateEye = 50
+        GuardGuestPass = 50,
+        CrimeSceneGuestPass = 51
     }
 
     public class PrivateEyeSyncDiskPreset : SyncDiskPreset
@@ -28,7 +30,10 @@ namespace ByTheBook.SyncDisks
                     ByTheBookPlugin.Logger.LogInfo($"BTB: Creating PrivateEye SyncDisk Preset.");
                     _instance = ScriptableObject.CreateInstance<PrivateEyeSyncDiskPreset>();
                     Init(_instance);
-                    ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects(NAME, _instance, ImmutableList.Create(ByTheBookSyncEffects.PrivateEye));
+
+
+                    ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.option1}_0", _instance, ImmutableList.Create(ByTheBookSyncEffects.GuardGuestPass));
+                    ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.option1}_1", _instance, ImmutableList.Create(ByTheBookSyncEffects.GuardGuestPass, ByTheBookSyncEffects.CrimeSceneGuestPass));
                 }
 
                 return _instance;
@@ -41,14 +46,22 @@ namespace ByTheBook.SyncDisks
             instance.presetName = NAME;
             instance.name = instance.presetName;
 
-            instance.syncDiskNumber = (int)ByTheBook.SyncDisks.ByTheBookSyncEffects.PrivateEye;
+            instance.syncDiskNumber = (int)ByTheBook.SyncDisks.ByTheBookSyncEffects.GuardGuestPass;
 
             instance.price = 500;
             instance.rarity = Rarity.medium;
 
-            instance.mainEffect1 = (Effect)ByTheBookSyncEffects.PrivateEye;
+            instance.mainEffect1 = (Effect)ByTheBookSyncEffects.GuardGuestPass;
             instance.mainEffect1Name = $"{NAME}_effect1_name";
             instance.mainEffect1Description = $"{NAME}_effect1_description";
+
+            Il2CppSystem.Collections.Generic.List<UpgradeEffect> upgradeEffects = new Il2CppSystem.Collections.Generic.List<UpgradeEffect>();
+            upgradeEffects.Add((UpgradeEffect)((int)ByTheBookSyncEffects.CrimeSceneGuestPass));
+            instance.option1UpgradeEffects = upgradeEffects;
+
+            Il2CppSystem.Collections.Generic.List<string> upgradeNames = new Il2CppSystem.Collections.Generic.List<string>();
+            upgradeNames.Add($"{NAME}_upgrade1_description");
+            instance.option1UpgradeNameReferences = upgradeNames;
 
             instance.mainEffect2 = Effect.none;
             instance.mainEffect3 = Effect.none;

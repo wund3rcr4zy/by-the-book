@@ -17,8 +17,7 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix()
             {
-                // TODO: now that the dialog option for a pass is in, this should only be unabled if upgrade status 1.
-                if (!ByTheBookUpgradeManager.Instance.IsUpgradeEnabled(SyncDisks.ByTheBookSyncEffects.PrivateEye))
+                if (!ByTheBookUpgradeManager.Instance.IsUpgradeEnabled(SyncDisks.ByTheBookSyncEffects.CrimeSceneGuestPass))
                 {
                     return;
                 }

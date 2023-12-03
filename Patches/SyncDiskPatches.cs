@@ -18,15 +18,43 @@ namespace ByTheBook.Patches
                     return;
                 }
 
-                ImmutableList<ByTheBookSyncEffects> upgradeOptions;
-                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(application.upgrade, out upgradeOptions))
+                ImmutableList<ByTheBookSyncEffects> upgradeOptions = ImmutableList.Create<ByTheBookSyncEffects>();
+                string upgradeKey = $"{application.upgrade}_{option}_{application.level}";
+                ByTheBookPlugin.Instance.Log.LogInfo($"Attempting to install syncDisk group: {upgradeKey}.");
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeOptions))
                 {
-                    if (option >= 0 && option <  upgradeOptions.Count) 
+                    ByTheBookPlugin.Instance.Log.LogInfo($"Found upgrades: {upgradeOptions.Count}");
+                    foreach (var effect in upgradeOptions) 
                     {
-                        ByTheBookUpgradeManager.Instance.EnableUpgrade(upgradeOptions[option]);
+                        ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
                     }
                 }
                    
+            }
+        }
+
+        [HarmonyPatch(typeof(UpgradesController), nameof(UpgradesController.UpgradeSyncDisk))]
+        public class UpgradeSyncDiskHook
+        {
+            [HarmonyPostfix]
+            public static void Postfix(UpgradesController.Upgrades upgradeThis)
+            {
+                if (upgradeThis == null || upgradeThis.preset == null)
+                {
+                    return;
+                }
+
+                ImmutableList<ByTheBookSyncEffects> upgradeOptions = ImmutableList.Create<ByTheBookSyncEffects>();
+                string upgradeKey = $"{upgradeThis.upgrade}_{upgradeThis.state}_{upgradeThis.level}";
+                ByTheBookPlugin.Instance.Log.LogInfo($"Attempting to install upgrade group: {upgradeKey}.");
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeOptions))
+                {
+                    ByTheBookPlugin.Instance.Log.LogInfo($"Found upgrades: {upgradeOptions.Count}");
+                    foreach (var effect in upgradeOptions)
+                    {
+                        ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
+                    }
+                }
             }
         }
 
@@ -41,8 +69,9 @@ namespace ByTheBook.Patches
                     return;
                 }
 
-                ImmutableList<ByTheBookSyncEffects> effectsToRemove;
-                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(removal.upgrade, out effectsToRemove))
+                ImmutableList<ByTheBookSyncEffects> effectsToRemove = ImmutableList.Create<ByTheBookSyncEffects>();
+                string upgradeKey = $"{removal.upgrade}_{removal.state}_{removal.level}";
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out effectsToRemove))
                 {
                     foreach (ByTheBookSyncEffects effectToDisable in effectsToRemove)
                     {
@@ -61,10 +90,12 @@ namespace ByTheBook.Patches
             {
                 // TODO: figure out why the SyncDiskPreset is not present on the Upgrade.
                 // This issue is the root of other hackiness required in the code.
-                if (newUpgrade?.upgrade == PrivateEyeSyncDiskPreset.NAME && newUpgrade?.preset == null)
+                SyncDiskPreset preset = null;
+                string upgradeKey = $"{newUpgrade.upgrade}_{newUpgrade.state}_{newUpgrade.level}";
+                if (newUpgrade?.preset == null && newUpgrade?.upgrade != null && ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.TryGetValue(newUpgrade.upgrade, out preset))
                 {
                     ByTheBookPlugin.Logger.LogWarning($"SyncDiskElementControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");
-                    newUpgrade.preset = PrivateEyeSyncDiskPreset.Instance;
+                    newUpgrade.preset = preset;
                 }
             }
         }

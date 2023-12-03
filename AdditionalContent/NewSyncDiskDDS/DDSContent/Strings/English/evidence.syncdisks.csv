@@ -1,4 +1,5 @@
 Game Reference Key,Notes,Displayed Text,Alternate Text,Frequency,Requires Suffix,Misc.
 private-eye,,Private Eye License,,,,11:49 05/09/2022
 private-eye_effect1_name,,Detective Consultant,,,,11:49 05/09/2022
-private-eye_effect1_description,,You are free to canvas crime scenes without trespassing.,,,,11:49 05/09/2022
+private-eye_effect1_description,,The Enforcer guard on duty at a crime scenes may be asked for a guest pass. Capping at 75% chance with Social Credit Tier 3.,,,,11:49 05/09/2022
+private-eye_upgrade1_description,,You will always receive a guest pass (if required) when entering a crime scene.,,,,11:49 05/09/2022

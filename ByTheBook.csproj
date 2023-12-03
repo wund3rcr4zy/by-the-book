@@ -36,18 +36,6 @@
     <ModFolderContent Include="$(ProjectDir)ModFolderContent\**\*.*" />
   </ItemGroup>
 
-  <ItemGroup>
-    <DDSContentFiles Remove="AdditionalContent\DialogDDS\DDSContent\DDS\Blocks\16e1892c-2ded-4f8b-a38d-a6f2322358db.block" />
-    <DDSContentFiles Remove="AdditionalContent\DialogDDS\DDSContent\DDS\Blocks\a3caf795-6987-4e72-9d19-c6d2fc94a7fe.block" />
-    <DDSContentFiles Remove="AdditionalContent\DialogDDS\DDSContent\DDS\Messages\38da3c6d-3065-434b-992a-0cc190d39dd7.msg" />
-    <DDSContentFiles Remove="AdditionalContent\DialogDDS\DDSContent\DDS\Messages\bd452178-7e7a-47d2-adf0-20e9432e4c13.msg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="AdditionalContent\DialogDDS\DDSContent\DDS\Trees\" />
-    <Folder Include="release\" />
-  </ItemGroup>
-
   
   <!-- <Target Name="CopyArtifactsToBepinExDir" AfterTargets="PostBuildEvent">
     <MakeDir Directories="$(BepInExPath)plugins\$(ProjectName)" Condition="!Exists('$(BepInExPath)plugins\$(ProjectName)')" />

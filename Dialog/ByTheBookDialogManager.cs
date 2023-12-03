@@ -59,6 +59,9 @@ namespace ByTheBook.Dialog
                 saysTo?.speechController?.Speak(DDS_BLOCKS_DICTIONARY, GuardGuestPassAIFailureResponsePreset.DDS_STRING_ID, 
                     dialogPreset: GuardGuestPassDialogPreset.Instance, dialog: GuardGuestPassAIFailureResponsePreset.Instance);
             }
+
+            // TODO: I don't think this is properly making use of the game's SpeechHistory functionality.. but this works for now.
+            saysTo?.evidenceEntry?.RemoveDialogOption(Evidence.DataKey.voice, GuardGuestPassDialogPreset.Instance, newSideJob: null, roomRef: null);
         }
     }
 }
