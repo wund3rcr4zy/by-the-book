@@ -1,10 +1,9 @@
 ﻿using ByTheBook.SyncDisks;
+using ByTheBook.Upgrades;
 using HarmonyLib;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Immutable;
+
 
 namespace ByTheBook.Patches
 {
@@ -17,15 +16,44 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix(StateSaveData load)
             {
-                ByTheBookPlugin.Instance.DisableUpgrade(ByTheBookSyncEffects.PrivateEye);
+                ByTheBookUpgradeManager.Instance.DisableAllUpgrades();
+                
                 foreach (var upgrade in load.upgrades)
                 {
-                    if (upgrade?.upgrade == PrivateEyeSyncDiskPreset.NAME && upgrade?.preset == null) 
+                    string upgradeKey = $"{upgrade.upgrade}_{upgrade.state}_{upgrade.level}";
+                    bool containsKey = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.ContainsKey(upgradeKey);
+                    ByTheBookPlugin.Logger.LogDebug($"Have related upgrade: {upgradeKey}?: {containsKey}");
+
+                    if (!containsKey)
                     {
-                        ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");
-                        upgrade.preset = PrivateEyeSyncDiskPreset.Instance;
-                        ByTheBookPlugin.Instance.EnableUpgrade(ByTheBookSyncEffects.PrivateEye);
-                        break;
+                        upgradeKey = $"{upgrade.upgrade}_{UpgradesController.SyncDiskState.option1}_{upgrade.level}";
+                        containsKey = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.ContainsKey(upgradeKey);
+                        ByTheBookPlugin.Logger.LogDebug($"Have related upgrade fallback: {upgradeKey}?: {containsKey}");
+                    }
+
+                    ImmutableList<ByTheBookSyncEffects> upgradeEffects = ImmutableList.Create<ByTheBookSyncEffects>();
+                    if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeEffects)) 
+                    {
+                        ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing {upgrade.upgrade} preset. Really need to figure out why this happens.");
+                        upgrade.preset = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.GetValueSafe(upgradeKey);
+
+                        if (UpgradesController.SyncDiskState.notInstalled == upgrade.state)
+                        {
+                            continue;
+                        }
+
+                        foreach (ByTheBookSyncEffects effect in upgradeEffects)
+                        {
+                            ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
+                        }
+                    }
+                }
+
+                if (Game.Instance.giveAllUpgrades)
+                {
+                    foreach (var upgrade in Enum.GetValues<ByTheBookSyncEffects>())
+                    {
+                        ByTheBookUpgradeManager.Instance.EnableUpgrade(upgrade);
                     }
                 }
             }

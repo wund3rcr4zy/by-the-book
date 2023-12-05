@@ -1,11 +1,7 @@
 ﻿using ByTheBook.SyncDisks;
+using ByTheBook.Upgrades;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static UpgradesController;
+using System.Collections.Immutable;
 
 namespace ByTheBook.Patches
 {
@@ -22,10 +18,59 @@ namespace ByTheBook.Patches
                     return;
                 }
 
-                // TODO: correctly handle options and allow for more than mainEffect1
-                if (ByTheBookPlugin.Instance.byTheBookSyncDisks.ContainsKey(application.preset.presetName))
+                ImmutableList<ByTheBookSyncEffects> upgradeOptions = ImmutableList.Create<ByTheBookSyncEffects>();
+                string upgradeKey = $"{application.upgrade}_option{option}_{application.level}";
+                ByTheBookPlugin.Instance.Log.LogInfo($"Attempting to install syncDisk group: {upgradeKey}.");
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeOptions))
                 {
-                    ByTheBookPlugin.Instance.EnableUpgrade((ByTheBookSyncEffects)application.preset.mainEffect1);
+                    ByTheBookPlugin.Instance.Log.LogInfo($"Found upgrades: {upgradeOptions.Count}");
+                    foreach (var effect in upgradeOptions) 
+                    {
+                        ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
+                    }
+                }
+                   
+            }
+        }
+
+        [HarmonyPatch(typeof(UpgradesController), nameof(UpgradesController.UpgradeSyncDisk))]
+        public class UpgradeSyncDiskHook
+        {
+            [HarmonyPrefix]
+            public static void Prefix(UpgradesController.Upgrades upgradeThis)
+            {
+                if (upgradeThis == null || upgradeThis.preset == null)
+                {
+                    return;
+                }
+
+                ImmutableList<ByTheBookSyncEffects> upgradeOptions = ImmutableList.Create<ByTheBookSyncEffects>();
+                string upgradeKey = $"{upgradeThis.upgrade}_{upgradeThis.state}_{upgradeThis.level}";
+                ByTheBookPlugin.Instance.Log.LogInfo($"Prefix: Attempting to install upgrade group: {upgradeKey}.");
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeOptions))
+                {
+                    ByTheBookPlugin.Instance.Log.LogInfo($"Prefix: Found upgrades: {upgradeOptions.Count}");
+                }
+            }
+
+            [HarmonyPostfix]
+            public static void Postfix(UpgradesController.Upgrades upgradeThis)
+            {
+                if (upgradeThis == null || upgradeThis.preset == null)
+                {
+                    return;
+                }
+
+                ImmutableList<ByTheBookSyncEffects> upgradeOptions = ImmutableList.Create<ByTheBookSyncEffects>();
+                string upgradeKey = $"{upgradeThis.upgrade}_{upgradeThis.state}_{upgradeThis.level}";
+                ByTheBookPlugin.Instance.Log.LogInfo($"Attempting to install upgrade group: {upgradeKey}.");
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeOptions))
+                {
+                    ByTheBookPlugin.Instance.Log.LogInfo($"Found upgrades: {upgradeOptions.Count}");
+                    foreach (var effect in upgradeOptions)
+                    {
+                        ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
+                    }
                 }
             }
         }
@@ -36,15 +81,19 @@ namespace ByTheBook.Patches
             [HarmonyPostfix]
             public static void Postfix(UpgradesController.Upgrades removal)
             {
-                if (removal == null || removal.preset == null)
+                if (removal == null || removal.upgrade == null)
                 {
                     return;
                 }
 
-                // TODO: correctly handle options and allow for less hardcoding.
-                if (PrivateEyeSyncDiskPreset.NAME == removal.preset.presetName)
+                ImmutableList<ByTheBookSyncEffects> effectsToRemove = ImmutableList.Create<ByTheBookSyncEffects>();
+                string upgradeKey = $"{removal.upgrade}_{removal.state}_{removal.level}";
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out effectsToRemove))
                 {
-                    ByTheBookPlugin.Instance.DisableUpgrade((ByTheBookSyncEffects)removal.preset.mainEffect1);
+                    foreach (ByTheBookSyncEffects effectToDisable in effectsToRemove)
+                    {
+                        ByTheBookUpgradeManager.Instance.DisableUpgrade(effectToDisable);
+                    }
                 }
             }
         }
@@ -57,12 +106,13 @@ namespace ByTheBook.Patches
             public static void Prefix(UpgradesController.Upgrades newUpgrade)
             {
                 // TODO: figure out why the SyncDiskPreset is not present on the Upgrade.
-                // This issue is the root of other hackiness required in the code and why this mod
-                // can only support 1 sync disk as of now.
-                if (newUpgrade?.upgrade == PrivateEyeSyncDiskPreset.NAME && newUpgrade?.preset == null)
+                // This issue is the root of other hackiness required in the code.
+                SyncDiskPreset preset = null;
+                string upgradeKey = $"{newUpgrade.upgrade}_{newUpgrade.state}_{newUpgrade.level}";
+                if (newUpgrade?.preset == null && newUpgrade?.upgrade != null && ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.TryGetValue(upgradeKey, out preset))
                 {
                     ByTheBookPlugin.Logger.LogWarning($"SyncDiskElementControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");
-                    newUpgrade.preset = PrivateEyeSyncDiskPreset.Instance;
+                    newUpgrade.preset = preset;
                 }
             }
         }

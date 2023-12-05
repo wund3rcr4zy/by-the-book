@@ -1,10 +1,8 @@
-﻿using ByTheBook.SyncDisks;
+﻿using ByTheBook.Dialog;
+using ByTheBook.SyncDisks;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
+using Il2CppInterop.Runtime;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace ByTheBook.Patches
@@ -14,31 +12,38 @@ namespace ByTheBook.Patches
         [HarmonyPatch(typeof(Toolbox), nameof(Toolbox.LoadAll))]
         public class ToolboxLoadAllHook
         {
-            public static SyncDiskPreset diskPreset;
+            private static bool presetsLoaded = false;
 
             [HarmonyPostfix]
             public static void Postfix()
             {
                 ByTheBookPlugin.Logger.LogDebug($"Toolbox Post LoadAll.");
 
-                if (diskPreset == null)
+                if (!presetsLoaded)
                 {
-                    var policeVendingMenu = Resources.FindObjectsOfTypeAll<MenuPreset>()
-                        .Where(preset => preset.GetPresetName() == "PoliceAutomat");
-
-
-                    diskPreset = PrivateEyeSyncDiskPreset.CreateWarrantSyncDiskPreset();
-                    Toolbox.Instance.allSyncDisks.Add(diskPreset);
-
-                    if (diskPreset != null)
-                    {
-                        foreach (var pv in policeVendingMenu)
-                        {
-                            ByTheBookPlugin.Logger.LogInfo($"Attempted to add WarrantSync Disk to machine.");
-                            pv.syncDisks.Add(diskPreset);
-                        }
-                    }
+                    LoadSyncDisks();
+                    LoadDialogs();
+                    presetsLoaded = true;
                 }
+            }
+
+            private static void LoadSyncDisks() 
+            {
+                var policeVendingMenu = Resources.FindObjectsOfTypeAll<MenuPreset>()
+                    .Where(preset => preset.GetPresetName() == "PoliceAutomat");
+
+                Toolbox.Instance.allSyncDisks.Add(PrivateEyeSyncDiskPreset.Instance);
+
+                foreach (var pv in policeVendingMenu)
+                {
+                    ByTheBookPlugin.Logger.LogInfo($"Attempted to add PrivateEye SyncDisk to WeaponsLocker.");
+                    pv.syncDisks.Add(PrivateEyeSyncDiskPreset.Instance);
+                }
+            }
+
+            private static void LoadDialogs()
+            {
+                Toolbox.Instance.allDialog.Add(GuardGuestPassDialogPreset.Instance);
             }
         }
     }

@@ -1,10 +1,6 @@
 ﻿using ByTheBook.SyncDisks;
+using ByTheBook.Upgrades;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ByTheBook.Patches
 {
@@ -16,7 +12,7 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix()
             {
-                if (!ByTheBookPlugin.Instance.IsUpgradeEnabled(SyncDisks.ByTheBookSyncEffects.PrivateEye))
+                if (!ByTheBookUpgradeManager.Instance.IsUpgradeEnabled(ByTheBookSyncEffects.CrimeSceneGuestPass))
                 {
                     return;
                 }

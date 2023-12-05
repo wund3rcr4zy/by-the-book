@@ -1,14 +1,17 @@
-﻿using ByTheBook.SyncDisks;
+﻿using ByTheBook.Dialog;
+using ByTheBook.SyncDisks;
+using ByTheBook.Upgrades;
 using HarmonyLib;
+using Il2CppInterop.Runtime;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+using UnityEngine;
+
 
 namespace ByTheBook.Patches
 {
-    internal class DebugPatches
+    public class DebugPatches
     {
 
     }
