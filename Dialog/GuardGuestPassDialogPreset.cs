@@ -1,28 +1,21 @@
-﻿using BepInEx.Unity.IL2CPP.Utils.Collections;
-using ByTheBook.Upgrades;
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
+using static DialogPreset;
 
 namespace ByTheBook.Dialog
 {
 
-    public class GuardGuestPassDialogPreset : DialogPreset
+    public class GuardGuestPassDialogPreset
     {
         public const string NAME = "guard-guest-pass";
 
-        private static GuardGuestPassDialogPreset _instance;
-        public static GuardGuestPassDialogPreset Instance
+        private static DialogPreset _instance;
+        public static DialogPreset Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = ScriptableObject.CreateInstance<GuardGuestPassDialogPreset>();
+                    _instance = ScriptableObject.CreateInstance<DialogPreset>();
                     Init(_instance);
                 }
 
@@ -31,7 +24,7 @@ namespace ByTheBook.Dialog
         }
 
         // Seems like constructor work, but I don't think I can trust ScriptableObject.CreateInstance with a constructor.
-        private static void Init(GuardGuestPassDialogPreset instance)
+        private static void Init(DialogPreset instance)
         {
             instance.presetName = NAME;
             instance.name = instance.presetName;

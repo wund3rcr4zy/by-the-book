@@ -2,16 +2,8 @@
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using ByTheBook.Dialog;
-using ByTheBook.Patches;
-using ByTheBook.SyncDisks;
-using ByTheBook.Utils;
 using HarmonyLib;
-using HarmonyLib.Tools;
 using Il2CppInterop.Runtime.Injection;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using UnityEngine;
 
 namespace ByTheBook
 {
@@ -52,10 +44,6 @@ namespace ByTheBook
 
         private void RegisterTypes()
         {
-            ClassInjector.RegisterTypeInIl2Cpp<PrivateEyeSyncDiskPreset>();
-            ClassInjector.RegisterTypeInIl2Cpp<GuardGuestPassDialogPreset>();
-            ClassInjector.RegisterTypeInIl2Cpp<GuardGuestPassAISuccessResponsePreset>();
-            ClassInjector.RegisterTypeInIl2Cpp<GuardGuestPassAIFailureResponsePreset>();
             ClassInjector.RegisterTypeInIl2Cpp<ByTheBookDialogManager>();
             Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} has added custom types!");
         }

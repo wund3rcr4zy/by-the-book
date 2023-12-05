@@ -1,4 +1,5 @@
 ﻿using ByTheBook.Dialog;
+using ByTheBook.Upgrades;
 using ByTheBook.Utils;
 using HarmonyLib;
 using System;
@@ -12,7 +13,7 @@ namespace ByTheBook.Patches
         public class DialogExecuteHook
         {
             private static readonly Random random = new Random(Guid.NewGuid().GetHashCode());
-            private const int GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL = 3;
+            private static readonly int GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL = Math.Clamp(ByTheBookPlugin.Instance.Config.Bind("SyncDisks", "guard-pass-max-chance-social-credit-level", 3).Value, 1, 8);
 
             [HarmonyPrefix]
             public static void Prefix(EvidenceWitness.DialogOption dialog, Interactable saysTo, NewNode where, Actor saidBy, ForceSuccess forceSuccess, ref bool __runOriginal)
@@ -23,7 +24,7 @@ namespace ByTheBook.Patches
                 if (dialog?.preset == GuardGuestPassDialogPreset.Instance)
                 {
                     Citizen citizen = saysTo?.controller?.GetComponentInParent<Citizen>();
-                    ByTheBookPlugin.Logger.LogInfo($"Executing Dialog: {dialog?.preset?.name} executed by: {saidBy?.name}");
+                    ByTheBookPlugin.Logger.LogDebug($"Executing Dialog: {dialog?.preset?.name} executed by: {saidBy?.name}");
 
 
                     if (citizen != null)
@@ -58,8 +59,6 @@ namespace ByTheBook.Patches
         [HarmonyPatch(typeof(DialogController), nameof(DialogController.TestSpecialCaseAvailability))]
         public class DialogControllerSpecialCaseHook
         {
-            private static bool syncDisksLoaded = false;
-
             [HarmonyPostfix]
             public static void Postfix(ref bool __result, DialogPreset preset, Citizen saysTo, SideJob jobRef)
             {
@@ -76,6 +75,11 @@ namespace ByTheBook.Patches
 
             private static bool IsEnforcerGuardingLatestMurderScene(Citizen saysTo)
             {
+                if (!ByTheBookUpgradeManager.Instance.IsUpgradeEnabled(SyncDisks.ByTheBookSyncEffects.GuardGuestPass))
+                {
+                    return false;
+                }
+
                 MurderController.Murder? latestMurder = MurderController.Instance.GetLatestMurder();
                 if (latestMurder == null || !saysTo.isEnforcer)
                 {

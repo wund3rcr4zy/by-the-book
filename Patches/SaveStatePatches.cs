@@ -27,15 +27,15 @@ namespace ByTheBook.Patches
                     if (!containsKey)
                     {
                         upgradeKey = $"{upgrade.upgrade}_{UpgradesController.SyncDiskState.option1}_{upgrade.level}";
+                        containsKey = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.ContainsKey(upgradeKey);
+                        ByTheBookPlugin.Logger.LogDebug($"Have related upgrade fallback: {upgradeKey}?: {containsKey}");
                     }
-                    containsKey = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.ContainsKey(upgradeKey);
-                    ByTheBookPlugin.Logger.LogDebug($"Have related upgrade fallback: {upgradeKey}?: {containsKey}");
 
                     ImmutableList<ByTheBookSyncEffects> upgradeEffects = ImmutableList.Create<ByTheBookSyncEffects>();
                     if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeEffects)) 
                     {
                         ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing {upgrade.upgrade} preset. Really need to figure out why this happens.");
-                        upgrade.preset = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks[upgradeKey];
+                        upgrade.preset = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.GetValueSafe(upgradeKey);
 
                         if (UpgradesController.SyncDiskState.notInstalled == upgrade.state)
                         {

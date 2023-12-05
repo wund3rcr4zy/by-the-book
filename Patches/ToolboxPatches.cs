@@ -23,6 +23,7 @@ namespace ByTheBook.Patches
                 {
                     LoadSyncDisks();
                     LoadDialogs();
+                    presetsLoaded = true;
                 }
             }
 
@@ -38,8 +39,6 @@ namespace ByTheBook.Patches
                     ByTheBookPlugin.Logger.LogInfo($"Attempted to add PrivateEye SyncDisk to WeaponsLocker.");
                     pv.syncDisks.Add(PrivateEyeSyncDiskPreset.Instance);
                 }
-
-                presetsLoaded = true;
             }
 
             private static void LoadDialogs()
