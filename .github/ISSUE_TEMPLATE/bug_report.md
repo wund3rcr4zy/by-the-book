@@ -12,6 +12,7 @@ What is the name and version of mod you are using?
 
 **Shadows of Doubt Game Version (Required)**
 This should be located in the top right of the main menu.
+Was it on the normal, experimental, or mono branch?
 
 **Describe the bug (Required)**
 A clear and concise description of what the bug is.
