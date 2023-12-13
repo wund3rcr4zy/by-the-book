@@ -29,12 +29,11 @@ namespace ByTheBook.Patches
             public static void Postfix(Interactable __instance)
             {
                 Human human = __instance?.belongsTo;
-                if (human == null || !human.isEnforcer || __instance.speechController == null)
+                if (human == null || human.ai == null || !human.isEnforcer || human.isDead || human.ai.ko || __instance.speechController == null)
                 {
                     return;
                 }
 
-                human.evidenceEntry?.AddDialogOption(Evidence.DataKey.voice, GuardGuestPassDialogPreset.Instance, newSideJob: null, roomRef: null, allowPresetDuplicates: false);
                 if (TalkTo != null && (__instance?.currentActions?.TryGetValue(InteractablePreset.InteractionKey.primary, out var currentAction) ?? false))
                 {
                     // This is required because normally, we are not allowed to talk to active duty Enforcers at the scene of a crime.

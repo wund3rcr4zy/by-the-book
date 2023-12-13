@@ -62,7 +62,7 @@ namespace ByTheBook.SyncDisks
             instance.option1UpgradeNameReferences = upgradeNames;
 
             Il2CppSystem.Collections.Generic.List<float> upgradeValues = new Il2CppSystem.Collections.Generic.List<float>();
-            upgradeValues.Add(1.0f);
+            upgradeValues.Add(0.0f);
             instance.option1UpgradeValues = upgradeValues;
 
             instance.mainEffect2 = Effect.none;

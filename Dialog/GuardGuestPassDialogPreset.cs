@@ -48,10 +48,8 @@ namespace ByTheBook.Dialog
 
             instance.responses = potentialResponses;
 
-            // TODO: Dialog is not being removed after trying it. A bug because the dialog option can be spammed until success.
+            instance.defaultOption = true;
             instance.removeAfterSaying = true;
-
-            // TODO: is this actually working? Can't really test until the dialog is removed as it should be after trying.
             instance.dailyReplenish = true;
         }
     }

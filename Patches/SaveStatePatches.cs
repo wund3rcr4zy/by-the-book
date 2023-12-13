@@ -34,8 +34,11 @@ namespace ByTheBook.Patches
                     ImmutableList<ByTheBookSyncEffects> upgradeEffects = ImmutableList.Create<ByTheBookSyncEffects>();
                     if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeEffects)) 
                     {
-                        ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing {upgrade.upgrade} preset. Really need to figure out why this happens.");
-                        upgrade.preset = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.GetValueSafe(upgradeKey);
+                        if (upgrade.preset == null)
+                        {
+                            ByTheBookPlugin.Logger.LogWarning($"SaveStateControllerHook: Hack Forcing {upgrade.upgrade} preset. Really need to figure out why this happens.");
+                            upgrade.preset = ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.GetValueSafe(upgradeKey);
+                        }
 
                         if (UpgradesController.SyncDiskState.notInstalled == upgrade.state)
                         {

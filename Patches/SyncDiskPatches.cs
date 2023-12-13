@@ -18,10 +18,9 @@ namespace ByTheBook.Patches
                     return;
                 }
 
-                ImmutableList<ByTheBookSyncEffects> upgradeOptions = ImmutableList.Create<ByTheBookSyncEffects>();
                 string upgradeKey = $"{application.upgrade}_option{option}_{application.level}";
                 ByTheBookPlugin.Instance.Log.LogInfo($"Attempting to install syncDisk group: {upgradeKey}.");
-                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeOptions))
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out ImmutableList<ByTheBookSyncEffects> upgradeOptions))
                 {
                     ByTheBookPlugin.Instance.Log.LogInfo($"Found upgrades: {upgradeOptions.Count}");
                     foreach (var effect in upgradeOptions) 
@@ -36,23 +35,6 @@ namespace ByTheBook.Patches
         [HarmonyPatch(typeof(UpgradesController), nameof(UpgradesController.UpgradeSyncDisk))]
         public class UpgradeSyncDiskHook
         {
-            [HarmonyPrefix]
-            public static void Prefix(UpgradesController.Upgrades upgradeThis)
-            {
-                if (upgradeThis == null || upgradeThis.preset == null)
-                {
-                    return;
-                }
-
-                ImmutableList<ByTheBookSyncEffects> upgradeOptions = ImmutableList.Create<ByTheBookSyncEffects>();
-                string upgradeKey = $"{upgradeThis.upgrade}_{upgradeThis.state}_{upgradeThis.level}";
-                ByTheBookPlugin.Instance.Log.LogInfo($"Prefix: Attempting to install upgrade group: {upgradeKey}.");
-                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeOptions))
-                {
-                    ByTheBookPlugin.Instance.Log.LogInfo($"Prefix: Found upgrades: {upgradeOptions.Count}");
-                }
-            }
-
             [HarmonyPostfix]
             public static void Postfix(UpgradesController.Upgrades upgradeThis)
             {
@@ -61,10 +43,9 @@ namespace ByTheBook.Patches
                     return;
                 }
 
-                ImmutableList<ByTheBookSyncEffects> upgradeOptions = ImmutableList.Create<ByTheBookSyncEffects>();
                 string upgradeKey = $"{upgradeThis.upgrade}_{upgradeThis.state}_{upgradeThis.level}";
                 ByTheBookPlugin.Instance.Log.LogInfo($"Attempting to install upgrade group: {upgradeKey}.");
-                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out upgradeOptions))
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out ImmutableList<ByTheBookSyncEffects> upgradeOptions))
                 {
                     ByTheBookPlugin.Instance.Log.LogInfo($"Found upgrades: {upgradeOptions.Count}");
                     foreach (var effect in upgradeOptions)
@@ -94,25 +75,6 @@ namespace ByTheBook.Patches
                     {
                         ByTheBookUpgradeManager.Instance.DisableUpgrade(effectToDisable);
                     }
-                }
-            }
-        }
-
-
-        [HarmonyPatch(typeof(SyncDiskElementController), nameof(SyncDiskElementController.Setup))]
-        public class SyncDiskElementControllerHooks
-        {
-            [HarmonyPrefix]
-            public static void Prefix(UpgradesController.Upgrades newUpgrade)
-            {
-                // TODO: figure out why the SyncDiskPreset is not present on the Upgrade.
-                // This issue is the root of other hackiness required in the code.
-                SyncDiskPreset preset = null;
-                string upgradeKey = $"{newUpgrade.upgrade}_{newUpgrade.state}_{newUpgrade.level}";
-                if (newUpgrade?.preset == null && newUpgrade?.upgrade != null && ByTheBookUpgradeManager.Instance.byTheBookSyncDisks.TryGetValue(upgradeKey, out preset))
-                {
-                    ByTheBookPlugin.Logger.LogWarning($"SyncDiskElementControllerHook: Hack Forcing PrivateEye preset. Really need to figure out why this happens.");
-                    newUpgrade.preset = preset;
                 }
             }
         }

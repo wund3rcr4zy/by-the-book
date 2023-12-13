@@ -17,6 +17,8 @@
   <ItemGroup>
     <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    <PackageReference Include="JsonDiffPatch" Version="2.0.61" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,18 +36,12 @@
     <!-- DDS Localication Content -->
     <DDSContentFiles Include="$(ProjectDir)AdditionalContent\**\*.*" />
     <ModFolderContent Include="$(ProjectDir)ModFolderContent\**\*.*" />
+    <DeployedDependencies Include="$(ProjectDir)lib\deployed\*.*" />
   </ItemGroup>
 
-  
-  <!-- <Target Name="CopyArtifactsToBepinExDir" AfterTargets="PostBuildEvent">
-    <MakeDir Directories="$(BepInExPath)plugins\$(ProjectName)" Condition="!Exists('$(BepInExPath)plugins\$(ProjectName)')" />
-    <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(BepInExPath)plugins/$(ProjectName)&quot;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(BepInExPath)plugins/$(ProjectName)&quot;" />
-    
-    <Copy SourceFiles="@(ModFolderContent)" DestinationFolder="$(BepInExPath)plugins\$(ProjectName)" SkipUnchangedFiles="true" />
-
-    <MakeDir Directories="$(BepInExPath)plugins\$(ProjectName)\AdditionalContent" Condition="!Exists('$(BepInExPath)plugins\$(ProjectName)\AdditionalContent')" />
-    <Copy SourceFiles="@(DDSContentFiles)" DestinationFolder="$(BepInExPath)plugins\$(ProjectName)\AdditionalContent\%(RecursiveDir)" SkipUnchangedFiles="true" />
-  </Target> -->
+  <ItemGroup>
+    <DeployedDependencies Remove="lib\deployed\JsonDiffPatch.dll" />
+  </ItemGroup>
 
   <Target Name="CreateReleaseZip" AfterTargets="PostBuildEvent">
     <MakeDir Directories="$(ProjectDir)release" Condition="!Exists('$(ProjectDir)release')" />
@@ -56,6 +52,7 @@
     <Copy SourceFiles="@(ModFolderContent)" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
     <Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
     <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(DeployedDependencies)" DestinationFolder="$(ProjectDir)release\$(ProjectName)-$(Version)" SkipUnchangedFiles="true" />
 
     <ZipDirectory SourceDirectory="$(ProjectDir)release\$(ProjectName)-$(Version)" DestinationFile="$(ProjectDir)release\$(ProjectName)-$(Version).zip" Overwrite="TRUE" />
   </Target>
