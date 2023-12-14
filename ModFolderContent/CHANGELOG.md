@@ -2,7 +2,7 @@
 
 * Bugfix: the player should no longer become very tall and fall through the floor on the second upgrade of PrivateEye. (Fingers crossed. That one was weird)
 * Bugfix: this mod's text should now render again after the latest game update.
-* A new downside side-effect has been added to the Private-Eye sync disk. If you are persued while you have active fines, you will lose social credeit.
+* A new downside side-effect has been added to the Private-Eye sync disk. If you are persued while you have active fines, you will lose social credit.
   * The amount of social credit you will lose is a small percentage of your current fines capping at 100 social credit.
   * A player cannot go below 0 social credit. 
 * A configuration option has been added to the BepInEx config to be disable the new side-effect
