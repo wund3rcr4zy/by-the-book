@@ -42,7 +42,7 @@ namespace ByTheBook.Upgrades
             byTheBookSyncUpgrades.Add(upgradeName, upgradeEffects);
         }
 
-        public void EnableUpgrade(ByTheBookSyncEffects effect)
+        public void EnableEffect(ByTheBookSyncEffects effect)
         {
             enabledUpgrades.Add(effect);
 
@@ -77,7 +77,7 @@ namespace ByTheBook.Upgrades
             }    
         }
 
-        public void DisableUpgrade(ByTheBookSyncEffects effect)
+        public void DisableEffect(ByTheBookSyncEffects effect)
         {
             enabledUpgrades.Remove(effect);
 
@@ -91,15 +91,15 @@ namespace ByTheBook.Upgrades
             }
         }
 
-        public void DisableAllUpgrades()
+        public void DisableAllEffects()
         {
             foreach (var effect in enabledUpgrades) 
             {
-                DisableUpgrade(effect);
+                DisableEffect(effect);
             }
         }
 
-        public bool IsUpgradeEnabled(ByTheBookSyncEffects effect)
+        public bool IsEffectEnabled(ByTheBookSyncEffects effect)
         {
             return Game.Instance.giveAllUpgrades || enabledUpgrades.Contains(effect);
         }

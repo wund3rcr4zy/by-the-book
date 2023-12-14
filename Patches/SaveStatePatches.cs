@@ -16,7 +16,7 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix(StateSaveData load)
             {
-                ByTheBookUpgradeManager.Instance.DisableAllUpgrades();
+                ByTheBookUpgradeManager.Instance.DisableAllEffects();
                 
                 foreach (var upgrade in load.upgrades)
                 {
@@ -47,7 +47,7 @@ namespace ByTheBook.Patches
 
                         foreach (ByTheBookSyncEffects effect in upgradeEffects)
                         {
-                            ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
+                            ByTheBookUpgradeManager.Instance.EnableEffect(effect);
                         }
                     }
                 }
@@ -56,7 +56,7 @@ namespace ByTheBook.Patches
                 {
                     foreach (var upgrade in Enum.GetValues<ByTheBookSyncEffects>())
                     {
-                        ByTheBookUpgradeManager.Instance.EnableUpgrade(upgrade);
+                        ByTheBookUpgradeManager.Instance.EnableEffect(upgrade);
                     }
                 }
             }

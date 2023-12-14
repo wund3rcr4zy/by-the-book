@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>ByTheBook</AssemblyName>
     <Description>A collection of modifications for the more scrupulous detective.</Description>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -37,10 +37,6 @@
     <DDSContentFiles Include="$(ProjectDir)AdditionalContent\**\*.*" />
     <ModFolderContent Include="$(ProjectDir)ModFolderContent\**\*.*" />
     <DeployedDependencies Include="$(ProjectDir)lib\deployed\*.*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <DeployedDependencies Remove="lib\deployed\JsonDiffPatch.dll" />
   </ItemGroup>
 
   <Target Name="CreateReleaseZip" AfterTargets="PostBuildEvent">

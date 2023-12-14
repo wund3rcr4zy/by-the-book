@@ -1,5 +1,7 @@
 ﻿using Il2CppInterop.Runtime.Injection;
 using System;
+using System.Linq;
+using UnityEngine;
 
 namespace ByTheBook.Dialog
 {
@@ -25,6 +27,19 @@ namespace ByTheBook.Dialog
 
                 return __instance; 
             } 
+        }
+
+        private AIActionPreset __talkTo;
+        public  AIActionPreset TalkToAction
+        {
+            get
+            {
+                if (__talkTo == null)
+                {
+                    __talkTo = Resources.FindObjectsOfTypeAll<AIActionPreset>().Where(preset => preset.presetName == "TalkTo").LastOrDefault();
+                }
+                return __talkTo;
+            }
         }
 
         public ByTheBookDialogManager(IntPtr ptr) : base(ptr)

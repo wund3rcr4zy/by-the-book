@@ -75,7 +75,7 @@ namespace ByTheBook.Patches
 
             private static bool IsEnforcerGuardingLatestMurderScene(Citizen saysTo)
             {
-                if (!ByTheBookUpgradeManager.Instance.IsUpgradeEnabled(SyncDisks.ByTheBookSyncEffects.GuardGuestPass))
+                if (!ByTheBookUpgradeManager.Instance.IsEffectEnabled(SyncDisks.ByTheBookSyncEffects.GuardGuestPass))
                 {
                     return false;
                 }

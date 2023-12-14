@@ -1,4 +1,5 @@
-﻿using ByTheBook.Dialog;
+﻿using ByTheBook.AIActions;
+using ByTheBook.Dialog;
 using ByTheBook.SyncDisks;
 using HarmonyLib;
 using Il2CppInterop.Runtime;
@@ -10,6 +11,28 @@ namespace ByTheBook.Patches
 {
     internal class LoadingPatches
     {
+        [HarmonyPatch(typeof(AssetLoader), nameof(AssetLoader.GetAllActions))]
+        public class AssetLoaderGetAllActionsHook()
+        {
+            private static bool presetsLoaded = false;
+
+            [HarmonyPostfix]
+            public static void Postfix(List<AIActionPreset> __result)
+            {
+                ByTheBookPlugin.Logger.LogDebug($"AssetLoaderGetAllActionsHook Post.");
+
+                if (!presetsLoaded)
+                {
+                    LoadActions(__result);
+                    presetsLoaded = true;
+                }
+            }
+
+            private static void LoadActions(List<AIActionPreset> data)
+            {
+                data.Add(SeekOutDetectiveAction.Instance);
+            }
+        }
 
         [HarmonyPatch(typeof(AssetLoader), nameof(AssetLoader.GetAllPresets))]
         public class AssetLoaderGetAllPresetsHook()
@@ -19,12 +42,16 @@ namespace ByTheBook.Patches
             [HarmonyPostfix]
             public static void Postfix(List<ScriptableObject> __result)
             {
-                ByTheBookPlugin.Logger.LogDebug($"AssetLoaderGetAllPresetsHook Post LoadAll.");
+                ByTheBookPlugin.Logger.LogDebug($"AssetLoaderGetAllPresetsHook Post.");
 
                 if (!presetsLoaded)
                 {
                     LoadSyncDisks(__result);
                     LoadDialogs(__result);
+                    
+                    // TODO: Still figuring out how to modify the AI and change goals.
+                    //LoadGoals(__result);
+                    
                     presetsLoaded = true;
                 }
             }
@@ -37,6 +64,11 @@ namespace ByTheBook.Patches
             private static void LoadDialogs(List<ScriptableObject> data)
             {
                 data.Add(GuardGuestPassDialogPreset.Instance);
+            }
+
+            private static void LoadGoals(List<ScriptableObject> data)
+            {
+                data.Add(SeekOutDetectiveGoal.Instance);
             }
         }
 

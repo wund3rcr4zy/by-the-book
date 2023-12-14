@@ -25,7 +25,7 @@ namespace ByTheBook.Patches
                     ByTheBookPlugin.Instance.Log.LogInfo($"Found upgrades: {upgradeOptions.Count}");
                     foreach (var effect in upgradeOptions) 
                     {
-                        ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
+                        ByTheBookUpgradeManager.Instance.EnableEffect(effect);
                     }
                 }
                    
@@ -50,7 +50,7 @@ namespace ByTheBook.Patches
                     ByTheBookPlugin.Instance.Log.LogInfo($"Found upgrades: {upgradeOptions.Count}");
                     foreach (var effect in upgradeOptions)
                     {
-                        ByTheBookUpgradeManager.Instance.EnableUpgrade(effect);
+                        ByTheBookUpgradeManager.Instance.EnableEffect(effect);
                     }
                 }
             }
@@ -73,7 +73,7 @@ namespace ByTheBook.Patches
                 {
                     foreach (ByTheBookSyncEffects effectToDisable in effectsToRemove)
                     {
-                        ByTheBookUpgradeManager.Instance.DisableUpgrade(effectToDisable);
+                        ByTheBookUpgradeManager.Instance.DisableEffect(effectToDisable);
                     }
                 }
             }

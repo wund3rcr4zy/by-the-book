@@ -12,19 +12,6 @@ namespace ByTheBook.Patches
         [HarmonyPatch(typeof(Interactable), nameof(Interactable.UpdateCurrentActions))]
         public class InteractableHook
         {
-            private static AIActionPreset __talkTo;
-            private static AIActionPreset TalkTo
-            {
-                get
-                {
-                    if (__talkTo == null)
-                    {
-                        __talkTo = Resources.FindObjectsOfTypeAll<AIActionPreset>().Where(preset => preset.presetName == "TalkTo").LastOrDefault();
-                    }
-                    return __talkTo;
-                }
-            }
-
             [HarmonyPostfix]
             public static void Postfix(Interactable __instance)
             {
@@ -34,7 +21,7 @@ namespace ByTheBook.Patches
                     return;
                 }
 
-                if (TalkTo != null && (__instance?.currentActions?.TryGetValue(InteractablePreset.InteractionKey.primary, out var currentAction) ?? false))
+                if (ByTheBookDialogManager.Instance.TalkToAction != null && (__instance?.currentActions?.TryGetValue(InteractablePreset.InteractionKey.primary, out var currentAction) ?? false))
                 {
                     // This is required because normally, we are not allowed to talk to active duty Enforcers at the scene of a crime.
                     // Force the "Talk To" interaction to be present.
@@ -42,7 +29,7 @@ namespace ByTheBook.Patches
                     if (currentAction.currentAction.interactionName == "Take Print")
                     {
                         ByTheBookPlugin.Instance.Log.LogDebug("Set TalkTo action on guard.");
-                        currentAction.currentAction.action = TalkTo;
+                        currentAction.currentAction.action = ByTheBookDialogManager.Instance.TalkToAction;
                         currentAction.currentAction.interactionName = "Talk To";
                         currentAction.currentAction.specialCase = InteractablePreset.InteractionAction.SpecialCase.none;
                     }

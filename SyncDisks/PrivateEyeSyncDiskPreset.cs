@@ -9,7 +9,8 @@ namespace ByTheBook.SyncDisks
     public enum ByTheBookSyncEffects
     {
         GuardGuestPass = 50,
-        CrimeSceneGuestPass = 51
+        CrimeSceneGuestPass = 51,
+        CrimePersuitSocialCredit = 52
     }
 
     public class PrivateEyeSyncDiskPreset
@@ -30,8 +31,25 @@ namespace ByTheBook.SyncDisks
                     // TODO: Work more directly with the game's upgrade system rather than creating this key to upgrade list map.
                     // ^ This is currently difficult to do with IL2Cpp.
                     ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.notInstalled}_0", _instance, ImmutableList.Create<ByTheBookSyncEffects>());
-                    ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.option1}_0", _instance, ImmutableList.Create(ByTheBookSyncEffects.GuardGuestPass));
-                    ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.option1}_1", _instance, ImmutableList.Create(ByTheBookSyncEffects.GuardGuestPass, ByTheBookSyncEffects.CrimeSceneGuestPass));
+
+                    if (ByTheBookPlugin.Instance.Config.Bind("EnabledSideEffects", NAME, true).Value)
+                    {
+                        ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.option1}_0", _instance,
+                            ImmutableList.Create(ByTheBookSyncEffects.CrimePersuitSocialCredit, ByTheBookSyncEffects.GuardGuestPass));
+
+
+                        ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.option1}_1", _instance,
+                            ImmutableList.Create(ByTheBookSyncEffects.CrimePersuitSocialCredit, ByTheBookSyncEffects.GuardGuestPass, ByTheBookSyncEffects.CrimeSceneGuestPass));
+                    }
+                    else 
+                    {
+                        ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.option1}_0", _instance,
+                            ImmutableList.Create(ByTheBookSyncEffects.GuardGuestPass));
+
+
+                        ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.option1}_1", _instance,
+                            ImmutableList.Create(ByTheBookSyncEffects.GuardGuestPass, ByTheBookSyncEffects.CrimeSceneGuestPass));
+                    }
                 }
 
                 return _instance;
@@ -64,6 +82,13 @@ namespace ByTheBook.SyncDisks
             Il2CppSystem.Collections.Generic.List<float> upgradeValues = new Il2CppSystem.Collections.Generic.List<float>();
             upgradeValues.Add(0.0f);
             instance.option1UpgradeValues = upgradeValues;
+
+            if (ByTheBookPlugin.Instance.Config.Bind("EnabledSideEffects", NAME, true).Value)
+            {
+                instance.sideEffectDescription = $"{NAME}_side-effect_description"; ;
+                instance.sideEffectValue = 0f;
+                instance.sideEffect = (Effect)ByTheBookSyncEffects.CrimePersuitSocialCredit;
+            }
 
             instance.mainEffect2 = Effect.none;
             instance.mainEffect3 = Effect.none;
