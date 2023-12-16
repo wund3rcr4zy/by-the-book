@@ -36,9 +36,9 @@ namespace ByTheBook.AIActions
             instance.name = instance.presetName;
 
             instance.startingGoal = true;
+            instance.forcePriorityUpdateOnCreation = true;
             instance.appliesTo = AIGoalPreset.StartingGoal.all;
             instance.category = AIGoalPreset.GoalCategory.vital;
-            
             instance.completable = true;
             
             instance.basePriority = 11;
@@ -59,7 +59,7 @@ namespace ByTheBook.AIActions
         {
             var setupSeekAction = new AIGoalPreset.GoalActionSetup()
             {
-                condition = AIGoalPreset.ActionCondition.inPublicOnly
+                condition = AIGoalPreset.ActionCondition.always
             };
 
             setupSeekAction.actions.Add(SeekOutDetectiveAction.Instance);
@@ -122,16 +122,22 @@ namespace ByTheBook.AIActions
             AIActionPreset.AutomaticAction automaticAction = new AIActionPreset.AutomaticAction()
             {
                 forcedAction = ByTheBookDialogManager.Instance.TalkToAction,
-                proximityCheck = true,
-                additionalDelay = 0
+                proximityCheck = true
             };
 
+            instance.forcedActionsSearchLevel = AIActionPreset.ForcedActionsSearchLevel.thisObjectOnly;
             instance.forcedActionsOnArrival.Add(automaticAction);
-            instance.dontUpdateGoalPriorityWhileActive = true;
+            instance.requiresForcedUpdate = true;
+            //instance.dontUpdateGoalPriorityWhileActive = true;
             instance.inputPriority = 11;
 
-            // TODO: false when done.
-            instance.debug = true;
+            instance.specificOutfitOnArrive = true;
+            instance.makeClothedOnArrive = false;
+            instance.allowedOutfitOnArrive = ClothesPreset.OutfitCategory.undressed;
+            instance.completableAction = true;
+            instance.avoidRepeatingInteractables = true;
+            instance.repeatOnComplete = false;
+
 
             instance.defaultKey = InteractablePreset.InteractionKey.none;
 
@@ -140,7 +146,7 @@ namespace ByTheBook.AIActions
             instance.facing = AIActionPreset.ActionFacingDirection.player;
             instance.runIfSeesPlayer = true;
             instance.completeOnSeeIllegal = true;     
-            instance.searchSetting = AIActionPreset.FindSetting.onlyPublic;
+            instance.searchSetting = AIActionPreset.FindSetting.nonTrespassing;
             instance.onUsePointBusy = AIActionPreset.ActionBusy.skipAction;
 
             instance.holsterCurrentItemOnAction = true;

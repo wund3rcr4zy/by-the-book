@@ -10,6 +10,6 @@
       "useTraits": false
     }
   ],
-  "id": "bd452178-7e7a-47d2-adf0-20e9432e4c13",
+  "id": "38da3c6d-3065-434b-992a-0cc190d39dd7",
   "name": "GuardGuestResponseSuccessMsg_BTB"
 }

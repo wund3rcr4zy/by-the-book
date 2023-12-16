@@ -39,6 +39,13 @@
     <DeployedDependencies Include="$(ProjectDir)lib\deployed\*.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <DDSContentFiles Remove="AdditionalContent\Dialog\BTBDDS\DDS\Blocks\44cab549-03ba-459b-845c-3fe93b797ec6.block" />
+    <DDSContentFiles Remove="AdditionalContent\Dialog\BTBDDS\DDS\Blocks\75cb0f22-1bad-4c43-b31c-39e266c85ac3.block" />
+    <DDSContentFiles Remove="AdditionalContent\Dialog\BTBDDS\DDS\Messages\1122d9da-03be-48ec-8f3c-61d8e21fab0a.msg" />
+    <DDSContentFiles Remove="AdditionalContent\Dialog\BTBDDS\DDS\Messages\ff93cc13-0927-4e3a-adce-00f3f9855642.msg" />
+  </ItemGroup>
+
   <Target Name="CreateReleaseZip" AfterTargets="PostBuildEvent">
     <MakeDir Directories="$(ProjectDir)release" Condition="!Exists('$(ProjectDir)release')" />
     <MakeDir Directories="$(ProjectDir)release\$(ProjectName)-$(Version)" Condition="!Exists('$(ProjectDir)release\$(ProjectName)-$(Version)')" />

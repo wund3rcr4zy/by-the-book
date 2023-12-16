@@ -50,7 +50,7 @@ namespace ByTheBook.Patches
                     LoadDialogs(__result);
                     
                     // TODO: Still figuring out how to modify the AI and change goals.
-                    //LoadGoals(__result);
+                    LoadGoals(__result);
                     
                     presetsLoaded = true;
                 }

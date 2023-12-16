@@ -35,6 +35,30 @@ namespace ByTheBook.Patches
                     }
                 }
             }
+
+            [HarmonyPatch(typeof(Interactable), nameof(Interactable.MainSetupEnd))]
+            public class InteractableSetupEndHook
+            {
+                [HarmonyPostfix]
+                public static void PostFix(Interactable __instance)
+                {
+                    if (__instance.preset.presetName == "Citizen" && (__instance?.belongsTo?.isPlayer ?? false))
+                    {
+                        ByTheBookPlugin.Instance.Log.LogInfo($"Adding ability for AI to TalkTo player.");
+                        InteractablePreset.InteractionAction interactionAction = new InteractablePreset.InteractionAction()
+                        {
+                            interactionName = "Talk To",
+                            action = ByTheBookDialogManager.Instance.TalkToAction,
+                            useDefaultKeySetting = false,
+                            keyOverride = InteractablePreset.InteractionKey.none,
+                            availableWhileIllegal = false,
+                            specialCase = InteractablePreset.InteractionAction.SpecialCase.nonCombatOrRestrained
+                        };
+
+                        __instance.aiActionReference[ByTheBookDialogManager.Instance.TalkToAction] = interactionAction;
+                    }
+                }
+            }
         }
     }
 }
