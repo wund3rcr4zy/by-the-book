@@ -53,6 +53,9 @@ namespace ByTheBook.Upgrades
                 case ByTheBookSyncEffects.GuardGuestPass:
                     PrivateEyeUpgradeStatusChanged(enabled: true);
                     break;
+                case ByTheBookSyncEffects.RelaySeenUnusual:
+                    RelaySeenUnusualUpgradeStatusChanged(enabled: true);
+                    break;
             }
         }
 
@@ -77,6 +80,26 @@ namespace ByTheBook.Upgrades
             }    
         }
 
+        private void RelaySeenUnusualUpgradeStatusChanged(bool enabled)
+        {
+            ByTheBookPlugin.Instance.Log.LogInfo($"RelaySeenUnusualUpgradeStatusChanged to: {enabled}");
+            var citizens = Resources.FindObjectsOfTypeAll<Citizen>()
+                .ToList();
+
+            ByTheBookPlugin.Instance.Log.LogInfo($"Found {citizens.Count} citizens to add dialog option 'ForceRelaySeenUnusual'.");
+            foreach (var citizen in citizens)
+            {
+                if (enabled)
+                {
+                    citizen.evidenceEntry?.AddDialogOption((Evidence.DataKey)ByTheBookDataKey.Default, SeekDetectiveDialogPreset.Instance, newSideJob: null, roomRef: null, allowPresetDuplicates: false);
+                }
+                else
+                {
+                    citizen.evidenceEntry?.RemoveDialogOption((Evidence.DataKey)ByTheBookDataKey.Default, SeekDetectiveDialogPreset.Instance, newSideJob: null, roomRef: null);
+                }
+            }
+        }
+
         public void DisableEffect(ByTheBookSyncEffects effect)
         {
             enabledUpgrades.Remove(effect);
@@ -87,6 +110,9 @@ namespace ByTheBook.Upgrades
             {
                 case ByTheBookSyncEffects.GuardGuestPass:
                     PrivateEyeUpgradeStatusChanged(enabled: false);
+                    break;
+                case ByTheBookSyncEffects.RelaySeenUnusual:
+                    RelaySeenUnusualUpgradeStatusChanged(enabled: false);
                     break;
             }
         }

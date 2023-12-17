@@ -3,6 +3,7 @@ using ByTheBook.Upgrades;
 using HarmonyLib;
 using System;
 using System.Collections.Immutable;
+using static SyncDiskPreset;
 
 
 namespace ByTheBook.Patches
@@ -17,7 +18,11 @@ namespace ByTheBook.Patches
             public static void Prefix(StateSaveData load)
             {
                 ByTheBookUpgradeManager.Instance.DisableAllEffects();
-                
+
+                // TODO: this is just for testing. Remove it.
+                ByTheBookUpgradeManager.Instance.DisableEffect(ByTheBookSyncEffects.RelaySeenUnusual);
+                ByTheBookUpgradeManager.Instance.EnableEffect(ByTheBookSyncEffects.RelaySeenUnusual);
+
                 foreach (var upgrade in load.upgrades)
                 {
                     string upgradeKey = $"{upgrade.upgrade}_{upgrade.state}_{upgrade.level}";

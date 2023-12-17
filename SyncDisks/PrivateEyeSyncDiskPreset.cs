@@ -10,7 +10,8 @@ namespace ByTheBook.SyncDisks
     {
         GuardGuestPass = 50,
         CrimeSceneGuestPass = 51,
-        CrimePersuitSocialCredit = 52
+        CrimePersuitSocialCredit = 52,
+        RelaySeenUnusual = 53
     }
 
     public class PrivateEyeSyncDiskPreset
@@ -30,7 +31,7 @@ namespace ByTheBook.SyncDisks
 
                     // TODO: Work more directly with the game's upgrade system rather than creating this key to upgrade list map.
                     // ^ This is currently difficult to do with IL2Cpp.
-                    ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.notInstalled}_0", _instance, ImmutableList.Create<ByTheBookSyncEffects>());
+                    ByTheBookUpgradeManager.Instance.AddSyncUpgradeEffects($"{NAME}_{UpgradesController.SyncDiskState.notInstalled}_0", _instance, ImmutableList.Create<ByTheBookSyncEffects>(ByTheBookSyncEffects.RelaySeenUnusual));
 
                     if (ByTheBookPlugin.Instance.Config.Bind("EnabledSideEffects", NAME, true).Value)
                     {

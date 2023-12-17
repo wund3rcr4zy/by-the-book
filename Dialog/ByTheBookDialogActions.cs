@@ -1,6 +1,9 @@
-﻿using System;
+﻿using ByTheBook.AIActions;
+using ByTheBook.Dialog;
+using System;
 using System.Collections.Generic;
 using static DialogController;
+using static EvidenceWitness;
 
 namespace ByTheBook.Dialog
 {
@@ -9,12 +12,29 @@ namespace ByTheBook.Dialog
         private static readonly Random random = new Random(Guid.NewGuid().GetHashCode());
         private static readonly int GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL = Math.Clamp(ByTheBookPlugin.Instance.Config.Bind("SyncDisks", "guard-pass-max-chance-social-credit-level", 3).Value, 1, 8);
 
-        public static readonly IReadOnlyDictionary<DialogPreset, Action<EvidenceWitness.DialogOption, Interactable, NewNode, Actor, DialogController.ForceSuccess>>
-            DialogActionDictionary = new Dictionary<DialogPreset, Action<EvidenceWitness.DialogOption, Interactable, NewNode, Actor, DialogController.ForceSuccess>>()
+        private static ByTheBookDialogActions __instance;
+        public static ByTheBookDialogActions Instance
+        {
+            get
             {
-                { GuardGuestPassDialogPreset.Instance, OnGuardGuestPassDialog },
-                { SeekDetectiveDialogPreset.Instance, OnSeekDetectiveSeenUnusual }
-            };
+                if (__instance == null)
+                {
+                    __instance = new ByTheBookDialogActions();
+                    __instance.Init();
+                }
+                return __instance;
+            }
+        }
+
+
+        public readonly Dictionary<string, Action<EvidenceWitness.DialogOption, Interactable, NewNode, Actor, DialogController.ForceSuccess>>
+            DialogActionDictionary = new Dictionary<string, Action<EvidenceWitness.DialogOption, Interactable, NewNode, Actor, DialogController.ForceSuccess>>();
+
+        private void Init()
+        {
+            DialogActionDictionary.Add(GuardGuestPassDialogPreset.Instance.presetName, OnGuardGuestPassDialog);
+            DialogActionDictionary.Add(SeekDetectiveDialogPreset.Instance.presetName, OnSeekDetectiveSeenUnusual);
+        }
 
         #region GuardGuestPass
         public static void OnGuardGuestPassDialog(EvidenceWitness.DialogOption dialog, Interactable saysTo, NewNode where, Actor saidBy, ForceSuccess forceSuccess)
@@ -82,12 +102,12 @@ namespace ByTheBook.Dialog
         public static void OnSeekDetectiveSeenUnusual(EvidenceWitness.DialogOption dialog, Interactable saysTo, NewNode where, Actor saidBy, ForceSuccess forceSuccess)
         {
             Citizen citizen = saysTo?.controller?.GetComponentInParent<Citizen>();
-            ByTheBookPlugin.Logger.LogDebug($"Executing Dialog: {dialog?.preset?.name} executed by: {saidBy?.name}");
+            ByTheBookPlugin.Logger.LogInfo($"Executing Dialog: {dialog?.preset?.name} executed by: {saidBy?.name}");
 
 
             if (citizen != null)
             {
-                DialogController.Instance.SeenOrHeardUnusual(citizen, saysTo, where, saidBy, success: true, null, null);
+                //DialogController.Instance.SeenOrHeardUnusual(citizen, saysTo, where, saidBy, success: true, roomRef: null, jobRef: null);
             }
         }
         #endregion

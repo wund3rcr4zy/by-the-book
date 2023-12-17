@@ -1,4 +1,5 @@
-﻿using ByTheBook.Dialog;
+﻿using ByTheBook.AIActions;
+using ByTheBook.Dialog;
 using HarmonyLib;
 using System.Linq;
 using UnityEngine;
@@ -44,18 +45,18 @@ namespace ByTheBook.Patches
                 {
                     if (__instance.preset.presetName == "Citizen" && (__instance?.belongsTo?.isPlayer ?? false))
                     {
-                        ByTheBookPlugin.Instance.Log.LogInfo($"Adding ability for AI to TalkTo player.");
+                        ByTheBookPlugin.Instance.Log.LogInfo($"Adding ability for AI to 'RelayInformation' on player.");
                         InteractablePreset.InteractionAction interactionAction = new InteractablePreset.InteractionAction()
                         {
-                            interactionName = "Talk To",
-                            action = ByTheBookDialogManager.Instance.TalkToAction,
+                            interactionName = "Force Seen Unusual",
+                            action = ForceSeenUnusualAction.Instance,
                             useDefaultKeySetting = false,
                             keyOverride = InteractablePreset.InteractionKey.none,
                             availableWhileIllegal = false,
                             specialCase = InteractablePreset.InteractionAction.SpecialCase.nonCombatOrRestrained
                         };
 
-                        __instance.aiActionReference[ByTheBookDialogManager.Instance.TalkToAction] = interactionAction;
+                        __instance.aiActionReference[ForceSeenUnusualAction.Instance] = interactionAction;
                     }
                 }
             }

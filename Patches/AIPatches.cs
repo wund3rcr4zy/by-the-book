@@ -1,10 +1,12 @@
 ﻿using ByTheBook.AIActions;
+using ByTheBook.Dialog;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DialogController;
 
 namespace ByTheBook.Patches
 {
@@ -28,20 +30,17 @@ namespace ByTheBook.Patches
             }
         }
 
-        [HarmonyPatch(typeof(ActionController), nameof(ActionController.TalkTo))]
-        public class ActionControllerTalkToHook
+        [HarmonyPatch(typeof(ActionController), nameof(ActionController.ExecuteAction))]
+        public class ActionControllerExecuteActionHook
         {
             [HarmonyPrefix]
-            public static void Prefix(ActionController __instance, ref Interactable what, ref Actor who)
+            public static void Prefix(ActionController __instance, AIActionPreset action,  Interactable what, Actor who, ref bool __runOriginal)
             {
-                //ByTheBookPlugin.Instance.Log.LogInfo($"WhatCtrlActorNull?: {what.controller.isActor == null}");
-
-                // TODO: Why is the interactable controller null here when I'm passing the player's interactable?
-                // It makes no sense... This probably has adver
-                if (what?.controller == null && (what?.belongsTo?.isPlayer ?? false) && !(who?.isPlayer ?? false))
+                if (action != null && ByTheBookAIActions.Instance.AIActionDictionary.TryGetValue(action.presetName, out var handleAction))
                 {
-                    what = who.interactable;
-                    who = Player.Instance;
+                    ByTheBookPlugin.Instance.Log.LogInfo($"Found action handler for {action?.presetName}. Invoking...");
+                    handleAction.Invoke(action, what, who);
+                    __runOriginal = false;
                 }
             }
         }

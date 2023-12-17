@@ -10,6 +10,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using static CitizenOutfitController;
+using static DialogController;
 
 
 namespace ByTheBook.Patches

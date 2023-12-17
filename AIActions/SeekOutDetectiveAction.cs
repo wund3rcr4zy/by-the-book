@@ -121,7 +121,7 @@ namespace ByTheBook.AIActions
 
             AIActionPreset.AutomaticAction automaticAction = new AIActionPreset.AutomaticAction()
             {
-                forcedAction = ByTheBookDialogManager.Instance.TalkToAction,
+                forcedAction = ForceSeenUnusualAction.Instance,
                 proximityCheck = true
             };
 
@@ -149,6 +149,49 @@ namespace ByTheBook.AIActions
             instance.searchSetting = AIActionPreset.FindSetting.nonTrespassing;
             instance.onUsePointBusy = AIActionPreset.ActionBusy.skipAction;
 
+            instance.holsterCurrentItemOnAction = true;
+            instance.disableConversationTriggers = true;
+            instance.exitConversationOnActivate = true;
+        }
+    }
+
+    public class ForceSeenUnusualAction
+    {
+        public const string NAME = "force-seen-unusual-action";
+
+        private static AIActionPreset _instance;
+        public static AIActionPreset Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = ScriptableObject.CreateInstance<AIActionPreset>();
+                    Init(_instance);
+                }
+
+                return _instance;
+            }
+        }
+
+        private static void Init(AIActionPreset instance)
+        {
+            instance.presetName = NAME;
+            instance.name = instance.presetName;
+
+            instance.requiresForcedUpdate = true;
+            instance.completableAction = true;
+            instance.avoidRepeatingInteractables = true;
+            instance.repeatOnComplete = false;
+
+            instance.defaultKey = InteractablePreset.InteractionKey.none;
+            instance.actionLocation = AIActionPreset.ActionLocation.player;
+            instance.facePlayerWhileTalkingTo = true;
+            instance.facing = AIActionPreset.ActionFacingDirection.player;
+            instance.runIfSeesPlayer = true;
+            instance.completeOnSeeIllegal = true;
+            instance.searchSetting = AIActionPreset.FindSetting.nonTrespassing;
+            instance.onUsePointBusy = AIActionPreset.ActionBusy.skipAction;
             instance.holsterCurrentItemOnAction = true;
             instance.disableConversationTriggers = true;
             instance.exitConversationOnActivate = true;

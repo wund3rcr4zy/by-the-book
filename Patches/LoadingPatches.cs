@@ -2,7 +2,6 @@
 using ByTheBook.Dialog;
 using ByTheBook.SyncDisks;
 using HarmonyLib;
-using Il2CppInterop.Runtime;
 using Il2CppSystem.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -31,6 +30,7 @@ namespace ByTheBook.Patches
             private static void LoadActions(List<AIActionPreset> data)
             {
                 data.Add(SeekOutDetectiveAction.Instance);
+                data.Add(ForceSeenUnusualAction.Instance);
             }
         }
 
@@ -48,8 +48,6 @@ namespace ByTheBook.Patches
                 {
                     LoadSyncDisks(__result);
                     LoadDialogs(__result);
-                    
-                    // TODO: Still figuring out how to modify the AI and change goals.
                     LoadGoals(__result);
                     
                     presetsLoaded = true;
@@ -64,6 +62,7 @@ namespace ByTheBook.Patches
             private static void LoadDialogs(List<ScriptableObject> data)
             {
                 data.Add(GuardGuestPassDialogPreset.Instance);
+                data.Add(SeekDetectiveDialogPreset.Instance);
             }
 
             private static void LoadGoals(List<ScriptableObject> data)

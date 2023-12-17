@@ -39,13 +39,10 @@ namespace ByTheBook.Dialog
             instance.hospitalDecisionOption = false;
             instance.ignoreActiveJobRequirement = true;
             instance.inputBox = InputSetting.none;
-            instance.msgID = "b0bde6bb-0803-4e23-b441-8ceb16c87133";
-            instance.tiedToKey = Evidence.DataKey.voice;
+            instance.msgID = "1122d9da-03be-48ec-8f3c-61d8e21fab0a";
+            instance.tiedToKey = (Evidence.DataKey)ByTheBookDataKey.Default;
 
             Il2CppSystem.Collections.Generic.List<AIActionPreset.AISpeechPreset> potentialResponses = new Il2CppSystem.Collections.Generic.List<AIActionPreset.AISpeechPreset>();
-            potentialResponses.Add(GuardGuestPassAISuccessResponsePreset.Instance);
-            potentialResponses.Add(GuardGuestPassAIFailureResponsePreset.Instance);
-
             instance.responses = potentialResponses;
 
             instance.defaultOption = true;

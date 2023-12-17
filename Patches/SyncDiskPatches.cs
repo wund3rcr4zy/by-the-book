@@ -67,9 +67,8 @@ namespace ByTheBook.Patches
                     return;
                 }
 
-                ImmutableList<ByTheBookSyncEffects> effectsToRemove = ImmutableList.Create<ByTheBookSyncEffects>();
                 string upgradeKey = $"{removal.upgrade}_{removal.state}_{removal.level}";
-                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out effectsToRemove))
+                if (ByTheBookUpgradeManager.Instance.TryGetSyncUpgrades(upgradeKey, out var effectsToRemove))
                 {
                     foreach (ByTheBookSyncEffects effectToDisable in effectsToRemove)
                     {
