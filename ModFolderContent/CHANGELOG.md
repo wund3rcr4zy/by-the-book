@@ -1,3 +1,11 @@
+# 0.2.1
+
+* Stability: Sync Disk linkage hardening for **PrivateEye** (IL2CPP/Harmony); prevents rare NullReferenceExceptions in `SyncDiskElementController.Setup(...)` by late-linking the `SyncDiskPreset` before the row renders.
+* Robustness: Keeps `upgradesQuickRef` populated; relinks missing presets during `SetupQuickRef` and just before `UpdateUpgrades` to handle load-order edges.
+* Safety: If the preset still can’t be resolved after late-link, the original `Setup(...)` is skipped to avoid an NRE.
+* Internals: Resource scan now ignores hidden/internal objects; added extra null guards; quick-ref postfix uses a low Harmony priority to better cooperate with other mods.
+* Utility: `BTB_UpgradeEffectRefresh.ForceRefresh()` helper to trigger `OnSyncDiskChange(true)` after programmatic install/uninstall.
+
 # 0.2.0
 
 * Bugfix: the player should no longer become very tall and fall through the floor on the second upgrade of PrivateEye. (Fingers crossed. That one was weird)
