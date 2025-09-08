@@ -44,6 +44,12 @@ namespace ByTheBook.Patches
                                 double successChance = 0.99 - Math.Clamp((socialCreditNumerator / guardPassSocialCreditRequired), 0, 0.75);
                                 double randomDouble = random.NextDouble();
                                 success = (randomDouble >= successChance);
+                                // FIX: Force success only when the upgrade's ALWAYS-PASS effect is enabled.
+                                // Base disk enables GuardGuestPass (dialog available). The upgrade enables CrimeSceneGuestPass (guaranteed pass).
+                                if (ByTheBookUpgradeManager.Instance.IsEffectEnabled(SyncDisks.ByTheBookSyncEffects.CrimeSceneGuestPass))
+                                {
+                                    success = true;
+                                }
                                 ByTheBook.ByTheBookPlugin.Logger.LogInfo($"GuardIssueGuestPass rolled: {randomDouble} - required: {successChance}");
                                 break;
                         }
