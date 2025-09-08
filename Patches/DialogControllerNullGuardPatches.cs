@@ -1,17 +1,37 @@
 // Patches/DialogControllerNullGuardPatches.cs
-// v0.2.1 — Crash guard for DialogController.TestSpecialCaseAvailability
+// v0.2.2 — Defensive crash guard for DialogController.TestSpecialCaseAvailability
 //
-// Why: Other patches may dereference `preset.name`. During dialog teardown,
-//      the game can legitimately call this with a null/destroyed `preset`,
-//      causing an NRE and a crash.
+// OVERVIEW
+// ──────────────────────────────────────────────────────────────────────────────
+// During dialog teardown (or other edge transitions), the game may invoke
+// DialogController.TestSpecialCaseAvailability(...) with a null/destroyed
+// DialogPreset or Citizen. Other patches sometimes dereference fields like
+// `preset.name`, which turns that into a NullReferenceException and crashes.
 //
-// What this does:
-//   • Prefix (Priority.First): if `preset` (or `saysTo`) is null/destroyed,
-//     short-circuit with __result=false so the option is simply unavailable.
-//   • Finalizer: catch any exception from other prefixes/original and turn it
-//     into __result=false instead of a crash.
+// WHAT THIS PATCH DOES
+// • Prefix (Priority.First) — If `preset` or `saysTo` is null/destroyed, we
+//   short-circuit with `__result = false` (option “not available”) and skip the
+//   original. This prevents any dereference in downstream patches.
+// • Finalizer — Wraps the original + all patches and converts any thrown
+//   exception into `__result = false` instead of crashing the game.
+// • Logging — Error-only (release-friendly).
 //
-// Logging: error-only (release-friendly).
+// IMPLEMENTATION NOTES
+// • Unity “truthiness”: destroyed UnityEngine.Object instances compare equal to
+//   null, so we check both `obj == null` and `!obj`.
+// • Conservative behavior: this never enables an option; it only prevents
+//   crashes by reporting the option as unavailable on bad inputs.
+//
+// COMPATIBILITY
+// • Harmony prefix priority is set to run first; finalizer safely swallows
+//   exceptions from any patch/original below.
+//
+// VERSION HISTORY
+// • 0.2.2
+//   - Added Prefix with [HarmonyPriority(Priority.First)] to short-circuit on null/destroyed args.
+//   - Added Finalizer to swallow exceptions and return __result=false instead of crashing.
+//   - Kept logging to error-only for release builds.
+//   - Clarified header and inline comments for PR review.
 
 #nullable enable
 using System;
