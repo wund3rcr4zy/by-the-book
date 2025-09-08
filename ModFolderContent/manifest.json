@@ -1,6 +1,6 @@
 {
   "name": "ByTheBook",
-  "version_number": "0.2.1",
+  "version_number": "0.2.2",
   "website_url": "https://github.com/wund3rcr4zy/by-the-book",
   "description": "Adds the 'Private Eye License' sync disk to the Weapons Locker. Allows for canvasing crime scenes without trespassing.",
   "dependencies": [

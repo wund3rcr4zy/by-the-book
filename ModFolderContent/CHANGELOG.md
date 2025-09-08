@@ -1,3 +1,15 @@
+# 0.2.2
+
+* Stability: defensive null-guard for `DialogController.TestSpecialCaseAvailability(...)`.
+  * Prefix (Priority.First) returns `false` when `preset`/`saysTo` is null or destroyed (prevents NREs during dialog teardown).
+  * Finalizer swallows any exception from other patches/original and sets `__result = false` instead of crashing.
+  * Error-only logging (release-friendly).
+* UX: ensure **“Talk To”** reliably appears for *on-duty* enforcers at active crime scenes.
+  * Postfix on `Interactable.UpdateCurrentActions` (no changes if dialog is open).
+  * IL2CPP-safe iteration of `aiActionReference` to find the canonical Talk action; promoted to **PRIMARY** via `InteractableCurrentAction`.
+* Gameplay: make guest-pass requests deterministic **after the upgrade**.
+  * In `DialogController.ExecuteDialog` (Guard Guest Pass branch), force success only when `CrimeSceneGuestPass` effect is active; otherwise keep the original RNG.
+
 # 0.2.1
 
 * Stability: Sync Disk linkage hardening for **PrivateEye** (IL2CPP/Harmony); prevents rare NullReferenceExceptions in `SyncDiskElementController.Setup(...)` by late-linking the `SyncDiskPreset` before the row renders.
