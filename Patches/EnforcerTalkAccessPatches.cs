@@ -4,16 +4,17 @@
 //
 // What this does
 //  • Skips changes when a dialog is open (avoid race with End Conversation).
-//  • Finds the guard’s existing Talk InteractionAction from aiActionReference.
+//  • Finds the guard’s existing Talk InteractionAction from aiActionReference (IL2CPP dict).
 //  • Wraps it into Interactable.InteractableCurrentAction and promotes to PRIMARY.
 //  • Error-only logging (release-friendly).
 
 #nullable enable
 using System;
-using System.Collections;
 using HarmonyLib;
 using UnityEngine;
 using BepInEx.Logging;
+// IL2CPP collections live here; iterate them directly (don’t cast to System.Collections.*)
+using Il2CppSystem.Collections.Generic; // Enumerator<>, Dictionary<,> etc.  (see example mods) [ref]
 
 internal static class BTB_TalkLog
 {
@@ -57,63 +58,43 @@ internal static class BTB_EnforcerTalk
             var dc = (DialogController._instance != null) ? DialogController._instance : DialogController.Instance;
             if (dc == null) return false;
 
-            // Different builds expose different flags; try both safely.
-            try { if ((bool)AccessProp(dc, "isOpen")) return true; } catch { }
-            try { if ((bool)AccessProp(dc, "dialogOpen")) return true; } catch { }
+            // Try common flags; ignore if not present on this build.
+            try { if ((bool)(dc.GetType().GetProperty("isOpen")?.GetValue(dc) ?? false)) return true; } catch { }
+            try { if ((bool)(dc.GetType().GetProperty("dialogOpen")?.GetValue(dc) ?? false)) return true; } catch { }
         }
         catch { }
         return false;
     }
 
-    // Tiny helper to read a property safely without hard type deps
-    static object? AccessProp(object obj, string name)
-    {
-        try { return obj.GetType().GetProperty(name)?.GetValue(obj); } catch { return null; }
-    }
-
     static bool IsTalkLabel(string? s)
         => !string.IsNullOrEmpty(s) && s.IndexOf("talk", StringComparison.OrdinalIgnoreCase) >= 0;
 
-    /// Find the *InteractionAction* for Talk in aiActionReference.
+    /// Find the *InteractionAction* for Talk in aiActionReference (IL2CPP Dictionary<AIActionPreset, InteractionAction>).
     public static bool TryGetTalkActionFromAIRef(Interactable i, out InteractablePreset.InteractionAction? action)
     {
         action = null;
         try
         {
-            var dictObj = i.aiActionReference;       // usually Dictionary<InteractablePreset.InteractionAction, …>
-            if (dictObj == null) return false;
+            var dict = i.aiActionReference; // Il2CppSystem.Collections.Generic.Dictionary<AIActionPreset, InteractionAction>
+            if (dict == null) return false;
 
-            // Use non-generic IDictionary shape to avoid Il2Cpp KeyValuePair types.
-            if (dictObj is IDictionary dict)
+            // Iterate the IL2CPP ValueCollection directly — NO casts to System.* IEnumerable.
+            var values = dict.Values; // ValueCollection<InteractionAction>
+            var e = values.GetEnumerator(); // Il2CppSystem.Collections.Generic.Enumerator<InteractionAction>
+            while (e.MoveNext())
             {
-                foreach (DictionaryEntry de in dict)
+                var a = e.Current;
+                if (a != null && IsTalkLabel(a.ToString()))
                 {
-                    var key = de.Key as InteractablePreset.InteractionAction;
-                    if (key == null) continue;
-                    if (IsTalkLabel(key.ToString()))
-                    {
-                        action = key;
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                foreach (var entry in (IEnumerable)dictObj)
-                {
-                    dynamic e = entry;
-                    object? keyObj = null;
-                    try { keyObj = e.Key; } catch { }
-                    var key = keyObj as InteractablePreset.InteractionAction;
-                    if (key != null && IsTalkLabel(key.ToString()))
-                    {
-                        action = key;
-                        return true;
-                    }
+                    action = a;
+                    return true;
                 }
             }
         }
-        catch (Exception ex) { BTB_TalkLog.Err($"[BTB] TryGetTalkActionFromAIRef failed: {ex}"); }
+        catch (Exception ex)
+        {
+            BTB_TalkLog.Err($"[BTB] TryGetTalkActionFromAIRef failed: {ex}");
+        }
         return false;
     }
 
@@ -142,7 +123,7 @@ static class BTB_EnsureEnforcerTalk_Postfix
             if (citizen == null) return;
             if (!BTB_EnforcerTalk.IsOnDutyCrimeSceneGuard(citizen)) return;
 
-            // Light, locale-agnostic enable: obtain the Talk InteractionAction from AI ref and surface it.
+            // Locale-agnostic: obtain the Talk InteractionAction from AI ref and surface it.
             if (BTB_EnforcerTalk.TryGetTalkActionFromAIRef(__instance, out var talk) && talk != null)
             {
                 __instance.currentActions[InteractablePreset.InteractionKey.primary] =
