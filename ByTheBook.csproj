@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>ByTheBook</AssemblyName>
     <Description>A collection of modifications for the more scrupulous detective.</Description>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
