@@ -14,11 +14,29 @@ namespace ByTheBook.Patches
     internal static class TalkToInjection
     {
         // Make public to avoid CS0122 when called from other patches/files.
-        public static bool Verbose = false;
+        public static bool Verbose = true;
+
+        // New: hard mute for all logs (overrides Verbose)
+        public static bool Silent = true;
 
         // Centralized UI label we match/force.
         public static readonly string TalkToUIName = "Talk To";
         public static readonly string InspectUIName = "Inspect"; // <-- added
+
+        /// <summary>
+        /// Small helpers so all logging respects the Silent toggle.
+        /// </summary>
+        internal static void Log(string msg)
+        {
+            if (Silent) return;
+            Debug.Log(msg);
+        }
+
+        internal static void VLog(string msg)
+        {
+            if (Silent || !Verbose) return;
+            Debug.Log(msg);
+        }
 
         /// <summary>
         /// Is this human on-duty at a crime-scene call (as guard OR responder)?
@@ -245,7 +263,7 @@ namespace ByTheBook.Patches
             }
 
             sb.Append(" }");
-            Debug.Log(sb.ToString());
+            VLog(sb.ToString());
         }
 
         /// <summary>
@@ -262,7 +280,7 @@ namespace ByTheBook.Patches
             if (inter == null)
             {
                 sb.Append("no current interactable.");
-                Debug.Log(sb.ToString());
+                VLog(sb.ToString());
                 return;
             }
 
@@ -279,7 +297,7 @@ namespace ByTheBook.Patches
             bool onDuty = IsOnDutyCrimeSceneResponder(target, out why);
             sb.Append($", onDutyCrimeSceneResponder={onDuty} (why: {why})");
 
-            Debug.Log(sb.ToString());
+            VLog(sb.ToString());
 
             // Also dump actions for fast correlation
             DumpActions(inter, "PRE-INJECT");
@@ -318,10 +336,7 @@ namespace ByTheBook.Patches
 
             if (!TalkToInjection.TryFindTalkTo(__instance, out var talk, out var key))
             {
-                if (TalkToInjection.Verbose)
-                {
-                    Debug.Log($"[BTB][ACTIONS-REFRESH] No 'Talk To' slot found (why: {why}). inter#{__instance.id}");
-                }
+                TalkToInjection.VLog($"[BTB][ACTIONS-REFRESH] No 'Talk To' slot found (why: {why}). inter#{__instance.id}");
                 return;
             }
 
@@ -329,15 +344,13 @@ namespace ByTheBook.Patches
             if (qualifies)
             {
                 bool changed = TalkToInjection.ForceEnable(talk);
-                if (TalkToInjection.Verbose)
-                    Debug.Log($"[BTB][ACTIONS-REFRESH] {(changed ? "Forced enable/display" : "Already enabled")} for 'Talk To' (on-duty: {why}). inter#{__instance.id}");
+                TalkToInjection.VLog($"[BTB][ACTIONS-REFRESH] {(changed ? "Forced enable/display" : "Already enabled")} for 'Talk To' (on-duty: {why}). inter#{__instance.id}");
 
                 // Also force-enable "Inspect" if present (added)
                 if (TalkToInjection.TryFindInspect(__instance, out var inspect, out var inspectKey))
                 {
                     bool changedInspect = TalkToInjection.ForceEnable(inspect);
-                    if (TalkToInjection.Verbose)
-                        Debug.Log($"[BTB][ACTIONS-REFRESH] {(changedInspect ? "Forced enable/display" : "Already enabled")} for 'Inspect' (on-duty: {why}). inter#{__instance.id}");
+                    TalkToInjection.VLog($"[BTB][ACTIONS-REFRESH] {(changedInspect ? "Forced enable/display" : "Already enabled")} for 'Inspect' (on-duty: {why}). inter#{__instance.id}");
                     if (changedInspect) TalkToInjection.RefreshHud();
                 }
 
@@ -349,8 +362,7 @@ namespace ByTheBook.Patches
             }
             else
             {
-                if (TalkToInjection.Verbose)
-                    Debug.Log($"[BTB][ACTIONS-REFRESH] Target is NOT on-duty responder (why: {why}). No injection. inter#{__instance.id}");
+                TalkToInjection.VLog($"[BTB][ACTIONS-REFRESH] Target is NOT on-duty responder (why: {why}). No injection. inter#{__instance.id}");
             }
         }
     }
@@ -414,7 +426,7 @@ namespace ByTheBook.Patches
             {
                 var human = inter.isActor as Human;
                 string who = (human != null) ? $"{human.humanID}:{human.citizenName}" : "unknown";
-                Debug.Log($"[BTB][INTERACT] Selecting '{label}' on {who}");
+                TalkToInjection.Log($"[BTB][INTERACT] Selecting '{label}' on {who}");
             }
 
             bool NormalizeStatic(string s)
