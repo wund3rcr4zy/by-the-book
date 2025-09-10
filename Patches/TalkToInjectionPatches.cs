@@ -14,10 +14,11 @@ namespace ByTheBook.Patches
     internal static class TalkToInjection
     {
         // Make public to avoid CS0122 when called from other patches/files.
-        public static bool Verbose = true;
+        public static bool Verbose = false;
 
         // Centralized UI label we match/force.
         public static readonly string TalkToUIName = "Talk To";
+        public static readonly string InspectUIName = "Inspect"; // <-- added
 
         /// <summary>
         /// Is this human on-duty at a crime-scene call (as guard OR responder)?
@@ -101,7 +102,7 @@ namespace ByTheBook.Patches
         private static string Normalize(string s)
         {
             if (string.IsNullOrEmpty(s)) return string.Empty;
-            s = Regex.Replace(s, @"\s+", " ");
+            s = Regex.Replace(s, @"\\s+", " ");
             return s.Trim().ToLowerInvariant();
         }
 
@@ -126,6 +127,12 @@ namespace ByTheBook.Patches
             return n == "talk to" || n == "talkto" || n == "talk";
         }
 
+        private static bool LooksLikeInspect(string labelOrKey) // <-- added
+        {
+            var n = Normalize(labelOrKey);
+            return n == "inspect";
+        }
+
         /// <summary>
         /// Find a "Talk To" action in the interactable dictionary (by best-effort name match).
         /// </summary>
@@ -144,6 +151,34 @@ namespace ByTheBook.Patches
 
                 var displayName = GetActionUiName(ia, ica);
                 if (LooksLikeTalkTo(displayName) || LooksLikeTalkTo(ia.interactionName))
+                {
+                    found = ica;
+                    key = kv.Key;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Find an "Inspect" action in the interactable dictionary (by best-effort name match).
+        /// </summary>
+        public static bool TryFindInspect(Interactable inter, out Interactable.InteractableCurrentAction found, out InteractablePreset.InteractionKey key) // <-- added
+        {
+            found = null;
+            key = default;
+
+            if (inter == null || inter.currentActions == null) return false;
+
+            foreach (var kv in inter.currentActions)
+            {
+                var ica = kv.Value;
+                var ia = ica?.currentAction;
+                if (ia == null) continue;
+
+                var displayName = GetActionUiName(ia, ica);
+                if (LooksLikeInspect(displayName) || LooksLikeInspect(ia.interactionName))
                 {
                     found = ica;
                     key = kv.Key;
@@ -297,6 +332,15 @@ namespace ByTheBook.Patches
                 if (TalkToInjection.Verbose)
                     Debug.Log($"[BTB][ACTIONS-REFRESH] {(changed ? "Forced enable/display" : "Already enabled")} for 'Talk To' (on-duty: {why}). inter#{__instance.id}");
 
+                // Also force-enable "Inspect" if present (added)
+                if (TalkToInjection.TryFindInspect(__instance, out var inspect, out var inspectKey))
+                {
+                    bool changedInspect = TalkToInjection.ForceEnable(inspect);
+                    if (TalkToInjection.Verbose)
+                        Debug.Log($"[BTB][ACTIONS-REFRESH] {(changedInspect ? "Forced enable/display" : "Already enabled")} for 'Inspect' (on-duty: {why}). inter#{__instance.id}");
+                    if (changedInspect) TalkToInjection.RefreshHud();
+                }
+
                 if (changed)
                 {
                     // Help older saves display immediately
@@ -375,7 +419,7 @@ namespace ByTheBook.Patches
 
             bool NormalizeStatic(string s)
             {
-                var n = Regex.Replace(s ?? string.Empty, @"\s+", " ").Trim().ToLowerInvariant();
+                var n = Regex.Replace(s ?? string.Empty, @"\\s+", " ").Trim().ToLowerInvariant();
                 return n == "talk to" || n == "talkto";
             }
         }
