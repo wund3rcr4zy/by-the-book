@@ -1,3 +1,85 @@
+/*
+ *  TalkToInjectionPatches.cs
+ *  v0.2.3 — “By-the-Book” on-duty Talk/Inspect injection (IL2CPP / Harmony)
+ *
+ *  WHAT THIS DOES
+ *  ─────────────────────────────────────────────────────────────────────────────
+ *  Ensures the **“Talk To”** (and, when present, **“Inspect”**) interaction
+ *  stays visible/enabled on enforcers who are *on duty* at an active
+ *  crime-scene call. We don’t add new actions; we only surface existing slots
+ *  that vanilla sometimes hides due to state/priority edge cases. When a change
+ *  is applied, the HUD text/icons are refreshed so the button appears
+ *  immediately.
+ *
+ *  RULES / SCOPE
+ *  ─────────────────────────────────────────────────────────────────────────────
+ *  • Target must be a Human linked to an active crime-scene call where they are:
+ *      - the assigned **guard**, or
+ *      - in the call’s **response** list,
+ *    and the call state is **responding** or **arrived**.
+ *  • We toggle only `enabled`/`display` on the existing action slot.
+ *    We **never** modify `specialCase`, priority, or input bindings.
+ *  • Action detection prefers the per-slot override label, then falls back to
+ *    the preset action name. Matching is whitespace-insensitive and case-insensitive.
+ *
+ *  GAME API TOUCHPOINTS
+ *  ─────────────────────────────────────────────────────────────────────────────
+ *  • GameplayController
+ *      - Fields read: `enforcerCalls` (Dictionary), each call’s `isCrimeScene`,
+ *        `state`, `guard`, `response` (List<int>).
+ *      - Enum used: `EnforcerCallState.responding`, `arrived`.
+ *
+ *  • Interactable
+ *      - Postfix: `UpdateCurrentActions()` → find action slots and force
+ *        `enabled/display` for qualifying targets.
+ *      - Fields read: `id`, `isActor`, `currentActions`
+ *        (Dictionary<InteractablePreset.InteractionKey, Interactable.InteractableCurrentAction>).
+ *      - Nested: `InteractableCurrentAction` → `currentAction`, `enabled`,
+ *        `display`, `overrideInteractionName`.
+ *
+ *  • InteractablePreset
+ *      - `InteractionAction` → `interactionName`, `keyOverride`, `specialCase`.
+ *      - `InteractionKey` used as the dictionary key.
+ *
+ *  • InteractionController
+ *      - Postfix: `OnPlayerLookAtInteractableChange()` → snapshot/log + HUD refresh.
+ *      - Prefix:  `SetCurrentPlayerInteraction(...)` → lightweight selection log
+ *        for “Talk To” (no logic changes).
+ *      - Helpers called: `UpdateInteractionText()`, `UpdateInteractionIcons()`.
+ *      - Uses `currentLookingAtInteractable.interactable` (via InteractableController).
+ *
+ *  HOW TO USE / TWEAK
+ *  ─────────────────────────────────────────────────────────────────────────────
+ *  • Logging:
+ *      - `Silent` (default **true**) hard-mutes all logs.
+ *      - `Verbose` (default false) enables detailed dumps *only if* `Silent` is false.
+ *  • Labels:
+ *      - If your localization renames actions, adjust the simple matchers in
+ *        `LooksLikeTalkTo(...)` / `LooksLikeInspect(...)`.
+ *  • Safety:
+ *      - We skip work for non-Humans and when `currentActions` is empty.
+ *      - Dumps are suppressed when there’s nothing to show (avoids spam).
+ *
+ *  COMPATIBILITY / ASSUMPTIONS
+ *  ─────────────────────────────────────────────────────────────────────────────
+ *  • BepInEx 6 (IL2CPP) + Harmony; Unity 2021.x; Il2CppInterop types.
+ *  • Postfix on `UpdateCurrentActions()` preserves vanilla/other-mod action
+ *    building; we only toggle visibility for qualifying actors.
+ *  • No changes to input keys, priorities, or `specialCase`, minimizing
+ *    conflicts with UI/interaction mods.
+ *  • Work per frame is O(n) over `currentActions` and is tiny with logging
+ *    disabled (`Silent` true by default).
+ *
+ *  VERSIONING / NOTES
+ *  ─────────────────────────────────────────────────────────────────────────────
+ *  • 0.2.3  Force-enable **Inspect** (when present); added `Silent` hard-mute
+ *           (overrides `Verbose`); quieter logging and fixed whitespace
+ *           normalization; stable `Interactable.id` in logs; snapshot/dump
+ *           utilities and safe HUD refresh after changes; robust
+ *           InteractableController→Interactable resolution; extra null guards;
+ *           initial “Talk To” injection for on-duty responders.
+ */
+
 using System.Text;
 using System.Text.RegularExpressions;
 using HarmonyLib;
