@@ -1,3 +1,13 @@
+# 0.2.3
+
+* Feature: On-duty interaction injection for Enforcers at active crime scenes. **“Talk To”** is always surfaced; **“Inspect”** is surfaced when present. Applies when the target is the call **guard** or in the **response** list and the call state is **responding/arrived**.
+* Behavior: No new actions added or priorities changed — we only toggle `enabled`/`display` on existing slots and never touch `specialCase`, priority, or input bindings.
+* UX: HUD text/icons (`UpdateInteractionText`, `UpdateInteractionIcons`) are refreshed when we force visibility so the buttons appear immediately.
+* Matching: Action label matching prefers per-slot `overrideInteractionName`, falling back to preset `interactionName`; comparison is case/whitespace-insensitive (`@"\s+"` normalization).
+* Diagnostics: Safe snapshot/dump helpers with stable `Interactable.id`; skip empty action maps to avoid spam.
+* Compatibility: Postfix on `Interactable.UpdateCurrentActions()` to preserve vanilla & other mods’ action building; robust `InteractableController → Interactable` resolution; extra null guards.
+* Performance: Single O(n) scan of `currentActions`; effectively negligible with logging muted.
+
 # 0.2.1
 
 * Stability: Sync Disk linkage hardening for **PrivateEye** (IL2CPP/Harmony); prevents rare NullReferenceExceptions in `SyncDiskElementController.Setup(...)` by late-linking the `SyncDiskPreset` before the row renders.
