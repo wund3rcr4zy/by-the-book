@@ -120,7 +120,7 @@ namespace ByTheBook.Patches
         private static string Normalize(string s)
         {
             if (string.IsNullOrEmpty(s)) return string.Empty;
-            s = Regex.Replace(s, @"\\s+", " ");
+            s = Regex.Replace(s, @"\s+", " ");
             return s.Trim().ToLowerInvariant();
         }
 
@@ -431,7 +431,7 @@ namespace ByTheBook.Patches
 
             bool NormalizeStatic(string s)
             {
-                var n = Regex.Replace(s ?? string.Empty, @"\\s+", " ").Trim().ToLowerInvariant();
+                var n = Regex.Replace(s ?? string.Empty, @"\s+", " ").Trim().ToLowerInvariant();
                 return n == "talk to" || n == "talkto";
             }
         }
