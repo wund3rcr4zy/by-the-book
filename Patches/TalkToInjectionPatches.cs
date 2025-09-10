@@ -1,10 +1,8 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using HarmonyLib;
-using Il2CppSystem.Collections.Generic; // IL2CPP generics
+using Il2CppSystem.Collections.Generic;
 using UnityEngine;
-
-// ReSharper disable InconsistentNaming
 
 namespace ByTheBook.Patches
 {
@@ -14,14 +12,14 @@ namespace ByTheBook.Patches
     internal static class TalkToInjection
     {
         // Make public to avoid CS0122 when called from other patches/files.
-        public static bool Verbose = true;
+        public static bool Verbose = false;
 
         // New: hard mute for all logs (overrides Verbose)
         public static bool Silent = true;
 
         // Centralized UI label we match/force.
         public static readonly string TalkToUIName = "Talk To";
-        public static readonly string InspectUIName = "Inspect"; // <-- added
+        public static readonly string InspectUIName = "Inspect";
 
         /// <summary>
         /// Small helpers so all logging respects the Silent toggle.
