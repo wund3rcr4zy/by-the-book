@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BuildingPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>BuildingPreset</h1>
+      <div class="page-meta">Source file: <span class="code">BuildingPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">BuildingPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>disable</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>prefab</td><td><code>GameObject</code></td><td>Reference to the building model prefab <span class="badge">Header: Models</span></td><td></td></tr>
+<tr><td>emissionMapUnlit</td><td><code>Texture2D</code></td><td>The emission texture used to light up windows on this model (unlit)</td><td></td></tr>
+<tr><td>emissionMapLit</td><td><code>Texture2D</code></td><td>The emission texture used to light up windows on this model (lit)</td><td></td></tr>
+<tr><td>buildingHeight</td><td><code>float</code></td><td>The height of this building</td><td></td></tr>
+<tr><td>lightningRodLocalPos</td><td><code>Vector3</code></td><td>The local position of the lightning rod</td><td></td></tr>
+<tr><td>defaultExteriorWallMaterial</td><td><code>List&lt;MaterialGroupPreset&gt;</code></td><td>The material to use on default walls. Leave blank to use default (brick)</td><td></td></tr>
+<tr><td>exteriorKey</td><td><code>Toolbox.MaterialKey</code></td><td>The material key to use on the exterior of the building</td><td></td></tr>
+<tr><td>enableAlleywayWalls</td><td><code>bool</code></td><td>Check if this building supports alley blocks</td><td>true</td></tr>
+<tr><td>enableExteriorQuoins</td><td><code>bool</code></td><td>Allow this building to feature quoins</td><td>true</td></tr>
+<tr><td>overrideEvidencePhotoSettings</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>relativeCamPhotoPos</td><td><code>Vector3</code></td><td><span class="badge">EnableIf(&quot;overrideEvidencePhotoSettings&quot;)</span></td><td>new Vector3(0f, 2.25f, 23f)</td></tr>
+<tr><td>relativeCamPhotoEuler</td><td><code>Vector3</code></td><td><span class="badge">EnableIf(&quot;overrideEvidencePhotoSettings&quot;)</span></td><td>new Vector3(-45f, 180f, 0f)</td></tr>
+<tr><td>overrideDistrictEnvironment</td><td><code>bool</code></td><td><span class="badge">Header: Environment</span></td><td>true</td></tr>
+<tr><td>sceneProfile</td><td><code>SessionData.SceneProfile</code></td><td><span class="badge">EnableIf(&quot;overrideDistrictEnvironment&quot;)</span></td><td>SessionData.SceneProfile.indoors</td></tr>
+<tr><td>maxLostAndFound</td><td><code>int</code></td><td>The max amount of lost and found items to spawn at one time <span class="badge">Range(0f, 5f)</span> <span class="badge">Header: Special</span></td><td></td></tr>
+<tr><td>floorLayouts</td><td><code>List&lt;BuildingPreset.InteriorFloorSetting&gt;</code></td><td>The layouts of above-ground floors, starting with ground floor <span class="badge">Header: Blueprints</span></td><td>new List&lt;BuildingPreset.InteriorFloorSetting&gt;()</td></tr>
+<tr><td>basementLayouts</td><td><code>List&lt;BuildingPreset.InteriorFloorSetting&gt;</code></td><td>The layouts of below-ground floors, starting with basement level 1</td><td>new List&lt;BuildingPreset.InteriorFloorSetting&gt;()</td></tr>
+<tr><td>controlRoomRange</td><td><code>Vector2</code></td><td>How many control rooms should this building feature?</td><td>Vector2.zero</td></tr>
+<tr><td>forceBuildingDesignStyles</td><td><code>List&lt;DesignStylePreset&gt;</code></td><td></td><td>new List&lt;DesignStylePreset&gt;()</td></tr>
+<tr><td>stairwellRegular</td><td><code>StairwellPreset</code></td><td></td><td></td></tr>
+<tr><td>stairwellLarge</td><td><code>StairwellPreset</code></td><td></td><td></td></tr>
+<tr><td>buildingFeaturesEchelonFloors</td><td><code>bool</code></td><td><span class="badge">Header: Echelons</span></td><td></td></tr>
+<tr><td>echelonFloorStart</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;buildingFeaturesEchelonFloors&quot;)</span></td><td>10</td></tr>
+<tr><td>overrideGrubiness</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>grubinessOverride</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;overrideGrubiness&quot;)</span></td><td></td></tr>
+<tr><td>displayedZone</td><td><code>BuildingPreset.ZoneType</code></td><td><span class="badge">Header: Zoning</span></td><td>BuildingPreset.ZoneType.privateProperty</td></tr>
+<tr><td>allowedInAllDistricts</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>allowedInDistricts</td><td><code>List&lt;DistrictPreset&gt;</code></td><td>Appears in this district <span class="badge">DisableIf(&quot;allowedInAllDistricts&quot;)</span></td><td>new List&lt;DistrictPreset&gt;()</td></tr>
+<tr><td>densityMinimum</td><td><code>BuildingPreset.Density</code></td><td>Appears in density range: Not required but choices will be weighted towards this</td><td></td></tr>
+<tr><td>densityMaximum</td><td><code>BuildingPreset.Density</code></td><td></td><td>BuildingPreset.Density.veryHigh</td></tr>
+<tr><td>landValueMinimum</td><td><code>BuildingPreset.LandValue</code></td><td>Appears in land value range: Not required but choices will be weighted towards this</td><td></td></tr>
+<tr><td>landValueMaximum</td><td><code>BuildingPreset.LandValue</code></td><td></td><td>BuildingPreset.LandValue.veryHigh</td></tr>
+<tr><td>minimum</td><td><code>int</code></td><td>Try and make sure the city has at least this many buildings of this type</td><td>1</td></tr>
+<tr><td>featureImportance</td><td><code>int</code></td><td>How important is it that the city features the above minimum amount of buildings? <span class="badge">Range(0f, 10f)</span></td><td>4</td></tr>
+<tr><td>hardLimit</td><td><code>int</code></td><td>Hard limit on the number of buildings per city</td><td>99</td></tr>
+<tr><td>desiredRatio</td><td><code>float</code></td><td>Desired ratio on the number of these buildings (1 means the whole city can be these) <span class="badge">Range(0f, 1f)</span></td><td>0.05f</td></tr>
+<tr><td>modernity</td><td><code>int</code></td><td>Modernity: Used to choose decor- how modern the building is <span class="badge">Range(0f, 10f)</span></td><td>5</td></tr>
+<tr><td>lobbyPreset</td><td><code>AddressPreset</code></td><td>Used in choosing decor: The lobby area room type</td><td></td></tr>
+<tr><td>nonEnterable</td><td><code>bool</code></td><td>True if this is supposed to not have floors</td><td></td></tr>
+<tr><td>boundary</td><td><code>bool</code></td><td>True if this is a boundary piece</td><td></td></tr>
+<tr><td>boundaryCorner</td><td><code>bool</code></td><td>True if this is a boundary corner piece</td><td></td></tr>
+<tr><td>overrideNaming</td><td><code>bool</code></td><td><span class="badge">Header: Naming</span></td><td></td></tr>
+<tr><td>possibleNames</td><td><code>List&lt;string&gt;</code></td><td><span class="badge">EnableIf(&quot;overrideNaming&quot;)</span></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>customDrawOnMap</td><td><code>bool</code></td><td><span class="badge">Header: Map</span></td><td></td></tr>
+<tr><td>tex</td><td><code>Texture2D</code></td><td></td><td></td></tr>
+<tr><td>captureMesh</td><td><code>Mesh</code></td><td>The mesh to use to find the window coordinates, cable coordinates <span class="badge">Header: Window Mapping</span></td><td></td></tr>
+<tr><td>windowMap</td><td><code>Texture2D</code></td><td>A map with white blocks mapping the window areas: IMPORTANT: Make sure texture image compression is off &amp; read/write is on.</td><td></td></tr>
+<tr><td>addonMap</td><td><code>Texture2D</code></td><td>A map with red pixels for cable connections and green for external signage: IMPORTANT: Make sure texture image compression is off &amp; read/write is on.</td><td></td></tr>
+<tr><td>sortedWindows</td><td><code>List&lt;BuildingPreset.WindowUVFloor&gt;</code></td><td></td><td>new List&lt;BuildingPreset.WindowUVFloor&gt;()</td></tr>
+<tr><td>floorCount</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>meshHeight</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>cableLinkPoints</td><td><code>List&lt;BuildingPreset.CableLinkPoint&gt;</code></td><td><span class="badge">Header: Building Addon Points</span></td><td>new List&lt;BuildingPreset.CableLinkPoint&gt;()</td></tr>
+<tr><td>cableSpawnChanceOverHeight</td><td><code>AnimationCurve</code></td><td></td><td>AnimationCurve.Linear(0f, 1f, 1f, 0.4f)</td></tr>
+<tr><td>sideSignPoints</td><td><code>List&lt;BuildingPreset.CableLinkPoint&gt;</code></td><td></td><td>new List&lt;BuildingPreset.CableLinkPoint&gt;()</td></tr>
+<tr><td>possibleNeonSigns</td><td><code>List&lt;GameObject&gt;</code></td><td><span class="badge">Header: Signage</span></td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>signsPerBuildingRange</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 3f)</td></tr>
+<tr><td>horizontalSignOffset</td><td><code>Vector3</code></td><td>Offset for horizontal lettering signs</td><td>new Vector3(0f, 4.046f, 0f)</td></tr>
+<tr><td>featuresSmokestack</td><td><code>bool</code></td><td><span class="badge">Header: Smokestacks</span></td><td></td></tr>
+<tr><td>spawnInterval</td><td><code>Vector2</code></td><td>Interval in gametime <span class="badge">EnableIf(&quot;featuresSmokestack&quot;)</span></td><td>new Vector2(0.1f, 0.33f)</td></tr>
+<tr><td>spritePrefab</td><td><code>GameObject</code></td><td><span class="badge">EnableIf(&quot;featuresSmokestack&quot;)</span></td><td></td></tr>
+<tr><td>spawnOffset</td><td><code>Vector3</code></td><td><span class="badge">EnableIf(&quot;featuresSmokestack&quot;)</span></td><td></td></tr>
+<tr><td>localPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>localRot</td><td><code>Vector3</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>GenerateWindowData</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>GenerateAddonData</td><td><code>void</code></td><td><span class="badge">10</span> <span class="badge">0</span> <span class="badge">num2</span> <span class="badge">2</span> <span class="badge">num3</span> <span class="badge">4</span> <span class="badge">num4</span> <span class="badge">6</span> <span class="badge">num5</span> <span class="badge">8</span> <span class="badge">num6</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">num7</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">l</span> <span class="badge">num7</span> <span class="badge">m</span> <span class="badge">n</span> <span class="badge">num8</span> <span class="badge">num9</span> <span class="badge">num10</span> <span class="badge">num11</span> <span class="badge">num12</span> <span class="badge">num13</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>CalculateMeshHeight</td><td><code>void</code></td><td><span class="badge">10</span> <span class="badge">0</span> <span class="badge">num</span> <span class="badge">2</span> <span class="badge">num2</span> <span class="badge">4</span> <span class="badge">num3</span> <span class="badge">6</span> <span class="badge">num4</span> <span class="badge">8</span> <span class="badge">num5</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>UvTo3D</td><td><code>Vector3</code></td><td></td><td><code>Vector2 uv</code></td></tr>
+<tr><td>Area</td><td><code>float</code></td><td><span class="badge">i</span> <span class="badge">i</span></td><td><code>Vector2 p1, Vector2 p2, Vector2 p3</code></td></tr>
+<tr><td>GetFloorSetting</td><td><code>BuildingPreset.InteriorFloorSetting</code></td><td></td><td><code>int floor, int index</code></td></tr>
+<tr><td>GetResidenceCount</td><td><code>int</code></td><td><span class="badge">index</span> <span class="badge">index</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class InteriorFloorSetting</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>floorsWithThisSetting</td><td><code>int</code></td><td>This setting will appear for x floors</td><td>1</td></tr>
+<tr><td>blueprints</td><td><code>List&lt;TextAsset&gt;</code></td><td>Possible floor presets (choose at random)</td><td>new List&lt;TextAsset&gt;()</td></tr>
+<tr><td>airVentMaximumExtrusion</td><td><code>int</code></td><td>How far air vents are allowed to extrude from the outer wall of the building (0 if none)</td><td></td></tr>
+<tr><td>controlRoomVariants</td><td><code>List&lt;TextAsset&gt;</code></td><td>Possible floor variants featuring control rooms (choose at random)</td><td>new List&lt;TextAsset&gt;()</td></tr>
+<tr><td>forceShowModel</td><td><code>bool</code></td><td>Forces the main building model to be visible on this floor</td><td></td></tr>
+<tr><td>forceHideModels</td><td><code>List&lt;string&gt;</code></td><td>When player is on this floor, force these model parents to be hidden</td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>forceHideModelsInRooms</td><td><code>List&lt;BuildingPreset.ForceHideModelsForRoom&gt;</code></td><td>When the player is on this floor, in this specific room type, force this model parents to be hidden (overrides outside rooms)</td><td>new List&lt;BuildingPreset.ForceHideModelsForRoom&gt;()</td></tr>
+<tr><td>forceHideModelsOutside</td><td><code>List&lt;string&gt;</code></td><td>When the player is outside on this floor, force this model parents to be hidden</td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>overrideCeilingHeight</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>newCeilingHeight</td><td><code>int</code></td><td></td><td>51</td></tr>
+</tbody></table>
+<h3>class ForceHideModelsForRoom</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>roomConfig</td><td><code>RoomConfiguration</code></td><td></td><td></td></tr>
+<tr><td>forceHideModels</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+</tbody></table>
+<h3>class WindowUVFloor</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>front</td><td><code>List&lt;BuildingPreset.WindowUVBlock&gt;</code></td><td></td><td>new List&lt;BuildingPreset.WindowUVBlock&gt;()</td></tr>
+<tr><td>back</td><td><code>List&lt;BuildingPreset.WindowUVBlock&gt;</code></td><td></td><td>new List&lt;BuildingPreset.WindowUVBlock&gt;()</td></tr>
+<tr><td>left</td><td><code>List&lt;BuildingPreset.WindowUVBlock&gt;</code></td><td></td><td>new List&lt;BuildingPreset.WindowUVBlock&gt;()</td></tr>
+<tr><td>right</td><td><code>List&lt;BuildingPreset.WindowUVBlock&gt;</code></td><td></td><td>new List&lt;BuildingPreset.WindowUVBlock&gt;()</td></tr>
+</tbody></table>
+<h3>class WindowUVBlock</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>originPixel</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>rectSize</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>centrePixel</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>localMeshPositionLeft</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>localMeshPositionRight</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>floor</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>side</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>horizonal</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>Density</h3>
+<pre><code>low
+medium
+high
+veryHigh</code></pre>
+<h3>LandValue</h3>
+<pre><code>veryLow
+low
+medium
+high
+veryHigh</code></pre>
+<h3>ZoneType</h3>
+<pre><code>residential
+commercial
+industrial
+municipal
+publicProperty
+privateProperty</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

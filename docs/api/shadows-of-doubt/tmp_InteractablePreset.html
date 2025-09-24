@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InteractablePreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>InteractablePreset</h1>
+      <div class="page-meta">Source file: <span class="code">InteractablePreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">InteractablePreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>spawnable</td><td><code>bool</code></td><td>If true this object can be spawned through the object creator <span class="badge">Header: Spawning</span></td><td>true</td></tr>
+<tr><td>prefab</td><td><code>GameObject</code></td><td>You only need to set this if the item is spawnable. <span class="badge">ShowIf(&quot;spawnable&quot;)</span></td><td></td></tr>
+<tr><td>prefabLocalEuler</td><td><code>Vector3</code></td><td>This value is held as a workaround for not being able to access the prefab in multithreading <span class="badge">ShowIf(&quot;spawnable&quot;)</span></td><td>Vector3.zero</td></tr>
+<tr><td>prefabLocalScale</td><td><code>Vector3</code></td><td>This value is held as a workaround for not being able to access the prefab in multithreading <span class="badge">ShowIf(&quot;spawnable&quot;)</span></td><td>Vector3.one</td></tr>
+<tr><td>dontSaveWithSaveGames</td><td><code>bool</code></td><td>Don&#x27;t save with state data</td><td></td></tr>
+<tr><td>onlySaveWithSaveGamesIfWorldObject</td><td><code>bool</code></td><td>Override the above behaviour if this is classed a world object; useful for lightswitches if they have been placed by the player <span class="badge">ShowIf(&quot;dontSaveWithSaveGames&quot;)</span></td><td></td></tr>
+<tr><td>excludeFromObjectPooling</td><td><code>bool</code></td><td>Object pooling will not be used for this <span class="badge">ShowIf(&quot;spawnable&quot;)</span></td><td></td></tr>
+<tr><td>excludeFromVisibilityRangeChecks</td><td><code>bool</code></td><td>If true, the mesh renderers on this object won&#x27;t get turned on and off with range or room visibility. <span class="badge">ShowIf(&quot;excludeFromObjectPooling&quot;)</span></td><td></td></tr>
+<tr><td>spawnRange</td><td><code>ObjectPoolingController.ObjectLoadRange</code></td><td>Load in at this range <span class="badge">ShowIf(&quot;spawnable&quot;)</span> <span class="badge">DisableIf(&quot;excludeFromVisibilityRangeChecks&quot;)</span></td><td>ObjectPoolingController.ObjectLoadRange.medium</td></tr>
+<tr><td>showWorldObjectInSceneCapture</td><td><code>bool</code></td><td>If true include in any scene capturing. If false the object will be hidden. Toggle for any static or integrated objects. <span class="badge">Header: Scene Capture</span></td><td></td></tr>
+<tr><td>captureStateInSceneCapture</td><td><code>bool</code></td><td>If true, capture and set the state of this object for captures <span class="badge">EnableIf(&quot;showWorldObjectInSceneCapture&quot;)</span></td><td></td></tr>
+<tr><td>createProxy</td><td><code>bool</code></td><td><span class="badge">DisableIf(&quot;showWorldObjectInSceneCapture&quot;)</span></td><td></td></tr>
+<tr><td>onlyCreateProxyInDetailedCapture</td><td><code>bool</code></td><td><span class="badge">ShowIf(&quot;createProxy&quot;)</span></td><td>true</td></tr>
+<tr><td>createProxyAtRange</td><td><code>ObjectPoolingController.ObjectLoadRange</code></td><td><span class="badge">ShowIf(&quot;createProxy&quot;)</span></td><td></td></tr>
+<tr><td>inheritColouringFromDecor</td><td><code>bool</code></td><td>If true the same material colours will be shared over all instances of this furniture for the room. Does not apply to integrated interactables which will be coloured by their parent furniture. <span class="badge">Header: Colour</span></td><td></td></tr>
+<tr><td>shareColoursWithFurniture</td><td><code>FurniturePreset.ShareColours</code></td><td>If true the same material colours will be shared over all instances of this furniture for the room. Difference from furniture: This cannot &#x27;create&#x27; a material key, so furniture with it must already exist in the room. <span class="badge">ShowIf(&quot;inheritColouringFromDecor&quot;)</span></td><td></td></tr>
+<tr><td>useOwnColourSettings</td><td><code>bool</code></td><td>If this object needs custom colours...</td><td></td></tr>
+<tr><td>mainColour</td><td><code>InteractablePreset.InteractableColourSetting</code></td><td><span class="badge">ShowIf(&quot;useOwnColourSettings&quot;)</span></td><td></td></tr>
+<tr><td>customColour1</td><td><code>InteractablePreset.InteractableColourSetting</code></td><td><span class="badge">ShowIf(&quot;useOwnColourSettings&quot;)</span></td><td></td></tr>
+<tr><td>customColour2</td><td><code>InteractablePreset.InteractableColourSetting</code></td><td><span class="badge">ShowIf(&quot;useOwnColourSettings&quot;)</span></td><td></td></tr>
+<tr><td>customColour3</td><td><code>InteractablePreset.InteractableColourSetting</code></td><td><span class="badge">ShowIf(&quot;useOwnColourSettings&quot;)</span></td><td></td></tr>
+<tr><td>inheritGrubValue</td><td><code>bool</code></td><td><span class="badge">ShowIf(&quot;useOwnColourSettings&quot;)</span></td><td></td></tr>
+<tr><td>autoName</td><td><code>bool</code></td><td>Attempt to name this using evidence entry or preset name, if false you must set this manually. <span class="badge">Header: Setup</span></td><td>true</td></tr>
+<tr><td>includeBelongsTo</td><td><code>bool</code></td><td>Include belongs to name in interactable name</td><td></td></tr>
+<tr><td>useNameShorthand</td><td><code>bool</code></td><td>Use a shorthand version of the name (Initial + Surname) <span class="badge">ShowIf(&quot;includeBelongsTo&quot;)</span></td><td></td></tr>
+<tr><td>useApartmentName</td><td><code>bool</code></td><td><span class="badge">ShowIf(&quot;includeBelongsTo&quot;)</span></td><td></td></tr>
+<tr><td>isLight</td><td><code>LightingPreset</code></td><td>Is this a light?</td><td></td></tr>
+<tr><td>lightswitch</td><td><code>InteractablePreset.Switch</code></td><td></td><td></td></tr>
+<tr><td>allowUnscrewed</td><td><code>bool</code></td><td>If true, allows an unscrewed override state (cutsom switch 1)</td><td>true</td></tr>
+<tr><td>isMainLight</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>forceIncludeOnStreetLightLayer</td><td><code>bool</code></td><td>If true, this light is added to layer 1; the light layer for street lights</td><td></td></tr>
+<tr><td>staticImage</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>imagePos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>imageRot</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>imageScale</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>imagePrefabOverride</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>iconOverride</td><td><code>Sprite</code></td><td>Weapon selection icon override</td><td></td></tr>
+<tr><td>itemClass</td><td><code>InteractablePreset.ItemClass</code></td><td></td><td>InteractablePreset.ItemClass.misc</td></tr>
+<tr><td>allowInApartmentStorage</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>allowInApartmentShop</td><td><code>bool</code></td><td><span class="badge">EnableIf(&quot;allowInApartmentStorage&quot;)</span></td><td></td></tr>
+<tr><td>disableMoveToStorage</td><td><code>bool</code></td><td>If enabled, this item cannot be &#x27;moved to storage&#x27;. Only needed for spawnable items <span class="badge">EnableIf(&quot;spawnable&quot;)</span></td><td></td></tr>
+<tr><td>apartmentPlacementMode</td><td><code>InteractablePreset.ApartmentPlacementMode</code></td><td>The method of placement used when the player uses the apartment editor to place this <span class="badge">EnableIf(&quot;allowInApartmentStorage&quot;)</span></td><td></td></tr>
+<tr><td>mustTouchFurniture</td><td><code>List&lt;FurniturePreset&gt;</code></td><td></td><td>new List&lt;FurniturePreset&gt;()</td></tr>
+<tr><td>useMaterialOverride</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>materialOverride</td><td><code>AudioController.SoundMaterialOverride</code></td><td><span class="badge">EnableIf(&quot;useMaterialOverride&quot;)</span></td><td></td></tr>
+<tr><td>actionsPreset</td><td><code>List&lt;InteractableActionsPreset&gt;</code></td><td>Setup of actions able to be performed <span class="badge">Header: Interaction</span></td><td></td></tr>
+<tr><td>onlyIllegalIfInNonPublic</td><td><code>bool</code></td><td>Illegal actions are only classed as illegal if the item is in a non-public space</td><td>true</td></tr>
+<tr><td>rangeModifier</td><td><code>float</code></td><td>This modifier will be added to the interactable distance</td><td></td></tr>
+<tr><td>physicsProfile</td><td><code>PhysicsProfile</code></td><td><span class="badge">Header: Physics</span></td><td></td></tr>
+<tr><td>overrideMass</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>forcePhysicsAlwaysOn</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>reactWithExternalStimuli</td><td><code>bool</code></td><td>If true this object will react with doors, damage impacts etc</td><td></td></tr>
+<tr><td>mass</td><td><code>float</code></td><td><span class="badge">ShowIf(&quot;overrideMass&quot;)</span></td><td>1f</td></tr>
+<tr><td>breakable</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>particleProfile</td><td><code>ParticleEffect</code></td><td><span class="badge">EnableIf(&quot;breakable&quot;)</span></td><td></td></tr>
+<tr><td>overrideShatterSettings</td><td><code>bool</code></td><td><span class="badge">EnableIf(&quot;breakable&quot;)</span></td><td></td></tr>
+<tr><td>shardSize</td><td><code>Vector3</code></td><td>The size of the shards created <span class="badge">EnableIf(&quot;overrideShatterSettings&quot;)</span></td><td>new Vector3(0.025f, 0.025f, 0.025f)</td></tr>
+<tr><td>shardEveryXPixels</td><td><code>int</code></td><td>Create a shard every this amount of pixels on the texture <span class="badge">EnableIf(&quot;overrideShatterSettings&quot;)</span></td><td>64</td></tr>
+<tr><td>overrideSpatterSettings</td><td><code>bool</code></td><td><span class="badge">EnableIf(&quot;breakable&quot;)</span></td><td></td></tr>
+<tr><td>spatterSimulation</td><td><code>SpatterPatternPreset</code></td><td><span class="badge">EnableIf(&quot;overrideSpatterSettings&quot;)</span></td><td></td></tr>
+<tr><td>spatterCountMultiplier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;overrideSpatterSettings&quot;)</span></td><td>1f</td></tr>
+<tr><td>overrideFurnitureSetting</td><td><code>bool</code></td><td>Use this to override the hiding place camera settings in the furniture preset <span class="badge">Header: Hiding Place Override</span></td><td></td></tr>
+<tr><td>enterTransition</td><td><code>PlayerTransitionPreset</code></td><td><span class="badge">ShowIf(&quot;overrideFurnitureSetting&quot;)</span></td><td></td></tr>
+<tr><td>exitTransition</td><td><code>PlayerTransitionPreset</code></td><td><span class="badge">ShowIf(&quot;overrideFurnitureSetting&quot;)</span></td><td></td></tr>
+<tr><td>enterTransition2</td><td><code>PlayerTransitionPreset</code></td><td><span class="badge">ShowIf(&quot;overrideFurnitureSetting&quot;)</span></td><td></td></tr>
+<tr><td>exitTransition2</td><td><code>PlayerTransitionPreset</code></td><td><span class="badge">ShowIf(&quot;overrideFurnitureSetting&quot;)</span></td><td></td></tr>
+<tr><td>switchSFX</td><td><code>List&lt;InteractablePreset.IfSwitchStateSFX&gt;</code></td><td>Trigger audio on these switch events <span class="badge">Header: Trigger Sounds</span></td><td>new List&lt;InteractablePreset.IfSwitchStateSFX&gt;()</td></tr>
+<tr><td>startingSwitchState</td><td><code>bool</code></td><td>Set the switch state to this on start <span class="badge">Header: Starting States</span></td><td></td></tr>
+<tr><td>startingCustomState1</td><td><code>bool</code></td><td>Set the switch state to this on start</td><td></td></tr>
+<tr><td>startingCustomState2</td><td><code>bool</code></td><td>Set the switch state to this on start</td><td></td></tr>
+<tr><td>startingCustomState3</td><td><code>bool</code></td><td>Set the switch state to this on start</td><td></td></tr>
+<tr><td>startingLockState</td><td><code>bool</code></td><td>Set the lock state to this on start</td><td></td></tr>
+<tr><td>value</td><td><code>Vector2</code></td><td>Monetary value of this object. Min/Max. <span class="badge">Header: Value</span> <span class="badge">MinMaxSlider(0f, 10000f)</span></td><td>new Vector2(1f, 1f)</td></tr>
+<tr><td>AIPriority</td><td><code>int</code></td><td>AI will rank actions by this if there are multiple copies <span class="badge">Header: AI</span> <span class="badge">Range(0f, 10f)</span></td><td>5</td></tr>
+<tr><td>disableForSocialGroups</td><td><code>bool</code></td><td>Is this incompatible for social gatherings? Ie if I&#x27;m meeting someone here...</td><td></td></tr>
+<tr><td>pickDistanceMultiplier</td><td><code>float</code></td><td>When chosing between interactables, how much to factor in the closest one?</td><td>1f</td></tr>
+<tr><td>perActionPrioritySettings</td><td><code>List&lt;InteractablePreset.AIUsePriority&gt;</code></td><td>Use unique settings per action for each of the following</td><td>new List&lt;InteractablePreset.AIUsePriority&gt;()</td></tr>
+<tr><td>tamperEnabled</td><td><code>bool</code></td><td>Will the AI notice if this is moved?</td><td>true</td></tr>
+<tr><td>resetBehaviour</td><td><code>List&lt;InteractablePreset.ObjectResetBehaviour&gt;</code></td><td>Object reset behaviours based on activity and conditions</td><td>new List&lt;InteractablePreset.ObjectResetBehaviour&gt;()</td></tr>
+<tr><td>useSetting</td><td><code>InteractablePreset.AIUseSetting</code></td><td>The AI will move to one of these postions to use this</td><td></td></tr>
+<tr><td>readingEnabled</td><td><code>bool</code></td><td>If within reading range then display text contained in this evidence <span class="badge">Header: Reading</span></td><td></td></tr>
+<tr><td>readyingEnabledOnlyWithSwitchIsTue</td><td><code>bool</code></td><td>Reading mode is only active while switch status is true <span class="badge">ShowIf(&quot;readingEnabled&quot;)</span></td><td></td></tr>
+<tr><td>readingEnabledOnlyWithKaizenSkill</td><td><code>bool</code></td><td>Reading mode is only active while switch status is true <span class="badge">ShowIf(&quot;readingEnabled&quot;)</span></td><td></td></tr>
+<tr><td>readingSource</td><td><code>InteractablePreset.ReadingModeSource</code></td><td>Where to pull the text info from <span class="badge">ShowIf(&quot;readingEnabled&quot;)</span></td><td>InteractablePreset.ReadingModeSource.mainEvidenceText</td></tr>
+<tr><td>discoverOnRead</td><td><code>bool</code></td><td>Discover evidence upon read <span class="badge">ShowIf(&quot;readingEnabled&quot;)</span></td><td></td></tr>
+<tr><td>pageTurnReadingDelay</td><td><code>float</code></td><td>A delay to reading when a page is turned <span class="badge">ShowIf(&quot;readingEnabled&quot;)</span></td><td></td></tr>
+<tr><td>distanceRecognitionEnabled</td><td><code>bool</code></td><td>If within a certain range, then display a grey-ed out interaction icon with name text <span class="badge">Header: Distance Recognition</span></td><td></td></tr>
+<tr><td>distanceRecognitionOnly</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>recognitionRange</td><td><code>float</code></td><td></td><td>5f</td></tr>
+<tr><td>subObjectClasses</td><td><code>List&lt;SubObjectClassPreset&gt;</code></td><td>Spawn this object using this sub object group <span class="badge">Header: Placement</span></td><td>new List&lt;SubObjectClassPreset&gt;()</td></tr>
+<tr><td>backupClasses</td><td><code>List&lt;SubObjectClassPreset&gt;</code></td><td>If the object fails to be placed in the above, use this class as a fall-back placement option. This is irrelevent for auto placement, as objects are spawned by the individual placements upon furniture, these places won&#x27;t be considered.</td><td>new List&lt;SubObjectClassPreset&gt;()</td></tr>
+<tr><td>autoPlacement</td><td><code>InteractablePreset.AutoPlacement</code></td><td>Whether this will be automatically placed along with furniture...</td><td></td></tr>
+<tr><td>alwaysPlaceAtGameLocation</td><td><code>bool</code></td><td>If true, these objects will be placed with no owners at every gamelocation (based on other filters in this section). <span class="badge">Header: ...Per Game Location</span></td><td></td></tr>
+<tr><td>frequencyPerGamelocationMin</td><td><code>int</code></td><td>The minimum number of objects that will be auto-placed at every gamelocation <span class="badge">Range(0f, 20f)</span> <span class="badge">ShowIf(&quot;alwaysPlaceAtGameLocation&quot;)</span></td><td></td></tr>
+<tr><td>frequencyPerGameLocationMax</td><td><code>int</code></td><td>The minimum number of objects that will be auto-placed at every gamelocation <span class="badge">ShowIf(&quot;alwaysPlaceAtGameLocation&quot;)</span> <span class="badge">Range(0f, 20f)</span></td><td></td></tr>
+<tr><td>perGameLocationObjectPriority</td><td><code>int</code></td><td>Dictates in what order objects should be placed in... <span class="badge">ShowIf(&quot;alwaysPlaceAtGameLocation&quot;)</span> <span class="badge">Range(0f, 10f)</span></td><td></td></tr>
+<tr><td>placeIfFiltersPresentInOwner</td><td><code>bool</code></td><td>If true, owners/inhabitants/employees will be scanned for these traits and items will be placed accordingly... <span class="badge">Header: ...Per Owner</span></td><td></td></tr>
+<tr><td>placeAtHome</td><td><code>bool</code></td><td>Place if this is the citizen&#x27;s home <span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span></td><td>true</td></tr>
+<tr><td>placeAtWork</td><td><code>bool</code></td><td>Place if this is the citizen&#x27;s place of work <span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span></td><td></td></tr>
+<tr><td>traitModifiers</td><td><code>List&lt;InteractablePreset.TraitPick&gt;</code></td><td></td><td>new List&lt;InteractablePreset.TraitPick&gt;()</td></tr>
+<tr><td>frequencyPerOwnerMin</td><td><code>int</code></td><td>The minimum number of objects that will be auto-placed for each owner <span class="badge">Range(0f, 20f)</span> <span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span></td><td></td></tr>
+<tr><td>frequencyPerOwnerMax</td><td><code>int</code></td><td>The minimum number of objects that will be auto-placed for each owner <span class="badge">Range(0f, 20f)</span> <span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span></td><td></td></tr>
+<tr><td>multiplyByMessiness</td><td><code>bool</code></td><td>If true, the overall frequency range will be multiplied by the inverse of conscientiousness (untidy = more) <span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span></td><td></td></tr>
+<tr><td>perOwnerObjectPriority</td><td><code>int</code></td><td>Dictates in what order objects should be placed in... <span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span> <span class="badge">Range(0f, 10f)</span></td><td></td></tr>
+<tr><td>writerIs</td><td><code>EvidencePreset.BelongsToSetting</code></td><td><span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span></td><td></td></tr>
+<tr><td>receiverIs</td><td><code>EvidencePreset.BelongsToSetting</code></td><td><span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span></td><td></td></tr>
+<tr><td>canBeFromSelf</td><td><code>bool</code></td><td>If the above two options are different, is this allowed to be from the same person to the same person? <span class="badge">ShowIf(&quot;placeIfFiltersPresentInOwner&quot;)</span></td><td></td></tr>
+<tr><td>limitPerObject</td><td><code>bool</code></td><td><span class="badge">Header: Placement Limits</span></td><td></td></tr>
+<tr><td>perObjectLimit</td><td><code>int</code></td><td>How many of these objects can be spawned per object? <span class="badge">ShowIf(&quot;limitPerObject&quot;)</span></td><td>1</td></tr>
+<tr><td>limitPerRoom</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>perRoomLimit</td><td><code>int</code></td><td>How many of these objects can be spawned per room? <span class="badge">ShowIf(&quot;limitPerRoom&quot;)</span></td><td>99</td></tr>
+<tr><td>limitPerAddress</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>perAddressLimit</td><td><code>int</code></td><td>How many of these objects can be spawned per address? <span class="badge">ShowIf(&quot;limitPerAddress&quot;)</span></td><td>99</td></tr>
+<tr><td>limitInResidential</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>perResidentialLimit</td><td><code>int</code></td><td>How many of these objects can be spawned if residential? <span class="badge">ShowIf(&quot;limitInResidential&quot;)</span></td><td>1</td></tr>
+<tr><td>limitInCommercial</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>perCommercialLimit</td><td><code>int</code></td><td>How many of these objects can be spawned if residential? <span class="badge">ShowIf(&quot;limitInCommercial&quot;)</span></td><td>1</td></tr>
+<tr><td>banFromRooms</td><td><code>List&lt;RoomConfiguration&gt;</code></td><td>Ban this item from being placed in certain room types</td><td>new List&lt;RoomConfiguration&gt;()</td></tr>
+<tr><td>limitToCertainRooms</td><td><code>bool</code></td><td>Only feature this item in certain room types</td><td></td></tr>
+<tr><td>onlyInRooms</td><td><code>List&lt;RoomConfiguration&gt;</code></td><td><span class="badge">ShowIf(&quot;limitToCertainRooms&quot;)</span></td><td>new List&lt;RoomConfiguration&gt;()</td></tr>
+<tr><td>limitToCertainBuildings</td><td><code>bool</code></td><td>Only feature this item in certain building types</td><td></td></tr>
+<tr><td>onlyInBuildings</td><td><code>List&lt;BuildingPreset&gt;</code></td><td><span class="badge">ShowIf(&quot;limitToCertainBuildings&quot;)</span></td><td>new List&lt;BuildingPreset&gt;()</td></tr>
+<tr><td>attemptToStoreInFolder</td><td><code>EvidencePreset</code></td><td>If this is not null, it will attempt to place this evidence inside a folder matching this evidence type.</td><td></td></tr>
+<tr><td>folderPlacementChance</td><td><code>float</code></td><td>If the above is not null, the chance of being placed in the folder. <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>dontPlaceIfNoFolder</td><td><code>bool</code></td><td>If unable to place in folder, then don&#x27;t place at all</td><td></td></tr>
+<tr><td>folderOwnershipMustMatch</td><td><code>bool</code></td><td>Folder&#x27;s ownership must match</td><td></td></tr>
+<tr><td>useSubSpawning</td><td><code>bool</code></td><td>If true this will also look to spawn upon on other objects (and prioritize them)</td><td></td></tr>
+<tr><td>securityLevel</td><td><code>int</code></td><td>This will try to be placed in a place of security matching this, if not higher... <span class="badge">Range(0f, 3f)</span></td><td></td></tr>
+<tr><td>ownedRule</td><td><code>InteractablePreset.OwnedPlacementRule</code></td><td>Rules about being placed in owned vs non-owned locations. &#x27;Prioritise&#x27; settings will favour owned locations but sill place in non-owned, while &#x27;only&#x27; settings will only place in that location.</td><td>InteractablePreset.OwnedPlacementRule.both</td></tr>
+<tr><td>overrideWithOnlyOwnedSpawnAtWork</td><td><code>bool</code></td><td>Override with ownedOnly if at work</td><td></td></tr>
+<tr><td>subSpawnClass</td><td><code>SubObjectClassPreset</code></td><td>Can sub spawn objects with this class</td><td></td></tr>
+<tr><td>subSpawnPositions</td><td><code>List&lt;InteractablePreset.SubSpawnSlot&gt;</code></td><td>Sub spawning slots within this</td><td>new List&lt;InteractablePreset.SubSpawnSlot&gt;()</td></tr>
+<tr><td>relocationAuthority</td><td><code>InteractablePreset.RelocationAuthority</code></td><td>If the object is moved by this person, also set the spawn point so it doesn&#x27;t get reset. <span class="badge">Header: Relocation</span></td><td></td></tr>
+<tr><td>relocateIfPlacedInPlayersHome</td><td><code>bool</code></td><td>Will not reset if placed in the player&#x27;s home</td><td>true</td></tr>
+<tr><td>AIWillCorrectPosition</td><td><code>bool</code></td><td>AI will attempt to put back this if it is out of place</td><td>true</td></tr>
+<tr><td>useEvidence</td><td><code>bool</code></td><td>Does this interactable need to reference a piece of evidence? If true will attempt to find the evidence as below (will be overriden by passed variabes in the constructor) <span class="badge">Header: Evidence</span></td><td></td></tr>
+<tr><td>useSingleton</td><td><code>EvidencePreset</code></td><td>If not null, will attempt to find the singleton using this preset... <span class="badge">ShowIf(&quot;useEvidence&quot;)</span></td><td></td></tr>
+<tr><td>findEvidence</td><td><code>InteractablePreset.FindEvidence</code></td><td>Use a specific evidence from below <span class="badge">ShowIf(&quot;useEvidence&quot;)</span></td><td></td></tr>
+<tr><td>spawnEvidence</td><td><code>EvidencePreset</code></td><td>Create an evidence class of below</td><td></td></tr>
+<tr><td>locationIsParent</td><td><code>bool</code></td><td>On create evidence: Use the item&#x27;s location as evidence parent <span class="badge">ShowIf(&quot;useEvidence&quot;)</span></td><td>true</td></tr>
+<tr><td>summaryMessageSource</td><td><code>string</code></td><td>Use this DDS message ID for the summary</td><td></td></tr>
+<tr><td>overrideEvidencePhotoSettings</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>relativeCamPhotoPos</td><td><code>Vector3</code></td><td><span class="badge">ShowIf(&quot;overrideEvidencePhotoSettings&quot;)</span></td><td>new Vector3(-0.075f, 0.25f, 0.2f)</td></tr>
+<tr><td>relativeCamPhotoEuler</td><td><code>Vector3</code></td><td><span class="badge">ShowIf(&quot;overrideEvidencePhotoSettings&quot;)</span></td><td>new Vector3(45f, 155f, 0f)</td></tr>
+<tr><td>includeLock</td><td><code>InteractablePreset</code></td><td><span class="badge">Header: Locks</span></td><td></td></tr>
+<tr><td>lockOffset</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>passwordSource</td><td><code>RoomConfiguration.RoomPasswordPreference</code></td><td>Preferred password source</td><td></td></tr>
+<tr><td>attemptedOpenSound</td><td><code>AudioEvent</code></td><td>Play this when attempted to open while locked</td><td></td></tr>
+<tr><td>armLockOnClose</td><td><code>bool</code></td><td>The lock is armed when the door movement is closed</td><td>true</td></tr>
+<tr><td>lockStrength</td><td><code>Vector2</code></td><td>If this isn&#x27;t an actual door, this is the lock strength range...</td><td>new Vector2(0.1f, 0.4f)</td></tr>
+<tr><td>isSelfLock</td><td><code>bool</code></td><td>This object itself acts as the lock</td><td></td></tr>
+<tr><td>useMaterialChanges</td><td><code>bool</code></td><td><span class="badge">Header: Material Changes</span></td><td></td></tr>
+<tr><td>lockOffMaterial</td><td><code>Material</code></td><td><span class="badge">ShowIf(&quot;useMaterialChanges&quot;)</span></td><td></td></tr>
+<tr><td>lockOnMaterial</td><td><code>Material</code></td><td><span class="badge">ShowIf(&quot;useMaterialChanges&quot;)</span></td><td></td></tr>
+<tr><td>isComputer</td><td><code>bool</code></td><td>Is this a computer (cruncher)? <span class="badge">Header: Computer</span></td><td></td></tr>
+<tr><td>bootApp</td><td><code>CruncherAppPreset</code></td><td>The boot application <span class="badge">ShowIf(&quot;isComputer&quot;)</span></td><td></td></tr>
+<tr><td>logInApp</td><td><code>CruncherAppPreset</code></td><td>The booted app (what this boots to) <span class="badge">ShowIf(&quot;isComputer&quot;)</span></td><td></td></tr>
+<tr><td>desktopApp</td><td><code>CruncherAppPreset</code></td><td>The desktop app <span class="badge">ShowIf(&quot;isComputer&quot;)</span></td><td></td></tr>
+<tr><td>additionalApps</td><td><code>List&lt;CruncherAppPreset&gt;</code></td><td>Additional apps <span class="badge">ShowIf(&quot;isComputer&quot;)</span></td><td>new List&lt;CruncherAppPreset&gt;()</td></tr>
+<tr><td>fingerprintsEnabled</td><td><code>bool</code></td><td>Should there be fingerprints here? <span class="badge">Header: Fingerprints</span></td><td>true</td></tr>
+<tr><td>printsSource</td><td><code>RoomConfiguration.PrintsSource</code></td><td>The source of the prints <span class="badge">ShowIf(&quot;fingerprintsEnabled&quot;)</span></td><td>RoomConfiguration.PrintsSource.ownersWritersReceivers</td></tr>
+<tr><td>fingerprintDensity</td><td><code>float</code></td><td>Fingerprint density <span class="badge">ShowIf(&quot;fingerprintsEnabled&quot;)</span> <span class="badge">Range(0f, 5f)</span></td><td>3f</td></tr>
+<tr><td>enableDynamicFingerprints</td><td><code>bool</code></td><td>Dynamic fingerprints will be left when an AI uses this <span class="badge">ShowIf(&quot;fingerprintsEnabled&quot;)</span></td><td>true</td></tr>
+<tr><td>disableDynamicFingerprintsFromStaticPrintsSources</td><td><code>bool</code></td><td><span class="badge">ShowIf(&quot;fingerprintsEnabled&quot;)</span></td><td></td></tr>
+<tr><td>overrideMaxDynamicFingerprints</td><td><code>bool</code></td><td>Override the default fingerprint maximum <span class="badge">ShowIf(&quot;fingerprintsEnabled&quot;)</span></td><td></td></tr>
+<tr><td>maxDynamicFingerprints</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;overrideMaxDynamicFingerprints&quot;)</span> <span class="badge">ShowIf(&quot;fingerprintsEnabled&quot;)</span></td><td>8</td></tr>
+<tr><td>fpsItem</td><td><code>FirstPersonItem</code></td><td>If this is a first person item, the corresponding item ID <span class="badge">Header: First Person Setup</span></td><td></td></tr>
+<tr><td>isInventoryItem</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>fpsItemOffset</td><td><code>Vector3</code></td><td>Offset of held item <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>Vector3.zero</td></tr>
+<tr><td>fpsItemRotation</td><td><code>Vector3</code></td><td><span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>Vector3.zero</td></tr>
+<tr><td>fpsItemScaleModifier</td><td><code>Vector3</code></td><td>Added to the FPS item scale (default usually 4100 in all dimensions) <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>Vector3.zero</td></tr>
+<tr><td>consumableAmount</td><td><code>float</code></td><td>The amount of consumable; consumed at 1 per second by the player</td><td></td></tr>
+<tr><td>destroyWhenAllConsumed</td><td><code>bool</code></td><td>Destroy when this is all consumed <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td></td></tr>
+<tr><td>useSameModelAsTrash</td><td><code>bool</code></td><td>Trash object <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>true</td></tr>
+<tr><td>trashItem</td><td><code>InteractablePreset</code></td><td><span class="badge">DisableIf(&quot;useSameModelAsTrash&quot;)</span> <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td></td></tr>
+<tr><td>playerConsumeLoop</td><td><code>AudioEvent</code></td><td><span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td></td></tr>
+<tr><td>takeOneEvent</td><td><code>AudioEvent</code></td><td><span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td></td></tr>
+<tr><td>disposal</td><td><code>Human.DisposalType</code></td><td><span class="badge">DisableIf(&quot;destroyWhenAllConsumed&quot;)</span> <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td></td></tr>
+<tr><td>chanceOfDroppedAngle</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span> <span class="badge">DisableIf(&quot;destroyWhenAllConsumed&quot;)</span></td><td></td></tr>
+<tr><td>droppedAngleHeightBoost</td><td><code>float</code></td><td><span class="badge">DisableIf(&quot;destroyWhenAllConsumed&quot;)</span></td><td>0.1f</td></tr>
+<tr><td>weapon</td><td><code>MurderWeaponPreset</code></td><td><span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td></td></tr>
+<tr><td>inventoryCarryItem</td><td><code>bool</code></td><td>If in inventory, display object <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td></td></tr>
+<tr><td>requiredCarryAnimation</td><td><code>bool</code></td><td>This required a carrying animation <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>true</td></tr>
+<tr><td>aiCarryAnimation</td><td><code>int</code></td><td>If an AI can carry this, which carrying animation to play <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>1</td></tr>
+<tr><td>aiHeldObjectPosition</td><td><code>Vector3</code></td><td>position object by this when AI is holding <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>new Vector3(-0.05f, -0.1f, -0.02f)</td></tr>
+<tr><td>aiHeldObjectRotation</td><td><code>Vector3</code></td><td>Rotate object by this when AI is holding <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>new Vector3(90f, 0f, 0f)</td></tr>
+<tr><td>putDownAtHome</td><td><code>bool</code></td><td>The AI will put this down when at home <span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td></td></tr>
+<tr><td>takeWith</td><td><code>bool</code></td><td>The AI will take this when they leave home</td><td></td></tr>
+<tr><td>putDownPositions</td><td><code>List&lt;SubObjectClassPreset&gt;</code></td><td><span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>new List&lt;SubObjectClassPreset&gt;()</td></tr>
+<tr><td>backupPutDownPositions</td><td><code>List&lt;SubObjectClassPreset&gt;</code></td><td><span class="badge">ShowIf(&quot;isInventoryItem&quot;)</span></td><td>new List&lt;SubObjectClassPreset&gt;()</td></tr>
+<tr><td>specialCaseFlag</td><td><code>InteractablePreset.SpecialCase</code></td><td><span class="badge">Header: Special cases</span></td><td></td></tr>
+<tr><td>affectRoomSteamLevel</td><td><code>bool</code></td><td>Affect room steam amount with switch state 1</td><td></td></tr>
+<tr><td>isPayphone</td><td><code>bool</code></td><td>This is a payphone</td><td></td></tr>
+<tr><td>isClock</td><td><code>bool</code></td><td>This is a clock; use hourly chimes</td><td></td></tr>
+<tr><td>isMoney</td><td><code>bool</code></td><td>If true this will be a naming special case.</td><td></td></tr>
+<tr><td>entertainmentSource</td><td><code>bool</code></td><td>According to AI, only 1 entertainment source should be active in a room</td><td></td></tr>
+<tr><td>isHeatSource</td><td><code>bool</code></td><td>Is this a heat source? Only active when switch 0 is on</td><td></td></tr>
+<tr><td>markAsTrashOnCreate</td><td><code>bool</code></td><td>Mark this as trash as soon as it is created, for removal as soon as possible</td><td></td></tr>
+<tr><td>isLitter</td><td><code>bool</code></td><td>If picked up, the AI will seek to put this in a bin/gets added to their carrying trash</td><td></td></tr>
+<tr><td>isDecal</td><td><code>bool</code></td><td>Will require an art asset sent to a decal projector</td><td></td></tr>
+<tr><td>isMovableChair</td><td><code>bool</code></td><td>Used for detecting work positions/animations mostly</td><td></td></tr>
+<tr><td>bedRightSide</td><td><code>bool</code></td><td>This is the right side of a double bed</td><td></td></tr>
+<tr><td>resetSwitchStates</td><td><code>bool</code></td><td>Resets switch states to starting configuration after x amount of time</td><td></td></tr>
+<tr><td>resetTimer</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;resetSwitchStates&quot;)</span></td><td>0.01f</td></tr>
+<tr><td>dontSaveSwitchStates</td><td><code>bool</code></td><td>Don&#x27;t save switch states</td><td></td></tr>
+<tr><td>dontLoadSwitchStates</td><td><code>bool</code></td><td>Don&#x27;t load switch states</td><td></td></tr>
+<tr><td>recordCreationTime</td><td><code>bool</code></td><td>If true, the game will record the creation time of this in passed variables</td><td></td></tr>
+<tr><td>musicTracks</td><td><code>List&lt;AudioEvent&gt;</code></td><td>If this is a music player: Track list</td><td>new List&lt;AudioEvent&gt;()</td></tr>
+<tr><td>retailItem</td><td><code>RetailItemPreset</code></td><td>Is this a retailItem? If so here&#x27;s the reference. This is set by having a RetailItem Preset that points to this.</td><td></td></tr>
+<tr><td>menuOverride</td><td><code>MenuPreset</code></td><td>If this is associated with a shop interface, override the location&#x27;s menu with this one (useful for vending machines)</td><td></td></tr>
+<tr><td>hourlyChime</td><td><code>AudioEvent</code></td><td><span class="badge">ShowIf(&quot;isClock&quot;)</span></td><td></td></tr>
+<tr><td>chimeEqualToHour</td><td><code>bool</code></td><td>Do as many chimes as the hour dictates <span class="badge">ShowIf(&quot;isClock&quot;)</span></td><td></td></tr>
+<tr><td>chimeDelay</td><td><code>float</code></td><td>Delay between chimes if above is true <span class="badge">ShowIf(&quot;isClock&quot;)</span></td><td>1.5f</td></tr>
+<tr><td>searchLoop</td><td><code>AudioEvent</code></td><td>Audio loop played on search</td><td></td></tr>
+<tr><td>copyFrom</td><td><code>InteractablePreset</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>GetActions</td><td><code>List&lt;InteractablePreset.InteractionAction&gt;</code></td><td></td><td><code>int lockedInPhase = 0</code></td></tr>
+<tr><td>GetPhysicsProfile</td><td><code>PhysicsProfile</code></td><td></td><td><code></code></td></tr>
+<tr><td>CopyFPSHeldPostionFromTransform</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>CalculateDroppedAngleHeightBoost</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>SpawnIntoInventory</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>SetToZeroValue</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>CreateOwnEvidence</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class AIUseSetting</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>usageOffset</td><td><code>Vector3</code></td><td>Usage point relative to the interactable. Calculated on spawn/move position.</td><td>new Vector3(0f, 0f, 0.35f)</td></tr>
+<tr><td>facingOffset</td><td><code>Vector3</code></td><td>Look at point relative to the interactable. Calculated on spawn/move position.</td><td></td></tr>
+<tr><td>useNodeFloorPosition</td><td><code>bool</code></td><td>If true, this will use the parent node&#x27;s floor Y value for the position</td><td>true</td></tr>
+<tr><td>useDoorBehaviour</td><td><code>bool</code></td><td>If true, flip the Z axis usage offset depending on actor relative position to the door</td><td></td></tr>
+<tr><td>useSittingOffset</td><td><code>bool</code></td><td>If true use the citizen&#x27;s sitting offset position</td><td></td></tr>
+<tr><td>useArmsStandingOffset</td><td><code>bool</code></td><td>If true use the citizen&#x27;s standing offset position</td><td></td></tr>
+</tbody></table>
+<h3>class SwitchState</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>switchState</td><td><code>InteractablePreset.Switch</code></td><td></td><td></td></tr>
+<tr><td>boolIs</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class IfSwitchState</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>switchState</td><td><code>InteractablePreset.Switch</code></td><td></td><td></td></tr>
+<tr><td>boolIs</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class IfSwitchStateSFX</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>switchState</td><td><code>InteractablePreset.Switch</code></td><td></td><td></td></tr>
+<tr><td>boolIs</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>triggerAudio</td><td><code>AudioEvent</code></td><td></td><td></td></tr>
+<tr><td>isLoop</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isBroadcast</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isMusicPlayer</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>stop</td><td><code>AudioController.StopType</code></td><td></td><td>AudioController.StopType.fade</td></tr>
+<tr><td>passOpenParam</td><td><code>bool</code></td><td>Passes an open parameter to FMOD based on switch state</td><td></td></tr>
+<tr><td>passCSParam</td><td><code>bool</code></td><td>Passes the consumable state parameter to FMOD based on switch state</td><td></td></tr>
+<tr><td>passDoorDirParam</td><td><code>bool</code></td><td>Pass door opening or closing direction</td><td></td></tr>
+<tr><td>onlyIfInSyncBed</td><td><code>bool</code></td><td>Only if player is inside sync bed/chamber</td><td></td></tr>
+<tr><td>onlyIfNotInSyncBed</td><td><code>bool</code></td><td>Only if player is not inside sync bed/chamber</td><td></td></tr>
+<tr><td>onlyIfNeonSign</td><td><code>bool</code></td><td>Only if this door features a neon sign</td><td></td></tr>
+</tbody></table>
+<h3>class InteractionAction</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>interactionName</td><td><code>string</code></td><td>The dictionary reference to this action&#x27;s name</td><td></td></tr>
+<tr><td>action</td><td><code>AIActionPreset</code></td><td>The action preset</td><td></td></tr>
+<tr><td>useDefaultKeySetting</td><td><code>bool</code></td><td>Use the default key as found on the action preset...</td><td>true</td></tr>
+<tr><td>keyOverride</td><td><code>InteractablePreset.InteractionKey</code></td><td>Which key will activate this?</td><td></td></tr>
+<tr><td>specialCase</td><td><code>InteractablePreset.InteractionAction.SpecialCase</code></td><td>Alter the interaction name based on special cases</td><td></td></tr>
+<tr><td>usableByAI</td><td><code>bool</code></td><td>Is this usable by the AI</td><td>true</td></tr>
+<tr><td>aiUsageDelay</td><td><code>float</code></td><td>When AI is performing this, use a delay (seconds) <span class="badge">ShowIf(&quot;usableByAI&quot;)</span></td><td></td></tr>
+<tr><td>effectSwitchStates</td><td><code>List&lt;InteractablePreset.SwitchState&gt;</code></td><td>This action effects these states</td><td>new List&lt;InteractablePreset.SwitchState&gt;()</td></tr>
+<tr><td>onlyActiveIf</td><td><code>List&lt;InteractablePreset.IfSwitchState&gt;</code></td><td>This action is only enabled if the following is true</td><td>new List&lt;InteractablePreset.IfSwitchState&gt;()</td></tr>
+<tr><td>actionIsIllegal</td><td><code>bool</code></td><td>Is this action illegal?</td><td></td></tr>
+<tr><td>availableWhileIllegal</td><td><code>bool</code></td><td>Is this action available while illegal?</td><td>true</td></tr>
+<tr><td>availableWhileWitnessesToIllegal</td><td><code>bool</code></td><td>If above is true, is this allowed when others have witnessed illegal activity? <span class="badge">EnableIf(&quot;availableWhileIllegal&quot;)</span></td><td></td></tr>
+<tr><td>onlyAvailableToRestrainedWhileIllegal</td><td><code>bool</code></td><td>Force availability on restrained while illegal status is active</td><td></td></tr>
+<tr><td>availableWhileLockedIn</td><td><code>bool</code></td><td>Is this action available while using a locked in action?</td><td></td></tr>
+<tr><td>availableWhileJumping</td><td><code>bool</code></td><td>Is this action available while jumping?</td><td>true</td></tr>
+<tr><td>actionCost</td><td><code>int</code></td><td>Cost of performing this action</td><td></td></tr>
+<tr><td>useStrikethrough</td><td><code>bool</code></td><td>If true when this action is unavailable, it will be striked through instead of invisible</td><td></td></tr>
+<tr><td>isHidingPlace</td><td><code>bool</code></td><td>Is this a hiding place?</td><td></td></tr>
+<tr><td>onlyHidingPlaceIfPublic</td><td><code>bool</code></td><td>Only a hiding place in areas classed as public <span class="badge">EnableIf(&quot;isHidingPlace&quot;)</span></td><td></td></tr>
+<tr><td>soundEvent</td><td><code>AudioEvent</code></td><td>Sound event reference for this action</td><td></td></tr>
+<tr><td>playOnTrigger</td><td><code>bool</code></td><td>If true this sound event will automatically be played on trigger. If false then this is just a reference for the sound indicator to known the sound level.</td><td>true</td></tr>
+</tbody></table>
+<h3>class AIUsePriority</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>actions</td><td><code>List&lt;AIActionPreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>AIPriority</td><td><code>float</code></td><td>AI will rank actions by this if there are multiple copies <span class="badge">Range(0f, 10f)</span></td><td>5f</td></tr>
+<tr><td>pickDistanceMultiplier</td><td><code>float</code></td><td>When chosing between interactables, how much to factor in the closest one?</td><td>1f</td></tr>
+</tbody></table>
+<h3>class ObjectResetBehaviour</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>ifSwitchState</td><td><code>InteractablePreset.Switch</code></td><td></td><td></td></tr>
+<tr><td>ifSwitchBool</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ifCondition</td><td><code>InteractablePreset.ObjectResetCondition</code></td><td></td><td></td></tr>
+<tr><td>ifGoal</td><td><code>AIGoalPreset</code></td><td></td><td></td></tr>
+<tr><td>scope</td><td><code>InteractablePreset.ObjectResetScope</code></td><td></td><td></td></tr>
+<tr><td>onlyIfObjectBelongsTo</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>onlyIfAuthority</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>onlyIfLastOccupant</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>onlyIfHome</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>insertActions</td><td><code>List&lt;AIActionPreset&gt;</code></td><td></td><td>new List&lt;AIActionPreset&gt;()</td></tr>
+</tbody></table>
+<h3>class TraitPick</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>rule</td><td><code>CharacterTrait.RuleType</code></td><td></td><td></td></tr>
+<tr><td>traitList</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>mustPassForApplication</td><td><code>bool</code></td><td>If this isn&#x27;t true then it won&#x27;t be picked for application at all.</td><td>true</td></tr>
+<tr><td>appliedFrequencyMin</td><td><code>int</code></td><td>If the rules match, then apply this frequency <span class="badge">Range(0f, 20f)</span></td><td></td></tr>
+<tr><td>appliedFrequencyMax</td><td><code>int</code></td><td>If the rules match, then apply this frequency <span class="badge">Range(0f, 20f)</span></td><td></td></tr>
+</tbody></table>
+<h3>class SubSpawnSlot</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>localPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>localEuler</td><td><code>Vector3</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>InteractionKey</h3>
+<pre><code>none
+primary
+secondary
+alternative
+scrollAxisUp
+scrollAxisDown
+jump
+crouch
+sprint
+flashlight
+caseBoard
+map
+notebook
+moveHorizontal
+moveVertical
+lookHorizontal
+lookVertical
+WeaponSelect
+nearestInteractable
+CaseBoardZoomAxis
+MoveEvidenceAxisX
+MoveEvidenceAxisY
+ContentMoveAxisX
+ContentMoveAxisY
+SelectLeft
+SelectRight
+SelectUp
+SelectDown
+CreateString
+LeanLeft
+LeanRight
+Back
+Select
+Menu
+MoveEvidence</code></pre>
+<h3>Switch</h3>
+<pre><code>switchState
+custom1
+custom2
+custom3
+lockState
+lockedIn
+sprinting
+enforcersInside
+ko
+securityGrid
+carryPhysicsObject</code></pre>
+<h3>SpecialCase</h3>
+<pre><code>none
+takeSwap
+onlyIfDeadAsleepOrUncon
+availableInFastForward
+onlyAvailableInFastForward
+caseFormsNeeded
+activeCaseHandInReady
+search
+knockOnDoor
+putBack
+originalPlace
+onlyIfRestrained
+onlyIfNotRestrained
+ifInventoryItemDrawn
+onlyIfSick
+nonCombat
+onlyIfMultiPageHasPages
+onlyInNormalTimeAndAwakeNonDialog
+nonDialog
+decorPlacementPurchase
+furniturePlacement
+decorItemPlacement
+citizenReturn
+nonCombatOrRestrained
+validTransitionZone
+onlyIfRegularRotation
+takePrintsFromBody</code></pre>
+<h3>InteractableColourSetting</h3>
+<pre><code>none
+ownersFavColour
+randomColour
+randomDecorColour
+syncDisk</code></pre>
+<h3>ItemClass</h3>
+<pre><code>consumable
+medical
+equipment
+document
+misc
+electronics</code></pre>
+<h3>ApartmentPlacementMode</h3>
+<pre><code>physics
+vertical
+ceiling</code></pre>
+<h3>ObjectResetCondition</h3>
+<pre><code>leavingLocation
+goalActive
+goalActivated
+goalDeactivated</code></pre>
+<h3>ObjectResetScope</h3>
+<pre><code>ifInSameRoom
+ifInSameLocation</code></pre>
+<h3>ReadingModeSource</h3>
+<pre><code>evidenceNote
+multipageEvidence
+time
+bookPreset
+recordPreset
+syncDiskPreset
+mainEvidenceText
+kaizenSkillDisplay</code></pre>
+<h3>AutoPlacement</h3>
+<pre><code>always
+onlyInCompany
+onlyInHomes
+onlyOnStreet
+never</code></pre>
+<h3>OwnedPlacementRule</h3>
+<pre><code>nonOwnedOnly
+ownedOnly
+prioritiseNonOwned
+prioritiseOwned
+both</code></pre>
+<h3>RelocationAuthority</h3>
+<pre><code>AIAndOwnersCanRelocate
+ownerCanRelocate
+anyoneCanRelocate
+nooneCanRelocate</code></pre>
+<h3>FindEvidence</h3>
+<pre><code>none
+residentsContract
+sideJob
+companyRoster
+addressKey
+businessCard
+namePlacard
+photo
+calendar
+retailItem
+workID
+salesRecords
+diary
+menu
+homeFile
+birthCertificate
+bankStatement
+medicalDetails
+IDCard
+addressBook
+residentRoster
+telephone
+callLogs
+hospitalBed</code></pre>
+<h3>SpecialCase</h3>
+<pre><code>none
+sleepPosition
+workDesk
+workCounter
+workKitchen
+securityDoor
+alarmSystem
+sentryGun
+securityCamera
+interestBook
+bookStack
+thrownItem
+fingerprint
+shower
+syncDisk
+unused1
+unused2
+codebreaker
+doorWedge
+telephone
+hospitalBed
+syncBed
+padlock
+salesLedger
+caseTray
+footprint
+breakerSecurity
+breakerLights
+breakerDoors
+fridge
+stovetopKettle
+syncDiskUpgrade
+otherSecuritySystem
+gasReleaseSystem
+tracker
+grenade
+ballisticArmour
+forceStanding
+lightswitch
+airVent
+burningBarrel
+addressBook
+garbageDisposal
+glassBulletHole
+bloodPool
+briefcase
+umbrella
+basBouleCardCommon
+basBouleCardRare
+basBouleCardVeryRare</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

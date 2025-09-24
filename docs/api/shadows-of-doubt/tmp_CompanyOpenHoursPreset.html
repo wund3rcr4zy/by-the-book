@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CompanyOpenHoursPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CompanyOpenHoursPreset</h1>
+      <div class="page-meta">Source file: <span class="code">CompanyOpenHoursPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CompanyOpenHoursPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>retailOpenHours</td><td><code>Vector2</code></td><td>Hours of retail opening hours <span class="badge">Header: Opening Hours</span></td><td>new Vector2(8f, 17f)</td></tr>
+<tr><td>monday</td><td><code>bool</code></td><td><span class="badge">Header: Days Open</span></td><td>true</td></tr>
+<tr><td>tuesday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>wednesday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>thursday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>friday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>saturday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>sunday</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>shifts</td><td><code>List&lt;CompanyOpenHoursPreset.CompanyShift&gt;</code></td><td><span class="badge">Header: Work Hours</span></td><td>new List&lt;CompanyOpenHoursPreset.CompanyShift&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class CompanyShift</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td>&quot;shift&quot;</td></tr>
+<tr><td>shiftType</td><td><code>OccupationPreset.ShiftType</code></td><td></td><td>OccupationPreset.ShiftType.dayShift</td></tr>
+<tr><td>decimalHours</td><td><code>Vector2</code></td><td></td><td>new Vector2(9f, 17f)</td></tr>
+<tr><td>monday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>tuesday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>wednesday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>thursday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>friday</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>saturday</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>sunday</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>assigned</td><td><code>List&lt;Occupation&gt;</code></td><td></td><td>new List&lt;Occupation&gt;()</td></tr>
+<tr><td>debugAssigned</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

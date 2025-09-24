@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Game</h1>
+      <div class="page-meta">Source file: <span class="code">Game.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Game</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>buildID</td><td><code>string</code></td><td>Build version <span class="badge">Header: Build</span></td><td>&quot;20&quot;</td></tr>
+<tr><td>buildDescription</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>customTags</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>steamScriptPath</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>updateAbove</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lastCompatibleCities</td><td><code>string</code></td><td></td><td>&quot;30.00&quot;</td></tr>
+<tr><td>buildConfiguration</td><td><code>Game.BuildConfig</code></td><td>Controls a bunch of settings like options available to the player and default settings <span class="badge">Header: Build Settings</span></td><td></td></tr>
+<tr><td>autodetectBuildConfig</td><td><code>bool</code></td><td>Will automatically set the above build config depending on the platform running. This will only work for detecting consoles and won&#x27;t detect different PC versions.</td><td>true</td></tr>
+<tr><td>forceLowEndHardware</td><td><code>bool</code></td><td>Forces the low end hardware flag</td><td></td></tr>
+<tr><td>devMode</td><td><code>bool</code></td><td>Enable dev options on main menu &amp; collect debugging info on a range of gameobjects</td><td></td></tr>
+<tr><td>printDebug</td><td><code>bool</code></td><td>Print to console</td><td>true</td></tr>
+<tr><td>alwaysPrintErrors</td><td><code>bool</code></td><td>Allow errors to be printed even if the above is false <span class="badge">DisableIf(&quot;printDebug&quot;)</span></td><td>true</td></tr>
+<tr><td>collectDebugData</td><td><code>bool</code></td><td>Collect debug data</td><td></td></tr>
+<tr><td>debugPrintLevel</td><td><code>int</code></td><td>Set the debug prints level: 0 is nothing, 2 is maximum <span class="badge">Range(0f, 2f)</span> <span class="badge">EnableIf(&quot;printDebug&quot;)</span></td><td>2</td></tr>
+<tr><td>enableBugReporting</td><td><code>bool</code></td><td>Enable bug reporting</td><td></td></tr>
+<tr><td>forceEnglish</td><td><code>bool</code></td><td>Force the game to be english</td><td></td></tr>
+<tr><td>skipIntro</td><td><code>bool</code></td><td>Skip intro</td><td></td></tr>
+<tr><td>allowMods</td><td><code>bool</code></td><td>Allows mod button in the main menu; only if this is NOT a console version</td><td>true</td></tr>
+<tr><td>forceMediumCitiesOnConsole</td><td><code>bool</code></td><td>Force medium sized cities on console</td><td>true</td></tr>
+<tr><td>ensureItemNamesInDictionaries</td><td><code>bool</code></td><td>If true and in dev mode and collect debug data, will ensure dictionaries have names for all items</td><td></td></tr>
+<tr><td>isLowEndHardware</td><td><code>bool</code></td><td>Low end hardware detected; this includes steam deck. Will provide alternate default settings.</td><td></td></tr>
+<tr><td>boostMinimumFontSize</td><td><code>bool</code></td><td>Boosts minimum font sizes when running at 1280x800 or below</td><td></td></tr>
+<tr><td>removeOnConsoleVersions</td><td><code>List&lt;GameObject&gt;</code></td><td><span class="badge">Header: Console Limitations</span></td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>timeLimited</td><td><code>bool</code></td><td>Is this a demo build? Limit time <span class="badge">Header: Demo Limitations</span></td><td></td></tr>
+<tr><td>timeLimit</td><td><code>float</code></td><td>Limit time to this in minutes</td><td>60f</td></tr>
+<tr><td>startTimerAfterApartmentExit</td><td><code>bool</code></td><td>Start the timer after exit of apartment in story mode</td><td>true</td></tr>
+<tr><td>pauseTimerOnGamePause</td><td><code>bool</code></td><td>Pause the timer on caseboard or menu</td><td></td></tr>
+<tr><td>disableSaveLoadGames</td><td><code>bool</code></td><td>Disable save games</td><td></td></tr>
+<tr><td>disableSandbox</td><td><code>bool</code></td><td>Disable sandbox mode</td><td></td></tr>
+<tr><td>disableCityGeneration</td><td><code>bool</code></td><td>Disable city generation</td><td></td></tr>
+<tr><td>smallCitiesOnly</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>displayBetaMessage</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>useSaveGameCompression</td><td><code>bool</code></td><td>Use compression to store save games <span class="badge">Header: Game</span></td><td></td></tr>
+<tr><td>saveGameCompressionQuality</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;useSaveGameCompression&quot;)</span></td><td>9</td></tr>
+<tr><td>useCityDataCompression</td><td><code>bool</code></td><td>Use compression to store generated city data</td><td></td></tr>
+<tr><td>cityDataCompressionQuality</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;useCityDataCompression&quot;)</span></td><td>9</td></tr>
+<tr><td>maxThreads</td><td><code>int</code></td><td>How many threads to spawn on certain loading/generation routines</td><td>16</td></tr>
+<tr><td>writeUnfoundToTextFiles</td><td><code>bool</code></td><td>Automatically write unfound text entries to .csv files</td><td>true</td></tr>
+<tr><td>sandboxMode</td><td><code>bool</code></td><td>Start the game without loading a story chapter</td><td></td></tr>
+<tr><td>loadChapter</td><td><code>int</code></td><td>Load this chapter <span class="badge">DisableIf(&quot;sandboxMode&quot;)</span></td><td></td></tr>
+<tr><td>updateMovementEveryFrame</td><td><code>bool</code></td><td>If true, the player movement will update in the regular Update() loop, if false it will update in FixedUpdate()</td><td></td></tr>
+<tr><td>defaultSaturationAmount</td><td><code>float</code></td><td>Default amount of saturation: Needed as we modify it with loosing health etc</td><td>10f</td></tr>
+<tr><td>displayExtraControlHints</td><td><code>bool</code></td><td>If true this will display control tips</td><td>true</td></tr>
+<tr><td>objectiveMarkers</td><td><code>bool</code></td><td>If true this will display objective markers</td><td>true</td></tr>
+<tr><td>gameDifficulty</td><td><code>int</code></td><td>General game difficulty <span class="badge">Range(0f, 3f)</span></td><td>1</td></tr>
+<tr><td>difficultyIncomingDamageMultipliers</td><td><code>List&lt;float&gt;</code></td><td></td><td>new List&lt;float&gt;()</td></tr>
+<tr><td>gameLength</td><td><code>int</code></td><td>Game length <span class="badge">Range(0f, 4f)</span></td><td>2</td></tr>
+<tr><td>gameLengthMaxLevels</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>forceSideJobDifficulty</td><td><code>bool</code></td><td>Force side missions to be a certain difficulty</td><td></td></tr>
+<tr><td>forcedJobDifficulty</td><td><code>int</code></td><td><span class="badge">Range(0f, 6f)</span></td><td>2</td></tr>
+<tr><td>resumeAfterPin</td><td><code>bool</code></td><td>Resume the game after pinning evidence item</td><td></td></tr>
+<tr><td>closeInteractionsOnResume</td><td><code>bool</code></td><td>Close windows with world interaction status on resume game</td><td>true</td></tr>
+<tr><td>enableDirectionalArrow</td><td><code>bool</code></td><td>Enables the directional arrow</td><td>true</td></tr>
+<tr><td>sandboxStartTime</td><td><code>float</code></td><td></td><td>9f</td></tr>
+<tr><td>enableMurdererInSandbox</td><td><code>bool</code></td><td>Enables the murderer in sandbox mode</td><td>true</td></tr>
+<tr><td>weatherChangeFrequency</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>disableSnow</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>disableTrespass</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>debugMurdererOnStart</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>demoChapterSkip</td><td><code>bool</code></td><td>Starts the game outside the door of the apartment in story mode</td><td></td></tr>
+<tr><td>demoMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>allHospitalAccess</td><td><code>bool</code></td><td>Gives access to all hospital doors</td><td></td></tr>
+<tr><td>autoPause</td><td><code>bool</code></td><td>Auto pause the game after x seconds of no input</td><td></td></tr>
+<tr><td>autoPauseSeconds</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;autoPause&quot;)</span></td><td>90</td></tr>
+<tr><td>demoAutoReset</td><td><code>bool</code></td><td>Ask to restart the game from this save game if left for x seconds of no input</td><td></td></tr>
+<tr><td>resetSeconds</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;demoAutoReset&quot;)</span></td><td>90</td></tr>
+<tr><td>resetChapterPart</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;demoAutoReset&quot;)</span></td><td>23</td></tr>
+<tr><td>resetSaveGameName</td><td><code>string</code></td><td><span class="badge">EnableIf(&quot;demoAutoReset&quot;)</span></td><td></td></tr>
+<tr><td>textSpeed</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>disableCaseBoardClose</td><td><code>bool</code></td><td>Disables closing of case board: Used sometimes by the tutorial</td><td></td></tr>
+<tr><td>allowLicensedMusic</td><td><code>bool</code></td><td>Allows/disables licensed music</td><td>true</td></tr>
+<tr><td>overridePasscodes</td><td><code>bool</code></td><td>Override all passcodes</td><td></td></tr>
+<tr><td>overriddenPasscode</td><td><code>int</code></td><td></td><td>1000</td></tr>
+<tr><td>maxDeltaTime</td><td><code>float</code></td><td>Max delta time</td><td>1.05f</td></tr>
+<tr><td>aaMode</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>mainThread</td><td><code>Thread</code></td><td></td><td></td></tr>
+<tr><td>coldStatusEnabled</td><td><code>bool</code></td><td><span class="badge">Header: Statuses</span></td><td>true</td></tr>
+<tr><td>smellyStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>headacheStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>injuryStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>tiredStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>hungerStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>hydrationStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>numbStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>bleedingStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>wetStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>sickStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>drunkStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>starchAddictionEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>poisonStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>blindedStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>energizedStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>hydratedStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>focusedStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>wellRestedStatusEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>mouseSensitivity</td><td><code>Vector2</code></td><td>Enables mouse/keyboard control by default on startup; disable for console builds <span class="badge">Header: Controls</span></td><td>new Vector2(20f, 20f)</td></tr>
+<tr><td>controllerSensitivity</td><td><code>Vector2</code></td><td></td><td>new Vector2(20f, 20f)</td></tr>
+<tr><td>virtualCursorSensitivity</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>axisMP</td><td><code>Vector2</code></td><td></td><td>new Vector2(1f, 1f)</td></tr>
+<tr><td>controlAutoSwitch</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>mouseSmoothing</td><td><code>int</code></td><td></td><td>10</td></tr>
+<tr><td>controllerSmoothing</td><td><code>int</code></td><td></td><td>40</td></tr>
+<tr><td>movementSpeed</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>scrollSensitivity</td><td><code>int</code></td><td></td><td>50</td></tr>
+<tr><td>forceFeedbackMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>playerFirstName</td><td><code>string</code></td><td><span class="badge">Header: Player</span></td><td>&quot;Fred&quot;</td></tr>
+<tr><td>playerSurname</td><td><code>string</code></td><td></td><td>&quot;Melrose&quot;</td></tr>
+<tr><td>playerGender</td><td><code>Human.Gender</code></td><td></td><td></td></tr>
+<tr><td>partnerGender</td><td><code>Human.Gender</code></td><td></td><td></td></tr>
+<tr><td>playerSkinColour</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>playerBirthDay</td><td><code>int</code></td><td></td><td>19</td></tr>
+<tr><td>playerBirthMonth</td><td><code>int</code></td><td></td><td>12</td></tr>
+<tr><td>playerBirthYear</td><td><code>int</code></td><td></td><td>1947</td></tr>
+<tr><td>language</td><td><code>string</code></td><td>The game&#x27;s language reference string <span class="badge">Header: Words</span></td><td>&quot;English&quot;</td></tr>
+<tr><td>wordCountTotal</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>displayStreetChunks</td><td><code>bool</code></td><td><span class="badge">Header: Streets</span></td><td></td></tr>
+<tr><td>displayStreetAndJunctionChunks</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>displayTrafficSimulationResults</td><td><code>bool</code></td><td><span class="badge">EnableIf(&quot;displayStreetAndJunctionChunks&quot;)</span></td><td></td></tr>
+<tr><td>debugtrafficSimMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>displayStreets</td><td><code>bool</code></td><td><span class="badge">DisableIf(&quot;displayStreetAndJunctionChunks&quot;)</span></td><td></td></tr>
+<tr><td>debugStreetMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>streetDebugColours</td><td><code>List&lt;Color&gt;</code></td><td></td><td>new List&lt;Color&gt;()</td></tr>
+<tr><td>debugDisplayRoads</td><td><code>bool</code></td><td>Display roads <span class="badge">Header: City</span></td><td></td></tr>
+<tr><td>keysToTheCity</td><td><code>bool</code></td><td>Player can open any door</td><td>true</td></tr>
+<tr><td>disableFurniture</td><td><code>bool</code></td><td>Disable generation of furniture</td><td></td></tr>
+<tr><td>debugContainer</td><td><code>Transform</code></td><td>Destroy this when the game is started</td><td></td></tr>
+<tr><td>enableCullingDebug</td><td><code>bool</code></td><td>Enable culling debug for new cull system</td><td></td></tr>
+<tr><td>enableCityEditor</td><td><code>bool</code></td><td>When generating a new city, use the city editor</td><td></td></tr>
+<tr><td>collectRoutineTimingInfo</td><td><code>bool</code></td><td>Statistic for keeping track of how early/late citizens are on average compared with due time. Records guess accuracy. <span class="badge">Header: Citizens</span></td><td>true</td></tr>
+<tr><td>guessAverageOnTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>guessDataEntries</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>guessEarlyPercent</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>guessLatePercent</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>guessCumulativeOnTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>guessEarlyEntries</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>guessLateEntries</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>boundaries</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>noReactOnAttack</td><td><code>bool</code></td><td>If enabled, citizens won&#x27;t react to getting attacked by the player</td><td></td></tr>
+<tr><td>debugPathfinding</td><td><code>bool</code></td><td>If pathfinding fails, load objects to present the closed set for debugging <span class="badge">Header: Pathfinding</span></td><td></td></tr>
+<tr><td>useJobSystem</td><td><code>bool</code></td><td>Use the job system for pathfinding</td><td>true</td></tr>
+<tr><td>useExternalRouteCaching</td><td><code>bool</code></td><td>Cache external routes for the pathfinding system</td><td>true</td></tr>
+<tr><td>useInternalRouteCaching</td><td><code>bool</code></td><td>Cache internal routes for the pathfinding system</td><td>true</td></tr>
+<tr><td>forceStreetPathsOnMainThread</td><td><code>bool</code></td><td>Force street pathing to be run on the main thread, this appears to be faster due to the data passed to the worker?</td><td>true</td></tr>
+<tr><td>unlimitedPathCaching</td><td><code>bool</code></td><td>If true the maximum cached path numbers will be ignored. The game could run out of memory eventually, so be careful!</td><td></td></tr>
+<tr><td>maxExternalCachedPaths</td><td><code>int</code></td><td>The maximum number of cached external paths</td><td>1000</td></tr>
+<tr><td>maxInternalCachedPaths</td><td><code>int</code></td><td>The maximum number of cached paths in an internal address</td><td>12</td></tr>
+<tr><td>maxStreetCachedPaths</td><td><code>int</code></td><td>The maximum number of cached street paths</td><td>1000</td></tr>
+<tr><td>dynamicReRouting</td><td><code>bool</code></td><td>Enable dynamic rerouting</td><td>true</td></tr>
+<tr><td>pathfinderDebugLog</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>discoverAllEvidence</td><td><code>bool</code></td><td>Discover all evidence as soon as it is created <span class="badge">Header: Evidence</span></td><td></td></tr>
+<tr><td>discoverAllRooms</td><td><code>bool</code></td><td>Discover all rooms <span class="badge">Header: Map</span></td><td></td></tr>
+<tr><td>maxDrawnMapIcons</td><td><code>int</code></td><td>Maximum number of drawn map icons in memory</td><td>400</td></tr>
+<tr><td>everywhereIllegal</td><td><code>bool</code></td><td>Player is always in illegal area <span class="badge">Header: Gameplay</span></td><td></td></tr>
+<tr><td>invisiblePlayer</td><td><code>bool</code></td><td>Player is always hidden for AI</td><td></td></tr>
+<tr><td>inaudiblePlayer</td><td><code>bool</code></td><td>Player cannot be heard by AI</td><td></td></tr>
+<tr><td>invinciblePlayer</td><td><code>bool</code></td><td>Player cannot be killed</td><td></td></tr>
+<tr><td>routeTeleport</td><td><code>bool</code></td><td>Plotting a route will teleport the player to that location isntead</td><td></td></tr>
+<tr><td>giveAllUpgrades</td><td><code>bool</code></td><td>Give all upgrades available in the city</td><td></td></tr>
+<tr><td>disableFallDamage</td><td><code>bool</code></td><td>Disable fall damage</td><td></td></tr>
+<tr><td>pauseAI</td><td><code>bool</code></td><td>Pause the AI completely</td><td></td></tr>
+<tr><td>freeCam</td><td><code>bool</code></td><td>Free camera mode</td><td></td></tr>
+<tr><td>fastForward</td><td><code>bool</code></td><td>Fast forward</td><td></td></tr>
+<tr><td>disableSurvivalStatusesInStory</td><td><code>bool</code></td><td>Disable negatives statuses while in story mode</td><td>true</td></tr>
+<tr><td>sandboxStartingApartment</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>sandboxStartingMoney</td><td><code>int</code></td><td></td><td>100</td></tr>
+<tr><td>sandboxStartingLockpicks</td><td><code>int</code></td><td></td><td>5</td></tr>
+<tr><td>preferredStartingBuildings</td><td><code>List&lt;BuildingPreset&gt;</code></td><td>Build types where the player apartment will be located</td><td>new List&lt;BuildingPreset&gt;()</td></tr>
+<tr><td>alwaysRun</td><td><code>bool</code></td><td>Will always run and sprint control will walk</td><td></td></tr>
+<tr><td>toggleRun</td><td><code>bool</code></td><td>Toggles run instead of having to hold it down</td><td></td></tr>
+<tr><td>permaDeath</td><td><code>bool</code></td><td>If you get KO&#x27;d in game, the game ends</td><td></td></tr>
+<tr><td>autoTravelPause</td><td><code>bool</code></td><td>If true, the game will pause while auto travelling</td><td></td></tr>
+<tr><td>allowEchelons</td><td><code>bool</code></td><td>Allow echelon gated communities</td><td>true</td></tr>
+<tr><td>allowLoitering</td><td><code>bool</code></td><td>Allow loitering</td><td>true</td></tr>
+<tr><td>allowAutoTravel</td><td><code>bool</code></td><td>Allow auto travel</td><td>true</td></tr>
+<tr><td>allowSocialCreditPerks</td><td><code>bool</code></td><td>Allow social credit perks</td><td>true</td></tr>
+<tr><td>allowDraggableRagdolls</td><td><code>bool</code></td><td>Allow draggable bodies</td><td>true</td></tr>
+<tr><td>forceCoverUpOffers</td><td><code>bool</code></td><td>Enables a quick way of testing cover-up offers: DISABLE FOR RELEASE!</td><td></td></tr>
+<tr><td>enableColesFallingThroughFloorCheck</td><td><code>bool</code></td><td>Enabled Cole&#x27;s code check for falling through a floor; possible conflict with Austin&#x27;s attached to the player controller</td><td>true</td></tr>
+<tr><td>forcePlayerTaunts</td><td><code>bool</code></td><td>Force the killer to leave taunts at the player&#x27;s apartment</td><td></td></tr>
+<tr><td>useSimplifiedKillerMonikers</td><td><code>bool</code></td><td>Use the newer, simpler version of killer monikers system</td><td>true</td></tr>
+<tr><td>spawnBasBouleCards</td><td><code>bool</code></td><td>Spawn Bas Boule Cards</td><td></td></tr>
+<tr><td>jobRewardMultiplier</td><td><code>float</code></td><td><span class="badge">Header: Difficulty: Prices</span></td><td>1f</td></tr>
+<tr><td>jobPenaltyMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>housePriceMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>noShadowsWhenPlayerIsInDifferentGoundmapLocation</td><td><code>bool</code></td><td>Switch indoor lights to non-shadow casting when player is in a different groundmap area <span class="badge">Header: Graphics</span></td><td>true</td></tr>
+<tr><td>useReflectionProbes</td><td><code>bool</code></td><td>Spawn &amp; setup reflection probes</td><td>true</td></tr>
+<tr><td>enableRaindrops</td><td><code>bool</code></td><td>Use a special raindrop material/shader on the streets</td><td>true</td></tr>
+<tr><td>enableRainyWindows</td><td><code>bool</code></td><td>Use a special raindrop material/shader on the windows</td><td>true</td></tr>
+<tr><td>fov</td><td><code>int</code></td><td></td><td>70</td></tr>
+<tr><td>depthBlur</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>motionBlurIntensity</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>motionBlurGameSpeedModifier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>bloomIntensity</td><td><code>float</code></td><td></td><td>0.151f</td></tr>
+<tr><td>shadowsOnCitizenLOD</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>vsync</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>enableFrameCap</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>frameCap</td><td><code>int</code></td><td></td><td>60</td></tr>
+<tr><td>flickeringLights</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>enableRuntimeStaticBatching</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>useQuadsForFootprints</td><td><code>bool</code></td><td>Use quads instead of decal projectors for footprints</td><td></td></tr>
+<tr><td>enableCustomLightCulling</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>enableNewRealtimeTimeCullingSystem</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>generateCullingInGame</td><td><code>bool</code></td><td>If true, the game will generate culling trees using the legacy system, previously used at generation-time only <span class="badge">DisableIf(&quot;enableNewRealtimeTimeCullingSystem&quot;)</span></td><td></td></tr>
+<tr><td>screenSpaceReflection</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>hyperacusisFilter</td><td><code>int</code></td><td><span class="badge">Header: Audio</span></td><td></td></tr>
+<tr><td>bassReduction</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>lightFadeDistanceMultiplier</td><td><code>float</code></td><td><span class="badge">Range(0.4f, 2f)</span></td><td>1f</td></tr>
+<tr><td>shadowFadeDistanceMultiplier</td><td><code>float</code></td><td><span class="badge">Range(0.4f, 2f)</span></td><td>1f</td></tr>
+<tr><td>sunShadowUpdateFrequency</td><td><code>int</code></td><td>Same as above but for the sun <span class="badge">Header: Shadows</span></td><td>1</td></tr>
+<tr><td>lastShadowsUpdatedCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>overrideLightControllerShadowMode</td><td><code>bool</code></td><td>Override shadow mode on all light controllers...</td><td></td></tr>
+<tr><td>shadowModeOverride</td><td><code>LightingPreset.ShadowMode</code></td><td><span class="badge">EnableIf(&quot;overrideLightControllerShadowMode&quot;)</span></td><td></td></tr>
+<tr><td>dynamicShadowUpdateFrames</td><td><code>int</code></td><td></td><td>3</td></tr>
+<tr><td>maxUpdateDynamicShadowsPerFrame</td><td><code>int</code></td><td></td><td>5</td></tr>
+<tr><td>combineAirDuctMeshes</td><td><code>bool</code></td><td>Combining meshes will take longer on load and increase memory, but also increase performance... <span class="badge">Header: Meshes</span></td><td>true</td></tr>
+<tr><td>combineRoomMeshes</td><td><code>bool</code></td><td>Combining meshes will take longer on load and increase memory, but also increase performance...</td><td>true</td></tr>
+<tr><td>roomWallShadowMode</td><td><code>ShadowCastingMode</code></td><td></td><td>ShadowCastingMode.On</td></tr>
+<tr><td>roomFloorShadowMode</td><td><code>ShadowCastingMode</code></td><td></td><td>ShadowCastingMode.On</td></tr>
+<tr><td>roomCeilingShadowMode</td><td><code>ShadowCastingMode</code></td><td></td><td>ShadowCastingMode.TwoSided</td></tr>
+<tr><td>airDuctShadowMode</td><td><code>ShadowCastingMode</code></td><td></td><td>ShadowCastingMode.On</td></tr>
+<tr><td>useJobSystemForMeshCombination</td><td><code>bool</code></td><td>Enables job based mesh creation</td><td>true</td></tr>
+<tr><td>optimizeCombinedMeshes</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>autoWeldVertices</td><td><code>bool</code></td><td>Automatically weld vertices together if they share the same space</td><td>true</td></tr>
+<tr><td>uiScale</td><td><code>int</code></td><td><span class="badge">Header: Interface</span></td><td>100</td></tr>
+<tr><td>selectCitizenOnLookAt</td><td><code>bool</code></td><td><span class="badge">Header: Editor</span></td><td></td></tr>
+<tr><td>base26Test</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>screenshotMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>screenshotModeAllowDialog</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>debugHuman</td><td><code>List&lt;Actor&gt;</code></td><td><span class="badge">Header: Debug</span></td><td>new List&lt;Actor&gt;()</td></tr>
+<tr><td>debugHumanMovement</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>debugHumanActions</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>debugHumanAttacks</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>debugHumanUpdates</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>debugHumanMisc</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>debugHumanSight</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>debugFindWall</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>debugAddressID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>debugCitizenID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>debugPhotoTestID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>debugTestWeapon</td><td><code>MurderWeaponPreset</code></td><td></td><td></td></tr>
+<tr><td>debugWeaponsSurvey</td><td><code>List&lt;Game.DebugCitizenWeapons&gt;</code></td><td></td><td>new List&lt;Game.DebugCitizenWeapons&gt;()</td></tr>
+<tr><td>_instance</td><td><code>static Game</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>WordCount</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>SetScreenshotMode</td><td><code>void</code></td><td></td><td><code>bool val, bool allowDialog = false</code></td></tr>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddOnTimeEntry</td><td><code>void</code></td><td></td><td><code>Actor cc, float newOnTime</code></td></tr>
+<tr><td>AIInAddressFullyRested</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AIInAddressNeedShower</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AIInAddressNeedFun</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DebugButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetRoutineCollectionData</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>AddRandomCitizenToAwareness</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>ForceEnableMovement</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetRaindrops</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetRainWindows</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetFOV</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>SetObjectiveMarkers</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetDirectionalArrow</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetAwarenessIndicator</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetDepthBlur</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetSandboxStartTime</td><td><code>void</code></td><td></td><td><code>float val</code></td></tr>
+<tr><td>SetGameDifficulty</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>SetGameLength</td><td><code>void</code></td><td></td><td><code>int val, bool updateSocialCredits, bool updateDropdown, bool updateSavedValue</code></td></tr>
+<tr><td>SetEnableColdStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableSmellyStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableHeadacheStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableBleedingStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableInjuryStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableHungerStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableHydrationStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableWetStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableSickStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableNumbStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableTiredStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableDrunkStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableEnergizedStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableHydratedStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableFocusedStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetEnableWellRestedStatus</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetSandboxStartingApartment</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetSandboxStartingMoney</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>SetSandboxStartingLockpicks</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>SetForceSideJobDifficulty</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetForcedSideJobDifficulty</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>SetPauseAI</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetFreeCamMode</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetFastForward</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetDrawDistance</td><td><code>void</code></td><td></td><td><code>float val</code></td></tr>
+<tr><td>SetLightDistance</td><td><code>void</code></td><td></td><td><code>float val</code></td></tr>
+<tr><td>SetMurders</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>bool val</code></td></tr>
+<tr><td>SetUIScale</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>SetAAMode</td><td><code>void</code></td><td></td><td><code>int newMode</code></td></tr>
+<tr><td>SetAAQuality</td><td><code>void</code></td><td></td><td><code>int newQuality</code></td></tr>
+<tr><td>SetDithering</td><td><code>void</code></td><td></td><td><code>bool newVal</code></td></tr>
+<tr><td>SetVsync</td><td><code>void</code></td><td></td><td><code>bool newVal</code></td></tr>
+<tr><td>SetEnableFrameCap</td><td><code>void</code></td><td></td><td><code>bool newVal</code></td></tr>
+<tr><td>SetFrameCap</td><td><code>void</code></td><td></td><td><code>int newVal</code></td></tr>
+<tr><td>SetPasscodeOverrideToggle</td><td><code>void</code></td><td></td><td><code>bool newVal</code></td></tr>
+<tr><td>SetPasscodeOverride</td><td><code>void</code></td><td></td><td><code>int newPasscode</code></td></tr>
+<tr><td>SetFlickingLights</td><td><code>void</code></td><td></td><td><code>bool newVal</code></td></tr>
+<tr><td>Log</td><td><code>void</code></td><td><span class="badge">static</span></td><td><code>object print, int level = 2</code></td></tr>
+<tr><td>LogError</td><td><code>void</code></td><td><span class="badge">static</span></td><td><code>object print, int level = 2</code></td></tr>
+<tr><td>SetAllowLicensedMusic</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetScreenSpaceReflection</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetHyperacusisFilter</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>SetBassReduction</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>Base26Test</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>Give1000Crows</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>Give100Lockpicks</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>ResetHealth</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>KOPlayer</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>TestCurrentDetainedStatus</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>VictimsRankTest</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>GiveAllUpgrades</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>GiveSocialCredit</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>CompleteSideJob</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>DisplayAnswersToCurrentSideJob</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>OnBuildValueChanged</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DebugFindWall</td><td><code>void</code></td><td><span class="badge">Dev</span> <span class="badge">Debug</span> <span class="badge">CollData</span> <span class="badge">BugRep</span> <span class="badge">NoLoadSave</span> <span class="badge">NoSandbox</span> <span class="badge">NoGeneration</span> <span class="badge">SmallCities</span> <span class="badge">BetaMsg</span> <span class="badge">ForceENG</span> <span class="badge">Mods</span> <span class="badge">3</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>DebugAddressID</td><td><code>void</code></td><td><span class="badge">8</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num</span> <span class="badge">4</span> <span class="badge">num2</span> <span class="badge">6</span> <span class="badge">num3</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>DebugCitizenID</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>ShotgunTest</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>MissionPhotoTest</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>FindProsthetics</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>TeleportPlayerStreetStart</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>ToggleCitizenColliders</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>GiveRandomJolt</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>TripPlayer</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>TestTimeRange</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>DeletePlayerPrefs</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>DeletePlayerPrefsConfirm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DeletePlayerPrefsCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ForcePlayerDirtyDeath</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>TurnOffAllDynamicOcclusion</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>TurnOffAllLODS</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>ShootFromPlayer</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>UnloadUnusedAssets</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>ListSelfEmployed</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class DebugCitizenWeapons</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>weapon</td><td><code>MurderWeaponPreset</code></td><td></td><td></td></tr>
+<tr><td>count</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>percentage</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>BuildConfig</h3>
+<pre><code>PCSteam
+PCEpic
+PCGog
+PCMicrosoftStore
+PCNoStorefrontFeatures
+ConsolePlaystation5
+ConsoleXboxSeriesS
+ConsoleXboxSeriesX</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

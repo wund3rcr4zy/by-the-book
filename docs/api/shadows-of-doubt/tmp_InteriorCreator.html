@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InteriorCreator — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>InteriorCreator</h1>
+      <div class="page-meta">Source file: <span class="code">InteriorCreator.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">InteriorCreator</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>loadChunk</td><td><code>int</code></td><td></td><td>5</td></tr>
+<tr><td>threadedInteriorCreationActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>threads</td><td><code>List&lt;InteriorCreator.LoaderThread&gt;</code></td><td></td><td>new List&lt;InteriorCreator.LoaderThread&gt;()</td></tr>
+<tr><td>_instance</td><td><code>static InteriorCreator</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartLoading</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>GenChunk</td><td><code>IEnumerator</code></td><td></td><td><code></code></td></tr>
+<tr><td>ThreadedInteriorGeneration</td><td><code>IEnumerator</code></td><td><span class="badge">index</span> <span class="badge">cursor</span> <span class="badge">cursor</span> <span class="badge">l</span> <span class="badge">8</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">num9</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">7</span></td><td><code>InteriorCreator.LoaderThread loaderReference</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class LoaderThread</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>thread</td><td><code>Coroutine</code></td><td></td><td></td></tr>
+<tr><td>street</td><td><code>StreetController</code></td><td></td><td></td></tr>
+<tr><td>floor</td><td><code>NewFloor</code></td><td></td><td></td></tr>
+<tr><td>isDone</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

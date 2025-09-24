@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CasePanelController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CasePanelController</h1>
+      <div class="page-meta">Source file: <span class="code">CasePanelController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CasePanelController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnPinnedChange</td><td><code>event CasePanelController.PinnedChange</code></td><td></td><td></td></tr>
+<tr><td>OnPinEvidence</td><td><code>event CasePanelController.PinEvidence</code></td><td></td><td></td></tr>
+<tr><td>OnUnpinEvidence</td><td><code>event CasePanelController.UnpinEvidence</code></td><td></td><td></td></tr>
+<tr><td>corkBoard</td><td><code>RectTransform</code></td><td><span class="badge">Header: References</span></td><td></td></tr>
+<tr><td>pinnedContainer</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>stringContainer</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>caseButtonParent</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>newCaseButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>closeCaseButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>caseDisplayArea</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>closeCaseDisplayArea</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>resolveSprite</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>archiveSprite</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>collectHandInSprite</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>activeCase</td><td><code>Case</code></td><td><span class="badge">Header: Cases</span></td><td></td></tr>
+<tr><td>activeCases</td><td><code>List&lt;Case&gt;</code></td><td></td><td>new List&lt;Case&gt;()</td></tr>
+<tr><td>archivedCases</td><td><code>List&lt;Case&gt;</code></td><td></td><td>new List&lt;Case&gt;()</td></tr>
+<tr><td>spawnedCaseButtons</td><td><code>List&lt;CaseButtonController&gt;</code></td><td></td><td>new List&lt;CaseButtonController&gt;()</td></tr>
+<tr><td>pickModeActive</td><td><code>bool</code></td><td><span class="badge">Header: Pick Evidence Mode</span></td><td></td></tr>
+<tr><td>pickForField</td><td><code>InputFieldController</code></td><td></td><td></td></tr>
+<tr><td>customLinkSelectionMode</td><td><code>bool</code></td><td><span class="badge">Header: String Link</span></td><td></td></tr>
+<tr><td>customStringLinkSelection</td><td><code>PinnedItemController</code></td><td></td><td></td></tr>
+<tr><td>customString</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>newestCreatedFact</td><td><code>FactCustom</code></td><td></td><td></td></tr>
+<tr><td>spawnedPins</td><td><code>List&lt;PinnedItemController&gt;</code></td><td><span class="badge">Header: Spawned</span></td><td>new List&lt;PinnedItemController&gt;()</td></tr>
+<tr><td>spawnedStrings</td><td><code>List&lt;StringController&gt;</code></td><td></td><td>new List&lt;StringController&gt;()</td></tr>
+<tr><td>caseCloseTransition</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>controllerMode</td><td><code>bool</code></td><td><span class="badge">Header: Controller Mode</span></td><td></td></tr>
+<tr><td>selectedWindow</td><td><code>InfoWindow</code></td><td></td><td></td></tr>
+<tr><td>selectedPinned</td><td><code>PinnedItemController</code></td><td></td><td></td></tr>
+<tr><td>selectedTopBarButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>currentSelectMode</td><td><code>CasePanelController.ControllerSelectMode</code></td><td></td><td></td></tr>
+<tr><td>upgradesSelect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>upgradesSelectJuice</td><td><code>JuiceController</code></td><td></td><td></td></tr>
+<tr><td>boardSelect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>boardSelectJuice</td><td><code>JuiceController</code></td><td></td><td></td></tr>
+<tr><td>mapSelect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>mapSelectJuice</td><td><code>JuiceController</code></td><td></td><td></td></tr>
+<tr><td>notebookButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>stickNoteButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>selectNoCaseButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>caseboardMO</td><td><code>ViewportMouseOver</code></td><td></td><td></td></tr>
+<tr><td>caseboardScroll</td><td><code>ControllerViewRectScroll</code></td><td></td><td></td></tr>
+<tr><td>mapMO</td><td><code>ViewportMouseOver</code></td><td></td><td></td></tr>
+<tr><td>mapScroll</td><td><code>ControllerViewRectScroll</code></td><td></td><td></td></tr>
+<tr><td>upgradesMO</td><td><code>ViewportMouseOver</code></td><td></td><td></td></tr>
+<tr><td>upgradesScroll</td><td><code>ControllerViewRectScroll</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static CasePanelController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateCaseControls</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SelectNoCaseButton</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>NewCustomCaseButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CreateNewCase</td><td><code>Case</code></td><td></td><td><code>Case.CaseType newType, Case.CaseStatus newStatus, bool isSilent = false, string caseName = &quot;New Case&quot;</code></td></tr>
+<tr><td>OnCreateNewCustomCase</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCancelNewCustomCase</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateCloseCaseButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CloseCaseButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CloseCase</td><td><code>void</code></td><td></td><td><code>Case closeThisCase</code></td></tr>
+<tr><td>SetActiveCase</td><td><code>void</code></td><td></td><td><code>Case newCase</code></td></tr>
+<tr><td>UpdateCaseButtonsActive</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>NewStickyNoteButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>NewStickyNote</td><td><code>InfoWindow</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCreateNewCasePopup</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>onCreateNewCasePopupCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UnPinFromCasePanel</td><td><code>void</code></td><td></td><td><code>Case thisCase, Evidence ev, List&lt;Evidence.DataKey&gt; evKeys, bool uniqueKeysOnly = false, Case.CaseElement forceElement = null</code></td></tr>
+<tr><td>UpdatePinned</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>UpdateStrings</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>CustomStringLinkSelection</td><td><code>void</code></td><td><span class="badge">num</span> <span class="badge">num</span> <span class="badge">num</span> <span class="badge">i</span> <span class="badge">num2</span></td><td><code>PinnedItemController pinnedItem, bool holdButtonMode = false</code></td></tr>
+<tr><td>CustomStringLink</td><td><code>IEnumerator</code></td><td></td><td><code>bool holdButtonMode = false</code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CancelCustomStringLinkSelection</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>FinishCustomStringLinkSelection</td><td><code>void</code></td><td></td><td><code>PinnedItemController target</code></td></tr>
+<tr><td>OnContinueFactName</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCancelCustomFact</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateResolveNotifications</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>SetPickModeActive</td><td><code>void</code></td><td></td><td><code>bool val, InputFieldController forField</code></td></tr>
+<tr><td>OnShowCaseBoard</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnHideCaseBoard</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetControllerMode</td><td><code>void</code></td><td></td><td><code>bool isActive, CasePanelController.ControllerSelectMode newMode</code></td></tr>
+<tr><td>SetSelectedWindow</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code>InfoWindow newWindow, bool forceUpdate = false, bool snapVirtualCursor = false</code></td></tr>
+<tr><td>SetSelectedPinned</td><td><code>void</code></td><td></td><td><code>PinnedItemController newPinned, bool forceUpdate = false</code></td></tr>
+<tr><td>ControllerNavigate</td><td><code>void</code></td><td></td><td><code>Vector2 direction</code></td></tr>
+<tr><td>ShoulderNavigate</td><td><code>void</code></td><td></td><td><code>bool right</code></td></tr>
+<tr><td>GetClosestPinnedToCentre</td><td><code>PinnedItemController</code></td><td></td><td><code></code></td></tr>
+<tr><td>DisplayCorrectMurderQuestions</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class StringConnection</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>from</td><td><code>PinnedItemController</code></td><td></td><td></td></tr>
+<tr><td>to</td><td><code>PinnedItemController</code></td><td></td><td></td></tr>
+<tr><td>links</td><td><code>List&lt;Evidence.FactLink&gt;</code></td><td></td><td>new List&lt;Evidence.FactLink&gt;()</td></tr>
+<tr><td>facts</td><td><code>List&lt;Fact&gt;</code></td><td></td><td>new List&lt;Fact&gt;()</td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>ControllerSelectMode</h3>
+<pre><code>caseBoard
+windows</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

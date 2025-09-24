@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lzma — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>lzma</h1>
+      <div class="page-meta">Source file: <span class="code">lzma.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">lzma</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>persitentDataPath</td><td><code>static string</code></td><td></td><td>&quot;&quot;</td></tr>
+<tr><td>props</td><td><code>static int[]</code></td><td></td><td>new int[7]</td></tr>
+<tr><td>defaultsSet</td><td><code>static bool</code></td><td></td><td>false</td></tr>
+<tr><td>libname</td><td><code>const string</code></td><td></td><td>&quot;liblzma&quot;</td></tr>
+<tr><td>ninfo</td><td><code>static List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>sinfo</td><td><code>static List&lt;ulong&gt;</code></td><td></td><td>new List&lt;ulong&gt;()</td></tr>
+<tr><td>trueTotalFiles</td><td><code>static int</code></td><td></td><td>0</td></tr>
+<tr><td>nativeBuffer</td><td><code>static IntPtr</code></td><td></td><td>IntPtr.Zero</td></tr>
+<tr><td>nativeBufferIsBeingUsed</td><td><code>static bool</code></td><td></td><td>false</td></tr>
+<tr><td>nativeOffset</td><td><code>static int</code></td><td></td><td>0</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>setProps</td><td><code>void</code></td><td><span class="badge">static</span></td><td><code>int level = 5, int dictSize = 65536, int lc = 3, int lp = 0, int pb = 2, int fb = 32, int numThreads = 2</code></td></tr>
+<tr><td>decompress7zip</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>string filePath, string exctractionPath, bool fullPaths, string entry, IntPtr progress, IntPtr FileBuffer, int FileBufferLength</code></td></tr>
+<tr><td>decompress7zip2</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>string filePath, string exctractionPath, bool fullPaths, string entry, IntPtr progress, IntPtr FileBuffer, int FileBufferLength</code></td></tr>
+<tr><td>_getSize</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>string filePath, IntPtr FileBuffer, int FileBufferLength, bool justParse</code></td></tr>
+<tr><td>entrySize</td><td><code>ulong</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>string filePath, string entry, IntPtr FileBuffer, int FileBufferLength</code></td></tr>
+<tr><td>lzmaUtil</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>bool encode, string inPath, string outPath, IntPtr Props</code></td></tr>
+<tr><td>decode2Buf</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>string filePath, string entry, IntPtr buffer, IntPtr FileBuffer, int FileBufferLength</code></td></tr>
+<tr><td>_releaseBuffer</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>IntPtr buffer</code></td></tr>
+<tr><td>_createBuffer</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>int size</code></td></tr>
+<tr><td>_addToBuffer</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>IntPtr destination, int offset, IntPtr buffer, int len</code></td></tr>
+<tr><td>Lzma_Compress</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>IntPtr buffer, int bufferLength, bool makeHeader, ref int v, IntPtr Props</code></td></tr>
+<tr><td>Lzma_Uncompress</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code>IntPtr buffer, int bufferLength, int uncompressedSize, IntPtr outbuffer, bool useHeader</code></td></tr>
+<tr><td>sevenZcancel</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code></code></td></tr>
+<tr><td>resetBytesRead</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code></code></td></tr>
+<tr><td>getBytesRead</td><td><code>ulong</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code></code></td></tr>
+<tr><td>getBytesWritten</td><td><code>ulong</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;liblzma&quot;)</span></td><td><code></code></td></tr>
+<tr><td>gcA</td><td><code>GCHandle</code></td><td><span class="badge">static</span></td><td><code>object o</code></td></tr>
+<tr><td>setFilePermissions</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string filePath, string _user, string _group, string _other</code></td></tr>
+<tr><td>checkObject</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>object fileBuffer, string filePath, ref GCHandle fbuf, ref IntPtr fileBufferPointer, ref int fileBufferLength</code></td></tr>
+<tr><td>doDecompress7zip</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string filePath, string exctractionPath = null, int[] progress = null, bool largeFiles = false, bool fullPaths = true, string entry = null, object fileBuffer = null</code></td></tr>
+<tr><td>doDecompress7zip</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span></td><td><code>string filePath, string exctractionPath = null, bool largeFiles = false, bool fullPaths = true, string entry = null, object fileBuffer = null</code></td></tr>
+<tr><td>LzmaUtilEncode</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span></td><td><code>string inPath, string outPath</code></td></tr>
+<tr><td>LzmaUtilDecode</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string inPath, string outPath</code></td></tr>
+<tr><td>get7zInfo</td><td><code>ulong</code></td><td><span class="badge">static</span></td><td><code>string filePath, object fileBuffer = null</code></td></tr>
+<tr><td>get7zSize</td><td><code>ulong</code></td><td><span class="badge">static</span> <span class="badge">0</span> <span class="badge">1</span></td><td><code>string filePath = null, string entry = null, object fileBuffer = null</code></td></tr>
+<tr><td>getHeadersSize</td><td><code>uint</code></td><td><span class="badge">static</span></td><td><code>string filePath, object fileBuffer = null</code></td></tr>
+<tr><td>decode2Buffer</td><td><code>byte[]</code></td><td><span class="badge">static</span></td><td><code>string filePath, string entry, object fileBuffer = null</code></td></tr>
+<tr><td>getAllFiles</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">num</span></td><td><code>string dir</code></td></tr>
+<tr><td>getFileSize</td><td><code>long</code></td><td><span class="badge">static</span></td><td><code>string file</code></td></tr>
+<tr><td>getDirSize</td><td><code>ulong</code></td><td><span class="badge">static</span></td><td><code>string dir</code></td></tr>
+<tr><td>compressBuffer</td><td><code>bool</code></td><td><span class="badge">static</span> <span class="badge">i</span></td><td><code>byte[] inBuffer, ref byte[] outBuffer, bool makeHeader = true</code></td></tr>
+<tr><td>compressBuffer</td><td><code>byte[]</code></td><td><span class="badge">static</span></td><td><code>byte[] inBuffer, bool makeHeader = true</code></td></tr>
+<tr><td>compressBufferPartial</td><td><code>bool</code></td><td><span class="badge">static</span> <span class="badge">num</span></td><td><code>byte[] inBuffer, int inBufferPartialIndex, int inBufferPartialLength, ref byte[] outBuffer, bool makeHeader = true</code></td></tr>
+<tr><td>compressBufferPartialFixed</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>byte[] inBuffer, int inBufferPartialIndex, int inBufferPartialLength, ref byte[] outBuffer, bool safe = true, bool makeHeader = true</code></td></tr>
+<tr><td>compressBufferFixed</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>byte[] inBuffer, ref byte[] outBuffer, bool safe = true, bool makeHeader = true</code></td></tr>
+<tr><td>decompressBuffer</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>byte[] inBuffer, ref byte[] outbuffer, bool useHeader = true, int customLength = 0</code></td></tr>
+<tr><td>decompressBuffer</td><td><code>byte[]</code></td><td><span class="badge">static</span></td><td><code>byte[] inBuffer, bool useHeader = true, int customLength = 0</code></td></tr>
+<tr><td>decompressBufferFixed</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">num</span></td><td><code>byte[] inBuffer, ref byte[] outbuffer, bool safe = true, bool useHeader = true, int customLength = 0</code></td></tr>
+<tr><td>download7zFileNative</td><td><code>IEnumerator</code></td><td><span class="badge">static</span></td><td><code>string url, Action&lt;bool&gt; downloadDone, Action&lt;IntPtr&gt; pointer = null, Action&lt;int&gt; fileSize = null</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class CustomWebRequest2</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>dic</h3>
+<pre><code></code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

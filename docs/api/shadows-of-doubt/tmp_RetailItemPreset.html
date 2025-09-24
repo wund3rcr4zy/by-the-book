@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RetailItemPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>RetailItemPreset</h1>
+      <div class="page-meta">Source file: <span class="code">RetailItemPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">RetailItemPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>itemPreset</td><td><code>InteractablePreset</code></td><td><span class="badge">Header: Item</span></td><td></td></tr>
+<tr><td>canBeFavourite</td><td><code>bool</code></td><td>Can this be ranked by the citizen as a favourite item? If true this will be used to calculate favourite places, as well as appear on shopping lists etc.</td><td>true</td></tr>
+<tr><td>isHot</td><td><code>bool</code></td><td>If true this item stays warm for 1 hour after it was purchased.</td><td></td></tr>
+<tr><td>isConsumable</td><td><code>bool</code></td><td>A citizen can pick this to buy at a shop</td><td>true</td></tr>
+<tr><td>brandName</td><td><code>string</code></td><td>If this is entered, upon singleton creation the evidence will be named using this entry.</td><td>string.Empty</td></tr>
+<tr><td>tags</td><td><code>List&lt;RetailItemPreset.Tags&gt;</code></td><td></td><td>new List&lt;RetailItemPreset.Tags&gt;()</td></tr>
+<tr><td>desireCategory</td><td><code>CompanyPreset.CompanyCategory</code></td><td><span class="badge">Header: Menu</span></td><td>CompanyPreset.CompanyCategory.snack</td></tr>
+<tr><td>menuCategory</td><td><code>RetailItemPreset.MenuCategory</code></td><td></td><td></td></tr>
+<tr><td>ethnicity</td><td><code>List&lt;Descriptors.EthnicGroup&gt;</code></td><td>Which ethnicity is this food (if any) <span class="badge">Header: Ethnicity</span></td><td>new List&lt;Descriptors.EthnicGroup&gt;()</td></tr>
+<tr><td>minimumWealth</td><td><code>float</code></td><td>Citizen&#x27;s money must be higher than this to list this item in favourites <span class="badge">Header: Citizen Suitability</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>mustFeatureTraits</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>cantFeatureTrait</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>preferredTraits</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>nourishment</td><td><code>float</code></td><td>This is applied as progress increases <span class="badge">Header: Stat Modifiers</span></td><td></td></tr>
+<tr><td>hydration</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>alertness</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>energy</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>excitement</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>chores</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>hygiene</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>bladder</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>heat</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>drunk</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>sick</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>headache</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>wet</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>brokenLeg</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>bruised</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>blackEye</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>blackedOut</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>numb</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>bleeding</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>wellRested</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>breath</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>starchAddiction</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>poisoned</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+<tr><td>health</td><td><code>float</code></td><td>This is applied as progress increases</td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>Tags</h3>
+<pre><code>starchProduct</code></pre>
+<h3>MenuCategory</h3>
+<pre><code>food
+drinks
+snacks
+none</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

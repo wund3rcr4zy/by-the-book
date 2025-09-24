@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AddressPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>AddressPreset</h1>
+      <div class="page-meta">Source file: <span class="code">AddressPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">AddressPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>debug</td><td><code>bool</code></td><td><span class="badge">Header: Zoning</span></td><td></td></tr>
+<tr><td>fitsUnitSizeMin</td><td><code>int</code></td><td>Fits in units of this size (in tiles) <span class="badge">Range(0f, 225f)</span></td><td></td></tr>
+<tr><td>fitsUnitSizeMax</td><td><code>int</code></td><td><span class="badge">Range(0f, 225f)</span></td><td>225</td></tr>
+<tr><td>hardSizeLimits</td><td><code>bool</code></td><td>If true, units incompatible with size will be completely discounted instead of just ranked lower...</td><td></td></tr>
+<tr><td>minMaxFloors</td><td><code>Vector2</code></td><td></td><td>new Vector2(-1f, 999f)</td></tr>
+<tr><td>important</td><td><code>bool</code></td><td>If true, the game will place at least one of these if at all possible</td><td></td></tr>
+<tr><td>maxInstances</td><td><code>int</code></td><td>Maximum number of instances</td><td>9999</td></tr>
+<tr><td>baseScore</td><td><code>int</code></td><td></td><td>3</td></tr>
+<tr><td>baseScoreFrequencyPenalty</td><td><code>int</code></td><td>Minus to base score with every instance</td><td>1</td></tr>
+<tr><td>idealFootfall</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>footfallMultiplier</td><td><code>float</code></td><td>How important is the correct footfall?</td><td>3f</td></tr>
+<tr><td>addressRules</td><td><code>List&lt;AddressPreset.AddressRule&gt;</code></td><td></td><td>new List&lt;AddressPreset.AddressRule&gt;()</td></tr>
+<tr><td>limitToBuildings</td><td><code>List&lt;BuildingPreset&gt;</code></td><td></td><td>new List&lt;BuildingPreset&gt;()</td></tr>
+<tr><td>forcePick</td><td><code>bool</code></td><td>Always pick this if it is compatible</td><td></td></tr>
+<tr><td>ethnicityMatters</td><td><code>bool</code></td><td>Does the ethnicity of this address factor in the ownership? <span class="badge">Header: Ownership</span></td><td></td></tr>
+<tr><td>ethnicity</td><td><code>Descriptors.EthnicGroup</code></td><td>Ethnicity of this address <span class="badge">EnableIf(&quot;ethnicityMatters&quot;)</span></td><td>Descriptors.EthnicGroup.northAmerican</td></tr>
+<tr><td>compatible</td><td><code>List&lt;LayoutConfiguration&gt;</code></td><td><span class="badge">Header: Compatible Layouts</span></td><td>new List&lt;LayoutConfiguration&gt;()</td></tr>
+<tr><td>roomConfig</td><td><code>List&lt;RoomConfiguration&gt;</code></td><td><span class="badge">Header: Room Config</span></td><td>new List&lt;RoomConfiguration&gt;()</td></tr>
+<tr><td>access</td><td><code>AddressPreset.AccessType</code></td><td><span class="badge">Header: Access</span></td><td></td></tr>
+<tr><td>canPassThrough</td><td><code>bool</code></td><td>If true an AI can pass through this on the way to another place (origins, destinations unaffected)</td><td></td></tr>
+<tr><td>openHoursDicatedByAdjoiningCompany</td><td><code>bool</code></td><td>Are open hours dictated by a company that ajoins this?</td><td></td></tr>
+<tr><td>needsPassword</td><td><code>bool</code></td><td>The player needs a password to enter this location</td><td></td></tr>
+<tr><td>dictionaryPasswordSources</td><td><code>List&lt;string&gt;</code></td><td>Sources for a password</td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>company</td><td><code>CompanyPreset</code></td><td>If a company operates this address, this is the preset <span class="badge">Header: Purpose</span></td><td></td></tr>
+<tr><td>residence</td><td><code>ResidencePreset</code></td><td>If a residence is at this address, this is the preset</td><td></td></tr>
+<tr><td>playerKnowsPurpose</td><td><code>bool</code></td><td>Purpose/icon is known to the player at the start</td><td>true</td></tr>
+<tr><td>evidenceIconLarge</td><td><code>Sprite</code></td><td><span class="badge">Header: Interface</span></td><td></td></tr>
+<tr><td>chanceOfNameSignHorizontal</td><td><code>float</code></td><td><span class="badge">Header: Signage</span> <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>horizontalSignOffset</td><td><code>Vector3</code></td><td>Make a sign using this character set</td><td>Vector3.zero</td></tr>
+<tr><td>signCharacterSet</td><td><code>List&lt;NeonSignCharacters&gt;</code></td><td></td><td>new List&lt;NeonSignCharacters&gt;()</td></tr>
+<tr><td>chanceOfNameSignVertical</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>possibleSigns</td><td><code>List&lt;GameObject&gt;</code></td><td>Make a sign using one of these</td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>specialItems</td><td><code>List&lt;InteractablePreset&gt;</code></td><td><span class="badge">Header: Special Items</span></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>chanceOfExternalSpareKey</td><td><code>float</code></td><td>Chance of a spare key being left in an adjoining lobby (will be hidden under mat, or in a plant or radiator)</td><td></td></tr>
+<tr><td>airVentRange</td><td><code>Vector2</code></td><td><span class="badge">Header: Air Vents</span></td><td>Vector2.one</td></tr>
+<tr><td>useOwnSecuritySystem</td><td><code>bool</code></td><td>If false, this uses the building&#x27;s security system <span class="badge">Header: Security</span></td><td></td></tr>
+<tr><td>useOwnBreakerBox</td><td><code>bool</code></td><td>If false, this uses the breaker box contained on the floor</td><td></td></tr>
+<tr><td>alarmLocksDownFloor</td><td><code>bool</code></td><td>If triggered, does the alarm lock down the building floor? <span class="badge">EnableIf(&quot;useOwnSecuritySystem&quot;)</span></td><td></td></tr>
+<tr><td>overrideBuildingEnvironment</td><td><code>bool</code></td><td><span class="badge">Header: Environment</span></td><td></td></tr>
+<tr><td>sceneProfile</td><td><code>SessionData.SceneProfile</code></td><td><span class="badge">EnableIf(&quot;overrideBuildingEnvironment&quot;)</span></td><td>SessionData.SceneProfile.indoors</td></tr>
+<tr><td>entrancesLockedByDefault</td><td><code>bool</code></td><td>Are entrance doors locked by default? <span class="badge">Header: Misc</span></td><td>true</td></tr>
+<tr><td>leaveLightsOn</td><td><code>bool</code></td><td>AI leaves lights on, even when empty</td><td></td></tr>
+<tr><td>disableLockingUp</td><td><code>bool</code></td><td>If enabled, AI leaves doesn&#x27;t lock doors out of hours or when empty</td><td></td></tr>
+<tr><td>disableLocationInformationDisplay</td><td><code>bool</code></td><td>Stop this from appearing in the bottom left when the player enters</td><td></td></tr>
+<tr><td>forceCityDirectoryInclusion</td><td><code>bool</code></td><td>This will be included in the city directory</td><td></td></tr>
+<tr><td>nameFeaturesBuildingReference</td><td><code>bool</code></td><td>The name of this also contains the building name</td><td></td></tr>
+<tr><td>nameFeaturesTypeCount</td><td><code>bool</code></td><td>Number the name of this based on how many of these types there are per floor</td><td></td></tr>
+<tr><td>overrideBuildingName</td><td><code>bool</code></td><td>The name of this will become the name of the building</td><td></td></tr>
+<tr><td>sameBuildingEmployeesAuthority</td><td><code>bool</code></td><td>Employees in the same building will have this as a location of authority</td><td></td></tr>
+<tr><td>sameBuildingResidentsAuthority</td><td><code>bool</code></td><td>Residents in the same building will have this as a location of authority</td><td></td></tr>
+<tr><td>canFeatureLostAndFound</td><td><code>bool</code></td><td>This address can feature lost &amp; found notes</td><td></td></tr>
+<tr><td>minimumLandValue</td><td><code>float</code></td><td>The minimum land value for this address type <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>maximumLandValue</td><td><code>float</code></td><td>The maximum land value for this address type <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>allowSniperVantagePoint</td><td><code>bool</code></td><td>If a sniper type killer is searching for a vantage point, allow this location</td><td></td></tr>
+<tr><td>vantagePointBoost</td><td><code>float</code></td><td>Add weight to this being chosen as a sniper vantage point <span class="badge">EnableIf(&quot;allowSniperVantagePoint&quot;)</span></td><td></td></tr>
+<tr><td>disableSniperTargetSite</td><td><code>bool</code></td><td>A sniper victim won&#x27;t get shot here if true</td><td></td></tr>
+<tr><td>allowPublicToiletUse</td><td><code>bool</code></td><td>Allow public toilet use</td><td></td></tr>
+<tr><td>disableThis</td><td><code>bool</code></td><td>If true this won&#x27;t be chosen in-game <span class="badge">Header: Debug</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class AddressRule</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>districtPreset</td><td><code>DistrictPreset</code></td><td></td><td></td></tr>
+<tr><td>scoreModifier</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>AccessType</h3>
+<pre><code>allPublic
+residents
+buildingInhabitants
+employees
+none</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

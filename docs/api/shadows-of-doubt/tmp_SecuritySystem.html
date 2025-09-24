@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SecuritySystem — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>SecuritySystem</h1>
+      <div class="page-meta">Source file: <span class="code">SecuritySystem.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">SecuritySystem</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>system</td><td><code>SecuritySystem.SecuritySystemType</code></td><td><span class="badge">Header: Security System Components</span></td><td></td></tr>
+<tr><td>anim</td><td><code>Animator</code></td><td></td><td></td></tr>
+<tr><td>laser</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>laserLight</td><td><code>Light</code></td><td></td><td></td></tr>
+<tr><td>isActive</td><td><code>bool</code></td><td>Switch state</td><td></td></tr>
+<tr><td>isAnimating</td><td><code>bool</code></td><td>Is the animation controller not at the end of an animation?</td><td></td></tr>
+<tr><td>trackingTarget</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>acquiredTarget</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>rend</td><td><code>MeshRenderer</code></td><td></td><td></td></tr>
+<tr><td>rotationPivotTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>desiredPivotRotation</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+<tr><td>selfTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>desiredSelfRotation</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+<tr><td>muzzleTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>seekUpdateProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>forgetProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>pulseProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>focusFlashCounter</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>activeTargets</td><td><code>List&lt;NewAIController.TrackingTarget&gt;</code></td><td></td><td>new List&lt;NewAIController.TrackingTarget&gt;()</td></tr>
+<tr><td>sweepProgress</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>awarenessIcon</td><td><code>InterfaceController.AwarenessIcon</code></td><td></td><td></td></tr>
+<tr><td>sentryFireProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>cameraSweep</td><td><code>AnimationCurve</code></td><td><span class="badge">Header: Settings</span></td><td></td></tr>
+<tr><td>focusGraceTime</td><td><code>float</code></td><td>How much time in seconds before this sounds an alarm/fires</td><td>3.5f</td></tr>
+<tr><td>focusGiveUpTime</td><td><code>float</code></td><td>How much time before this stops tracking a target that it has previously seen</td><td>5f</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Setup</td><td><code>void</code></td><td></td><td><code>Interactable newInteractable, bool inheritOpenStatusFromInteractable = true</code></td></tr>
+<tr><td>CreateEvidence</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>SetActive</td><td><code>void</code></td><td></td><td><code>bool open, bool skipAnimation = false</code></td></tr>
+<tr><td>UpdateMaterial</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnInvestigate</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>Actor newTarget, int escalation</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td><span class="badge">6</span> <span class="badge">0</span> <span class="badge">num2</span> <span class="badge">2</span> <span class="badge">num3</span> <span class="badge">4</span> <span class="badge">5</span></td><td><code></code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnEnable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetFocus</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>SecuritySystemType</h3>
+<pre><code>camera
+sentry</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

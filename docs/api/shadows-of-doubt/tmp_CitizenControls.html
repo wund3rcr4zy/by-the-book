@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CitizenControls — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CitizenControls</h1>
+      <div class="page-meta">Source file: <span class="code">CitizenControls.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CitizenControls</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>baseCitizenWalkSpeed</td><td><code>float</code></td><td>The base speed of a citizen <span class="badge">Header: Movement</span></td><td>1.85f</td></tr>
+<tr><td>baseCitizenRunSpeed</td><td><code>float</code></td><td>Citizen run speed multiplier</td><td>6f</td></tr>
+<tr><td>acceleration</td><td><code>AnimationCurve</code></td><td>Acceleration Curve</td><td></td></tr>
+<tr><td>decceleration</td><td><code>AnimationCurve</code></td><td>Decceleration Curve</td><td></td></tr>
+<tr><td>movementSpeedMultiplierRange</td><td><code>Vector2</code></td><td>Ranges for random speed multiplier</td><td>new Vector2(0.9f, 1.1f)</td></tr>
+<tr><td>citizenFaceSpeed</td><td><code>float</code></td><td>Speed citizen turns to face a new direction</td><td>20f</td></tr>
+<tr><td>citizenLookAtSpeed</td><td><code>Vector2</code></td><td>Range of speed of citizen turning head to face something</td><td>new Vector2(1f, 3f)</td></tr>
+<tr><td>citizenFootstepDistance</td><td><code>float</code></td><td>How far a citizen moves per footstep.</td><td>1f</td></tr>
+<tr><td>drunkMovementPenalty</td><td><code>float</code></td><td>Amount of movement speed to lose while drunk</td><td>0.3f</td></tr>
+<tr><td>drunkFallChance</td><td><code>float</code></td><td>Chance of falling over while drunk</td><td>0.5f</td></tr>
+<tr><td>capsuleMovementThickness</td><td><code>Vector2</code></td><td>Capsule collider changes thickness depending on movement</td><td>new Vector2(0.12f, 0.31f)</td></tr>
+<tr><td>baseScale</td><td><code>float</code></td><td>The average scale of the average in-game height (175.4). This is slightly shorter than the player who is slightly above average height. <span class="badge">Header: Visuals</span></td><td>0.85f</td></tr>
+<tr><td>speechBubbleHeight</td><td><code>float</code></td><td>How high above a citizens head is th speech bubble? <span class="badge">Header: Dialog</span></td><td>0.28f</td></tr>
+<tr><td>askAboutJob</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+<tr><td>maxSpeechBubbles</td><td><code>int</code></td><td>There maximum number of existing speech bubbles onscreen for new one line dialog to be triggered</td><td>2</td></tr>
+<tr><td>societalClassSavingsCurve</td><td><code>AnimationCurve</code></td><td><span class="badge">Header: Bank</span></td><td></td></tr>
+<tr><td>savingsBoostTrait</td><td><code>List&lt;CharacterTrait&gt;</code></td><td>Each of the following essentially boost the soc class by 0.1</td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>savingsDebuffTrait</td><td><code>List&lt;CharacterTrait&gt;</code></td><td>Each of the following essentially reduce the soc class by 0.1</td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>telephoneGreeting</td><td><code>DialogPreset</code></td><td><span class="badge">Header: Behaviour</span></td><td></td></tr>
+<tr><td>identifyNumberDialog</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+<tr><td>lastCallerDialog</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+<tr><td>policeDialog</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+<tr><td>coverUpOffer</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+<tr><td>coverUpBodyLocation</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+<tr><td>coverUpSuccess</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+<tr><td>coverUpConvoOptions</td><td><code>List&lt;EvidenceWitness.DialogOption&gt;</code></td><td></td><td>new List&lt;EvidenceWitness.DialogOption&gt;()</td></tr>
+<tr><td>fallbackTelephoneConversation</td><td><code>string</code></td><td>If no valid conversation is found, use this one</td><td></td></tr>
+<tr><td>minimumInvestigateTime</td><td><code>float</code></td><td>Minimum investigation time: The minimum time the AI is to keep the investigate goal at maximum priority (in-game time)</td><td>0.25f</td></tr>
+<tr><td>persuitChaseLogicAdditionPerSecond</td><td><code>float</code></td><td>How quickly the AI gains one &#x27;persuit lead&#x27; (this added per second)</td><td>0.66f</td></tr>
+<tr><td>maxChaseLogic</td><td><code>int</code></td><td>The maximum number of persuit logic leads the AI can acculumate</td><td>4</td></tr>
+<tr><td>persuitTimerThreshold</td><td><code>Vector2</code></td><td>Persuit response addition from shortest distance to longest distance</td><td>new Vector2(16f, 2f)</td></tr>
+<tr><td>persuitForgetThreshold</td><td><code>float</code></td><td>When target is not in range, how fast to forget them</td><td>1f</td></tr>
+<tr><td>hearingForgetThreshold</td><td><code>float</code></td><td>When heard an illegal sound, how fast to forget...</td><td>0.2f</td></tr>
+<tr><td>persuitMinInvestigationTimeMP</td><td><code>float</code></td><td>The multiplier for the minimum investiation time if the player is persued</td><td>1.5f</td></tr>
+<tr><td>sightingMinInvestigationTimeMP</td><td><code>float</code></td><td>The multiplier for the minimum investiation time if the citizen investiates a sighting</td><td>1.25f</td></tr>
+<tr><td>soundMinInvestigationTimeMP</td><td><code>float</code></td><td>The multiplier for the minimum investiation time if the citizen investiates a sound</td><td>1f</td></tr>
+<tr><td>lookAtGracePeriod</td><td><code>float</code></td><td>How much time passes after a sighting of highest rank before a citizen stops looking @ it</td><td>0.133f</td></tr>
+<tr><td>punchedResponseRange</td><td><code>float</code></td><td>If somebody in the same room is punched, trigger citizens in the same address within this range to respond...</td><td>11f</td></tr>
+<tr><td>defaultMemoryLimit</td><td><code>int</code></td><td>How many different citizens does can this person remember? <span class="badge">Header: Sightings</span></td><td>100</td></tr>
+<tr><td>citizenBaseRecoveryRate</td><td><code>float</code></td><td>Citizens recover this amount of health (normalized) over time (game time 1 hour) <span class="badge">Header: Combat</span></td><td>0.1f</td></tr>
+<tr><td>citizenBaseCombatSkillRange</td><td><code>Vector2</code></td><td>The starting value for citizen combat skill (how fast attacks are)</td><td>new Vector2(0.5f, 1.5f)</td></tr>
+<tr><td>citizenCombatHeftMultiplier</td><td><code>float</code></td><td>Multiplier for combat heft: See descriptors for how this works</td><td>0.25f</td></tr>
+<tr><td>throwMinRange</td><td><code>float</code></td><td>Minimum range for throwing an object</td><td>2f</td></tr>
+<tr><td>throwMaxRange</td><td><code>float</code></td><td>Minimum range for throwing an object</td><td>8f</td></tr>
+<tr><td>nerveDamageShockMultiplier</td><td><code>float</code></td><td>Shock damage on impact is multiplied by this</td><td>1f</td></tr>
+<tr><td>nerveWeaponDrawMultiplier</td><td><code>float</code></td><td>Nerve damage by a weapon draw is multiplied by this</td><td>1f</td></tr>
+<tr><td>nerveRecoveryRateMultiplier</td><td><code>float</code></td><td>Nerve recovery rate as a fraction of health recovery</td><td>0.3f</td></tr>
+<tr><td>doorBargeKOForceMultiplier</td><td><code>float</code></td><td></td><td>3f</td></tr>
+<tr><td>damageRecieveForceMultiplier</td><td><code>float</code></td><td>How the force multiplier scales with extra damage received</td><td>1f</td></tr>
+<tr><td>ragdollTransitionTime</td><td><code>float</code></td><td>How long it takes to transition from ragdoll landing position to the start of the get-up animation (seconds) <span class="badge">Header: Get up Limb Snapshot</span></td><td>0.68f</td></tr>
+<tr><td>getUpTimer</td><td><code>float</code></td><td>The length of the get up animation or longer</td><td>2f</td></tr>
+<tr><td>getUpManualAnimation</td><td><code>List&lt;CitizenControls.ManualAnimation&gt;</code></td><td></td><td></td></tr>
+<tr><td>stealthSkillApplicationRate</td><td><code>float</code></td><td>How quickly stealth skill is applied when standing still <span class="badge">Header: Skills</span></td><td>1f</td></tr>
+<tr><td>stealthSkillCancelRate</td><td><code>float</code></td><td>How quickly stealth skill is cancelled when moving</td><td>5f</td></tr>
+<tr><td>leftExtent</td><td><code>float</code></td><td><span class="badge">Header: LookAt Head Clamping</span></td><td>-70f</td></tr>
+<tr><td>rightExtent</td><td><code>float</code></td><td></td><td>70f</td></tr>
+<tr><td>upExtent</td><td><code>float</code></td><td></td><td>-18f</td></tr>
+<tr><td>downExtent</td><td><code>float</code></td><td></td><td>18f</td></tr>
+<tr><td>sittingYOffset</td><td><code>float</code></td><td>Animation offset of the citizens lower torso with a scale of 1... <span class="badge">Header: Animation</span></td><td></td></tr>
+<tr><td>armsStandingYOffset</td><td><code>float</code></td><td>Animation offset of the citizens arms with a scale of 1...</td><td></td></tr>
+<tr><td>unknownPrint</td><td><code>Texture2D</code></td><td><span class="badge">Header: Fingerprints</span></td><td></td></tr>
+<tr><td>prints</td><td><code>List&lt;Texture2D&gt;</code></td><td></td><td></td></tr>
+<tr><td>destitute</td><td><code>CharacterTrait</code></td><td><span class="badge">Header: Traits</span></td><td></td></tr>
+<tr><td>litterBug</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>likesTheRain</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>shoesNormal</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>shoesBoots</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>shoesHeels</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>coffeeLiker</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>teaLiker</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>bbCardTraits</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>bald</td><td><code>CharacterTrait</code></td><td><span class="badge">Header: Physical Traits</span></td><td></td></tr>
+<tr><td>shortHair</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>longHair</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>shoeSizeRange</td><td><code>Vector2</code></td><td></td><td>new Vector2(4f, 16f)</td></tr>
+<tr><td>nodeLocalSubdivisions</td><td><code>List&lt;Vector3&gt;</code></td><td>Subdivisions for AI navigation when inside nodes <span class="badge">Header: AI</span></td><td>new List&lt;Vector3&gt;()</td></tr>
+<tr><td>citizenStartingInventory</td><td><code>List&lt;CitizenControls.StartingInventory&gt;</code></td><td><span class="badge">Header: Starting Inventory</span></td><td>new List&lt;CitizenControls.StartingInventory&gt;()</td></tr>
+<tr><td>citizenInteractable</td><td><code>InteractablePreset</code></td><td><span class="badge">Header: Misc</span></td><td></td></tr>
+<tr><td>handInteractable</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>sleep</td><td><code>AIActionPreset</code></td><td></td><td></td></tr>
+<tr><td>matchWithPhoto</td><td><code>MatchPreset</code></td><td></td><td></td></tr>
+<tr><td>weakVisualSighting</td><td><code>MatchPreset</code></td><td></td><td></td></tr>
+<tr><td>mediumVisualSighting</td><td><code>MatchPreset</code></td><td></td><td></td></tr>
+<tr><td>strongVisualSighting</td><td><code>MatchPreset</code></td><td></td><td></td></tr>
+<tr><td>randomPassword</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>deadBodySearchInteractable</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>entryWound</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>exitWound</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>toothbrush</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>addressBook</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>umbrella</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>vomitSpatter</td><td><code>SpatterPatternPreset</code></td><td></td><td></td></tr>
+<tr><td>debugSelectCitizen</td><td><code>CitizenOutfitController</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+<tr><td>_instance</td><td><code>static CitizenControls</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ClearManualAnimation</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>AddManualKeyframe</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>DebugCitizensStuck</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class LimbPos</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>anchor</td><td><code>CitizenOutfitController.CharacterAnchor</code></td><td></td><td></td></tr>
+<tr><td>localPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>localRotation</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class ManualAnimation</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>timeline</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>limbData</td><td><code>List&lt;CitizenControls.LimbPos&gt;</code></td><td></td><td>new List&lt;CitizenControls.LimbPos&gt;()</td></tr>
+</tbody></table>
+<h3>class StartingInventory</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>presets</td><td><code>List&lt;InteractablePreset&gt;</code></td><td></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>baseChance</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>modifiers</td><td><code>List&lt;MurderPreset.MurdererModifierRule&gt;</code></td><td></td><td>new List&lt;MurderPreset.MurdererModifierRule&gt;()</td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

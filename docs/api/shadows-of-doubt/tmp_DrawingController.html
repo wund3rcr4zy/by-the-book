@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DrawingController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>DrawingController</h1>
+      <div class="page-meta">Source file: <span class="code">DrawingController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">DrawingController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>container</td><td><code>RectTransform</code></td><td><span class="badge">Header: Setup Components</span></td><td></td></tr>
+<tr><td>img</td><td><code>RawImage</code></td><td></td><td></td></tr>
+<tr><td>drawBrushRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>brushImage</td><td><code>RawImage</code></td><td></td><td></td></tr>
+<tr><td>drawingTex</td><td><code>Texture2D</code></td><td><span class="badge">Header: Generated Components</span></td><td></td></tr>
+<tr><td>isOver</td><td><code>bool</code></td><td><span class="badge">Header: State</span></td><td></td></tr>
+<tr><td>drawingActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>eraserMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lastPosValid</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lastValidLocalPos</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>brushColour</td><td><code>Color</code></td><td><span class="badge">Header: Settings</span></td><td>Color.white</td></tr>
+<tr><td>brush</td><td><code>Texture2D</code></td><td></td><td></td></tr>
+<tr><td>brushSize</td><td><code>Vector2</code></td><td></td><td>new Vector2(4f, 4f)</td></tr>
+<tr><td>startedDraw</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>setupButtons</td><td><code>bool</code></td><td><span class="badge">Header: Buttons</span></td><td></td></tr>
+<tr><td>windowButtonsController</td><td><code>WindowExtraControlsController</code></td><td></td><td></td></tr>
+<tr><td>toggleDrawingButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>colourButton</td><td><code>ColourSelectorButtonController</code></td><td></td><td></td></tr>
+<tr><td>eraserButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>clearButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPointerEnter</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnPointerExit</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>SetDrawingActive</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>ResetDrawingTexture</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetEraserMode</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetBrushColour</td><td><code>void</code></td><td></td><td><code>Color newCol</code></td></tr>
+<tr><td>SetBrushImage</td><td><code>void</code></td><td></td><td><code>Texture2D newBrush</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

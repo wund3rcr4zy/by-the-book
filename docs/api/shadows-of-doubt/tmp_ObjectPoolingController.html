@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ObjectPoolingController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>ObjectPoolingController</h1>
+      <div class="page-meta">Source file: <span class="code">ObjectPoolingController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">ObjectPoolingController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>useGradualSpawning</td><td><code>bool</code></td><td>Spawn object gradually instead of all at once <span class="badge">Header: Settings</span></td><td>true</td></tr>
+<tr><td>loadNewObjectPerFrame</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useGradualSpawning&quot;)</span></td><td>1</td></tr>
+<tr><td>loadPooledObjectPerFrame</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useGradualSpawning&quot;)</span></td><td>5</td></tr>
+<tr><td>usePooling</td><td><code>bool</code></td><td>Store uneeded objects in a list ready to be re-used</td><td>true</td></tr>
+<tr><td>maximumInteractablePoolCache</td><td><code>int</code></td><td>The maximum number of unrendered but loaded interactables to keep in the object pool. <span class="badge">EnableIf(&quot;usePooling&quot;)</span></td><td>1000</td></tr>
+<tr><td>useRange</td><td><code>bool</code></td><td>Use range for loading in objects</td><td>true</td></tr>
+<tr><td>loadRangeConfig</td><td><code>List&lt;ObjectPoolingController.ObjectLoadRangeConfig&gt;</code></td><td></td><td>new List&lt;ObjectPoolingController.ObjectLoadRangeConfig&gt;()</td></tr>
+<tr><td>maximumRangeCheckingPerFrame</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useRange&quot;)</span></td><td>50</td></tr>
+<tr><td>roomCacheLimit</td><td><code>bool</code></td><td>Enable room loading thresholds: When a certain number of rooms are loaded, unload uneeded ones down to a certain cached number <span class="badge">Header: Rooms</span></td><td>true</td></tr>
+<tr><td>maxRoomCache</td><td><code>int</code></td><td>Maximum number of rooms that are loaded at once before oldest is unloaded <span class="badge">EnableIf(&quot;roomCacheLimit&quot;)</span></td><td>100</td></tr>
+<tr><td>allowGradualRoomLoading</td><td><code>bool</code></td><td>Enables attempts to spread room loading across multiple frames; may not always be possible</td><td>true</td></tr>
+<tr><td>roomsLoadedPerFrame</td><td><code>int</code></td><td>Rooms loaded per frame if they are not immeditaley needed <span class="badge">EnableIf(&quot;allowGradualRoomLoading&quot;)</span></td><td>1</td></tr>
+<tr><td>interactablesLoaded</td><td><code>int</code></td><td><span class="badge">Header: Stats</span></td><td></td></tr>
+<tr><td>interactablesToLoadCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>interactablesRangeCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>updateObjectRangesTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>furntiureCheckCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>furnitureToLoadCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>furnitureRangeCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>interactablesCurrentlyPooled</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>interactableInstancesSaved</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>interactableFullPercentage</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>roomsLoaded</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>roomStuffToLoad</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>loadRanges</td><td><code>Dictionary&lt;int, float&gt;</code></td><td></td><td>new Dictionary&lt;int, float&gt;()</td></tr>
+<tr><td>interactableRangeToLoadList</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>interactableRangeToEnableDisableList</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>interactableLoadList</td><td><code>HashSet&lt;Interactable&gt;</code></td><td></td><td>new HashSet&lt;Interactable&gt;()</td></tr>
+<tr><td>furnitureRangeToLoadList</td><td><code>List&lt;FurnitureLocation&gt;</code></td><td></td><td>new List&lt;FurnitureLocation&gt;()</td></tr>
+<tr><td>furnitureRangeToEnableDisableList</td><td><code>HashSet&lt;FurnitureLocation&gt;</code></td><td></td><td>new HashSet&lt;FurnitureLocation&gt;()</td></tr>
+<tr><td>interactablePool</td><td><code>Dictionary&lt;InteractablePreset, HashSet&lt;Interactable&gt;&gt;</code></td><td></td><td>new Dictionary&lt;InteractablePreset, HashSet&lt;Interactable&gt;&gt;()</td></tr>
+<tr><td>entirePoolReference</td><td><code>HashSet&lt;Interactable&gt;</code></td><td></td><td>new HashSet&lt;Interactable&gt;()</td></tr>
+<tr><td>furnitureCheckingPool</td><td><code>HashSet&lt;FurnitureLocation&gt;</code></td><td></td><td>new HashSet&lt;FurnitureLocation&gt;()</td></tr>
+<tr><td>roomStuffQueuedToLoad</td><td><code>HashSet&lt;NewRoom&gt;</code></td><td></td><td>new HashSet&lt;NewRoom&gt;()</td></tr>
+<tr><td>UpdateObjectRange</td><td><code>Action</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static ObjectPoolingController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LateUpdate</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteInteractableCheckingPool</td><td><code>void</code></td><td></td><td><code>int maxPooledLoops, int maxNewObjectLoops</code></td></tr>
+<tr><td>ExecuteFurnitureCheckingPool</td><td><code>void</code></td><td></td><td><code>int maxLoops</code></td></tr>
+<tr><td>MarkAsToLoad</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Interactable interactable</code></td></tr>
+<tr><td>MarkAsNotNeeded</td><td><code>void</code></td><td></td><td><code>Interactable interactable</code></td></tr>
+<tr><td>MarkAsToLoad</td><td><code>void</code></td><td></td><td><code>FurnitureLocation furniture, bool forceSpawnImmediate = false</code></td></tr>
+<tr><td>MarkAsNotNeeded</td><td><code>void</code></td><td></td><td><code>FurnitureLocation furniture</code></td></tr>
+<tr><td>UpdateObjectRanges</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteUpdateObjectRanges</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteUpdateObjectRanges</td><td><code>void</code></td><td></td><td><code>bool forceImmediateSpawning = false</code></td></tr>
+<tr><td>SpawnRangeCheck</td><td><code>bool</code></td><td><span class="badge">i</span> <span class="badge">j</span> <span class="badge">k</span></td><td><code>Interactable interactable, out float distance</code></td></tr>
+<tr><td>SpawnRangeCheck</td><td><code>bool</code></td><td></td><td><code>FurnitureLocation furniture, out float distance</code></td></tr>
+<tr><td>GetInteractableObject</td><td><code>GameObject</code></td><td></td><td><code>Interactable interactable, out bool wasPooled, out bool isSelf</code></td></tr>
+<tr><td>RemoveFromPool</td><td><code>void</code></td><td></td><td><code>Interactable interactable</code></td></tr>
+<tr><td>PoolInteractable</td><td><code>void</code></td><td></td><td><code>Interactable interactable</code></td></tr>
+<tr><td>MarkRoomStuffToLoad</td><td><code>void</code></td><td></td><td><code>NewRoom room</code></td></tr>
+<tr><td>MarkRoomStuffNotNeeded</td><td><code>void</code></td><td></td><td><code>NewRoom room</code></td></tr>
+<tr><td>ExecuteRoomStuffPool</td><td><code>void</code></td><td></td><td><code>int maxPerFrame</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class ObjectLoadRangeConfig</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>range</td><td><code>ObjectPoolingController.ObjectLoadRange</code></td><td></td><td></td></tr>
+<tr><td>loadDistance</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>ObjectLoadRange</h3>
+<pre><code>veryClose
+close
+medium
+far
+veryFar
+maximum</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

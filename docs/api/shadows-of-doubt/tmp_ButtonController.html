@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ButtonController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>ButtonController</h1>
+      <div class="page-meta">Source file: <span class="code">ButtonController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">ButtonController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnPress</td><td><code>event ButtonController.Press</code></td><td></td><td></td></tr>
+<tr><td>OnHoverChange</td><td><code>event ButtonController.HoverChange</code></td><td></td><td></td></tr>
+<tr><td>OnButtonDown</td><td><code>event ButtonController.ButtonDown</code></td><td></td><td></td></tr>
+<tr><td>OnButtonUp</td><td><code>event ButtonController.ButtonUp</code></td><td></td><td></td></tr>
+<tr><td>rect</td><td><code>RectTransform</code></td><td>Reference to the rect transform component (assigned if not given) <span class="badge">Header: References</span></td><td></td></tr>
+<tr><td>button</td><td><code>Button</code></td><td>Reference to the button component (assigned if not given)</td><td></td></tr>
+<tr><td>rend</td><td><code>CanvasRenderer</code></td><td>Reference to the canvas renderer component (assigned if not given)</td><td></td></tr>
+<tr><td>background</td><td><code>Image</code></td><td>The background image for this button</td><td></td></tr>
+<tr><td>icon</td><td><code>Image</code></td><td>The icon image for this button</td><td></td></tr>
+<tr><td>text</td><td><code>TextMeshProUGUI</code></td><td>Text for this button</td><td></td></tr>
+<tr><td>tooltip</td><td><code>TooltipController</code></td><td>Tooltip control component</td><td></td></tr>
+<tr><td>juice</td><td><code>JuiceController</code></td><td>Juice controller for effects</td><td></td></tr>
+<tr><td>notifications</td><td><code>NotificationController</code></td><td>Used for notifications</td><td></td></tr>
+<tr><td>genericReference</td><td><code>object</code></td><td></td><td></td></tr>
+<tr><td>parentWindow</td><td><code>InfoWindow</code></td><td></td><td></td></tr>
+<tr><td>windowOf</td><td><code>Evidence</code></td><td></td><td></td></tr>
+<tr><td>tabOf</td><td><code>WindowTabController</code></td><td></td><td></td></tr>
+<tr><td>additionalHighlightRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>isOver</td><td><code>bool</code></td><td>Is this currently moused-over? <span class="badge">Header: State</span></td><td></td></tr>
+<tr><td>forceAdditionalHighlighted</td><td><code>bool</code></td><td>Force the additional/manual highlight</td><td></td></tr>
+<tr><td>additionalHighlighted</td><td><code>bool</code></td><td>Addition/manual highlight active</td><td></td></tr>
+<tr><td>interactable</td><td><code>bool</code></td><td>Interactable</td><td>true</td></tr>
+<tr><td>setupReferences</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isVirtualKeyboardCharacterButton</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lastLeftClick</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lastRightClick</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>baseColour</td><td><code>Color</code></td><td>Base colour used for built-in flash functionality <span class="badge">BoxGroup(&quot;Button Setup&quot;)</span></td><td>Color.white</td></tr>
+<tr><td>scrollRectAutoScroll</td><td><code>bool</code></td><td>If enabled, this will detect if it&#x27;s in a scroll rect, then adjust scroll accordingly when selected <span class="badge">BoxGroup(&quot;Button Setup&quot;)</span></td><td>true</td></tr>
+<tr><td>scrollVertical</td><td><code>bool</code></td><td><span class="badge">BoxGroup(&quot;Button Setup&quot;)</span> <span class="badge">EnableIf(&quot;scrollRectAutoScroll&quot;)</span></td><td>true</td></tr>
+<tr><td>scrollHorizontal</td><td><code>bool</code></td><td><span class="badge">BoxGroup(&quot;Button Setup&quot;)</span> <span class="badge">EnableIf(&quot;scrollRectAutoScroll&quot;)</span></td><td></td></tr>
+<tr><td>findableForAutoNavigation</td><td><code>bool</code></td><td>Can this button be found using automatic navigation of other buttons? <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td>true</td></tr>
+<tr><td>refreshControllerNavigationOnSetup</td><td><code>bool</code></td><td>Automatically refresh the controller navigation when set up <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>refreshControllerNavigationOnSelect</td><td><code>bool</code></td><td>Automatically refresh the controller navigation when selected <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>refreshControllerNavigationOnPress</td><td><code>bool</code></td><td>Automatically refresh the controller navigation when pressed <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>includeInactiveSelectables</td><td><code>bool</code></td><td>When looking for navigation selectables, include inactive objects <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>selectableSearchParentHierarchyThreshold</td><td><code>int</code></td><td>When looking for navigation selectables, how many transform parents up should it search for other buttons? <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span> <span class="badge">Range(1f, 10f)</span> <span class="badge">DisableIf(&quot;isEvidenceWindowButton&quot;)</span></td><td>1</td></tr>
+<tr><td>isEvidenceWindowButton</td><td><code>bool</code></td><td>A shortcut instead of above; search for components within this window... <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>allowLeftNavigation</td><td><code>bool</code></td><td>When auto navigation is setup, should we allow a search for selectables on the left? <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td>true</td></tr>
+<tr><td>allowRightNavigation</td><td><code>bool</code></td><td>When auto navigation is setup, should we allow a search for selectables on the right? <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td>true</td></tr>
+<tr><td>allowUpNavigation</td><td><code>bool</code></td><td>When auto navigation is setup, should we allow a search for selectables up? <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td>true</td></tr>
+<tr><td>allowDownNavigation</td><td><code>bool</code></td><td>When auto navigation is setup, should we allow a search for selectables down? <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td>true</td></tr>
+<tr><td>selectSaveGameObjectOnUp</td><td><code>bool</code></td><td>When auto navigation is setup, override a found object on &#x27;up&#x27; with a currently selected save game button (if there is one) <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>preferForwardButtonOnRight</td><td><code>bool</code></td><td>When auto navigation is setup, override a found object on &#x27;right&#x27; with a button labeled forward, if there is one <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>thisNavRectPoint</td><td><code>ButtonController.NavRectPoint</code></td><td>When measuring distances to to other nav buttons, use this point of the rect <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>otherNavRectPoint</td><td><code>ButtonController.NavRectPoint</code></td><td>When measuring distances to to other nav buttons, use this point of the other rect <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>ignoreParentsNamed</td><td><code>List&lt;string&gt;</code></td><td>When selecting from auto navigation, ignore the following objects if they are parents <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>secondaryIsRightClick</td><td><code>bool</code></td><td>When using a controller, the secondary action button is classed as a right click <span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td></td></tr>
+<tr><td>preferNavRankings</td><td><code>List&lt;ButtonController.PreferNav&gt;</code></td><td><span class="badge">BoxGroup(&quot;Auto Navigation&quot;)</span></td><td>new List&lt;ButtonController.PreferNav&gt;()</td></tr>
+<tr><td>useAutomaticText</td><td><code>bool</code></td><td>Automatically set the button text <span class="badge">BoxGroup(&quot;Text&quot;)</span></td><td></td></tr>
+<tr><td>textDictionary</td><td><code>string</code></td><td>Use this dictionary reference to get the text <span class="badge">EnableIf(&quot;useAutomaticText&quot;)</span> <span class="badge">BoxGroup(&quot;Text&quot;)</span></td><td>&quot;ui.interface&quot;</td></tr>
+<tr><td>textReference</td><td><code>string</code></td><td>Use this reference to get the text <span class="badge">BoxGroup(&quot;Text&quot;)</span> <span class="badge">EnableIf(&quot;useAutomaticText&quot;)</span></td><td></td></tr>
+<tr><td>casing</td><td><code>Strings.Casing</code></td><td><span class="badge">BoxGroup(&quot;Text&quot;)</span> <span class="badge">EnableIf(&quot;useAutomaticText&quot;)</span></td><td></td></tr>
+<tr><td>menuMouseoverReference</td><td><code>string</code></td><td><span class="badge">BoxGroup(&quot;Text&quot;)</span></td><td></td></tr>
+<tr><td>uninteractableTextAlpha</td><td><code>float</code></td><td><span class="badge">BoxGroup(&quot;Interactability&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td>0.25f</td></tr>
+<tr><td>interactableTextAlpha</td><td><code>float</code></td><td><span class="badge">BoxGroup(&quot;Interactability&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>defaultSelectionPriority</td><td><code>int</code></td><td>If nothing is selected, the priority of this button being the defauly selection vs others <span class="badge">BoxGroup(&quot;Interactability&quot;)</span> <span class="badge">Range(-2f, 2f)</span></td><td></td></tr>
+<tr><td>useAdditionalHighlight</td><td><code>bool</code></td><td>Use the additional/manual highlight functionality <span class="badge">BoxGroup(&quot;Additional Highlighter&quot;)</span></td><td>true</td></tr>
+<tr><td>additionalHighlightPrefab</td><td><code>GameObject</code></td><td>Prefab that acts as the additional/manual highlighter. If empty a default highlighter will be used. <span class="badge">BoxGroup(&quot;Additional Highlighter&quot;)</span></td><td></td></tr>
+<tr><td>additionalHighlightColour</td><td><code>Color</code></td><td>Colour applied to the additional/manual highlighter <span class="badge">BoxGroup(&quot;Additional Highlighter&quot;)</span></td><td>Color.white</td></tr>
+<tr><td>additionalHighlightUninteractableColour</td><td><code>Color</code></td><td>Colour applied to the additional/manual highlighter when uninteractable <span class="badge">BoxGroup(&quot;Additional Highlighter&quot;)</span></td><td>Color.gray</td></tr>
+<tr><td>additionalHighlightAtFront</td><td><code>bool</code></td><td>Set the additional/manual highlight to the front <span class="badge">BoxGroup(&quot;Additional Highlighter&quot;)</span></td><td></td></tr>
+<tr><td>additionalHighlightRectModifier</td><td><code>Vector4</code></td><td>Add to the rect size of the highlighter <span class="badge">BoxGroup(&quot;Additional Highlighter&quot;)</span></td><td>Vector4.zero</td></tr>
+<tr><td>additionalHImage</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>nudgeOnClick</td><td><code>bool</code></td><td><span class="badge">BoxGroup(&quot;Juice&quot;)</span></td><td>true</td></tr>
+<tr><td>glowOnHighlight</td><td><code>bool</code></td><td><span class="badge">BoxGroup(&quot;Juice&quot;)</span></td><td>true</td></tr>
+<tr><td>useGenericAudioSounds</td><td><code>bool</code></td><td>Use generic button sounds <span class="badge">BoxGroup(&quot;Audio&quot;)</span></td><td>true</td></tr>
+<tr><td>buttonType</td><td><code>ButtonController.ButtonAudioType</code></td><td><span class="badge">BoxGroup(&quot;Audio&quot;)</span> <span class="badge">EnableIf(&quot;useGenericAudioSounds&quot;)</span></td><td></td></tr>
+<tr><td>buttonDown</td><td><code>AudioEvent</code></td><td><span class="badge">BoxGroup(&quot;Audio&quot;)</span> <span class="badge">DisableIf(&quot;useGenericAudioSounds&quot;)</span></td><td></td></tr>
+<tr><td>clickPrimary</td><td><code>AudioEvent</code></td><td><span class="badge">DisableIf(&quot;useGenericAudioSounds&quot;)</span> <span class="badge">BoxGroup(&quot;Audio&quot;)</span></td><td></td></tr>
+<tr><td>clickSecondary</td><td><code>AudioEvent</code></td><td><span class="badge">BoxGroup(&quot;Audio&quot;)</span> <span class="badge">DisableIf(&quot;useGenericAudioSounds&quot;)</span></td><td></td></tr>
+<tr><td>rightClick</td><td><code>AudioEvent</code></td><td><span class="badge">BoxGroup(&quot;Audio&quot;)</span> <span class="badge">DisableIf(&quot;useGenericAudioSounds&quot;)</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>SetupReferences</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">Button(&quot;Setup References&quot;, 0)</span></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>VisualUpdate</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>UpdateButtonText</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>UpdateTooltipText</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>SetInteractable</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>bool val</code></td></tr>
+<tr><td>OnPointerClick</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnPointerDown</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnPointerUp</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnLeftClick</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnRightClick</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnLeftDoubleClick</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnRightDoubleClick</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnPointerEnter</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnSelect</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>AutoScroll</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SendTextContentToVirtualKeyboard</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnEnable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPointerExit</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnDeselect</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnHoverStart</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnHoverEnd</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>SetButtonBaseColour</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>Color col</code></td></tr>
+<tr><td>SetupAdditionalHighlight</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateAdditionalHighlight</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>SetForceAdditionalHighlight</td><td><code>void</code></td><td></td><td><code>bool newVal</code></td></tr>
+<tr><td>Flash</td><td><code>void</code></td><td></td><td><code>int repeat, Color flashColour</code></td></tr>
+<tr><td>FlashColour</td><td><code>IEnumerator</code></td><td></td><td><code>int repeat, Color flashColour</code></td></tr>
+<tr><td>RefreshNavEndOfFrame</td><td><code>IEnumerator</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RefreshAutomaticNavigation</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RefreshAutomaticNavigation</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>bool enableLeft, bool enableRight, bool enableUp, bool enableDown, bool includeInactive</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class NavRanking</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>button</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>score</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dir</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class PreferNav</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>button</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>score</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dir</td><td><code>ButtonController.NavDir</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>NavRectPoint</h3>
+<pre><code>center
+min
+max</code></pre>
+<h3>ButtonAudioType</h3>
+<pre><code>normal
+forward
+back
+tickBox</code></pre>
+<h3>NavDir</h3>
+<pre><code>up
+down
+left
+right</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

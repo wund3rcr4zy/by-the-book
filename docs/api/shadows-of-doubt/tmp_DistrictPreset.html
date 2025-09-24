@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DistrictPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>DistrictPreset</h1>
+      <div class="page-meta">Source file: <span class="code">DistrictPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">DistrictPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>generationPriority</td><td><code>Vector2</code></td><td>How important is it to generate this district first <span class="badge">Header: Generation</span></td><td></td></tr>
+<tr><td>limitToOne</td><td><code>bool</code></td><td>Can there be more than 1 of these districts?</td><td>true</td></tr>
+<tr><td>cityRatio</td><td><code>float</code></td><td>Distict size as ratio of the city <span class="badge">Range(0.1f, 0.5f)</span></td><td>0.2f</td></tr>
+<tr><td>minimumSize</td><td><code>int</code></td><td>Hard minimum size</td><td>1</td></tr>
+<tr><td>maximumSize</td><td><code>int</code></td><td>Hard maximum size</td><td>6</td></tr>
+<tr><td>mustBeOnCoast</td><td><code>bool</code></td><td>This district must be located on the coast</td><td></td></tr>
+<tr><td>centreWeighting</td><td><code>float</code></td><td>How important is it that this district is located near the centre of the city? <span class="badge">Range(-0.5f, 0.5f)</span></td><td></td></tr>
+<tr><td>aliterationWeight</td><td><code>int</code></td><td>Chance of alliteration with prefix. This will add words with the same letter to the suffix to increase the chances of picking them by this amount <span class="badge">Range(0f, 15f)</span> <span class="badge">Header: Naming</span></td><td>1</td></tr>
+<tr><td>prefixOrSuffixChance</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td>0.8f</td></tr>
+<tr><td>prefixList</td><td><code>List&lt;string&gt;</code></td><td>Use this name list to pick a prefix</td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>mainChance</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>mainNamingList</td><td><code>List&lt;string&gt;</code></td><td>Use this name list to pick a main name</td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>suffixList</td><td><code>List&lt;string&gt;</code></td><td>Append a random selection of this suffix list to the name</td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>minimumDensity</td><td><code>BuildingPreset.Density</code></td><td><span class="badge">Header: Composition</span></td><td></td></tr>
+<tr><td>maximumDensity</td><td><code>BuildingPreset.Density</code></td><td></td><td>BuildingPreset.Density.veryHigh</td></tr>
+<tr><td>minimumLandValue</td><td><code>BuildingPreset.LandValue</code></td><td></td><td></td></tr>
+<tr><td>maximumLandValue</td><td><code>BuildingPreset.LandValue</code></td><td></td><td>BuildingPreset.LandValue.veryHigh</td></tr>
+<tr><td>affectEthnicity</td><td><code>bool</code></td><td>Affect the ethnicity of the citizens in this district...</td><td></td></tr>
+<tr><td>ethnicityFrequencyModifiers</td><td><code>List&lt;SocialStatistics.EthnicityFrequency&gt;</code></td><td><span class="badge">EnableIf(&quot;affectEthnicity&quot;)</span></td><td>new List&lt;SocialStatistics.EthnicityFrequency&gt;()</td></tr>
+<tr><td>sceneProfile</td><td><code>SessionData.SceneProfile</code></td><td><span class="badge">Header: Environment</span></td><td></td></tr>
+<tr><td>alterStreetAreaLighting</td><td><code>bool</code></td><td>Change street light area colours</td><td>true</td></tr>
+<tr><td>possibleColours</td><td><code>List&lt;Color&gt;</code></td><td><span class="badge">EnableIf(&quot;alterStreetAreaLighting&quot;)</span></td><td>new List&lt;Color&gt;()</td></tr>
+<tr><td>lightOperation</td><td><code>DistrictPreset.AffectStreetAreaLights</code></td><td>This is used in combination with the following to adjust street area lighting <span class="badge">EnableIf(&quot;alterStreetAreaLighting&quot;)</span></td><td></td></tr>
+<tr><td>lightAmount</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;alterStreetAreaLighting&quot;)</span></td><td>1f</td></tr>
+<tr><td>brightnessModifier</td><td><code>float</code></td><td>This is added to brightness <span class="badge">EnableIf(&quot;alterStreetAreaLighting&quot;)</span></td><td></td></tr>
+<tr><td>copyFrom</td><td><code>DistrictPreset</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>CopyFrom</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>AffectStreetAreaLights</h3>
+<pre><code>lerp
+multiply
+add</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

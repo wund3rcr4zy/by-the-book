@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InteractionController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>InteractionController</h1>
+      <div class="page-meta">Source file: <span class="code">InteractionController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">InteractionController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnReturnFromLockedIn</td><td><code>event InteractionController.ReturnFromLockedIn</code></td><td></td><td></td></tr>
+<tr><td>OnInteractionActionCompleted</td><td><code>event InteractionController.InteractionActionCompleted</code></td><td></td><td></td></tr>
+<tr><td>OnInteractionActionProgressChange</td><td><code>event InteractionController.InteractionActionProgressChange</code></td><td></td><td></td></tr>
+<tr><td>OnInteractionActionLookedAway</td><td><code>event InteractionController.InteractionActionLookedAway</code></td><td></td><td></td></tr>
+<tr><td>OnInteractionActionCancelled</td><td><code>event InteractionController.InteractionActionCancelled</code></td><td></td><td></td></tr>
+<tr><td>currentInteractions</td><td><code>Dictionary&lt;InteractablePreset.InteractionKey, InteractionController.InteractionSetting&gt;</code></td><td><span class="badge">Header: Interaction</span></td><td>new Dictionary&lt;InteractablePreset.InteractionKey, InteractionController.InteractionSetting&gt;()</td></tr>
+<tr><td>allInteractionKeys</td><td><code>List&lt;InteractablePreset.InteractionKey&gt;</code></td><td></td><td></td></tr>
+<tr><td>nearbyInteractables</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>selectionIcons</td><td><code>List&lt;SelectionIconController&gt;</code></td><td></td><td>new List&lt;SelectionIconController&gt;()</td></tr>
+<tr><td>nearbyInteractablesHint</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>inputCooldown</td><td><code>float</code></td><td><span class="badge">Header: Player State</span></td><td></td></tr>
+<tr><td>lookingAtInteractable</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>displayingInteraction</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>previousLookingAtInteractable</td><td><code>InteractableController</code></td><td></td><td></td></tr>
+<tr><td>currentLookingAtInteractable</td><td><code>InteractableController</code></td><td></td><td></td></tr>
+<tr><td>currentLookAtTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>currentLookingAtReadingRange</td><td><code>InteractableController</code></td><td></td><td></td></tr>
+<tr><td>currentInteractable</td><td><code>InteractableController</code></td><td></td><td></td></tr>
+<tr><td>interactionMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>distanceRecognitionMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>readingMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>readingModeTransition</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>readingModeCoroutine</td><td><code>Coroutine</code></td><td></td><td></td></tr>
+<tr><td>interactionAnimationModifier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>interactionLookProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>carryingObject</td><td><code>InteractableController</code></td><td></td><td></td></tr>
+<tr><td>addedToDoorInteractionList</td><td><code>List&lt;NewDoor&gt;</code></td><td></td><td>new List&lt;NewDoor&gt;()</td></tr>
+<tr><td>currentlyDragging</td><td><code>RigidbodyDragObject</code></td><td></td><td></td></tr>
+<tr><td>playerPreviousRaycastHit</td><td><code>RaycastHit</code></td><td></td><td></td></tr>
+<tr><td>playerCurrentRaycastHit</td><td><code>RaycastHit</code></td><td></td><td></td></tr>
+<tr><td>lockedInInteraction</td><td><code>Interactable</code></td><td><span class="badge">Header: Locked-In Interaction</span></td><td></td></tr>
+<tr><td>lockedInInteractionRef</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>hideInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>activeInteractionAction</td><td><code>bool</code></td><td><span class="badge">Header: Interaction Action</span></td><td></td></tr>
+<tr><td>interactionActionThreshold</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>interactionActionMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>interactionActionName</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>activeInteractionActionLookCheck</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>canFailLookCheck</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lockpickGraphics</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>cancelInteractionIfOutOfRange</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>lastLookAtForInteraction</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>discoveryOverTime</td><td><code>Dictionary&lt;Interactable, float&gt;</code></td><td></td><td>new Dictionary&lt;Interactable, float&gt;()</td></tr>
+<tr><td>discoveryOverTimeEvidence</td><td><code>Dictionary&lt;Evidence, float&gt;</code></td><td></td><td>new Dictionary&lt;Evidence, float&gt;()</td></tr>
+<tr><td>discoveryOverTimeMeta</td><td><code>Dictionary&lt;MetaObject, float&gt;</code></td><td></td><td>new Dictionary&lt;MetaObject, float&gt;()</td></tr>
+<tr><td>discoveryOverTimeDiscovery</td><td><code>Dictionary&lt;EvidenceMultiPage.MultiPageContent, float&gt;</code></td><td></td><td>new Dictionary&lt;EvidenceMultiPage.MultiPageContent, float&gt;()</td></tr>
+<tr><td>spawnedProgressControllers</td><td><code>List&lt;LockpickProgressController&gt;</code></td><td></td><td>new List&lt;LockpickProgressController&gt;()</td></tr>
+<tr><td>sabotageInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>dialogMode</td><td><code>bool</code></td><td><span class="badge">Header: Dialog</span></td><td></td></tr>
+<tr><td>isRemote</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>dialogTransition</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dialogType</td><td><code>InteractionController.ConversationType</code></td><td></td><td></td></tr>
+<tr><td>citizenNameText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>talkingTo</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>remoteOverride</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>dialogOptions</td><td><code>List&lt;DialogButtonController&gt;</code></td><td></td><td>new List&lt;DialogButtonController&gt;()</td></tr>
+<tr><td>dialogSelection</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>moreOptionsScrollUpArrow</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>moreOptionsScrollDownArrow</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>mugger</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>debtCollector</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>inOut</td><td><code>bool</code></td><td><span class="badge">Header: Interface</span></td><td></td></tr>
+<tr><td>inOutProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>displayProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lockpickLoop</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static InteractionController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartDecorEdit</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">interactionKey</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">l</span></td><td><code></code></td></tr>
+<tr><td>SetCurrentPlayerInteraction</td><td><code>void</code></td><td></td><td><code>InteractablePreset.InteractionKey key, Interactable newInteractable, Interactable.InteractableCurrentAction newCurrentAction, bool fpsItem = false, int forcePriority = -1</code></td></tr>
+<tr><td>DisplayInteractionCursor</td><td><code>void</code></td><td><span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span></td><td><code>bool val, bool forceUpdate = false</code></td></tr>
+<tr><td>AlignInteractionIcons</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetDistanceRecognitionMode</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetReadingMode</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code>bool val, bool stopImmediately</code></td></tr>
+<tr><td>UpdateReadingModeText</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ReadingMode</td><td><code>IEnumerator</code></td><td><span class="badge">1</span> <span class="badge">2</span> <span class="badge">5</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">2</span> <span class="badge">0</span> <span class="badge">num3</span> <span class="badge">5</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">2</span> <span class="badge">0</span> <span class="badge">num4</span></td><td><code></code></td></tr>
+<tr><td>UpdateInteractionText</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateInteractionText</td><td><code>void</code></td><td></td><td><code>string newText</code></td></tr>
+<tr><td>InteractionRaycastCheck</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPlayerLookAtChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPlayerLookAtInteractableChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetLockedInInteractionMode</td><td><code>void</code></td><td></td><td><code>Interactable val, int reference = 0, bool dropCarriedCheck = true</code></td></tr>
+<tr><td>SetInteractionAction</td><td><code>void</code></td><td></td><td><code>float startingValue, float newThreshold, float increaseRate, string dictName, bool isIllegal, bool useLockpicks, Transform lookAtToComplete, bool cancelIfTooFar = true</code></td></tr>
+<tr><td>SetIllegalActionActive</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code>bool val</code></td></tr>
+<tr><td>CancelInteractionAction</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CompleteInteractionAction</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>PickUp</td><td><code>void</code></td><td></td><td><code>Interactable newObj</code></td></tr>
+<tr><td>SetDialog</td><td><code>void</code></td><td></td><td><code>bool val, Interactable newTalkingTo, bool newIsRemote = false, Interactable newRemoteOverrideInteractable = null, InteractionController.ConversationType newConvoType = InteractionController.ConversationType.normal</code></td></tr>
+<tr><td>RefreshDialogOptions</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>SetDialogSelection</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code>int newVal</code></td></tr>
+<tr><td>OnSabotage</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Interactable inter</code></td></tr>
+<tr><td>OnSabotageProgressChange</td><td><code>void</code></td><td></td><td><code>float amountChangeThisFrame, float amountToal</code></td></tr>
+<tr><td>OnCompleteSabotage</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnReturnFromSabotage</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetValidPlayerActionIllegal</td><td><code>bool</code></td><td></td><td><code>Interactable inter, NewNode location, bool allowPublic = true, bool illegalIfNotPlayersHome = true</code></td></tr>
+<tr><td>UpdateNearbyInteractables</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ClearNearbyInteractables</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetValidNearbyInteractables</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td><code>NewNode node</code></td></tr>
+<tr><td>FocusOnInteractable</td><td><code>void</code></td><td></td><td><code>Interactable interactable</code></td></tr>
+<tr><td>UpdateInteractionIcons</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateHighlightedInteractionIcon</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class InteractionSetting</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>currentAction</td><td><code>InteractablePreset.InteractionAction</code></td><td></td><td></td></tr>
+<tr><td>currentSetting</td><td><code>Interactable.InteractableCurrentAction</code></td><td></td><td></td></tr>
+<tr><td>interactable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>isFPSItem</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>audioEvent</td><td><code>AudioEvent</code></td><td></td><td></td></tr>
+<tr><td>priority</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>actionText</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>newUIRef</td><td><code>ControlDisplayController</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>ConversationType</h3>
+<pre><code>normal
+mugging
+loanSharkVisit
+accuseMurderer
+killerCleanUp</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

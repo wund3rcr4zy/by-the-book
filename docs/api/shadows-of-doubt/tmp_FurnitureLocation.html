@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FurnitureLocation — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>FurnitureLocation</h1>
+      <div class="page-meta">Source file: <span class="code">FurnitureLocation.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">FurnitureLocation</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>furnitureClasses</td><td><code>List&lt;FurnitureClass&gt;</code></td><td></td><td>new List&lt;FurnitureClass&gt;()</td></tr>
+<tr><td>angle</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>offset</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>anchorNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>coversNodes</td><td><code>List&lt;NewNode&gt;</code></td><td></td><td>new List&lt;NewNode&gt;()</td></tr>
+<tr><td>cluster</td><td><code>FurnitureClusterLocation</code></td><td></td><td></td></tr>
+<tr><td>useFOVBLock</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>fovDirection</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>fovMaxDistance</td><td><code>int</code></td><td></td><td>5</td></tr>
+<tr><td>scaleMultiplier</td><td><code>Vector3</code></td><td></td><td>Vector3.one</td></tr>
+<tr><td>usage</td><td><code>List&lt;Interactable.UsagePoint&gt;</code></td><td></td><td>new List&lt;Interactable.UsagePoint&gt;()</td></tr>
+<tr><td>sublocations</td><td><code>Dictionary&lt;NewNode, List&lt;Vector3&gt;&gt;</code></td><td></td><td>new Dictionary&lt;NewNode, List&lt;Vector3&gt;&gt;()</td></tr>
+<tr><td>furniture</td><td><code>FurniturePreset</code></td><td></td><td></td></tr>
+<tr><td>spawnedObject</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>meshes</td><td><code>List&lt;MeshRenderer&gt;</code></td><td></td><td>new List&lt;MeshRenderer&gt;()</td></tr>
+<tr><td>pickedMaterials</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>createdInteractables</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>pickedOwners</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>pickedArt</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>userPlaced</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>diagonalAngle</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>matKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>integratedInteractables</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>integratedIDAssign</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>spawnedInteractables</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>art</td><td><code>ArtPreset</code></td><td></td><td></td></tr>
+<tr><td>artMatKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>loadOwners</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>ownerMap</td><td><code>Dictionary&lt;FurnitureLocation.OwnerKey, int&gt;</code></td><td></td><td>new Dictionary&lt;FurnitureLocation.OwnerKey, int&gt;()</td></tr>
+<tr><td>debugOwners</td><td><code>List&lt;MonoBehaviour&gt;</code></td><td></td><td>new List&lt;MonoBehaviour&gt;()</td></tr>
+<tr><td>human</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>address</td><td><code>NewAddress</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>AssignID</td><td><code>void</code></td><td></td><td><code>NewRoom fromRoom</code></td></tr>
+<tr><td>RaiseLightswitch</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DiagonalRotation</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SpawnObject</td><td><code>void</code></td><td></td><td><code>bool forceSpawnImmediate = false</code></td></tr>
+<tr><td>DespawnObject</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">9</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">num2</span> <span class="badge">8</span> <span class="badge">7</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">num3</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">6</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">num4</span></td><td><code></code></td></tr>
+<tr><td>Delete</td><td><code>void</code></td><td></td><td><code>bool removeIntegratedInteractables, FurnitureClusterLocation.RemoveInteractablesOption removeSpawnedInteractables</code></td></tr>
+<tr><td>RemoveSpawnedInteractables</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RemoveIntegratedInteractables</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>CreateInteractables</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AssignOwner</td><td><code>void</code></td><td><span class="badge">num</span></td><td><code>Human newOwner, bool updateIntegratedObjectOwnership</code></td></tr>
+<tr><td>AssignOwner</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">this</span></td><td><code>NewAddress newOwner, bool updateIntegratedObjectOwnership</code></td></tr>
+<tr><td>UpdateIntegratedObjectOwnership</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetWorldAveragePosition</td><td><code>Vector3</code></td><td><span class="badge">8</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">7</span> <span class="badge">8</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">7</span></td><td><code></code></td></tr>
+<tr><td>CalculateWalkableSublocations</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetSubObjectLocalPosition</td><td><code>Vector3</code></td><td><span class="badge">newNode</span></td><td><code>FurniturePreset.SubObject subObj</code></td></tr>
+<tr><td>GetSubObjectLocalEuler</td><td><code>Vector3</code></td><td></td><td><code>FurniturePreset.SubObject subObj</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RainParticleController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>RainParticleController</h1>
+      <div class="page-meta">Source file: <span class="code">RainParticleController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">RainParticleController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>speed</td><td><code>Vector2</code></td><td>Rain speed <span class="badge">Header: Rain Settings</span></td><td>new Vector2(30f, 38f)</td></tr>
+<tr><td>spawnHeight</td><td><code>float</code></td><td>Spawn particles this high (local position)</td><td>20f</td></tr>
+<tr><td>rainFloorWorldYPos</td><td><code>float</code></td><td>The world Y position upon which the particles are set to the top of the simulation.</td><td>-5f</td></tr>
+<tr><td>spawnInterval</td><td><code>Vector2</code></td><td>Minimum time between spawning particles (seconds)</td><td>new Vector2(1f, 1.5f)</td></tr>
+<tr><td>particlePrefab</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>rotationEuler</td><td><code>Vector3</code></td><td></td><td>new Vector3(0.01f, 0.01f, 0.01f)</td></tr>
+<tr><td>speedSnow</td><td><code>Vector2</code></td><td>Rain speed <span class="badge">Header: Snow Settings</span></td><td>new Vector2(30f, 38f)</td></tr>
+<tr><td>spawnHeightSnow</td><td><code>float</code></td><td>Spawn particles this high (local position)</td><td>2f</td></tr>
+<tr><td>snowFloorWorldYPos</td><td><code>float</code></td><td>The world Y position upon which the particles are set to the top of the simulation.</td><td>-5f</td></tr>
+<tr><td>spawnIntervalSnow</td><td><code>Vector2</code></td><td>Minimum time between spawning particles (seconds)</td><td>new Vector2(1f, 1.5f)</td></tr>
+<tr><td>particlePrefabSnow</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>rotationEulerSnow</td><td><code>Vector3</code></td><td></td><td>new Vector3(0.01f, 0.01f, 0.01f)</td></tr>
+<tr><td>billboard</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>desiredParticleCount</td><td><code>int</code></td><td><span class="badge">Header: State</span></td><td>20</td></tr>
+<tr><td>actualParticleCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>particles</td><td><code>List&lt;RainParticleController.RainParticle&gt;</code></td><td></td><td>new List&lt;RainParticleController.RainParticle&gt;()</td></tr>
+<tr><td>spawnIntervalTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>snowMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>validSpawnNodes</td><td><code>List&lt;NewNode&gt;</code></td><td></td><td>new List&lt;NewNode&gt;()</td></tr>
+<tr><td>_instance</td><td><code>static RainParticleController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetSnowMode</td><td><code>void</code></td><td></td><td><code>bool val, bool forceUpdate = false</code></td></tr>
+<tr><td>UpdateValidSpawnNodes</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetSpawnPosition</td><td><code>bool</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code>out Vector3 spawn</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class RainParticle</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>trans</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>speed</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

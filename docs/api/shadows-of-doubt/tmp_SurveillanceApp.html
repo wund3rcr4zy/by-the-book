@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SurveillanceApp — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>SurveillanceApp</h1>
+      <div class="page-meta">Source file: <span class="code">SurveillanceApp.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">SurveillanceApp</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>titleText</td><td><code>TextMeshProUGUI</code></td><td><span class="badge">Header: Components</span></td><td></td></tr>
+<tr><td>cameraSelectionText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>timelineRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>timelineScrub</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>scrubUI</td><td><code>ComputerOSUIComponent</code></td><td></td><td></td></tr>
+<tr><td>timelineEntryPrefab</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>timestampText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>timestampTextShadow</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>locationstampText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>locationstampTextShadow</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>renderTexturePrefab</td><td><code>RenderTexture</code></td><td></td><td></td></tr>
+<tr><td>captureDisplay</td><td><code>RawImage</code></td><td></td><td></td></tr>
+<tr><td>captureRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>yesterdayButton</td><td><code>Button</code></td><td></td><td></td></tr>
+<tr><td>todayButton</td><td><code>Button</code></td><td></td><td></td></tr>
+<tr><td>actorNextButton</td><td><code>Button</code></td><td></td><td></td></tr>
+<tr><td>actorPrevButton</td><td><code>Button</code></td><td></td><td></td></tr>
+<tr><td>printButtonText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>actorPageRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>camDisplayPageRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>actorImage</td><td><code>RawImage</code></td><td></td><td></td></tr>
+<tr><td>actorNameText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>acquireNameButton</td><td><code>Button</code></td><td></td><td></td></tr>
+<tr><td>actorBackButton</td><td><code>Button</code></td><td></td><td></td></tr>
+<tr><td>actorPageText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>yesterdayText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>todayText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>actorListRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>actorListPrefab</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>locator</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>timelineColor</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>timelineMOColor</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>timelineFlagColor</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>cameras</td><td><code>List&lt;Interactable&gt;</code></td><td><span class="badge">Header: State</span></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>selectedCamera</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>selectedSentries</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>loadedCaptures</td><td><code>List&lt;SceneRecorder.SceneCapture&gt;</code></td><td></td><td>new List&lt;SceneRecorder.SceneCapture&gt;()</td></tr>
+<tr><td>spawnedTimelineEntries</td><td><code>List&lt;CruncherTimelineEntry&gt;</code></td><td></td><td>new List&lt;CruncherTimelineEntry&gt;()</td></tr>
+<tr><td>spawnedActorEntries</td><td><code>List&lt;CruncherSurveillanceActorEntry&gt;</code></td><td></td><td>new List&lt;CruncherSurveillanceActorEntry&gt;()</td></tr>
+<tr><td>hoveredActor</td><td><code>CruncherSurveillanceActorEntry</code></td><td></td><td></td></tr>
+<tr><td>selectedActor</td><td><code>CruncherSurveillanceActorEntry</code></td><td></td><td></td></tr>
+<tr><td>flaggedActor</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>dispayYesterday</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>timelineScale</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>timelineCovers</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentScene</td><td><code>SceneRecorder.SceneCapture</code></td><td></td><td></td></tr>
+<tr><td>currentSceneGametime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>scrubTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>actorPage</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>loadInHeadshots</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>scrubMove</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>scrubOffset</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>actorPageActive</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>OnSetup</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>SetCamera</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code>Interactable newSelection</code></td></tr>
+<tr><td>OnSelectedCameraNewCapture</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateScrub</td><td><code>void</code></td><td></td><td><code>bool forceTime = false, float newScrub = 0f</code></td></tr>
+<tr><td>SetScene</td><td><code>void</code></td><td></td><td><code>SceneRecorder.SceneCapture newScene</code></td></tr>
+<tr><td>CameraSelection</td><td><code>void</code></td><td></td><td><code>int addSelection</code></td></tr>
+<tr><td>ExitButton</td><td><code>void</code></td><td><span class="badge">num</span></td><td><code></code></td></tr>
+<tr><td>NextCaptureButtion</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>PrintButton</td><td><code>void</code></td><td><span class="badge">override</span> <span class="badge">num</span> <span class="badge">num</span></td><td><code></code></td></tr>
+<tr><td>SetCamActiveButton</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>UpdateCamStatus</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateActorList</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetActorPage</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">i</span></td><td><code>int val</code></td></tr>
+<tr><td>SelectActor</td><td><code>void</code></td><td></td><td><code>CruncherSurveillanceActorEntry actorButton</code></td></tr>
+<tr><td>SetActorPage</td><td><code>void</code></td><td></td><td><code>bool val, bool forceUpdate = false</code></td></tr>
+<tr><td>ActorBackButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AcquireNameButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ToggleFlagOnFootage</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetFlaggedActor</td><td><code>void</code></td><td></td><td><code>Human h</code></td></tr>
+<tr><td>UpdateTimelineFlagging</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SaveToTapeButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>YesterdayButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>TodayButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SideMissionIntroPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>SideMissionIntroPreset</h1>
+      <div class="page-meta">Source file: <span class="code">SideMissionIntroPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">SideMissionIntroPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>rewardModifier</td><td><code>int</code></td><td><span class="badge">Header: Rewards</span></td><td></td></tr>
+<tr><td>blocks</td><td><code>List&lt;SideMissionIntroPreset.SideMissionObjectiveBlock&gt;</code></td><td><span class="badge">Header: Elements</span></td><td>new List&lt;SideMissionIntroPreset.SideMissionObjectiveBlock&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class SideMissionObjectiveBlock</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>elementType</td><td><code>SideMissionIntroPreset.SideMissionElementType</code></td><td></td><td></td></tr>
+<tr><td>dialogReference</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>tagReference</td><td><code>JobPreset.JobTag</code></td><td></td><td></td></tr>
+<tr><td>spawnItems</td><td><code>List&lt;JobPreset.StartingSpawnItem&gt;</code></td><td></td><td>new List&lt;JobPreset.StartingSpawnItem&gt;()</td></tr>
+<tr><td>enableUpdateWhileTalking</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>objectiveDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>validItems</td><td><code>List&lt;InteractablePreset&gt;</code></td><td></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>validFurniture</td><td><code>List&lt;FurniturePreset&gt;</code></td><td></td><td>new List&lt;FurniturePreset&gt;()</td></tr>
+<tr><td>disableOnDifficulties</td><td><code>List&lt;JobPreset.DifficultyTag&gt;</code></td><td></td><td>new List&lt;JobPreset.DifficultyTag&gt;()</td></tr>
+<tr><td>onlyCompativleWithIntros</td><td><code>List&lt;SideMissionIntroPreset&gt;</code></td><td></td><td>new List&lt;SideMissionIntroPreset&gt;()</td></tr>
+<tr><td>onlyCompatibleWithHandIns</td><td><code>List&lt;SideMissionHandInPreset&gt;</code></td><td></td><td>new List&lt;SideMissionHandInPreset&gt;()</td></tr>
+<tr><td>triggerFailIfItemDestroyed</td><td><code>List&lt;JobPreset.JobTag&gt;</code></td><td></td><td>new List&lt;JobPreset.JobTag&gt;()</td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>SideMissionElementType</h3>
+<pre><code>playerCallsNumber
+acquireInformation
+askStaff
+spawnItems
+photoOfItemLocation
+openedBriefcase
+postSubmission
+playerHasCamera
+setGooseChaseCall
+setMeeting
+handDossier
+setupHomeInvestigation
+submitToPoster
+setHomeMeeting
+setGooseChaseCallIndoorOnly
+tailBriefcase
+playerHasItemInPossession
+leaveItemAtSecretLocation
+destroyItem
+playerHasHandcuffs
+telephoneSubmission
+placeItemInPosterMailbox
+placeItemOfTypeInPosterMailbox</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

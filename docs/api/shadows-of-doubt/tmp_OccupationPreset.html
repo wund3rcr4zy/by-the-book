@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OccupationPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>OccupationPreset</h1>
+      <div class="page-meta">Source file: <span class="code">OccupationPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">OccupationPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>work</td><td><code>OccupationPreset.workType</code></td><td>Collar colour <span class="badge">Header: Category</span></td><td></td></tr>
+<tr><td>tags</td><td><code>List&lt;OccupationPreset.workTags&gt;</code></td><td>Additional tags to describe this work</td><td>new List&lt;OccupationPreset.workTags&gt;()</td></tr>
+<tr><td>jobFillPriority</td><td><code>int</code></td><td>The higher the priority, the more chance the position will be filled <span class="badge">Range(0f, 4f)</span></td><td>2</td></tr>
+<tr><td>workOutfit</td><td><code>List&lt;ClothesPreset&gt;</code></td><td>If this job requires a certain work outfit, list it here... <span class="badge">Header: Outfit</span></td><td></td></tr>
+<tr><td>selfEmployed</td><td><code>bool</code></td><td><span class="badge">Header: Special Cases</span></td><td></td></tr>
+<tr><td>receptionist</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>canAskAboutJob</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>janitor</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>security</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isCriminal</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isPublicFacing</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>minimumPerCity</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;isCriminal&quot;)</span></td><td></td></tr>
+<tr><td>societalClass</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;isCriminal&quot;)</span></td><td>0.5f</td></tr>
+<tr><td>skewPersonalityTowardsJobFit</td><td><code>float</code></td><td>Personality is calculated after job assign; how much to scew personality towards this... <span class="badge">Header: Personality Fit</span></td><td>0.4f</td></tr>
+<tr><td>skewHumility</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>humility</td><td><code>float</code></td><td>Honesty-Humility (H): sincere, honest, faithful, loyal, modest/unassuming versus sly, deceitful, greedy, pretentious, hypocritical, boastful, pompous <span class="badge">EnableIf(&quot;skewHumility&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>skewEmotionality</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>emotionality</td><td><code>float</code></td><td>Emotionality (E): emotional, oversensitive, sentimental, fearful, anxious, vulnerable versus brave, tough, independent, self-assured, stable <span class="badge">EnableIf(&quot;skewEmotionality&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>skewExtraversion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>extraversion</td><td><code>float</code></td><td>Extraversion (X): outgoing, lively, extraverted, sociable, talkative, cheerful, active versus shy, passive, withdrawn, introverted, quiet, reserved <span class="badge">EnableIf(&quot;skewExtraversion&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>skewAgreeableness</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>agreeableness</td><td><code>float</code></td><td>Agreeableness (A): patient, tolerant, peaceful, mild, agreeable, lenient, gentle versus ill-tempered, quarrelsome, stubborn, choleric <span class="badge">Range(0f, 1f)</span> <span class="badge">EnableIf(&quot;skewAgreeableness&quot;)</span></td><td></td></tr>
+<tr><td>skewConscientiousness</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>conscientiousness</td><td><code>float</code></td><td>Conscientiousness (C): organized, disciplined, diligent, careful, thorough, precise versus sloppy, negligent, reckless, lazy, irresponsible, absent-minded <span class="badge">Range(0f, 1f)</span> <span class="badge">EnableIf(&quot;skewConscientiousness&quot;)</span></td><td></td></tr>
+<tr><td>skewCreativity</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>creativity</td><td><code>float</code></td><td>Openness to Experience (O): intellectual, creative, unconventional, innovative, ironic versus shallow, unimaginative, conventional <span class="badge">EnableIf(&quot;skewCreativity&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>shiftTimeIsImportant</td><td><code>bool</code></td><td>Find a shift matching the below enum <span class="badge">Header: Work Hours</span></td><td></td></tr>
+<tr><td>shiftType</td><td><code>OccupationPreset.ShiftType</code></td><td>The employee works this shift (if available)</td><td>OccupationPreset.ShiftType.dayShift</td></tr>
+<tr><td>countsTowardsOpenHoursCoverage</td><td><code>bool</code></td><td>Does this job count towards the open coverage of the shift they have?</td><td>true</td></tr>
+<tr><td>lunchBreakAllowed</td><td><code>bool</code></td><td>The employee can take a break half way through their shift</td><td>true</td></tr>
+<tr><td>jobAIPosition</td><td><code>OccupationPreset.JobAI</code></td><td>Where should the AI go to upon starting the goal? <span class="badge">Header: AI Behaviour</span></td><td></td></tr>
+<tr><td>bannedRooms</td><td><code>List&lt;RoomConfiguration&gt;</code></td><td>If AI behaviour is set to patrol, are there any rooms in which it is not allowed?</td><td>new List&lt;RoomConfiguration&gt;()</td></tr>
+<tr><td>actionSetup</td><td><code>List&lt;AIGoalPreset.GoalActionSetup&gt;</code></td><td>The list of actions the AI will perform inside the &#x27;Work&#x27; goal.</td><td>new List&lt;AIGoalPreset.GoalActionSetup&gt;()</td></tr>
+<tr><td>jobPostion</td><td><code>InteractablePreset.SpecialCase</code></td><td>What interactable will the AI work from?</td><td>InteractablePreset.SpecialCase.workDesk</td></tr>
+<tr><td>ownsWorkPosition</td><td><code>bool</code></td><td>Does the AI own their own version of above? If not they will use free available ones.</td><td></td></tr>
+<tr><td>preferredRooms</td><td><code>List&lt;RoomConfiguration&gt;</code></td><td>Where should the AI start to search for their work place?</td><td>new List&lt;RoomConfiguration&gt;()</td></tr>
+<tr><td>potterFrequency</td><td><code>Vector2</code></td><td>How often should the AI get up and do other tasks. Time range (game time)</td><td>new Vector2(0.5f, 1f)</td></tr>
+<tr><td>onlyPotterIfSomebodyElseWorking</td><td><code>bool</code></td><td>If true the AI will only potter if there is at least 1 other staff memeber on it&#x27;s work postion interactable type</td><td></td></tr>
+<tr><td>potterActions</td><td><code>List&lt;AIActionPreset&gt;</code></td><td>List of other tasks to randomly do while on the job.</td><td>new List&lt;AIActionPreset&gt;()</td></tr>
+<tr><td>canPickUpLitter</td><td><code>bool</code></td><td>Allows clean up actions to be inserted which will allow the AI to pick things up from the floor</td><td></td></tr>
+<tr><td>namePlacard</td><td><code>bool</code></td><td>This person has a name placard at work <span class="badge">Header: Items</span></td><td>true</td></tr>
+<tr><td>employeePhoto</td><td><code>bool</code></td><td>This person has an employee photo</td><td>true</td></tr>
+<tr><td>businessCards</td><td><code>bool</code></td><td>This person has business cards</td><td>true</td></tr>
+<tr><td>workRota</td><td><code>bool</code></td><td>This person has a work rota</td><td>true</td></tr>
+<tr><td>employmentContract</td><td><code>bool</code></td><td>This person has an employment contract</td><td>true</td></tr>
+<tr><td>jobItems</td><td><code>List&lt;InteractablePreset&gt;</code></td><td>List of items to add once this job position is filled</td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>inventoryItems</td><td><code>List&lt;InteractablePreset&gt;</code></td><td>List of items to add to inventory</td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>joinGroups</td><td><code>List&lt;GroupPreset&gt;</code></td><td></td><td>new List&lt;GroupPreset&gt;()</td></tr>
+<tr><td>addDialog</td><td><code>List&lt;DialogPreset&gt;</code></td><td><span class="badge">Header: Dialog Options</span></td><td>new List&lt;DialogPreset&gt;()</td></tr>
+<tr><td>selectedPreset</td><td><code>OccupationPreset</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>CopyOutfitFromSelectedPreset</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>workType</h3>
+<pre><code>Office
+Management
+Labourer
+Janitorial
+Retail
+Service
+Driver
+PublicSector
+Enforcer
+Criminal
+Creative
+Other
+Student
+Unemployed
+Retired
+Illegal</code></pre>
+<h3>ShiftType</h3>
+<pre><code>morningShift
+dayShift
+eveningShift
+nightShift</code></pre>
+<h3>JobAI</h3>
+<pre><code>workPosition
+random
+randomBuilding
+passedCompanyPosition</code></pre>
+<h3>workTags</h3>
+<pre><code>none
+dull
+exciting
+dangerous
+menial
+intern
+stressful
+cushy
+technical
+ceo
+social
+isolated
+professional</code></pre>
+<h3>Overtime</h3>
+<pre><code>none
+low
+medium
+high
+veryHigh</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

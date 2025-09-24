@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameplayControls — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>GameplayControls</h1>
+      <div class="page-meta">Source file: <span class="code">GameplayControls.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">GameplayControls</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>intro</td><td><code>CutScenePreset</code></td><td><span class="badge">Header: Cut Scenes</span></td><td></td></tr>
+<tr><td>outro</td><td><code>CutScenePreset</code></td><td></td><td></td></tr>
+<tr><td>startingTimeSpeed</td><td><code>SessionData.TimeSpeed</code></td><td><span class="badge">Header: Time</span></td><td>SessionData.TimeSpeed.normal</td></tr>
+<tr><td>timeMultipliers</td><td><code>List&lt;float&gt;</code></td><td>0 = slomo, 1 = normal, 2 = fast, 3 = ultrafast, 4 = sim</td><td>new List&lt;float&gt;()</td></tr>
+<tr><td>startingDate</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>startingMonth</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>startingYear</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>yearZeroLeapYearCycle</td><td><code>int</code></td><td>Only time cycles idependent of the actual time data are needed here</td><td>1</td></tr>
+<tr><td>dayZero</td><td><code>int</code></td><td></td><td>6</td></tr>
+<tr><td>publicYearZero</td><td><code>int</code></td><td></td><td>1978</td></tr>
+<tr><td>routineUpdateFrequency</td><td><code>float</code></td><td><span class="badge">Header: Routines</span></td><td>0.5f</td></tr>
+<tr><td>gameWorldUpdateFrequency</td><td><code>float</code></td><td></td><td>0.75f</td></tr>
+<tr><td>doorSequenceUpdateFrequency</td><td><code>float</code></td><td></td><td>0.15f</td></tr>
+<tr><td>stealthModeLoopUpdateFrequency</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>playerHeightNormal</td><td><code>float</code></td><td>Player height (normal) <span class="badge">Header: First Person</span></td><td>1.64f</td></tr>
+<tr><td>playerHeightCrouched</td><td><code>float</code></td><td>Player height (crouched)</td><td>0.96f</td></tr>
+<tr><td>crouchHeightCurve</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>leanCurve</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>joltCurve</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>cameraHeightNormal</td><td><code>float</code></td><td>FPS Camera Y as offset of centre of player</td><td>0.78f</td></tr>
+<tr><td>cameraHeightCrouched</td><td><code>float</code></td><td>FPS Camera Y as offset of centre of player</td><td>0.68f</td></tr>
+<tr><td>interactionRange</td><td><code>float</code></td><td>Range from which things can be interacted-with by the player</td><td>1.85f</td></tr>
+<tr><td>readingRange</td><td><code>float</code></td><td>Range from which things can be read by the player</td><td>1.2f</td></tr>
+<tr><td>carryDistance</td><td><code>float</code></td><td>The distance from which things are carried by the player</td><td>1f</td></tr>
+<tr><td>throwForce</td><td><code>float</code></td><td>The throw force of the player</td><td>500f</td></tr>
+<tr><td>fovNormal</td><td><code>float</code></td><td>Field of view (Normal)</td><td>70f</td></tr>
+<tr><td>fovInteraction</td><td><code>float</code></td><td>Field of view (interaction)</td><td>40f</td></tr>
+<tr><td>fpsModelLag</td><td><code>float</code></td><td>How much FPS model lag</td><td>60f</td></tr>
+<tr><td>playerWalkSpeed</td><td><code>float</code></td><td>Player walk speed</td><td>4f</td></tr>
+<tr><td>playerRunSpeed</td><td><code>float</code></td><td>Player run speed</td><td>8f</td></tr>
+<tr><td>jumpHeight</td><td><code>float</code></td><td>Jump height</td><td>3.5f</td></tr>
+<tr><td>playerStealthWalkMuliplier</td><td><code>float</code></td><td>Player stealth mode walk multiplier</td><td>0.5f</td></tr>
+<tr><td>playerStealthRunMultiplier</td><td><code>float</code></td><td>Player stealth mode run multiplier</td><td>0.9f</td></tr>
+<tr><td>headBobMultiplier</td><td><code>float</code></td><td>Head bob multiplier</td><td>0.55f</td></tr>
+<tr><td>ductPlayerHeight</td><td><code>float</code></td><td>Player height multiplier in air ducts</td><td>0.25f</td></tr>
+<tr><td>ductCamHeight</td><td><code>float</code></td><td>Camera height multiplier in air ducts</td><td>2.4f</td></tr>
+<tr><td>ductPlayerPosY</td><td><code>float</code></td><td>Player height boost on enter air duct</td><td>-0.5f</td></tr>
+<tr><td>airDuctEntry</td><td><code>Vector3</code></td><td>Air duct entry point</td><td>new Vector3(-0.35f, 0f, 0.05f)</td></tr>
+<tr><td>airDuctExit</td><td><code>Vector3</code></td><td>Air duct exit point</td><td>new Vector3(0f, 0f, 0.5f)</td></tr>
+<tr><td>normalSkinWidth</td><td><code>float</code></td><td>Normal skin width</td><td>0.08f</td></tr>
+<tr><td>carryingSkinWidth</td><td><code>float</code></td><td>Carrying skin width</td><td>0.2f</td></tr>
+<tr><td>ductSkinWidth</td><td><code>float</code></td><td>Normal skin width</td><td>0.011f</td></tr>
+<tr><td>defaultReturnTransition</td><td><code>PlayerTransitionPreset</code></td><td>Default return transition</td><td></td></tr>
+<tr><td>enterVentTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>exitVentTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>citizensArrestTranstion</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>citizenTalkToTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>doorPeekEnter</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>doorPeekExit</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>lockpickEnter</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>lockpickExit</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>sabotageEnter</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>sabotageExit</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>bargeDoorEnter</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>bargeDoorFail</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>bargeDoorSuccess</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>punchedReaction</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>playerKO</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>playerUseComputer</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>playerComputerExit</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>playerTakePrint</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>playerTakePrintExit</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>playerSearch</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>playerSearchExit</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>focusOnInteractable</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>waterCoolerEnter</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>dragForceAmount</td><td><code>float</code></td><td>Force applied when the player drags a body <span class="badge">Header: Ragdolls</span></td><td>1520f</td></tr>
+<tr><td>maxAngleMovementWhenDragging</td><td><code>float</code></td><td>Amount of rotational camera movement allowed per second when dragging a body</td><td>70f</td></tr>
+<tr><td>ragdollCarryMaxDistance</td><td><code>float</code></td><td>How far infront the player the ragdoll is held</td><td>0.5f</td></tr>
+<tr><td>ragdollJointPreprocessing</td><td><code>bool</code></td><td>Ragdoll preprocessing: Disabling preprocessing helps to stabilize impossible-to-fulfil configurations.</td><td></td></tr>
+<tr><td>ragdollJointCollision</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ragdollJointProjection</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>ragdollJointContactDistance</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>ragdollRigidbodyCollision</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>ragdollJointBounce</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>ragdollJointDampen</td><td><code>float</code></td><td></td><td>50f</td></tr>
+<tr><td>ragdollJointSpring</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofNormalNearStart</td><td><code>float</code></td><td><span class="badge">Header: Depth of Field</span></td><td></td></tr>
+<tr><td>dofNormalNearEnd</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofNormalFarStart</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofNormalFarEnd</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofTalkingNearStart</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofTalkingNearEnd</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofTalkingFarStart</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofTalkingFarEnd</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofPausedNearStart</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofPausedNearEnd</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofPausedFarStart</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofPausedFarEnd</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofCityEditNearStart</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofCityEditNearEnd</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dofCityEditFarStart</td><td><code>float</code></td><td></td><td>275f</td></tr>
+<tr><td>dofCityEditFarEnd</td><td><code>float</code></td><td></td><td>800f</td></tr>
+<tr><td>dofChangeTime</td><td><code>float</code></td><td></td><td>0.25f</td></tr>
+<tr><td>startingItems</td><td><code>List&lt;FirstPersonItem&gt;</code></td><td>Start the game with these first person items</td><td>new List&lt;FirstPersonItem&gt;()</td></tr>
+<tr><td>nothingItem</td><td><code>FirstPersonItem</code></td><td></td><td></td></tr>
+<tr><td>watchItem</td><td><code>FirstPersonItem</code></td><td></td><td></td></tr>
+<tr><td>fistsItem</td><td><code>FirstPersonItem</code></td><td></td><td></td></tr>
+<tr><td>coinItem</td><td><code>FirstPersonItem</code></td><td></td><td></td></tr>
+<tr><td>printReader</td><td><code>FirstPersonItem</code></td><td></td><td></td></tr>
+<tr><td>itemSwitchCounter</td><td><code>float</code></td><td>How long to display the item switch interface when it is activated.</td><td>2f</td></tr>
+<tr><td>stealthAmbientLightLevel</td><td><code>AnimationCurve</code></td><td>Curve for ambient light levels throughout the day <span class="badge">Header: Stealth</span></td><td></td></tr>
+<tr><td>interiorAmbientLightMultiplier</td><td><code>float</code></td><td>The above is multiplied by this when inside to give ambient level</td><td>0.1f</td></tr>
+<tr><td>floorLightMeasure</td><td><code>Transform</code></td><td>Transform for the floor light measuring point (the camera is used for the upper)</td><td></td></tr>
+<tr><td>stealthSunLightLevel</td><td><code>AnimationCurve</code></td><td>Curve for direct sun light levels throughout the day</td><td></td></tr>
+<tr><td>buildingAlarmTime</td><td><code>Vector2</code></td><td>How long in gametime a building alarm lasts once triggered: From high to low so we can lerp with skill multiplier</td><td>new Vector2(0.4f, 0.1f)</td></tr>
+<tr><td>securityTrackSpeed</td><td><code>float</code></td><td>How fast a camera/turret tracks it&#x27;s target once alert</td><td>12f</td></tr>
+<tr><td>citizenFOV</td><td><code>float</code></td><td>Citizen FoV</td><td>160f</td></tr>
+<tr><td>securityFOV</td><td><code>float</code></td><td>Security FoV</td><td>80f</td></tr>
+<tr><td>sabotageLandValueMP</td><td><code>float</code></td><td>Sabotage land value multiplier</td><td>0.5f</td></tr>
+<tr><td>citizenSightRange</td><td><code>float</code></td><td>Citizen max sight range</td><td>25f</td></tr>
+<tr><td>securitySightRange</td><td><code>float</code></td><td>Security max sight range</td><td>16f</td></tr>
+<tr><td>minimumStealthDetectionRange</td><td><code>float</code></td><td>Minimum stealth detection threshold. If target is closer than this, even targets with 0 visibility are spotted</td><td>0.75f</td></tr>
+<tr><td>sentryGunWeapon</td><td><code>MurderWeaponPreset</code></td><td>Sentry gun weapon config</td><td></td></tr>
+<tr><td>sentryGunROF</td><td><code>float</code></td><td>Sentry gun rate of fire</td><td>5f</td></tr>
+<tr><td>sentryGunDamage</td><td><code>float</code></td><td>Sentry gun cone of fire</td><td>0.25f</td></tr>
+<tr><td>sentryGunAccuracy</td><td><code>float</code></td><td>Sentry gun cone of fire</td><td>0.1f</td></tr>
+<tr><td>playerMaxSpotDistance</td><td><code>float</code></td><td>Maximum distance at which the player can officially &#x27;spot&#x27; a citizen (used for triggering outlines etc)</td><td>20f</td></tr>
+<tr><td>playerSpotUpdateEveryXFrame</td><td><code>int</code></td><td>Perform a player spotting check every x frames</td><td>5</td></tr>
+<tr><td>spottedGraceTime</td><td><code>float</code></td><td>The time before a spotted actor becomes invisible to the player (seconds)</td><td>4f</td></tr>
+<tr><td>spottedFadeSpeed</td><td><code>float</code></td><td>The time it takes for a previously spotted actor to become invisible to the player again (seconds)</td><td>1f</td></tr>
+<tr><td>audioOnlySpotGraceTimeMultiplier</td><td><code>float</code></td><td>While sighted, the grace time multiplier for spotting a person is x1, how long is it for hearing a player?</td><td>0.5f</td></tr>
+<tr><td>playerImageCaptureMaxRange</td><td><code>float</code></td><td>Maximum distance for surveillance capturing the image of the player</td><td>14f</td></tr>
+<tr><td>buildingWantedTime</td><td><code>float</code></td><td>If security catches player, any fines are now active for this long...</td><td>24f</td></tr>
+<tr><td>breakerResetTime</td><td><code>float</code></td><td>How long before breakers are reset</td><td>0.25f</td></tr>
+<tr><td>securityResetTime</td><td><code>float</code></td><td>How long before turned off security is reactivated</td><td>2f</td></tr>
+<tr><td>gasFillTime</td><td><code>float</code></td><td>How long in gametime does it take for a room to fill up with toxic gas</td><td>0.1f</td></tr>
+<tr><td>gasEmptyTime</td><td><code>float</code></td><td>How long in gametime does it take for a room to empty of toxic gas</td><td>0.25f</td></tr>
+<tr><td>additionalEscalationTime</td><td><code>float</code></td><td>How much time spent at a location trespassing before +1 is added to the escalation level</td><td>0.1f</td></tr>
+<tr><td>startingMoney</td><td><code>int</code></td><td>Start the game with this amount of money <span class="badge">Header: Skills</span></td><td>100</td></tr>
+<tr><td>startingLockpicks</td><td><code>int</code></td><td>Start the game with this presence level</td><td>3</td></tr>
+<tr><td>lockpickEffectivenessRange</td><td><code>Vector2</code></td><td>How much lock strength can be used up by a single lockpick as a range dictated by skill</td><td>new Vector2(0.2f, 1f)</td></tr>
+<tr><td>lockpickSpeedRange</td><td><code>Vector2</code></td><td>Lockpicking speed multiplier</td><td>new Vector2(0.4f, 1f)</td></tr>
+<tr><td>bargeDamageRange</td><td><code>Vector2</code></td><td>How much door strength damage is done when barged</td><td>new Vector2(0.05f, 0.1f)</td></tr>
+<tr><td>baseMaxPlayerHealth</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>playerRecoveryRate</td><td><code>float</code></td><td>The player recovers this amount of health (normalized) over time (game time 1 hour)</td><td>0.1f</td></tr>
+<tr><td>playerCombatSkill</td><td><code>float</code></td><td>The player&#x27;s starting combat skill</td><td>1f</td></tr>
+<tr><td>playerCombatHeft</td><td><code>float</code></td><td>The player&#x27;s starting combat heft (damage per punch)</td><td>0.25f</td></tr>
+<tr><td>defaultInventorySlots</td><td><code>int</code></td><td>The default number of inventory slots</td><td>3</td></tr>
+<tr><td>incomingPlayerPhysicsDamageMultiplier</td><td><code>float</code></td><td>Damage multiplier for physics objects hitting the player</td><td>0.5f</td></tr>
+<tr><td>commonSyncDisksPer200Citizens</td><td><code>float</code></td><td></td><td>7f</td></tr>
+<tr><td>mediumSyncDisksPer200Citizens</td><td><code>float</code></td><td></td><td>5f</td></tr>
+<tr><td>rareSyncDisksPer200Citizens</td><td><code>float</code></td><td></td><td>3f</td></tr>
+<tr><td>veryRareSyncDisksPer200Citizens</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>corpSabotageMoney</td><td><code>int</code></td><td></td><td>200</td></tr>
+<tr><td>corpSabotageManagementBonus</td><td><code>int</code></td><td></td><td>100</td></tr>
+<tr><td>moneyForAddresses</td><td><code>int</code></td><td></td><td>20</td></tr>
+<tr><td>moneyForNewLocations</td><td><code>int</code></td><td></td><td>20</td></tr>
+<tr><td>moneyForAirDucts</td><td><code>int</code></td><td></td><td>20</td></tr>
+<tr><td>moneyForPasscodes</td><td><code>int</code></td><td></td><td>100</td></tr>
+<tr><td>moneyForReading</td><td><code>int</code></td><td></td><td>20</td></tr>
+<tr><td>moneyForStreetCleaning</td><td><code>int</code></td><td></td><td>2</td></tr>
+<tr><td>passiveIncome</td><td><code>int</code></td><td></td><td>10</td></tr>
+<tr><td>upgradeHeightModifier</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>upgradeRunSpeed</td><td><code>float</code></td><td></td><td>2f</td></tr>
+<tr><td>upgradeReach</td><td><code>float</code></td><td></td><td>1.5f</td></tr>
+<tr><td>upgradeHealth</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>upgradeRegen</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>legalInsuranceMultiplier</td><td><code>Vector2</code></td><td>Applied to all fines: From high to lower and lerped with the health insurance skill</td><td>new Vector2(1f, 0.2f)</td></tr>
+<tr><td>socialCreditForLostAndFound</td><td><code>int</code></td><td><span class="badge">Header: Social Credit</span></td><td>40</td></tr>
+<tr><td>socialCreditForSideJobs</td><td><code>int</code></td><td></td><td>50</td></tr>
+<tr><td>socialCreditForMurders</td><td><code>int</code></td><td></td><td>200</td></tr>
+<tr><td>socialCreditLevelCurve</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>foodHotTime</td><td><code>float</code></td><td>Hot food is warm for this time after purchase <span class="badge">Header: Evidence</span></td><td>1f</td></tr>
+<tr><td>timeOfDeathAccuracy</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>retailItemSoldDiscovery</td><td><code>EvidencePreset</code></td><td></td><td></td></tr>
+<tr><td>retailItemNoSoldDiscovery</td><td><code>EvidencePreset</code></td><td></td><td></td></tr>
+<tr><td>fistMaterial</td><td><code>Material</code></td><td><span class="badge">Header: First Person Skin Materials</span></td><td></td></tr>
+<tr><td>fingerUpperMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>fingerLowerMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>fingerTipMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>thumbJointMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>interpolation</td><td><code>RigidbodyInterpolation</code></td><td>Physics object interpolation: &#x27;By default interpolation is turned off. Commonly rigidbody interpolation is used on the player&#x27;s character. Physics is running at discrete timesteps, while graphics is renderered at variable frame rates. This can lead to jittery looking objects, because physics and graphics are not completely in sync. The effect is subtle but often visible on the player character, especially if a camera follows the main character. It is recommended to turn on interpolation for the main character but disable it for everything else.&#x27; <span class="badge">Header: Physics</span></td><td>RigidbodyInterpolation.Interpolate</td></tr>
+<tr><td>physicsOffTime</td><td><code>float</code></td><td></td><td>3f</td></tr>
+<tr><td>defaultObjectPhysicsProfile</td><td><code>PhysicsProfile</code></td><td></td><td></td></tr>
+<tr><td>binTrashLimit</td><td><code>int</code></td><td>Trash limit per bin <span class="badge">Header: Trash</span></td><td>12</td></tr>
+<tr><td>buildingCallLogMax</td><td><code>int</code></td><td>Each building logs this many phone calls <span class="badge">Header: Calls</span></td><td>100</td></tr>
+<tr><td>preSimSpeedMultiplier</td><td><code>float</code></td><td>Multiply citizen speed in presimulation by this amount <span class="badge">Header: Citizens</span></td><td>1.5f</td></tr>
+<tr><td>walletCashAmountBasedOnWealth</td><td><code>AnimationCurve</code></td><td>How much money a wallet contains based on citizien class</td><td></td></tr>
+<tr><td>creditCardTrait</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>donorCardTrait</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>successfulBlockThreshold</td><td><code>float</code></td><td>How close the block has to land for a successful block (total range = 1.0) <span class="badge">Header: Combat</span></td><td>0.1f</td></tr>
+<tr><td>perfectBlockThreshold</td><td><code>float</code></td><td>How close the block has to land for a perfect block (total range = 1.0)</td><td>0.01f</td></tr>
+<tr><td>baseAttackDelay</td><td><code>Vector2</code></td><td>The minimum base attack delay (AI time between attack) in seconds. Modified by combat skill using left from min to max.</td><td>new Vector2(0.5f, 0.2f)</td></tr>
+<tr><td>blockedAttackDelay</td><td><code>Vector2</code></td><td>Blocking will use this base attack delay instead of the above. Modified by combat skill using left from min to max</td><td>new Vector2(0.8f, 0.6f)</td></tr>
+<tr><td>perfectBlockAttackDelay</td><td><code>Vector2</code></td><td>Blocking perfectly use this base attack delay instead of the above. Modified by combat skill using left from min to max</td><td>new Vector2(2f, 1.5f)</td></tr>
+<tr><td>koTimeRange</td><td><code>Vector2</code></td><td>How much time before an enemy gets up after being KO&#x27;d (game time)</td><td>new Vector2(1f, 1f)</td></tr>
+<tr><td>playerKOPunchForce</td><td><code>float</code></td><td>The force applied to an NPC ragdoll on KO</td><td>200f</td></tr>
+<tr><td>koTimePass</td><td><code>float</code></td><td>How much time passes when the player is KO&#x27;d (in-game hours)</td><td>5f</td></tr>
+<tr><td>restrainedTimer</td><td><code>float</code></td><td>How long (game time) will a citizen be restrained by handcuffs?</td><td>1f</td></tr>
+<tr><td>takedownTimer</td><td><code>float</code></td><td>When using a takedown, how long a citizen will stay down for</td><td>0.5f</td></tr>
+<tr><td>thrownGrenadeFuse</td><td><code>float</code></td><td>The fuse for a thrown grenade</td><td>3f</td></tr>
+<tr><td>proxyGrenadeFuse</td><td><code>float</code></td><td>The fuse for a proxy grenade</td><td>2.5f</td></tr>
+<tr><td>bloodAmountMultiplier</td><td><code>float</code></td><td>Blood amount multiplier</td><td>1f</td></tr>
+<tr><td>successfulBlockTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>unsuccessfulBlockTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>counterTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>maxPlayerLookAtTailingDistance</td><td><code>float</code></td><td><span class="badge">Header: Tailing</span></td><td>12f</td></tr>
+<tr><td>playerLookAtSpookRate</td><td><code>float</code></td><td>How fast the AI gains spooked while being looked at</td><td>0.2f</td></tr>
+<tr><td>loseSpookedRate</td><td><code>float</code></td><td></td><td>-0.015f</td></tr>
+<tr><td>screenCentreSpookCurve</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>muggingChance</td><td><code>float</code></td><td>Chance for player to be mugged if the conditions are right <span class="badge">Header: Mugging</span></td><td>1f</td></tr>
+<tr><td>spatterRemovalTime</td><td><code>float</code></td><td>Spatter removal time: Only applys when the spatter simulation is set to use this erase mode. In-game hours. <span class="badge">Header: Cleanup</span></td><td>3f</td></tr>
+<tr><td>objectPositionResetTime</td><td><code>float</code></td><td>Moved objects reset time in-game hours.</td><td>4f</td></tr>
+<tr><td>brokenWindowBoardTime</td><td><code>float</code></td><td>Broken windows will become boarded up after this time</td><td>2.5f</td></tr>
+<tr><td>brokenWindowResetTime</td><td><code>float</code></td><td>Broken windows will reset after this time</td><td>24f</td></tr>
+<tr><td>breakingWindowsFine</td><td><code>int</code></td><td>Fine amount for breaking windows <span class="badge">Header: Crime/Cases</span></td><td>500</td></tr>
+<tr><td>vandalismFineMultiplier</td><td><code>int</code></td><td>Vandalism fine multiplier</td><td>4</td></tr>
+<tr><td>vandalismTimeout</td><td><code>float</code></td><td>How long it takes to cancel out address vandalism</td><td>24f</td></tr>
+<tr><td>illegalActionMinimumTime</td><td><code>float</code></td><td>Minimum amount of time for illegal actions to be present (seconds)</td><td>1f</td></tr>
+<tr><td>tamperGrace</td><td><code>int</code></td><td>How many items can be tampered with before it is considered a crime</td><td>3</td></tr>
+<tr><td>physicsTamperDistance</td><td><code>float</code></td><td>How far a physics object can be moved before it is considered a crime</td><td>1f</td></tr>
+<tr><td>fignerprintPreset</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>detainDelay</td><td><code>float</code></td><td>Time until suspects are detained after a call-in (gametime)</td><td>0.25f</td></tr>
+<tr><td>caseResultProcessTime</td><td><code>float</code></td><td>Time until results of the case are processed after detaining (gametime)</td><td>1f</td></tr>
+<tr><td>bestCaseVictimCount</td><td><code>int</code></td><td>The number of murder victims needed to get the top rank</td><td>1</td></tr>
+<tr><td>worstCaseVictimCount</td><td><code>int</code></td><td>The number of murder victims needed to get the worst rank</td><td>4</td></tr>
+<tr><td>sideJobDifficultyRewardMultiplier</td><td><code>AnimationCurve</code></td><td>Multiplier for job difficulty</td><td></td></tr>
+<tr><td>secretLocationFurniture</td><td><code>List&lt;FurniturePreset&gt;</code></td><td>Used for side jobs; leave item at this secret location</td><td>new List&lt;FurniturePreset&gt;()</td></tr>
+<tr><td>stealTriggerChance</td><td><code>float</code></td><td>Chance of triggering combat for stealing items from citizen&#x27;s inventory</td><td>0.5f</td></tr>
+<tr><td>maxCases</td><td><code>int</code></td><td>The max number of side jobs/custom cases</td><td>5</td></tr>
+<tr><td>crimeSceneCleanupDelay</td><td><code>float</code></td><td>The between a crime scene being sweeped, and the cleanup time</td><td>5f</td></tr>
+<tr><td>missionPhotoMinMaxDistance</td><td><code>Vector2</code></td><td>The minimum/maxinum distance a mission photo can be from the object</td><td>new Vector2(1f, 10f)</td></tr>
+<tr><td>missionPhotoDistanceScoreCurve</td><td><code>AnimationCurve</code></td><td>Scoring curve between min/max distances for a mission photo</td><td></td></tr>
+<tr><td>enableCoverUps</td><td><code>bool</code></td><td>Enable player crime cover up mission opporunities</td><td>true</td></tr>
+<tr><td>coverUpAvailableDuringCase</td><td><code>int</code></td><td>Cover ups will be available during and after case # <span class="badge">EnableIf(&quot;enableCoverUps&quot;)</span></td><td>2</td></tr>
+<tr><td>coverUpChance</td><td><code>float</code></td><td>Once cover ups are available, what are the chances that you&#x27;ll get one? <span class="badge">EnableIf(&quot;enableCoverUps&quot;)</span></td><td>0.5f</td></tr>
+<tr><td>coverUpReward</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;enableCoverUps&quot;)</span></td><td>1000</td></tr>
+<tr><td>coverUpDelayTime</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;enableCoverUps&quot;)</span></td><td>0.2f</td></tr>
+<tr><td>maximumFootprintsPerRoom</td><td><code>int</code></td><td>The maximum number of footprints per room <span class="badge">Header: Footprints</span></td><td>20</td></tr>
+<tr><td>footprintScaleRange</td><td><code>Vector2</code></td><td>Min/max size of footprints lerped shoe size</td><td>Vector2.one</td></tr>
+<tr><td>stepDirtRemoval</td><td><code>float</code></td><td>Each step removes this level of dirt from the citizen</td><td>-0.01f</td></tr>
+<tr><td>stepBloodRemoval</td><td><code>float</code></td><td>Each step removes this level of blood from the citizen</td><td>-0.01f</td></tr>
+<tr><td>outdoorStepDirtAccumulation</td><td><code>float</code></td><td>Each step outside adds this level of dirt + material specific values</td><td>0.011f</td></tr>
+<tr><td>footprintPreset</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>crimeSceneSearchLength</td><td><code>float</code></td><td>How long do enforcers search a crime scene? <span class="badge">Header: Murders</span></td><td>0.18f</td></tr>
+<tr><td>crimeSceneLength</td><td><code>float</code></td><td>How long does a crime scene stay active after enforcers arrive?</td><td>2f</td></tr>
+<tr><td>smellTime</td><td><code>float</code></td><td>Time for a dead body smell to extend one additional room (starts with 0)</td><td>1f</td></tr>
+<tr><td>murderResolveQuestions</td><td><code>List&lt;Case.ResolveQuestion&gt;</code></td><td>Murder turn-in questions</td><td>new List&lt;Case.ResolveQuestion&gt;()</td></tr>
+<tr><td>retirementResolveQuestions</td><td><code>List&lt;Case.ResolveQuestion&gt;</code></td><td>Retirement turn-in questions</td><td>new List&lt;Case.ResolveQuestion&gt;()</td></tr>
+<tr><td>kidnapperCallTriggerDialog</td><td><code>DialogPreset</code></td><td><span class="badge">Header: Kidnappings</span></td><td></td></tr>
+<tr><td>OScursor</td><td><code>GameObject</code></td><td>The cursor object to load <span class="badge">Header: Computers</span></td><td></td></tr>
+<tr><td>loadCursor</td><td><code>Sprite</code></td><td>Cursor load sprite</td><td></td></tr>
+<tr><td>captureFoV</td><td><code>float</code></td><td>Surveillance camera capture FoV <span class="badge">Header: Surveillance</span> <span class="badge">Range(85f, 180f)</span></td><td>180f</td></tr>
+<tr><td>captureRange</td><td><code>float</code></td><td>Surveillance camera capture range (nodes/visuals)</td><td>18f</td></tr>
+<tr><td>humanCaptureRange</td><td><code>float</code></td><td>Surveillance camera capture range (humans)</td><td>12.5f</td></tr>
+<tr><td>captureInterval</td><td><code>float</code></td><td>Gap between capturing for cameras (gametime 0.1667 = 10 mins)</td><td>0.1667f</td></tr>
+<tr><td>cameraCaptureMemory</td><td><code>int</code></td><td>How many captures a camera can hold before overwriting (288 = 48 hours @ 10 mins)</td><td>288</td></tr>
+<tr><td>cameraCaptureMaxTime</td><td><code>float</code></td><td>How old a camera capture can be before overwriting</td><td>48f</td></tr>
+<tr><td>maxCapturesPerFrame</td><td><code>int</code></td><td>Maximum camera captures per gameworld cycle</td><td>24</td></tr>
+<tr><td>syncDiskColours</td><td><code>List&lt;GameplayControls.SyncDiskColour&gt;</code></td><td><span class="badge">Header: Upgrades</span></td><td>new List&lt;GameplayControls.SyncDiskColour&gt;()</td></tr>
+<tr><td>defaultDiskSlots</td><td><code>int</code></td><td></td><td>3</td></tr>
+<tr><td>mouseWheelEvidenceScrollSensitivity</td><td><code>int</code></td><td>Scrolling sensitivity of the mouse wheel when not zooming <span class="badge">Header: General</span></td><td>22</td></tr>
+<tr><td>indoorTemperature</td><td><code>float</code></td><td>Indoor temperature (-2.5 - 2.5)</td><td>1.5f</td></tr>
+<tr><td>airDuctTemperature</td><td><code>float</code></td><td>Air duct temperature</td><td>-1.5f</td></tr>
+<tr><td>heatSourceTemperature</td><td><code>float</code></td><td>Heat source temperature</td><td>10f</td></tr>
+<tr><td>oscillatorX</td><td><code>AnimationCurve</code></td><td>Oscillators</td><td></td></tr>
+<tr><td>oscillatorY</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>drunkOscillationSpeed</td><td><code>Vector2</code></td><td></td><td>new Vector2(0.2f, 0.5f)</td></tr>
+<tr><td>shiverFluctuation</td><td><code>AnimationCurve</code></td><td>Shiver fluctuation</td><td></td></tr>
+<tr><td>shiverOscillationSpeed</td><td><code>Vector2</code></td><td></td><td>new Vector2(1f, 1.2f)</td></tr>
+<tr><td>drunkLensDistortOscillator</td><td><code>AnimationCurve</code></td><td>Drunk Lens Distort</td><td></td></tr>
+<tr><td>drunkLensDistortSpeed</td><td><code>Vector2</code></td><td></td><td>new Vector2(1f, 1.2f)</td></tr>
+<tr><td>tripTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>headacheFluctuation</td><td><code>AnimationCurve</code></td><td>Headache fluctuation</td><td></td></tr>
+<tr><td>bleedingSpatter</td><td><code>SpatterPatternPreset</code></td><td></td><td></td></tr>
+<tr><td>fallDamageMultiplier</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>detainedStatus</td><td><code>StatusPreset</code></td><td></td><td></td></tr>
+<tr><td>wantedInBuildingStatus</td><td><code>StatusPreset</code></td><td></td><td></td></tr>
+<tr><td>playerHungerRate</td><td><code>float</code></td><td></td><td>0.125f</td></tr>
+<tr><td>playerThirstRate</td><td><code>float</code></td><td></td><td>0.2f</td></tr>
+<tr><td>playerTirednessRate</td><td><code>float</code></td><td></td><td>0.12f</td></tr>
+<tr><td>playerEnergyRate</td><td><code>float</code></td><td></td><td>0.058f</td></tr>
+<tr><td>combatHitChanceOfBruised</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>combatHitChanceOfBlackEye</td><td><code>float</code></td><td></td><td>0.06f</td></tr>
+<tr><td>combatHitChanceOfBrokenLeg</td><td><code>float</code></td><td></td><td>0.01f</td></tr>
+<tr><td>combatHitChanceOfBleeding</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>propertyValueRange</td><td><code>Vector2</code></td><td><span class="badge">Header: Pricing</span></td><td>new Vector2(800f, 100000f)</td></tr>
+<tr><td>propertyValueCurve</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>defaultLoanAmount</td><td><code>int</code></td><td>How much the player gets now <span class="badge">Header: Loan Sharks</span></td><td>2000</td></tr>
+<tr><td>defaultLoanExtra</td><td><code>int</code></td><td>How much extra the player pays in full</td><td>250</td></tr>
+<tr><td>defaultLoanRepayment</td><td><code>int</code></td><td>The daily repayment per day</td><td>250</td></tr>
+<tr><td>loiteringCommentThreshold</td><td><code>float</code></td><td>How long in secords before the AI starts commenting on your loitering behaviour <span class="badge">Header: Loitering</span></td><td>10f</td></tr>
+<tr><td>loiteringConfrontThreshold</td><td><code>float</code></td><td>How long in secords before the player is approached by staff</td><td>30f</td></tr>
+<tr><td>loiteringTrespassThreshold</td><td><code>float</code></td><td>How long in secords before the player is classed as trespassing</td><td>120f</td></tr>
+<tr><td>loiteringPurchaseResetValue</td><td><code>float</code></td><td>The timer resets to this after a purchase</td><td>-0.02f</td></tr>
+<tr><td>humanScope</td><td><code>DDSScope</code></td><td><span class="badge">Header: Scope Bases</span></td><td></td></tr>
+<tr><td>itemScope</td><td><code>DDSScope</code></td><td></td><td></td></tr>
+<tr><td>murderScope</td><td><code>DDSScope</code></td><td></td><td></td></tr>
+<tr><td>locationScope</td><td><code>DDSScope</code></td><td></td><td></td></tr>
+<tr><td>evidenceScope</td><td><code>DDSScope</code></td><td></td><td></td></tr>
+<tr><td>sideJobScope</td><td><code>DDSScope</code></td><td></td><td></td></tr>
+<tr><td>syncDiskScope</td><td><code>DDSScope</code></td><td></td><td></td></tr>
+<tr><td>groupScope</td><td><code>DDSScope</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static GameplayControls</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class SyncDiskColour</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>category</td><td><code>SyncDiskPreset.Manufacturer</code></td><td></td><td></td></tr>
+<tr><td>mainColour</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+<tr><td>colour1</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+<tr><td>colour2</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+<tr><td>colour3</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

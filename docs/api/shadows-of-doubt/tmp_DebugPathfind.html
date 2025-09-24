@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DebugPathfind — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>DebugPathfind</h1>
+      <div class="page-meta">Source file: <span class="code">DebugPathfind.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">DebugPathfind</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>access</td><td><code>NewNode.NodeAccess</code></td><td></td><td></td></tr>
+<tr><td>room</td><td><code>NewRoom</code></td><td>Parent to this room</td><td></td></tr>
+<tr><td>gameLocation</td><td><code>NewGameLocation</code></td><td>Parent to this gamelocation</td><td></td></tr>
+<tr><td>fromNodePos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>toNodePos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>walkingAccess</td><td><code>bool</code></td><td><span class="badge">Header: Access Details</span></td><td></td></tr>
+<tr><td>employeeDoor</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>noPassThroughOnFromNode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>noPassThroughOnToNode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>noAccessOnFromNode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>noAccessOnToNode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>locationLinkAttempts</td><td><code>List&lt;DebugPathfind.DebugLocationLink&gt;</code></td><td>Links to other gamelocations</td><td>new List&lt;DebugPathfind.DebugLocationLink&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Setup</td><td><code>void</code></td><td></td><td><code>NewNode.NodeAccess newAccess, NewRoom newRoom, List&lt;DebugPathfind.DebugLocationLink&gt; linkList</code></td></tr>
+<tr><td>TeleportPlayer</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class DebugLocationLink</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>access</td><td><code>NewNode.NodeAccess</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FirstPersonController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>FirstPersonController</h1>
+      <div class="page-meta">Source file: <span class="code">FirstPersonController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">FirstPersonController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>enableMovement</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>enableLook</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>isMoving</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>movementChange</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>enableHeadBob</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>ghostMovement</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>clipping</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>syncTransforms</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>playerScript</td><td><code>Player</code></td><td></td><td></td></tr>
+<tr><td>m_IsWalking</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>m_RunToggle</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>m_WalkSpeed</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>m_RunSpeed</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>speed</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>m_RunstepLenghten</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>m_StickToGroundForce</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>m_GravityMultiplier</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>m_MouseLook</td><td><code>MouseLook</code></td><td></td><td></td></tr>
+<tr><td>m_UseFovKick</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>m_FovKick</td><td><code>FOVKick</code></td><td></td><td>new FOVKick()</td></tr>
+<tr><td>m_HeadBob</td><td><code>CurveControlledBob</code></td><td></td><td>new CurveControlledBob()</td></tr>
+<tr><td>m_UseJumpBob</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>m_JumpBob</td><td><code>LerpControlledBob</code></td><td></td><td>new LerpControlledBob()</td></tr>
+<tr><td>m_StepInterval</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>rightFootNext</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>leanPivot</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>leanSpeed</td><td><code>float</code></td><td></td><td>10f</td></tr>
+<tr><td>maxLeanAngle</td><td><code>float</code></td><td></td><td>18f</td></tr>
+<tr><td>maxLeanMovement</td><td><code>float</code></td><td></td><td>0.2f</td></tr>
+<tr><td>m_Camera</td><td><code>Camera</code></td><td></td><td></td></tr>
+<tr><td>m_Jump</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>m_YRotation</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>m_Input</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>m_MoveDir</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>m_CharacterController</td><td><code>CharacterController</code></td><td></td><td></td></tr>
+<tr><td>m_CollisionFlags</td><td><code>CollisionFlags</code></td><td></td><td></td></tr>
+<tr><td>m_PreviouslyGrounded</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>m_OriginalCameraPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>m_StepCycle</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>m_NextStep</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>m_Jumping</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>leanState</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>leanProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentLeanAngle</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentLeanMovement</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>activeJolts</td><td><code>List&lt;FirstPersonController.CameraJolt&gt;</code></td><td></td><td>new List&lt;FirstPersonController.CameraJolt&gt;()</td></tr>
+<tr><td>lastY</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>fallCount</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>previousMovement</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>movementThisUpdate</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>hitInfoArray</td><td><code>RaycastHit[]</code></td><td></td><td>new RaycastHit[1]</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>InitialiseController</td><td><code>void</code></td><td></td><td><code>bool setOriginalCamPosition, bool initMouslook = true</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PlayLandingSound</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>FixedUpdate</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PlayerOutOfWorldCheck</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateMovement</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>JoltCamera</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span></td><td><code>Vector3 direction, float amplitude, float speed</code></td></tr>
+<tr><td>PlayJumpSound</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ProgressStepCycle</td><td><code>void</code></td><td></td><td><code>float speed, float deltaTime</code></td></tr>
+<tr><td>UpdateCameraPosition</td><td><code>void</code></td><td></td><td><code>float speed</code></td></tr>
+<tr><td>GetInput</td><td><code>void</code></td><td></td><td><code>out float speed</code></td></tr>
+<tr><td>RotateView</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnControllerColliderHit</td><td><code>void</code></td><td></td><td><code>ControllerColliderHit hit</code></td></tr>
+<tr><td>DoHeadBob</td><td><code>Vector3</code></td><td></td><td><code>CurveControlledBob bob, float speed, float multiplier</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class CameraJolt</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>direction</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>progress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>speed</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

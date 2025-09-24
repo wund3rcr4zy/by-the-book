@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FurnitureClass — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>FurnitureClass</h1>
+      <div class="page-meta">Source file: <span class="code">FurnitureClass.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">FurnitureClass</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>wallRules</td><td><code>List&lt;FurnitureClass.FurnitureWallRule&gt;</code></td><td>List of rules this furniture must follow <span class="badge">Header: Rules</span></td><td>new List&lt;FurnitureClass.FurnitureWallRule&gt;()</td></tr>
+<tr><td>nodeRules</td><td><code>List&lt;FurnitureClass.FurnitureNodeRule&gt;</code></td><td>List of rules this furniture must follow</td><td>new List&lt;FurnitureClass.FurnitureNodeRule&gt;()</td></tr>
+<tr><td>blockedAccess</td><td><code>List&lt;FurnitureClass.BlockedAccess&gt;</code></td><td>Which points between nodes are blocked (no walking access)</td><td>new List&lt;FurnitureClass.BlockedAccess&gt;()</td></tr>
+<tr><td>customNodeWeights</td><td><code>List&lt;FurnitureClass.CustomNodeWeighting&gt;</code></td><td>Add a custom node weight to these nodes</td><td>new List&lt;FurnitureClass.CustomNodeWeighting&gt;()</td></tr>
+<tr><td>updatePreCalculated</td><td><code>bool</code></td><td><span class="badge">Header: PreCalculated Limits</span></td><td></td></tr>
+<tr><td>minimumZeroNodeWallCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>maximumZeroNodeWallCount</td><td><code>int</code></td><td></td><td>4</td></tr>
+<tr><td>canFaceDiagonally</td><td><code>bool</code></td><td>If true, face the furniture diagonally if in corner <span class="badge">Header: Behaviour</span></td><td></td></tr>
+<tr><td>limitPerRoom</td><td><code>bool</code></td><td>Maximum number per room</td><td>true</td></tr>
+<tr><td>maximumNumberPerRoom</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;limitPerRoom&quot;)</span> <span class="badge">Range(1f, 20f)</span></td><td>8</td></tr>
+<tr><td>limitPerAddress</td><td><code>bool</code></td><td>Maximum number per address</td><td>true</td></tr>
+<tr><td>maximumNumberPerAddress</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;limitPerAddress&quot;)</span> <span class="badge">Range(1f, 20f)</span></td><td>8</td></tr>
+<tr><td>limitToFloor</td><td><code>bool</code></td><td>Allow only on this floor</td><td></td></tr>
+<tr><td>allowedOnFloor</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;limitToFloor&quot;)</span></td><td></td></tr>
+<tr><td>limitToFloorRange</td><td><code>bool</code></td><td>Allow only on this range <span class="badge">DisableIf(&quot;limitToFloor&quot;)</span></td><td></td></tr>
+<tr><td>allowedOnFloorRange</td><td><code>Vector2</code></td><td><span class="badge">EnableIf(&quot;limitToFloorRange&quot;)</span></td><td>Vector2.zero</td></tr>
+<tr><td>limitPerBuildingResidence</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>perBuildingResidences</td><td><code>int</code></td><td>Limit to 1 per below number of residences in the building <span class="badge">EnableIf(&quot;limitPerBuildingResidence&quot;)</span></td><td>30</td></tr>
+<tr><td>limitPerJobs</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>perJobs</td><td><code>int</code></td><td>Limit to 1 per below number of residences in the building <span class="badge">EnableIf(&quot;limitPerJobs&quot;)</span></td><td>6</td></tr>
+<tr><td>awayFromClasses</td><td><code>List&lt;FurnitureClass&gt;</code></td><td>Must be at least this distance (nodes) from these classes...</td><td>new List&lt;FurnitureClass&gt;()</td></tr>
+<tr><td>minimumNodeDistance</td><td><code>float</code></td><td>Minimum node distance from these classes. A diagonal is about 1.8</td><td></td></tr>
+<tr><td>objectSize</td><td><code>Vector2</code></td><td><span class="badge">Header: Visuals</span></td><td>new Vector2(1f, 1f)</td></tr>
+<tr><td>tall</td><td><code>bool</code></td><td>If true this would cover up items on the wall such as lightswitches or block windows</td><td></td></tr>
+<tr><td>wallPiece</td><td><code>bool</code></td><td>Use the corresponding wall rules to place wall pieces</td><td></td></tr>
+<tr><td>useWallSnappingInDecorMode</td><td><code>bool</code></td><td>If being placed in decor mode, snap to nearby walls</td><td></td></tr>
+<tr><td>windowPiece</td><td><code>bool</code></td><td>Allow one of these per window</td><td></td></tr>
+<tr><td>occupiesTile</td><td><code>bool</code></td><td>Does this block the placement of other furniture (if this flag is true on them also)?</td><td>true</td></tr>
+<tr><td>allowedOnStairwell</td><td><code>bool</code></td><td>If this furniture allowed on stairwell tiles?</td><td></td></tr>
+<tr><td>onlyOnStairwell</td><td><code>bool</code></td><td><span class="badge">ShowIf(&quot;allowedOnStairwell&quot;)</span></td><td></td></tr>
+<tr><td>allowIfNoFloor</td><td><code>bool</code></td><td>Determins allowed if no floor</td><td></td></tr>
+<tr><td>ceilingPiece</td><td><code>bool</code></td><td>Is this a ceiling piece?</td><td></td></tr>
+<tr><td>requiresCeiling</td><td><code>bool</code></td><td>Does this require a ceiling above it? <span class="badge">DisableIf(&quot;ceilingPiece&quot;)</span></td><td></td></tr>
+<tr><td>blocksCeiling</td><td><code>bool</code></td><td>Does this block ceiling pieces from being placed?</td><td></td></tr>
+<tr><td>allowLightswitch</td><td><code>bool</code></td><td>This is allowed to be placed if there is a lightswitch on this tile</td><td>true</td></tr>
+<tr><td>raiseLightswitch</td><td><code>bool</code></td><td>If a lightswitch exists here, raise the height slightly <span class="badge">EnableIf(&quot;allowLightswitch&quot;)</span></td><td></td></tr>
+<tr><td>lightswitchYOffset</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;raiseLightswitch&quot;)</span></td><td>1.5f</td></tr>
+<tr><td>noBlocking</td><td><code>bool</code></td><td>If true this object doesn&#x27;t need access and won&#x27;t ever block anything; use on minor objects to optimize placement checks <span class="badge">Header: AI</span></td><td></td></tr>
+<tr><td>noPassThrough</td><td><code>bool</code></td><td>If true the AI can access this node, but not pass through it on the way to something else. Can be used for 1 node items such as tables where you can&#x27;t normally block access. IMPORTANT: Usually true if all but 1-3 directions are blocked.</td><td></td></tr>
+<tr><td>noAccessNeeded</td><td><code>bool</code></td><td>If true the AI can&#x27;t access this node, this node is effectively exluded from access checks. IMPORTANT: Make sure this is enabled if all directions are blocked.</td><td></td></tr>
+<tr><td>blockDefaultSublocations</td><td><code>bool</code></td><td>If true then default sublocations will be blocked completely (usually they are added if there are no custom ones on a node). Default sublocations will be used if there are no custom ones, and there is no furniture class with a blocking flag.</td><td></td></tr>
+<tr><td>ignoreGeometryInPhysicsCheck</td><td><code>bool</code></td><td>If true then the physics check will ignore colliders that are not citizens</td><td></td></tr>
+<tr><td>sublocations</td><td><code>List&lt;FurnitureClass.FurniureWalkSubLocations&gt;</code></td><td>These will be added to the tile&#x27;s sublocations</td><td>new List&lt;FurnitureClass.FurniureWalkSubLocations&gt;()</td></tr>
+<tr><td>aiRobberyPriority</td><td><code>int</code></td><td>If the AI is robbing a location, use this to compare the likihood of valuable contents... <span class="badge">Range(0f, 10f)</span></td><td>3</td></tr>
+<tr><td>isSecurityCamera</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ownershipClass</td><td><code>FurnitureClass.OwnershipClass</code></td><td>Dictates what class of ownership (ie each person living here needs 1 bed) <span class="badge">Header: Ownership</span></td><td></td></tr>
+<tr><td>ownershipSource</td><td><code>FurnitureClass.OwnershipSource</code></td><td>From where does this derrive the owners pool?</td><td></td></tr>
+<tr><td>assignBelongsToOwners</td><td><code>int</code></td><td>Assign owners to this furniture</td><td></td></tr>
+<tr><td>preferCouples</td><td><code>bool</code></td><td>If this is checked the game will assign this object to a couple</td><td></td></tr>
+<tr><td>copyFromPreviouslyPlacedInCluster</td><td><code>bool</code></td><td>If this is true, the object will try to copy ownership from previously placed items in the cluster</td><td></td></tr>
+<tr><td>onlyPickFromRoomOwners</td><td><code>bool</code></td><td>If this is true, this will only pick from the owners of the room (if there are any)</td><td></td></tr>
+<tr><td>skipIfNoAddressInhabitants</td><td><code>bool</code></td><td>Skip placement of this if there are no address owners</td><td></td></tr>
+<tr><td>assignHomelessOwners</td><td><code>bool</code></td><td>Assign homeless owners</td><td></td></tr>
+<tr><td>assignMailbox</td><td><code>bool</code></td><td>Make sure ownership is only assigned if mailbox not already assigned to an apartment</td><td></td></tr>
+<tr><td>discourageMissionPhotos</td><td><code>bool</code></td><td>Don&#x27;t allow mission photographs on this furniture</td><td></td></tr>
+<tr><td>copyFrom</td><td><code>FurnitureClass</code></td><td><span class="badge">Header: Copy</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>CopyBlockedAccess</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>CopySublocations</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>BlockSolid</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>BlockAllButFront</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>UpdatePreCalculatedLimits</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class FurniureWalkSubLocations</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>offset</td><td><code>Vector2</code></td><td>This rule is applied at this offset</td><td>Vector2.zero</td></tr>
+<tr><td>sublocations</td><td><code>List&lt;Vector3&gt;</code></td><td></td><td>new List&lt;Vector3&gt;()</td></tr>
+</tbody></table>
+<h3>class FurnitureNodeRule</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>offset</td><td><code>Vector2</code></td><td>This rule is applied at this offset</td><td>Vector2.zero</td></tr>
+<tr><td>option</td><td><code>FurnitureClass.FurnitureRuleOption</code></td><td>Type of rule to apply</td><td></td></tr>
+<tr><td>anyOccupiedTile</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>furnitureClass</td><td><code>FurnitureClass</code></td><td>What should be found at this node?</td><td></td></tr>
+<tr><td>addScore</td><td><code>int</code></td><td>If &#x27;Can Feature&#x27; add this to the location score <span class="badge">Range(-10f, 10f)</span></td><td></td></tr>
+</tbody></table>
+<h3>class FurnitureWallRule</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>nodeOffset</td><td><code>Vector2</code></td><td>This rule is applied at this offset</td><td>Vector2.zero</td></tr>
+<tr><td>wallDirection</td><td><code>CityData.BlockingDirection</code></td><td>This rule is applied at this offset</td><td></td></tr>
+<tr><td>option</td><td><code>FurnitureClass.FurnitureRuleOption</code></td><td>Type of rule to apply</td><td></td></tr>
+<tr><td>tag</td><td><code>FurnitureClass.WallRule</code></td><td>What should be found at this offset?</td><td></td></tr>
+<tr><td>roomType</td><td><code>RoomConfiguration</code></td><td>If the tag is &#x27;room to&#x27;</td><td></td></tr>
+<tr><td>addScore</td><td><code>int</code></td><td>If &#x27;Can Feature&#x27; add this to the location score <span class="badge">Range(-10f, 10f)</span></td><td></td></tr>
+</tbody></table>
+<h3>class BlockedAccess</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>disabled</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>nodeOffset</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>blockExteriorDiagonals</td><td><code>bool</code></td><td>Block diagonals on adjacent tiles</td><td></td></tr>
+<tr><td>blocked</td><td><code>List&lt;CityData.BlockingDirection&gt;</code></td><td></td><td>new List&lt;CityData.BlockingDirection&gt;()</td></tr>
+</tbody></table>
+<h3>class CustomNodeWeighting</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>disabled</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>nodeOffset</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>nodeWeightModifier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+</tbody></table>
+<h3>class SubObject</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>SubObjectClassPreset</code></td><td></td><td></td></tr>
+<tr><td>parent</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>localPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>localRot</td><td><code>Vector3</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>FurnitureRuleOption</h3>
+<pre><code>mustFeature
+cantFeature
+canFeature</code></pre>
+<h3>WallRule</h3>
+<pre><code>nothing
+wall
+window
+windowLarge
+entrance
+ventUpper
+ventLower
+wallOrUpperVent
+ventTop
+entranceDoorOnly
+entranceToRoomOfType
+anyWindow
+entraceDivider
+securityDoorDivider
+fence
+addressEntrance
+lightswitch</code></pre>
+<h3>OwnershipClass</h3>
+<pre><code>none
+bed
+desk
+locker
+drawers
+noticeBoard
+safe
+mailboxes</code></pre>
+<h3>OwnershipSource</h3>
+<pre><code>addressInhabitants
+buildingResidences</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

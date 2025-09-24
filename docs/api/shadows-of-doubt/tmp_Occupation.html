@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Occupation — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Occupation</h1>
+      <div class="page-meta">Source file: <span class="code">Occupation.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Occupation</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>idAssign</td><td><code>static int</code></td><td></td><td>1</td></tr>
+<tr><td>preset</td><td><code>OccupationPreset</code></td><td></td><td></td></tr>
+<tr><td>name</td><td><code>string</code></td><td></td><td>&quot;worker&quot;</td></tr>
+<tr><td>employer</td><td><code>Company</code></td><td></td><td></td></tr>
+<tr><td>isAgent</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>teamLeader</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>boss</td><td><code>Occupation</code></td><td></td><td></td></tr>
+<tr><td>paygrade</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>teamID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isOwner</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>work</td><td><code>OccupationPreset.workType</code></td><td></td><td></td></tr>
+<tr><td>tags</td><td><code>List&lt;OccupationPreset.workTags&gt;</code></td><td></td><td>new List&lt;OccupationPreset.workTags&gt;()</td></tr>
+<tr><td>shift</td><td><code>CompanyOpenHoursPreset.CompanyShift</code></td><td></td><td></td></tr>
+<tr><td>workHours</td><td><code>float</code></td><td></td><td>8f</td></tr>
+<tr><td>startTimeDecimalHour</td><td><code>float</code></td><td></td><td>9f</td></tr>
+<tr><td>endTimeDecialHour</td><td><code>float</code></td><td></td><td>17f</td></tr>
+<tr><td>lunchBreak</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lunchBreakHoursAfterStart</td><td><code>float</code></td><td></td><td>3.5f</td></tr>
+<tr><td>workDaysList</td><td><code>List&lt;SessionData.WeekDay&gt;</code></td><td></td><td>new List&lt;SessionData.WeekDay&gt;()</td></tr>
+<tr><td>salary</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>salaryString</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>employee</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>SalaryComparison</td><td><code>static Comparison&lt;Occupation&gt;</code></td><td></td><td>(Occupation object1, Occupation object2) =&gt; object1.salary.CompareTo(object2.salary)</td></tr>
+<tr><td>FillPriorityComparison</td><td><code>static Comparison&lt;Occupation&gt;</code></td><td></td><td>(Occupation object1, Occupation object2) =&gt; object1.preset.jobFillPriority.CompareTo(object2.preset.jobFillPriority)</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Setup</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Load</td><td><code>void</code></td><td></td><td><code>CitySaveData.OccupationCitySave data, Company newCompany</code></td></tr>
+<tr><td>IsAtWork</td><td><code>bool</code></td><td></td><td><code>float atTime</code></td></tr>
+<tr><td>GenerateSaveData</td><td><code>CitySaveData.OccupationCitySave</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetWorkingHoursString</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>CompareTo</td><td><code>int</code></td><td><span class="badge">i</span></td><td><code>Occupation paygrade</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

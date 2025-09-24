@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Case</h1>
+      <div class="page-meta">Source file: <span class="code">Case.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Case</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td><span class="badge">Header: Serializable</span></td><td>&quot;New Case&quot;</td></tr>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>assignCaseID</td><td><code>static int</code></td><td></td><td>1</td></tr>
+<tr><td>caseType</td><td><code>Case.CaseType</code></td><td></td><td>Case.CaseType.custom</td></tr>
+<tr><td>caseStatus</td><td><code>Case.CaseStatus</code></td><td></td><td>Case.CaseStatus.closable</td></tr>
+<tr><td>jobReference</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>mainStoryChapter</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>caseElements</td><td><code>List&lt;Case.CaseElement&gt;</code></td><td></td><td>new List&lt;Case.CaseElement&gt;()</td></tr>
+<tr><td>stringColours</td><td><code>List&lt;Case.StringColours&gt;</code></td><td></td><td>new List&lt;Case.StringColours&gt;()</td></tr>
+<tr><td>hiddenConnections</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>isActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>handInValid</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isSolved</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>questionsRank</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>victimsRank</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>rank</td><td><code>Case.CaseRank</code></td><td></td><td>Case.CaseRank.unSolved</td></tr>
+<tr><td>currentActiveObjectives</td><td><code>List&lt;Objective&gt;</code></td><td></td><td>new List&lt;Objective&gt;()</td></tr>
+<tr><td>inactiveCurrentObjectives</td><td><code>List&lt;Objective&gt;</code></td><td></td><td>new List&lt;Objective&gt;()</td></tr>
+<tr><td>endedObjectives</td><td><code>List&lt;Objective&gt;</code></td><td></td><td>new List&lt;Objective&gt;()</td></tr>
+<tr><td>resolveQuestions</td><td><code>List&lt;Case.ResolveQuestion&gt;</code></td><td></td><td>new List&lt;Case.ResolveQuestion&gt;()</td></tr>
+<tr><td>suspectsDetained</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>handIn</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>waitForObjectives</td><td><code>List&lt;Objective&gt;</code></td><td></td><td>new List&lt;Objective&gt;()</td></tr>
+<tr><td>job</td><td><code>SideJob</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>AddNewStringColour</td><td><code>void</code></td><td></td><td><code>Evidence.FactLink link, InterfaceControls.EvidenceColours col</code></td></tr>
+<tr><td>SetHidden</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Fact fact, bool val</code></td></tr>
+<tr><td>ToggleHidden</td><td><code>void</code></td><td></td><td><code>Fact fact</code></td></tr>
+<tr><td>SetStatus</td><td><code>void</code></td><td></td><td><code>Case.CaseStatus newStatus, bool cancelObjectives = true</code></td></tr>
+<tr><td>ApplyMonikerToCaseCheck</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetGameLocationFromQuestionInput</td><td><code>NewGameLocation</code></td><td></td><td><code>Case.ResolveQuestion question</code></td></tr>
+<tr><td>GetCitizenFromQuestionInput</td><td><code>Human</code></td><td></td><td><code>Case.ResolveQuestion question</code></td></tr>
+<tr><td>OnQuestionProgressChange</td><td><code>void</code></td><td></td><td><code>Case.ResolveQuestion question</code></td></tr>
+<tr><td>Resolve</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ValidationCheck</td><td><code>bool</code></td><td><span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>GetClosestHandIn</td><td><code>Interactable</code></td><td></td><td><code></code></td></tr>
+<tr><td>ClearAllObjectives</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class CaseElement</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>caseID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>n</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>id</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>dk</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td></td><td></td></tr>
+<tr><td>v</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>sdk</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td></td><td></td></tr>
+<tr><td>ap</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>w</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>resPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>resPiv</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>co</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>m</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>color</td><td><code>InterfaceControls.EvidenceColours</code></td><td></td><td></td></tr>
+<tr><td>pinnedController</td><td><code>PinnedItemController</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class StringColours</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>fromEv</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>toEv</td><td><code>List&lt;string&gt;</code></td><td></td><td></td></tr>
+<tr><td>fromDK</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td></td><td></td></tr>
+<tr><td>toDK</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td></td><td></td></tr>
+<tr><td>colIndex</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class ResolveQuestion</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnProgressChange</td><td><code>event Case.ResolveQuestion.ProgressChange</code></td><td></td><td></td></tr>
+<tr><td>name</td><td><code>string</code></td><td><span class="badge">Header: Setup</span></td><td></td></tr>
+<tr><td>displayObjective</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>displayOnlyAtPhase</td><td><code>bool</code></td><td><span class="badge">EnableIf(&quot;displayObjective&quot;)</span></td><td></td></tr>
+<tr><td>displayAtPhase</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;displayOnlyAtPhase&quot;)</span></td><td></td></tr>
+<tr><td>objectiveDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>onlyCompatibleWithIntros</td><td><code>List&lt;SideMissionIntroPreset&gt;</code></td><td></td><td>new List&lt;SideMissionIntroPreset&gt;()</td></tr>
+<tr><td>onlyCompatibleWithHandIns</td><td><code>List&lt;SideMissionHandInPreset&gt;</code></td><td></td><td>new List&lt;SideMissionHandInPreset&gt;()</td></tr>
+<tr><td>inputType</td><td><code>Case.InputType</code></td><td></td><td></td></tr>
+<tr><td>automaticAnswers</td><td><code>List&lt;Case.AutoCorrectAnswer&gt;</code></td><td>A list of automatically set answers</td><td>new List&lt;Case.AutoCorrectAnswer&gt;()</td></tr>
+<tr><td>tag</td><td><code>JobPreset.JobTag</code></td><td></td><td></td></tr>
+<tr><td>icon</td><td><code>InterfaceControls.Icon</code></td><td></td><td>InterfaceControls.Icon.resolve</td></tr>
+<tr><td>rewardRange</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>penaltyRange</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>isOptional</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>useAlternateName</td><td><code>bool</code></td><td><span class="badge">Header: Revenge Objective</span></td><td></td></tr>
+<tr><td>useName</td><td><code>Case.RevengeObjectiveName</code></td><td></td><td>Case.RevengeObjectiveName.IDTarget</td></tr>
+<tr><td>target</td><td><code>JobPreset.LeadCitizen</code></td><td></td><td></td></tr>
+<tr><td>location</td><td><code>JobPreset.JobSpawnWhere</code></td><td></td><td></td></tr>
+<tr><td>revengeObjective</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>revengeObjTarget</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>revengeObjLoc</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>revengeObjPassed</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>completedRevenge</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>input</td><td><code>string</code></td><td><span class="badge">Header: Inputted</span></td><td>&quot;...&quot;</td></tr>
+<tr><td>inputtedEvidence</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>correctAnswers</td><td><code>List&lt;string&gt;</code></td><td><span class="badge">Header: State</span></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>progress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>reward</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>penalty</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isValid</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isCorrect</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>inputField</td><td><code>InputFieldController</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>CaseStatus</h3>
+<pre><code>handInNotCollected
+handInCollected
+submitted
+closable
+archived
+forced</code></pre>
+<h3>CaseType</h3>
+<pre><code>mainStory
+murder
+sideJob
+custom
+retirement</code></pre>
+<h3>CaseRank</h3>
+<pre><code>super
+A
+B
+C
+D
+unSolved</code></pre>
+<h3>RevengeObjectiveName</h3>
+<pre><code>D0
+D1
+IDTarget</code></pre>
+<h3>AutoCorrectAnswer</h3>
+<pre><code>none
+poster
+purp
+purpsParamour
+posterHome
+purpHome
+purpsParamourHome
+posterWork
+purpWork
+purpsParamourWork
+posterPhoto
+purpPhoto
+purpsParamourPhoto
+posterHomePhoto
+purpHomePhoto
+purpsParamourHomePhoto
+posterWorkPhoto
+purpWorkPhoto
+purpsParamourWorkPhoto
+spawnedItemA
+spawnedItemB
+spawnedItemC
+spawnedItemD
+spawnedItemE
+spawnedItemF
+spawnedItemTag</code></pre>
+<h3>InputType</h3>
+<pre><code>citizen
+location
+item
+revengeObjective
+objective
+arrestPurp
+saveVictim</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RainSheetController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>RainSheetController</h1>
+      <div class="page-meta">Source file: <span class="code">RainSheetController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">RainSheetController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>sheets</td><td><code>List&lt;RainSheetController.RainSheet&gt;</code></td><td><span class="badge">Header: Components</span></td><td>new List&lt;RainSheetController.RainSheet&gt;()</td></tr>
+<tr><td>indoorRaycast</td><td><code>bool</code></td><td><span class="badge">Header: Settings</span></td><td>true</td></tr>
+<tr><td>raycastsPerFrame</td><td><code>int</code></td><td></td><td>3</td></tr>
+<tr><td>rainBlockOnlyMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>rainBlockAndRoomMeshMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>sheetCursor</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>rainSheetHeight</td><td><code>float</code></td><td></td><td>10f</td></tr>
+<tr><td>snowMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>material</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>snowMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetSnowMode</td><td><code>void</code></td><td></td><td><code>bool val, bool forceUpdate = false</code></td></tr>
+<tr><td>SetEnabled</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class RainSheet</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>rainSheetTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>renderer</td><td><code>MeshRenderer</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

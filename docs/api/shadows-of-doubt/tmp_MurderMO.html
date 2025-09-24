@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MurderMO — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>MurderMO</h1>
+      <div class="page-meta">Source file: <span class="code">MurderMO.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">MurderMO</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>notes</td><td><code>string</code></td><td><span class="badge">Header: Notes</span></td><td></td></tr>
+<tr><td>disabled</td><td><code>bool</code></td><td><span class="badge">Header: Compatibility</span></td><td></td></tr>
+<tr><td>compatibleWith</td><td><code>List&lt;MurderPreset&gt;</code></td><td>Compatible with these killer types</td><td>new List&lt;MurderPreset&gt;()</td></tr>
+<tr><td>baseDifficulty</td><td><code>int</code></td><td><span class="badge">Range(0f, 2f)</span></td><td></td></tr>
+<tr><td>maximumPotentialScore</td><td><code>float</code></td><td><span class="badge">Header: Murderer Suitability</span></td><td></td></tr>
+<tr><td>updateThis</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>pickRandomScoreRange</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>murdererTraitModifiers</td><td><code>List&lt;MurderPreset.MurdererModifierRule&gt;</code></td><td></td><td>new List&lt;MurderPreset.MurdererModifierRule&gt;()</td></tr>
+<tr><td>murdererJobModifiers</td><td><code>List&lt;MurderMO.JobModifier&gt;</code></td><td></td><td>new List&lt;MurderMO.JobModifier&gt;()</td></tr>
+<tr><td>murdererCompanyModifiers</td><td><code>List&lt;MurderMO.CompanyModifier&gt;</code></td><td></td><td>new List&lt;MurderMO.CompanyModifier&gt;()</td></tr>
+<tr><td>useMurdererSocialClassRange</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>murdererClassRange</td><td><code>Vector2</code></td><td><span class="badge">EnableIf(&quot;useMurdererSocialClassRange&quot;)</span></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>murdererClassRangeBoost</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useMurdererSocialClassRange&quot;)</span></td><td></td></tr>
+<tr><td>useHexaco</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>hexaco</td><td><code>HEXACO</code></td><td><span class="badge">ShowIf(&quot;useHexaco&quot;)</span></td><td></td></tr>
+<tr><td>requiresSniperVantageAtHome</td><td><code>bool</code></td><td>Ensures the killer will have sniper vantage points at home. Victim&#x27;s home has to be within line-of-sight of this.</td><td></td></tr>
+<tr><td>weaponsPool</td><td><code>List&lt;MurderWeaponsPool&gt;</code></td><td><span class="badge">Header: Weapons Picking</span></td><td>new List&lt;MurderWeaponsPool&gt;()</td></tr>
+<tr><td>blockDroppingWeapons</td><td><code>bool</code></td><td>Block weapons from being dropped at scene</td><td></td></tr>
+<tr><td>allowAnywhere</td><td><code>bool</code></td><td>The murder can happen anywhere <span class="badge">Header: Crime Scene</span></td><td></td></tr>
+<tr><td>allowHome</td><td><code>bool</code></td><td>The murder can happen at home <span class="badge">DisableIf(&quot;allowAnywhere&quot;)</span></td><td>true</td></tr>
+<tr><td>allowWork</td><td><code>bool</code></td><td>The murder can happen at work <span class="badge">DisableIf(&quot;allowAnywhere&quot;)</span></td><td></td></tr>
+<tr><td>allowPublic</td><td><code>bool</code></td><td>The murder can happen in public <span class="badge">DisableIf(&quot;allowAnywhere&quot;)</span></td><td></td></tr>
+<tr><td>allowStreets</td><td><code>bool</code></td><td>The murder can happen in public <span class="badge">DisableIf(&quot;allowAnywhere&quot;)</span></td><td></td></tr>
+<tr><td>allowDen</td><td><code>bool</code></td><td>The murder can happen at the killers den <span class="badge">DisableIf(&quot;allowAnywhere&quot;)</span></td><td></td></tr>
+<tr><td>denFurniture</td><td><code>List&lt;FurnitureCluster&gt;</code></td><td><span class="badge">EnableIf(&quot;allowDen&quot;)</span></td><td>new List&lt;FurnitureCluster&gt;()</td></tr>
+<tr><td>denStyleOverride</td><td><code>List&lt;DesignStylePreset&gt;</code></td><td><span class="badge">EnableIf(&quot;allowDen&quot;)</span></td><td>new List&lt;DesignStylePreset&gt;()</td></tr>
+<tr><td>denItems</td><td><code>List&lt;InteractablePreset&gt;</code></td><td><span class="badge">EnableIf(&quot;allowDen&quot;)</span></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>acquaintedSuitabilityBoost</td><td><code>int</code></td><td><span class="badge">Header: Victim Suitability</span> <span class="badge">Range(-20f, 20f)</span></td><td></td></tr>
+<tr><td>attractedToSuitabilityBoost</td><td><code>int</code></td><td><span class="badge">Range(-20f, 20f)</span></td><td></td></tr>
+<tr><td>likeSuitabilityBoost</td><td><code>int</code></td><td>The following is multiplied by the like value in acquaintance class. <span class="badge">Range(-20f, 20f)</span></td><td></td></tr>
+<tr><td>sameWorkplaceBoost</td><td><code>int</code></td><td><span class="badge">Range(-20f, 20f)</span></td><td></td></tr>
+<tr><td>murdererIsTenantBoost</td><td><code>int</code></td><td><span class="badge">Range(-20f, 20f)</span></td><td></td></tr>
+<tr><td>victimRandomScoreRange</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>victimTraitModifiers</td><td><code>List&lt;MurderPreset.MurdererModifierRule&gt;</code></td><td></td><td>new List&lt;MurderPreset.MurdererModifierRule&gt;()</td></tr>
+<tr><td>victimJobModifiers</td><td><code>List&lt;MurderMO.JobModifier&gt;</code></td><td></td><td>new List&lt;MurderMO.JobModifier&gt;()</td></tr>
+<tr><td>victimCompanyModifiers</td><td><code>List&lt;MurderMO.CompanyModifier&gt;</code></td><td></td><td>new List&lt;MurderMO.CompanyModifier&gt;()</td></tr>
+<tr><td>useVictimSocialClassRange</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>victimClassRange</td><td><code>Vector2</code></td><td><span class="badge">EnableIf(&quot;useVictimSocialClassRange&quot;)</span></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>victimClassRangeBoost</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useVictimSocialClassRange&quot;)</span></td><td></td></tr>
+<tr><td>monkierDDSMessageList</td><td><code>string</code></td><td><span class="badge">Header: Monkier DDS Message List</span></td><td></td></tr>
+<tr><td>confessionalDDSResponses</td><td><code>List&lt;string&gt;</code></td><td><span class="badge">Header: Confessional Responses</span></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>MOleads</td><td><code>List&lt;MurderPreset.MurderLeadItem&gt;</code></td><td><span class="badge">Header: Leads</span></td><td>new List&lt;MurderPreset.MurderLeadItem&gt;()</td></tr>
+<tr><td>graffiti</td><td><code>List&lt;MurderMO.Graffiti&gt;</code></td><td><span class="badge">Header: Calling Cards</span></td><td>new List&lt;MurderMO.Graffiti&gt;()</td></tr>
+<tr><td>callingCardPool</td><td><code>List&lt;MurderMO.CallingCardPick&gt;</code></td><td></td><td>new List&lt;MurderMO.CallingCardPick&gt;()</td></tr>
+<tr><td>playerTaunts</td><td><code>List&lt;InteractablePreset&gt;</code></td><td><span class="badge">Header: Player Taunts</span></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>OnGUIDValueChangedCallback</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class CallingCardPick</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>item</td><td><code>InteractablePreset</code></td><td>The item itself</td><td></td></tr>
+<tr><td>origin</td><td><code>MurderMO.CallingCardOrigin</code></td><td></td><td></td></tr>
+<tr><td>randomScoreRange</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 0f)</td></tr>
+<tr><td>traitModifiers</td><td><code>List&lt;MurderPreset.MurdererModifierRule&gt;</code></td><td></td><td>new List&lt;MurderPreset.MurdererModifierRule&gt;()</td></tr>
+</tbody></table>
+<h3>class Graffiti</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>pos</td><td><code>MurderMO.Graffiti.GraffitiPosition</code></td><td></td><td></td></tr>
+<tr><td>artImage</td><td><code>ArtPreset</code></td><td></td><td></td></tr>
+<tr><td>ddsMessageTextList</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>color</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+<tr><td>size</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class JobModifier</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>jobs</td><td><code>List&lt;OccupationPreset&gt;</code></td><td></td><td>new List&lt;OccupationPreset&gt;()</td></tr>
+<tr><td>jobBoost</td><td><code>int</code></td><td><span class="badge">Range(-20f, 20f)</span></td><td></td></tr>
+</tbody></table>
+<h3>class CompanyModifier</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>companies</td><td><code>List&lt;CompanyPreset&gt;</code></td><td></td><td>new List&lt;CompanyPreset&gt;()</td></tr>
+<tr><td>mininumEmployees</td><td><code>int</code></td><td></td><td>3</td></tr>
+<tr><td>companyBoost</td><td><code>int</code></td><td><span class="badge">Range(-20f, 20f)</span></td><td></td></tr>
+<tr><td>boostPerEmployeeOverMinimum</td><td><code>int</code></td><td>Add even more for employee count over the minimum</td><td>1</td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>CallingCardOrigin</h3>
+<pre><code>createAtScene
+createOnGoToLocation</code></pre>
+<h3>GraffitiPosition</h3>
+<pre><code>victim
+nearbyWall</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

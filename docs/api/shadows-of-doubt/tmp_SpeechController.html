@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpeechController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>SpeechController</h1>
+      <div class="page-meta">Source file: <span class="code">SpeechController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">SpeechController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>actor</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>interactable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>phoneLine</td><td><code>Telephone</code></td><td></td><td></td></tr>
+<tr><td>activeSpeechBubble</td><td><code>SpeechBubbleController</code></td><td><span class="badge">Header: Speech</span></td><td></td></tr>
+<tr><td>endAfterThisSpeech</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lastSpeech</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>speechQueue</td><td><code>List&lt;SpeechController.QueueElement&gt;</code></td><td></td><td>new List&lt;SpeechController.QueueElement&gt;()</td></tr>
+<tr><td>speechDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>speechActive</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>TriggerBark</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>SpeechController.Bark newBark</code></td></tr>
+<tr><td>Speak</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>ref List&lt;AIActionPreset.AISpeechPreset&gt; speechOptions, Human speakAbout = null, SideJob sideJob = null, DialogPreset dialogPreset = null, Interactable saysTo = null</code></td></tr>
+<tr><td>Speak</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">j</span></td><td><code>string ddsMessage, bool shout = false, bool interupt = false, Human speakAbout = null, SideJob sideJob = null</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>SetSpeechActive</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">j</span></td><td><code>bool val</code></td></tr>
+<tr><td>OnEnable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class QueueElement</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>dictRef</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>entryRef</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>useParsing</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>delay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>delayActivated</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>shouting</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>interupt</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>forceColour</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>color</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>speakingAbout</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>jobRef</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>endsDialog</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>jobHandIn</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>speakingToRef</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>dialog</td><td><code>AIActionPreset.AISpeechPreset</code></td><td></td><td></td></tr>
+<tr><td>dialogPreset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>isObjective</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>usePointer</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>pointerPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>triggers</td><td><code>List&lt;Objective.ObjectiveTrigger&gt;</code></td><td></td><td></td></tr>
+<tr><td>onComplete</td><td><code>Objective.OnCompleteAction</code></td><td></td><td></td></tr>
+<tr><td>removePreviousObjectives</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>chapterString</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>isSilent</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>allowCrouchPrompt</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>icon</td><td><code>InterfaceControls.Icon</code></td><td></td><td></td></tr>
+<tr><td>caseID</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>forceBottom</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>Bark</h3>
+<pre><code>persuit
+lostTarget
+answeringDoor
+answerDoor
+giveUpSearch
+hearsSuspicious
+seesSuspicious
+enforcerRadio
+idleSounds
+discoverTamper
+fallOffChair
+sleeping
+yawn
+hearsObject
+stench
+seeBody
+examineBody
+mourn
+enforcersKnock
+scared
+cower
+attack
+confrontMessingAround
+pickUpMisplaced
+takeDamage
+frustration
+outOfBreath
+cold
+drunkIdle
+targetDown
+restrained
+restrainedIdle
+dazed
+trespass
+threatenByItem
+threatenByCombat
+soundAlarm
+doorBlocked
+spooked
+exposedConfront
+spookConfront
+loiteringConfront
+trespassClosed
+trespassLoiter</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

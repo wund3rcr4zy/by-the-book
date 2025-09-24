@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TMP_SelectionController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>TMP_SelectionController</h1>
+      <div class="page-meta">Source file: <span class="code">TMP_SelectionController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">TMP_SelectionController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>m_TextMeshPro</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>m_Canvas</td><td><code>Canvas</code></td><td></td><td></td></tr>
+<tr><td>m_Camera</td><td><code>Camera</code></td><td></td><td></td></tr>
+<tr><td>isHoveringObject</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>m_selectedLink</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>m_matrix</td><td><code>Matrix4x4</code></td><td></td><td></td></tr>
+<tr><td>m_cachedMeshInfoVertexData</td><td><code>TMP_MeshInfo[]</code></td><td></td><td></td></tr>
+<tr><td>linkButtons</td><td><code>List&lt;LinkButtonController&gt;</code></td><td></td><td>new List&lt;LinkButtonController&gt;()</td></tr>
+<tr><td>hoverColour</td><td><code>Color</code></td><td></td><td>Color.red</td></tr>
+<tr><td>hoverOriginal</td><td><code>Color</code></td><td></td><td>Color.black</td></tr>
+<tr><td>highlightColour</td><td><code>Color</code></td><td></td><td>Color.yellow</td></tr>
+<tr><td>originalUseGradient</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>originalGradient</td><td><code>TMP_ColorGradient</code></td><td></td><td></td></tr>
+<tr><td>markedLinks</td><td><code>Dictionary&lt;int, bool&gt;</code></td><td></td><td>new Dictionary&lt;int, bool&gt;()</td></tr>
+<tr><td>lastPage</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateOriginalFontSettings</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnEnable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ON_TEXT_CHANGED</td><td><code>void</code></td><td></td><td><code>Object obj</code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LateStart</td><td><code>IEnumerator</code></td><td></td><td><code></code></td></tr>
+<tr><td>LateUpdate</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>NewHover</td><td><code>void</code></td><td></td><td><code>int linkIndex</code></td></tr>
+<tr><td>EndHover</td><td><code>void</code></td><td><span class="badge">linkIndex</span> <span class="badge">num</span> <span class="badge">num</span> <span class="badge">num</span> <span class="badge">materialReferenceIndex</span> <span class="badge">vertexIndex</span></td><td><code>int linkIndex</code></td></tr>
+<tr><td>UpdateLinkDiscovery</td><td><code>void</code></td><td><span class="badge">num</span> <span class="badge">num</span> <span class="badge">num</span> <span class="badge">materialReferenceIndex</span> <span class="badge">vertexIndex</span></td><td><code></code></td></tr>
+<tr><td>RefreshLinkButtons</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>bool updateNavigation = true</code></td></tr>
+<tr><td>DrawButton</td><td><code>LinkButtonController</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">num2</span> <span class="badge">num2</span> <span class="badge">num2</span> <span class="badge">num2</span> <span class="badge">num2</span> <span class="badge">num2</span> <span class="badge">num2</span> <span class="badge">num2</span></td><td><code>Vector3 bottomLeft, float width, float height, string linkID, string buttonName</code></td></tr>
+<tr><td>OnPointerEnter</td><td><code>void</code></td><td></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnPointerExit</td><td><code>void</code></td><td></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnPointerClick</td><td><code>void</code></td><td></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OnPointerUp</td><td><code>void</code></td><td><span class="badge">num</span></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>RestoreCachedVertexAttributes</td><td><code>void</code></td><td></td><td><code>int index</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

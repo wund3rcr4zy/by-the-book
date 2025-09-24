@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PlayerApartmentController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>PlayerApartmentController</h1>
+      <div class="page-meta">Source file: <span class="code">PlayerApartmentController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">PlayerApartmentController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnFurnitureChange</td><td><code>event PlayerApartmentController.FurnitureChange</code></td><td></td><td></td></tr>
+<tr><td>placementCursor</td><td><code>Transform</code></td><td><span class="badge">Header: Components</span></td><td></td></tr>
+<tr><td>placementValidLerpColour</td><td><code>Color</code></td><td><span class="badge">Header: Settings</span></td><td>Color.gray</td></tr>
+<tr><td>placementInvalidLerpColour</td><td><code>Color</code></td><td></td><td>Color.red</td></tr>
+<tr><td>furnitureFPSItem</td><td><code>FirstPersonItem</code></td><td></td><td></td></tr>
+<tr><td>nullCluster</td><td><code>FurnitureCluster</code></td><td></td><td></td></tr>
+<tr><td>swatches</td><td><code>List&lt;Color&gt;</code></td><td><span class="badge">Header: State</span></td><td>new List&lt;Color&gt;()</td></tr>
+<tr><td>furnitureStorage</td><td><code>List&lt;FurnitureLocation&gt;</code></td><td></td><td>new List&lt;FurnitureLocation&gt;()</td></tr>
+<tr><td>itemStorage</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>furniturePlacementMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>placeExistingRoomObject</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>furnPlacement</td><td><code>PlayerApartmentController.FurniturePlacement</code></td><td></td><td></td></tr>
+<tr><td>furnPlacementRoom</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>spawnedPlacementObj</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>spawnedPlacementMesh</td><td><code>MeshRenderer</code></td><td></td><td></td></tr>
+<tr><td>furnitureRotation</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>cloneMaterials</td><td><code>List&lt;Material&gt;</code></td><td></td><td>new List&lt;Material&gt;()</td></tr>
+<tr><td>placementColliders</td><td><code>List&lt;Collider&gt;</code></td><td></td><td>new List&lt;Collider&gt;()</td></tr>
+<tr><td>materialPulse</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lerpColour</td><td><code>Color</code></td><td></td><td>Color.black</td></tr>
+<tr><td>placementNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>isPlacementValid</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>decoratingMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>decoratingMaterial</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>decoratingType</td><td><code>MaterialGroupPreset.MaterialType</code></td><td></td><td></td></tr>
+<tr><td>decoratingKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>decoratingRoom</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>materialKeyWindow</td><td><code>InfoWindow</code></td><td></td><td></td></tr>
+<tr><td>rememberContent</td><td><code>WindowTabPreset.TabContentType</code></td><td></td><td>WindowTabPreset.TabContentType.decor</td></tr>
+<tr><td>rememberDecorType</td><td><code>MaterialGroupPreset.MaterialType</code></td><td></td><td></td></tr>
+<tr><td>rememberRoomStorageShop</td><td><code>FurnishingsController.TabState</code></td><td></td><td></td></tr>
+<tr><td>rememberDisplayClasses</td><td><code>List&lt;FurniturePreset.DecorClass&gt;</code></td><td></td><td>new List&lt;FurniturePreset.DecorClass&gt;()</td></tr>
+<tr><td>rememberItemDisplayClasses</td><td><code>List&lt;InteractablePreset.ItemClass&gt;</code></td><td></td><td>new List&lt;InteractablePreset.ItemClass&gt;()</td></tr>
+<tr><td>_instance</td><td><code>static PlayerApartmentController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SortSwatches</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>Step</td><td><code>int</code></td><td></td><td><code>Color colour</code></td></tr>
+<tr><td>BuyNewResidence</td><td><code>void</code></td><td></td><td><code>ResidenceController newHome, bool removePreviousResidence = false</code></td></tr>
+<tr><td>SetFurniturePlacementMode</td><td><code>void</code></td><td></td><td><code>bool val, PlayerApartmentController.FurniturePlacement newPlacement, NewRoom forRoom, bool newPlaceExistingRoomObject = false, bool forceUpdate = false</code></td></tr>
+<tr><td>OpenOrUpdateMaterialWindow</td><td><code>InfoWindow</code></td><td></td><td><code>FurniturePreset furn, Toolbox.MaterialKey useKey, MaterialGroupPreset newSelection</code></td></tr>
+<tr><td>SetDecoratingMode</td><td><code>void</code></td><td></td><td><code>bool val, MaterialGroupPreset materialPreset, MaterialGroupPreset.MaterialType editType = MaterialGroupPreset.MaterialType.walls, Toolbox.MaterialKey editKey = null, NewRoom forRoom = null</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RemoveBeingPlaced</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>GetExistingFurniture</td><td><code>FurnitureLocation</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdatePlacementColourKey</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateFurnitureDesiredPosition</td><td><code>NewNode</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>RotateFurn</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>bool right</code></td></tr>
+<tr><td>AddFurnitureRotation</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>int angle</code></td></tr>
+<tr><td>ExecutePlacement</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetExisting</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetCurrentCost</td><td><code>int</code></td><td></td><td><code></code></td></tr>
+<tr><td>CancelPlacement</td><td><code>void</code></td><td></td><td><code>bool restoreExistingPosition</code></td></tr>
+<tr><td>MoveFurnitureToStorage</td><td><code>void</code></td><td></td><td><code>FurnitureLocation newStorage</code></td></tr>
+<tr><td>RemoveFromStorage</td><td><code>void</code></td><td></td><td><code>FurnitureLocation newStorage</code></td></tr>
+<tr><td>SellFurniture</td><td><code>void</code></td><td></td><td><code>FurnitureLocation newSell</code></td></tr>
+<tr><td>MoveItemToStorage</td><td><code>void</code></td><td></td><td><code>Interactable newStorage</code></td></tr>
+<tr><td>RemoveItemFromStorage</td><td><code>void</code></td><td></td><td><code>Interactable newStorage</code></td></tr>
+<tr><td>SellItem</td><td><code>void</code></td><td></td><td><code>Interactable newSell</code></td></tr>
+<tr><td>UpdateDecorColourKey</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ApplyDecor</td><td><code>void</code></td><td></td><td><code>MaterialGroupPreset.MaterialType decorType, MaterialGroupPreset material, Toolbox.MaterialKey key, bool saveChanges</code></td></tr>
+<tr><td>RevertDecor</td><td><code>void</code></td><td></td><td><code>MaterialGroupPreset.MaterialType decorType</code></td></tr>
+<tr><td>PlaceIndividualCluster</td><td><code>void</code></td><td></td><td><code>FurnitureCluster cluster, NewAddress address, DesignStylePreset styleOverride = null</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class PlayerFurniture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>matKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>presetStr</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>preset</td><td><code>FurniturePreset</code></td><td></td><td></td></tr>
+<tr><td>placement</td><td><code>FurnitureLocation</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class FurniturePlacement</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>FurniturePreset</code></td><td></td><td></td></tr>
+<tr><td>existing</td><td><code>FurnitureLocation</code></td><td></td><td></td></tr>
+<tr><td>materialKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>art</td><td><code>ArtPreset</code></td><td></td><td></td></tr>
+<tr><td>anchorNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>coversNodes</td><td><code>List&lt;NewNode&gt;</code></td><td></td><td>new List&lt;NewNode&gt;()</td></tr>
+<tr><td>angle</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>offset</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

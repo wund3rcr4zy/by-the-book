@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AchievementsController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>AchievementsController</h1>
+      <div class="page-meta">Source file: <span class="code">AchievementsController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">AchievementsController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>freeHealthCareFlag</td><td><code>bool</code></td><td>Used to help detect whether we are escaping from hospital without paying... <span class="badge">Header: Achievement Flags</span></td><td></td></tr>
+<tr><td>notTheAnswerFlag</td><td><code>int</code></td><td>Used to help detect whether we are participating in a murder case without using violence. The number is a reference to a case ID, while active the player is not allowed to use violence...</td><td>-1</td></tr>
+<tr><td>privateSlyFlag</td><td><code>int</code></td><td>As above but seen trespassing instead of violence caused</td><td>-1</td></tr>
+<tr><td>allConnectedReference</td><td><code>List&lt;string&gt;</code></td><td>Records how many unique things we have pinned in a single game</td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>pacifistFlag</td><td><code>bool</code></td><td>If at any point the player KO&#x27;s anyone in their game, this is set to true and the achievement cannot complete</td><td></td></tr>
+<tr><td>notAScratchFlag</td><td><code>bool</code></td><td>If at any point the player is KO&#x27;d, this is set to true and the achievement cannot complete</td><td></td></tr>
+<tr><td>spareNoOneReference</td><td><code>List&lt;int&gt;</code></td><td>Tracks who the player has KO&#x27;d in this game by citizen ID. Used for the achivement for KO&#x27;ing everybody</td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>_instance</td><td><code>static AchievementsController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetAchievementStatus</td><td><code>bool</code></td><td></td><td><code>string id</code></td></tr>
+<tr><td>UnlockAchievement</td><td><code>void</code></td><td></td><td><code>string nameReference, string id</code></td></tr>
+<tr><td>AddToStat</td><td><code>void</code></td><td></td><td><code>string nameReference, string id, int add</code></td></tr>
+<tr><td>ClearAchievement</td><td><code>void</code></td><td></td><td><code>string id</code></td></tr>
+<tr><td>LoadTrackingDataFromSave</td><td><code>void</code></td><td></td><td><code>ref StateSaveData data</code></td></tr>
+<tr><td>TestKOEverybody</td><td><code>void</code></td><td><span class="badge">Button(&quot;Testing: KO Everybody&quot;, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

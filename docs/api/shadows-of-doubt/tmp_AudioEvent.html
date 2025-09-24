@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AudioEvent — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>AudioEvent</h1>
+      <div class="page-meta">Source file: <span class="code">AudioEvent.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">AudioEvent</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>guid</td><td><code>string</code></td><td>Paste the GUID from FMOD in here. Curly braces will be removed. <span class="badge">Header: Setup</span></td><td></td></tr>
+<tr><td>disableOcclusion</td><td><code>bool</code></td><td>If enabled, this sound&#x27;s occlusion will never be checked</td><td></td></tr>
+<tr><td>debug</td><td><code>bool</code></td><td>If enabled, this will print out debug info in the console</td><td></td></tr>
+<tr><td>isDummyEvent</td><td><code>bool</code></td><td>If enabled, this run the sound through the occlusion and AI checks without physically playing it</td><td></td></tr>
+<tr><td>isLicensed</td><td><code>bool</code></td><td>Is this a licensed music track?</td><td></td></tr>
+<tr><td>pauseWhenGameIsPaused</td><td><code>bool</code></td><td>Do we want this to pause when the game pauses? <span class="badge">Header: Loop Settings</span></td><td>true</td></tr>
+<tr><td>disabled</td><td><code>bool</code></td><td>Disable this in-game completely. <span class="badge">Header: Disable</span></td><td></td></tr>
+<tr><td>canPenetrateWalls</td><td><code>bool</code></td><td>If true this sound can penetrate walls <span class="badge">Header: Occlusion</span></td><td></td></tr>
+<tr><td>canPenetrateFloors</td><td><code>bool</code></td><td>If true this sound can penetrate floors</td><td></td></tr>
+<tr><td>canPenetrateCeilings</td><td><code>bool</code></td><td>If true this sound can penetrate cielings</td><td></td></tr>
+<tr><td>overrideMaximumLoops</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>overriddenMaxLoops</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;overrideMaximumLoops&quot;)</span></td><td>80</td></tr>
+<tr><td>overrideOcclusionModifier</td><td><code>bool</code></td><td>Overrides default occlusion value sound in the audio controller</td><td></td></tr>
+<tr><td>occlusionUnitVolumeModifier</td><td><code>float</code></td><td>Each occlusion unit will decrease volume by this amount... <span class="badge">EnableIf(&quot;overrideOcclusionModifier&quot;)</span></td><td>-0.1f</td></tr>
+<tr><td>overrideOpenDoorOcclusion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>openDoorOcclusionUnits</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;overrideOpenDoorOcclusion&quot;)</span> <span class="badge">Range(0f, 10f)</span></td><td>1</td></tr>
+<tr><td>overrideClosedDoorOcclusion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>closedDoorOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;overrideClosedDoorOcclusion&quot;)</span></td><td>5</td></tr>
+<tr><td>overrideWindowOcclusion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>windowOcclusionUnits</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;overrideWindowOcclusion&quot;)</span> <span class="badge">Range(0f, 10f)</span></td><td>4</td></tr>
+<tr><td>overrideWallOcclusion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>wallOcclusionUnits</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;overrideWallOcclusion&quot;)</span> <span class="badge">Range(0f, 10f)</span></td><td>7</td></tr>
+<tr><td>overrideCeilingOcclusion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ceilingOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;overrideCeilingOcclusion&quot;)</span></td><td>8</td></tr>
+<tr><td>overrideFloorOcclusion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>floorOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;overrideFloorOcclusion&quot;)</span></td><td>8</td></tr>
+<tr><td>forceVolumeLevelFadeTime</td><td><code>bool</code></td><td>On updated occlusion, force the volume to change level at a specific rate (seconds)</td><td></td></tr>
+<tr><td>volumeLevelFadeTime</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;forceVolumeLevelFadeTime&quot;)</span></td><td>0.5f</td></tr>
+<tr><td>canBeSuspicious</td><td><code>bool</code></td><td>Can this audio trigger an AI reaction? <span class="badge">Header: Suspicion</span></td><td></td></tr>
+<tr><td>alwaysSuspicious</td><td><code>bool</code></td><td>This event will by default trigger an AI reaction <span class="badge">EnableIf(&quot;canBeSuspicious&quot;)</span></td><td></td></tr>
+<tr><td>suspiciousIfTresspassing</td><td><code>bool</code></td><td>This event will only trigger an AI reaction if 1) The actor is trespassing and 2) The listener is allowed to go there without trespassing. <span class="badge">EnableIf(&quot;canBeSuspicious&quot;)</span></td><td></td></tr>
+<tr><td>suspiciousIfCantSeeSoundMaker</td><td><code>bool</code></td><td>This event is only considered suspicious if the AI can&#x27;t see the player <span class="badge">EnableIf(&quot;canBeSuspicious&quot;)</span></td><td></td></tr>
+<tr><td>onlySuspiciousIfEmptyAddress</td><td><code>bool</code></td><td>This event will only trigger an AI reaction if the address is empty apart from the player and the following number of people <span class="badge">EnableIf(&quot;canBeSuspicious&quot;)</span></td><td></td></tr>
+<tr><td>onlySuspiciousIfNotEnforcer</td><td><code>bool</code></td><td>Only suspicious if not caused by an enforcer <span class="badge">EnableIf(&quot;canBeSuspicious&quot;)</span></td><td>true</td></tr>
+<tr><td>suspiciousIfCitizenCount</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;canBeSuspicious&quot;)</span></td><td>2</td></tr>
+<tr><td>urgentResponse</td><td><code>bool</code></td><td>If this event is urgency (eg gunshot), AI will immediately run for investiation</td><td></td></tr>
+<tr><td>audioFocus</td><td><code>float</code></td><td>AI hearing this event triggers this amount of audio focus. 1 Will mean they investigate immediately, any less will be added within their focus window... <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>forceOutlineForLoopIfPlayerTrespassing</td><td><code>bool</code></td><td>Force this to display a red outline if this loop is heard by the player <span class="badge">EnableIf(&quot;canBeSuspicious&quot;)</span></td><td></td></tr>
+<tr><td>citizenMemoryTag</td><td><code>AudioEvent.MemoryTag</code></td><td></td><td></td></tr>
+<tr><td>spookValue</td><td><code>float</code></td><td>Will citizens get scared by this?</td><td></td></tr>
+<tr><td>noSpookIfEnforcer</td><td><code>bool</code></td><td>Enforcers do not get scared by this</td><td>true</td></tr>
+<tr><td>awakenChance</td><td><code>float</code></td><td>If the AI is asleep, how likely is it that they awaken upon hearing this? (Only works in conjunction with suspicious sounds) <span class="badge">Header: AI Hearing and Emulation</span> <span class="badge">Range(0f, 1f)</span></td><td>0.5f</td></tr>
+<tr><td>actualSoundRange</td><td><code>float</code></td><td>The actual sound range set in FMOD.</td><td></td></tr>
+<tr><td>hearingRange</td><td><code>float</code></td><td>The effective sound range that the AI can hear (applied to actual sound range above)</td><td>20f</td></tr>
+<tr><td>stealthModeModifier</td><td><code>float</code></td><td>If in stealth mode, also apply the following modifier to the hearing range...</td><td></td></tr>
+<tr><td>runModifier</td><td><code>float</code></td><td>If running apply the following modifier to the hearing range...</td><td></td></tr>
+<tr><td>canDanceTo</td><td><code>bool</code></td><td>Can the AI dance to this?</td><td></td></tr>
+<tr><td>masterVolumeScale</td><td><code>float</code></td><td><span class="badge">Header: Overrides</span> <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>modifyBasedOnSurface</td><td><code>bool</code></td><td>If true then the AI &#x27;sound level&#x27; above is overridden based on surface type. Important: Only works for footsteps!</td><td></td></tr>
+<tr><td>concreteHearingRangeModifier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;modifyBasedOnSurface&quot;)</span></td><td></td></tr>
+<tr><td>woodHearingRangeModifier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;modifyBasedOnSurface&quot;)</span></td><td></td></tr>
+<tr><td>carpetHearingRangeModifier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;modifyBasedOnSurface&quot;)</span></td><td></td></tr>
+<tr><td>tileHearingRangeModifier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;modifyBasedOnSurface&quot;)</span></td><td></td></tr>
+<tr><td>plasterHearingRangeModifier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;modifyBasedOnSurface&quot;)</span></td><td></td></tr>
+<tr><td>fabricHearingRangeModifier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;modifyBasedOnSurface&quot;)</span></td><td></td></tr>
+<tr><td>metalHearingRangeModifier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;modifyBasedOnSurface&quot;)</span></td><td></td></tr>
+<tr><td>glassHearingRangeModifier</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;modifyBasedOnSurface&quot;)</span></td><td></td></tr>
+<tr><td>enableVibrationOnPlay</td><td><code>bool</code></td><td><span class="badge">Header: Force Feedback</span></td><td></td></tr>
+<tr><td>disableForPS5</td><td><code>bool</code></td><td>You might want to disable this if we have haptics in-place instead...</td><td></td></tr>
+<tr><td>vibrationSetup</td><td><code>List&lt;InputController.ControllerVibration&gt;</code></td><td><span class="badge">EnableIf(&quot;enableVibrationOnPlay&quot;)</span></td><td>new List&lt;InputController.ControllerVibration&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>OnGUIDValueChangedCallback</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>MemoryTag</h3>
+<pre><code>none
+gunshot
+scream</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

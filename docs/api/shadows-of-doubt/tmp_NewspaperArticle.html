@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NewspaperArticle — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>NewspaperArticle</h1>
+      <div class="page-meta">Source file: <span class="code">NewspaperArticle.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">NewspaperArticle</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>disabled</td><td><code>bool</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+<tr><td>ddsReference</td><td><code>string</code></td><td><span class="badge">Header: Setup</span></td><td></td></tr>
+<tr><td>category</td><td><code>NewspaperArticle.Category</code></td><td></td><td></td></tr>
+<tr><td>followupStories</td><td><code>List&lt;NewspaperArticle&gt;</code></td><td>The next generated newspaper will try to feature one of the following</td><td>new List&lt;NewspaperArticle&gt;()</td></tr>
+<tr><td>context</td><td><code>NewspaperArticle.ContextSource</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>Category</h3>
+<pre><code>general
+murder
+ad
+foreignAffairs
+murderSecond</code></pre>
+<h3>ContextSource</h3>
+<pre><code>nothing
+lastMurder
+player
+randomCitizen
+randomCriminal
+randomGroup</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CityConstructor — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CityConstructor</h1>
+      <div class="page-meta">Source file: <span class="code">CityConstructor.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CityConstructor</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnGameStarted</td><td><code>event CityConstructor.OnStartGame</code></td><td></td><td></td></tr>
+<tr><td>OnLoadFinalize</td><td><code>event CityConstructor.LoadFinalize</code></td><td></td><td></td></tr>
+<tr><td>currentData</td><td><code>CitySaveData</code></td><td></td><td></td></tr>
+<tr><td>saveState</td><td><code>StateSaveData</code></td><td></td><td></td></tr>
+<tr><td>generateNew</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>isLoaded</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>useCityConstructionHold</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>saveChunk</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>evidenceToCompile</td><td><code>List&lt;Evidence&gt;</code></td><td></td><td>new List&lt;Evidence&gt;()</td></tr>
+<tr><td>loadState</td><td><code>CityConstructor.LoadState</code></td><td></td><td></td></tr>
+<tr><td>cityConstructorHoldState</td><td><code>CityConstructor.LoadState</code></td><td></td><td></td></tr>
+<tr><td>allLoadStates</td><td><code>List&lt;CityConstructor.LoadState&gt;</code></td><td></td><td>new List&lt;CityConstructor.LoadState&gt;()</td></tr>
+<tr><td>loadCursor</td><td><code>int</code></td><td></td><td>9999</td></tr>
+<tr><td>loadingProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>stateComplete</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>loadingOperationActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>preSimActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>preSimOccured</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>loadingWallsReference</td><td><code>Dictionary&lt;int, NewWall&gt;</code></td><td></td><td>new Dictionary&lt;int, NewWall&gt;()</td></tr>
+<tr><td>loadingFurnitureReference</td><td><code>Dictionary&lt;int, FurnitureLocation&gt;</code></td><td></td><td>new Dictionary&lt;int, FurnitureLocation&gt;()</td></tr>
+<tr><td>updateSwitchState</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>timeStamp</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>debugLoadTime</td><td><code>CityConstructor.CollectedLoadTimeInfo</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static CityConstructor</code></td><td></td><td></td></tr>
+<tr><td>loadFullCityDataTask</td><td><code>Task</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DestroySelf</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateNewCity</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadSaveGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>IncompatibleVersionConfirm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>IncompatibleVersionCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateCityFromShareCode</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadCityStartNewGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartLoading</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StopCityConstructionAtEndOfLoadState</td><td><code>void</code></td><td><span class="badge">psuedoRandomNumberContained</span> <span class="badge">7</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num2</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span></td><td><code>CityConstructor.LoadState stopHereState</code></td></tr>
+<tr><td>ClearCityConstructionHoldStatus</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>WriteSavingTimings</td><td><code>void</code></td><td></td><td><code>ref CityConstructor.CollectedLoadTimeInfo info</code></td></tr>
+<tr><td>WriteRoomDecorTimings</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">num3</span> <span class="badge">3</span> <span class="badge">key</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">2</span> <span class="badge">key</span> <span class="badge">1</span> <span class="badge">j</span></td><td><code>ref CityConstructor.CollectedLoadTimeInfo info</code></td></tr>
+<tr><td>WriteGeneratedObjectDetails</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>SetLoadingText</td><td><code>void</code></td><td><span class="badge">preset</span> <span class="badge">preset</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">l</span></td><td><code></code></td></tr>
+<tr><td>GatherData</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Finalized</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>FinalizePostSave</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetPreSim</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>StartGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>TriggerStartEvent</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>EnableTutorial</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DisableTutorial</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SaveCityData</td><td><code>IEnumerator</code></td><td></td><td><code></code></td></tr>
+<tr><td>IsUsingCityEditor</td><td><code>bool</code></td><td><span class="badge">cursor</span></td><td><code></code></td></tr>
+<tr><td>Cancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CreateSelfEmployed</td><td><code>void</code></td><td></td><td><code>CompanyPreset company, Human employee, Interactable workLocation</code></td></tr>
+<tr><td>LoadFullCityDataAsync</td><td><code>Task</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>LoadSaveStateFile</td><td><code>Task</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class CollectedLoadTimeInfo</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>build</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>citySize</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>generateNew</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>loadTimes</td><td><code>Dictionary&lt;CityConstructor.LoadState, int&gt;</code></td><td></td><td>new Dictionary&lt;CityConstructor.LoadState, int&gt;()</td></tr>
+<tr><td>decorTimes</td><td><code>Dictionary&lt;NewRoom, List&lt;CityConstructor.DecorClusterGenerationTimeInfo&gt;&gt;</code></td><td></td><td>new Dictionary&lt;NewRoom, List&lt;CityConstructor.DecorClusterGenerationTimeInfo&gt;&gt;()</td></tr>
+</tbody></table>
+<h3>class DecorClusterGenerationTimeInfo</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>cluster</td><td><code>FurnitureCluster</code></td><td></td><td></td></tr>
+<tr><td>found</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>time</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class DecorTotalTime</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>room</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>totalTime</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>LoadState</h3>
+<pre><code>parsingFile
+setupCityBoundary
+generateDistricts
+generateBlocks
+generateDensity
+generateBuildings
+generatePathfinding
+generateBlueprints
+generateCompanies
+connectRooms
+generateCitizens
+generateRelationships
+gatherData
+generateAirDucts
+generateEvidence
+generateInteriors
+prepareCitizens
+loadObjects
+finalizing
+savingData
+loadState
+preSim
+loadComplete</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

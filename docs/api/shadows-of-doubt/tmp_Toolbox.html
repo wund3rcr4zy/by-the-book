@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toolbox — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Toolbox</h1>
+      <div class="page-meta">Source file: <span class="code">Toolbox.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Toolbox</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>endOfFrameInvoke</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>invokeEndOfFrame</td><td><code>HashSet&lt;Action&gt;</code></td><td></td><td>new HashSet&lt;Action&gt;()</td></tr>
+<tr><td>debugInvokeEndOfFrame</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>censor</td><td><code>Censor</code></td><td></td><td></td></tr>
+<tr><td>allShoeTypes</td><td><code>List&lt;Human.ShoeType&gt;</code></td><td></td><td>new List&lt;Human.ShoeType&gt;()</td></tr>
+<tr><td>allDataKeys</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td></td><td>new List&lt;Evidence.DataKey&gt;()</td></tr>
+<tr><td>allEthnicities</td><td><code>List&lt;Descriptors.EthnicGroup&gt;</code></td><td></td><td>new List&lt;Descriptors.EthnicGroup&gt;()</td></tr>
+<tr><td>allTreeTriggers</td><td><code>List&lt;DDSSaveClasses.TreeTriggers&gt;</code></td><td></td><td>new List&lt;DDSSaveClasses.TreeTriggers&gt;()</td></tr>
+<tr><td>allConnectionTypes</td><td><code>List&lt;Acquaintance.ConnectionType&gt;</code></td><td></td><td>new List&lt;Acquaintance.ConnectionType&gt;()</td></tr>
+<tr><td>allCompanyCategories</td><td><code>List&lt;CompanyPreset.CompanyCategory&gt;</code></td><td></td><td>new List&lt;CompanyPreset.CompanyCategory&gt;()</td></tr>
+<tr><td>allItems</td><td><code>List&lt;RetailItemPreset&gt;</code></td><td></td><td>new List&lt;RetailItemPreset&gt;()</td></tr>
+<tr><td>allArt</td><td><code>List&lt;ArtPreset&gt;</code></td><td></td><td>new List&lt;ArtPreset&gt;()</td></tr>
+<tr><td>allCompanyPresets</td><td><code>List&lt;CompanyPreset&gt;</code></td><td></td><td>new List&lt;CompanyPreset&gt;()</td></tr>
+<tr><td>allJobs</td><td><code>List&lt;OccupationPreset&gt;</code></td><td></td><td>new List&lt;OccupationPreset&gt;()</td></tr>
+<tr><td>allCriminalJobs</td><td><code>List&lt;OccupationPreset&gt;</code></td><td></td><td>new List&lt;OccupationPreset&gt;()</td></tr>
+<tr><td>allStreetTiles</td><td><code>List&lt;StreetTilePreset&gt;</code></td><td></td><td>new List&lt;StreetTilePreset&gt;()</td></tr>
+<tr><td>allOutfitCategories</td><td><code>List&lt;ClothesPreset.OutfitCategory&gt;</code></td><td></td><td>new List&lt;ClothesPreset.OutfitCategory&gt;()</td></tr>
+<tr><td>allCharacterAnchors</td><td><code>List&lt;CitizenOutfitController.CharacterAnchor&gt;</code></td><td></td><td>new List&lt;CitizenOutfitController.CharacterAnchor&gt;()</td></tr>
+<tr><td>allSyncDisks</td><td><code>List&lt;SyncDiskPreset&gt;</code></td><td></td><td>new List&lt;SyncDiskPreset&gt;()</td></tr>
+<tr><td>allAmbientZones</td><td><code>List&lt;AmbientZone&gt;</code></td><td></td><td>new List&lt;AmbientZone&gt;()</td></tr>
+<tr><td>allSideJobs</td><td><code>List&lt;JobPreset&gt;</code></td><td></td><td>new List&lt;JobPreset&gt;()</td></tr>
+<tr><td>allDistricts</td><td><code>List&lt;DistrictPreset&gt;</code></td><td></td><td>new List&lt;DistrictPreset&gt;()</td></tr>
+<tr><td>allHandwriting</td><td><code>List&lt;HandwritingPreset&gt;</code></td><td></td><td>new List&lt;HandwritingPreset&gt;()</td></tr>
+<tr><td>allBroadcasts</td><td><code>List&lt;BroadcastSchedule&gt;</code></td><td></td><td>new List&lt;BroadcastSchedule&gt;()</td></tr>
+<tr><td>allBasBouleCards</td><td><code>List&lt;InteractablePreset&gt;</code></td><td></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>evidencePresetDictionary</td><td><code>Dictionary&lt;string, EvidencePreset&gt;</code></td><td></td><td>new Dictionary&lt;string, EvidencePreset&gt;()</td></tr>
+<tr><td>factPresetDictionary</td><td><code>Dictionary&lt;string, FactPreset&gt;</code></td><td></td><td>new Dictionary&lt;string, FactPreset&gt;()</td></tr>
+<tr><td>allGroups</td><td><code>List&lt;GroupPreset&gt;</code></td><td></td><td>new List&lt;GroupPreset&gt;()</td></tr>
+<tr><td>groupsDictionary</td><td><code>Dictionary&lt;string, GroupPreset&gt;</code></td><td></td><td>new Dictionary&lt;string, GroupPreset&gt;()</td></tr>
+<tr><td>scopeDictionary</td><td><code>Dictionary&lt;string, DDSScope&gt;</code></td><td></td><td>new Dictionary&lt;string, DDSScope&gt;()</td></tr>
+<tr><td>globalScopeDictionary</td><td><code>Dictionary&lt;string, DDSScope&gt;</code></td><td></td><td>new Dictionary&lt;string, DDSScope&gt;()</td></tr>
+<tr><td>devCloudSaveConfig</td><td><code>CloudSaveData</code></td><td></td><td></td></tr>
+<tr><td>objectPresetDictionary</td><td><code>Dictionary&lt;string, InteractablePreset&gt;</code></td><td></td><td>new Dictionary&lt;string, InteractablePreset&gt;()</td></tr>
+<tr><td>placeAtGameLocationInteractables</td><td><code>List&lt;InteractablePreset&gt;</code></td><td></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>placePerOwnerInteractables</td><td><code>List&lt;InteractablePreset&gt;</code></td><td></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>subObjectsDictionary</td><td><code>Dictionary&lt;SubObjectClassPreset, List&lt;InteractablePreset&gt;&gt;</code></td><td></td><td>new Dictionary&lt;SubObjectClassPreset, List&lt;InteractablePreset&gt;&gt;()</td></tr>
+<tr><td>voiceActedDictionary</td><td><code>Dictionary&lt;string, AudioEvent&gt;</code></td><td></td><td>new Dictionary&lt;string, AudioEvent&gt;()</td></tr>
+<tr><td>allMurderPresets</td><td><code>List&lt;MurderPreset&gt;</code></td><td></td><td>new List&lt;MurderPreset&gt;()</td></tr>
+<tr><td>allMurderMOs</td><td><code>List&lt;MurderMO&gt;</code></td><td></td><td>new List&lt;MurderMO&gt;()</td></tr>
+<tr><td>allCharacterTraits</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>stage0Traits</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>stage1Traits</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>stage2Traits</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>stage3Traits</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>reasons</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>allBooks</td><td><code>List&lt;BookPreset&gt;</code></td><td></td><td>new List&lt;BookPreset&gt;()</td></tr>
+<tr><td>allAddressPresets</td><td><code>List&lt;AddressPreset&gt;</code></td><td></td><td>new List&lt;AddressPreset&gt;()</td></tr>
+<tr><td>allRoomConfigs</td><td><code>List&lt;RoomConfiguration&gt;</code></td><td></td><td>new List&lt;RoomConfiguration&gt;()</td></tr>
+<tr><td>allDesignStyles</td><td><code>List&lt;DesignStylePreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>allMaterialGroups</td><td><code>List&lt;MaterialGroupPreset&gt;</code></td><td></td><td>new List&lt;MaterialGroupPreset&gt;()</td></tr>
+<tr><td>allWallFrontage</td><td><code>List&lt;WallFrontagePreset&gt;</code></td><td></td><td>new List&lt;WallFrontagePreset&gt;()</td></tr>
+<tr><td>furnitureDesignStyleRef</td><td><code>Dictionary&lt;DesignStylePreset, List&lt;FurniturePreset&gt;&gt;</code></td><td></td><td>new Dictionary&lt;DesignStylePreset, List&lt;FurniturePreset&gt;&gt;()</td></tr>
+<tr><td>furnitureRoomTypeRef</td><td><code>Dictionary&lt;RoomClassPreset, HashSet&lt;FurniturePreset&gt;&gt;</code></td><td></td><td>new Dictionary&lt;RoomClassPreset, HashSet&lt;FurniturePreset&gt;&gt;()</td></tr>
+<tr><td>materialDesignStyleRef</td><td><code>Dictionary&lt;DesignStylePreset, Dictionary&lt;MaterialGroupPreset.MaterialType, List&lt;MaterialGroupPreset&gt;&gt;&gt;</code></td><td></td><td>new Dictionary&lt;DesignStylePreset, Dictionary&lt;MaterialGroupPreset.MaterialType, List&lt;MaterialGroupPreset&gt;&gt;&gt;()</td></tr>
+<tr><td>wallFrontageStyleRef</td><td><code>Dictionary&lt;DesignStylePreset, Dictionary&lt;WallFrontageClass, List&lt;WallFrontagePreset&gt;&gt;&gt;</code></td><td></td><td>new Dictionary&lt;DesignStylePreset, Dictionary&lt;WallFrontageClass, List&lt;WallFrontagePreset&gt;&gt;&gt;()</td></tr>
+<tr><td>allFurnitureClusters</td><td><code>List&lt;FurnitureCluster&gt;</code></td><td></td><td></td></tr>
+<tr><td>allFurniture</td><td><code>List&lt;FurniturePreset&gt;</code></td><td></td><td>new List&lt;FurniturePreset&gt;()</td></tr>
+<tr><td>allRoomLighting</td><td><code>List&lt;RoomLightingPreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>allColourSchemes</td><td><code>List&lt;ColourSchemePreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>allGoals</td><td><code>List&lt;AIGoalPreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>allDialog</td><td><code>List&lt;DialogPreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>defaultDialogOptions</td><td><code>List&lt;DialogPreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>allWeapons</td><td><code>List&lt;InteractablePreset&gt;</code></td><td></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>allDDSBlocks</td><td><code>Dictionary&lt;string, DDSSaveClasses.DDSBlockSave&gt;</code></td><td></td><td>new Dictionary&lt;string, DDSSaveClasses.DDSBlockSave&gt;()</td></tr>
+<tr><td>allDDSMessages</td><td><code>Dictionary&lt;string, DDSSaveClasses.DDSMessageSave&gt;</code></td><td></td><td>new Dictionary&lt;string, DDSSaveClasses.DDSMessageSave&gt;()</td></tr>
+<tr><td>allDDSTrees</td><td><code>Dictionary&lt;string, DDSSaveClasses.DDSTreeSave&gt;</code></td><td></td><td>new Dictionary&lt;string, DDSSaveClasses.DDSTreeSave&gt;()</td></tr>
+<tr><td>allArticleTrees</td><td><code>List&lt;DDSSaveClasses.DDSTreeSave&gt;</code></td><td></td><td>new List&lt;DDSSaveClasses.DDSTreeSave&gt;()</td></tr>
+<tr><td>allHelpContent</td><td><code>Dictionary&lt;string, HelpContentPage&gt;</code></td><td></td><td>new Dictionary&lt;string, HelpContentPage&gt;()</td></tr>
+<tr><td>allClothes</td><td><code>List&lt;ClothesPreset&gt;</code></td><td></td><td>new List&lt;ClothesPreset&gt;()</td></tr>
+<tr><td>clothesDictionary</td><td><code>Dictionary&lt;string, ClothesPreset&gt;</code></td><td></td><td>new Dictionary&lt;string, ClothesPreset&gt;()</td></tr>
+<tr><td>allStatuses</td><td><code>List&lt;StatusPreset&gt;</code></td><td></td><td>new List&lt;StatusPreset&gt;()</td></tr>
+<tr><td>aiSightingLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>interactionRayLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>interactionRayLayerMaskNoRoomMesh</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>printDetectionRayLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>sceneCaptureLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>mugShotCaptureLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>physicalObjectsLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>playerMovementLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>autoTravelMovementLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>heldObjectsObjectsLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>spatterLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>textToImageMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>lightCullingMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>sniperLOSMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>rEthnicity</td><td><code>List&lt;Descriptors.EthnicGroup&gt;</code></td><td></td><td>new List&lt;Descriptors.EthnicGroup&gt;()</td></tr>
+<tr><td>totalEthnictiyFrequencyCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>resourcesCache</td><td><code>Dictionary&lt;Type, Dictionary&lt;string, ScriptableObject&gt;&gt;</code></td><td></td><td>new Dictionary&lt;Type, Dictionary&lt;string, ScriptableObject&gt;&gt;()</td></tr>
+<tr><td>materialProperties</td><td><code>Dictionary&lt;Material, MaterialGroupPreset&gt;</code></td><td></td><td>new Dictionary&lt;Material, MaterialGroupPreset&gt;()</td></tr>
+<tr><td>furnitureMeshReference</td><td><code>Dictionary&lt;Mesh, FurniturePreset&gt;</code></td><td></td><td>new Dictionary&lt;Mesh, FurniturePreset&gt;()</td></tr>
+<tr><td>lastRandomNumberKey</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>debugTimeRange1</td><td><code>Vector2</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+<tr><td>debugTimeRange2</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static Toolbox</code></td><td></td><td></td></tr>
+<tr><td>reference</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>preset</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>belongsTo</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>passedObject</td><td><code>object</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadDDS</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadDDSFilesFromPath</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>string path</code></td></tr>
+<tr><td>ProcessLoadedScriptableObject</td><td><code>void</code></td><td></td><td><code>ScriptableObject so</code></td></tr>
+<tr><td>LoadAll</td><td><code>void</code></td><td><span class="badge">subObjectClassPreset</span></td><td><code></code></td></tr>
+<tr><td>RoundToPlaces</td><td><code>float</code></td><td><span class="badge">designStylePreset</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">designStylePreset2</span> <span class="badge">key2</span> <span class="badge">key2</span> <span class="badge">key2</span> <span class="badge">key3</span> <span class="badge">key4</span> <span class="badge">key4</span> <span class="badge">key4</span> <span class="badge">key5</span></td><td><code>float input, int decimals</code></td></tr>
+<tr><td>AddZeros</td><td><code>string</code></td><td></td><td><code>float num, int decimals</code></td></tr>
+<tr><td>RoundToPlaces</td><td><code>float</code></td><td><span class="badge">1</span></td><td><code>double input, int decimals</code></td></tr>
+<tr><td>TravelTimeEstimate</td><td><code>float</code></td><td></td><td><code>Human cc, NewNode origin, NewNode destination</code></td></tr>
+<tr><td>AddToTravelTimeRecords</td><td><code>void</code></td><td></td><td><code>Actor cc, float discrepency</code></td></tr>
+<tr><td>TravelTimeEstimateMinutes</td><td><code>int</code></td><td></td><td><code>Citizen cc, NewNode origin, NewNode destination</code></td></tr>
+<tr><td>RandomRangeWeighted</td><td><code>float</code></td><td></td><td><code>float minimum, float maximum, float weightedValue, int stepResolution = 5</code></td></tr>
+<tr><td>RandomRangeWeightedSeedContained</td><td><code>float</code></td><td></td><td><code>float minimum, float maximum, float weightedValue, ref string inputSeed, int stepResolution = 5</code></td></tr>
+<tr><td>MinDistanceFromPath</td><td><code>float</code></td><td></td><td><code>NewNode pathOrigin, NewNode pathDestination, Vector3 inputPosition</code></td></tr>
+<tr><td>RectTransformToScreenSpace</td><td><code>Rect</code></td><td><span class="badge">i</span></td><td><code>RectTransform transform</code></td></tr>
+<tr><td>InvokeEndOfFrame</td><td><code>void</code></td><td></td><td><code>Action action, string newDebug</code></td></tr>
+<tr><td>ExeEndOfFrame</td><td><code>IEnumerator</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateButtonListPositions</td><td><code>void</code></td><td></td><td><code>List&lt;ButtonController&gt; buttons, float edgeMargin = 5f, float iconMargin = 4f</code></td></tr>
+<tr><td>GameTimeRangeOverlap</td><td><code>bool</code></td><td><span class="badge">0</span> <span class="badge">i</span></td><td><code>Vector2 range1, Vector2 range2, bool equalsIsOverlapping = true</code></td></tr>
+<tr><td>DecimalTimeRangeOverlap</td><td><code>bool</code></td><td></td><td><code>Vector2 range1, Vector2 range2, bool equalsIsOverlapping = true</code></td></tr>
+<tr><td>RotateVector2ACW</td><td><code>Vector2</code></td><td></td><td><code>Vector2 v, float degrees</code></td></tr>
+<tr><td>RotateVector2CW</td><td><code>Vector2</code></td><td></td><td><code>Vector2 v, float degrees</code></td></tr>
+<tr><td>RandomEthnicGroup</td><td><code>Descriptors.EthnicGroup</code></td><td></td><td><code>ref string seed</code></td></tr>
+<tr><td>GetRenderTexturePixel</td><td><code>Color</code></td><td></td><td><code>RenderTexture rt</code></td></tr>
+<tr><td>SetLightLayer</td><td><code>void</code></td><td></td><td><code>GameObject objectWithMesh, NewBuilding building, bool includeStreetLighting = false</code></td></tr>
+<tr><td>SetLightLayer</td><td><code>void</code></td><td></td><td><code>MeshRenderer meshRend, NewBuilding building, bool includeStreetLighting = false</code></td></tr>
+<tr><td>HeuristicCostEstimate</td><td><code>float</code></td><td><span class="badge">5</span> <span class="badge">0</span> <span class="badge">num</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span></td><td><code>NewNode start, NewNode goal</code></td></tr>
+<tr><td>ConstructPathAccurate</td><td><code>List&lt;NewNode&gt;</code></td><td></td><td><code>Dictionary&lt;NewNode, NewNode&gt; cameFrom, NewNode current</code></td></tr>
+<tr><td>GetOrCreateEvidenceForInteractable</td><td><code>Evidence</code></td><td><span class="badge">current</span></td><td><code>InteractablePreset preset, string newID, Interactable interactable, Human belongsTo, Human writer, Human reciever, SideJob jobParent, NewGameLocation gameLocation, RetailItemPreset retailItem, List&lt;Interactable.Passed&gt; passedVars</code></td></tr>
+<tr><td>TryGetEvidence</td><td><code>bool</code></td><td></td><td><code>string evID, out Evidence evidence</code></td></tr>
+<tr><td>SpawnSpareKey</td><td><code>Interactable</code></td><td></td><td><code>NewAddress ad, string loadGUID = null</code></td></tr>
+<tr><td>GetAngleForOffset</td><td><code>float</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">psuedoRandomNumber</span> <span class="badge">psuedoRandomNumber</span> <span class="badge">psuedoRandomNumber</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>Vector2 offset1</code></td></tr>
+<tr><td>GetOffsetFromAngle</td><td><code>Vector2</code></td><td></td><td><code>int angle</code></td></tr>
+<tr><td>GetAngleBetween</td><td><code>float</code></td><td></td><td><code>Vector3 origin, Vector3 lookAt</code></td></tr>
+<tr><td>GetAveragePosition</td><td><code>Vector3</code></td><td></td><td><code>List&lt;NewNode&gt; nodes</code></td></tr>
+<tr><td>IsWorkDay</td><td><code>bool</code></td><td></td><td><code>int day, Citizen cit</code></td></tr>
+<tr><td>FindNearestWithAction</td><td><code>Interactable</code></td><td></td><td><code>AIActionPreset action, NewRoom startRoom, Human person, AIActionPreset.FindSetting findSetting, bool overrideWithHome = true, HashSet&lt;NewRoom&gt; ignore = null, NewGameLocation restrictTo = null, NewBuilding restrictToBuilding = null, bool useSpecialCasesOnly = false, InteractablePreset.SpecialCase mustBeSpecial = InteractablePreset.SpecialCase.none, bool filterWithRoomType = false, List&lt;RoomTypePreset&gt; roomTypeFilter = null, bool preferUnused = true, bool enforcersAllowedEverywhere = false, float robberyPriority = 0f, List&lt;Interactable&gt; avoidInteractables = null, List&lt;InteractablePreset&gt; shopItems = null, bool printDebug = false, bool mustContainDesireCategory = false, CompanyPreset.CompanyCategory containDesireCategory = CompanyPreset.CompanyCategory.meal, bool excludeAIUsingThis = false, bool useToiletSettings = false</code></td></tr>
+<tr><td>FindNearestThatSells</td><td><code>Company</code></td><td><span class="badge">5</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num2</span> <span class="badge">4</span> <span class="badge">action</span> <span class="badge">0</span></td><td><code>InteractablePreset sellsItem, NewGameLocation startLocation</code></td></tr>
+<tr><td>GetNumbericalStringReference</td><td><code>string</code></td><td></td><td><code>int number</code></td></tr>
+<tr><td>Rotate</td><td><code>Vector2</code></td><td></td><td><code>Vector2 aPoint, float aDegree</code></td></tr>
+<tr><td>PlotLine</td><td><code>List&lt;Vector2&gt;</code></td><td></td><td><code>Vector2 point1, Vector2 point2</code></td></tr>
+<tr><td>ClampRotation</td><td><code>Quaternion</code></td><td></td><td><code>Quaternion q, float minimumUpDown, float maximumUpDown, float minimumLeftRight, float maximumLeftRight</code></td></tr>
+<tr><td>ClampAngle</td><td><code>float</code></td><td></td><td><code>float angle, float min, float max</code></td></tr>
+<tr><td>ShuffleList</td><td><code>void</code></td><td></td><td><code>ref List&lt;CharacterTrait&gt; list</code></td></tr>
+<tr><td>ShuffleListSeedContained</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">index</span> <span class="badge">index</span></td><td><code>ref List&lt;CharacterTrait&gt; list, string input, out string output</code></td></tr>
+<tr><td>ShuffleList</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">num</span> <span class="badge">num</span></td><td><code>ref List&lt;Human.WalletItem&gt; list</code></td></tr>
+<tr><td>SpawnObject</td><td><code>GameObject</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">num</span> <span class="badge">num</span></td><td><code>GameObject newObj, Transform newParent</code></td></tr>
+<tr><td>SpawnObject</td><td><code>GameObject</code></td><td></td><td><code>GameObject newObj, Vector3 newPos, Quaternion newRot, Transform newParent</code></td></tr>
+<tr><td>DestroyObject</td><td><code>void</code></td><td></td><td><code>GameObject newObj</code></td></tr>
+<tr><td>SpawnMaterial</td><td><code>Material</code></td><td></td><td><code>Material newObj</code></td></tr>
+<tr><td>GetLocalEulerAtRotation</td><td><code>Vector3</code></td><td></td><td><code>Transform transform, Quaternion targetRotation</code></td></tr>
+<tr><td>GetKeyCodeFromString</td><td><code>List&lt;int&gt;</code></td><td></td><td><code>string str</code></td></tr>
+<tr><td>GenerateEvidenceIdentifier</td><td><code>string</code></td><td></td><td><code>Evidence ev</code></td></tr>
+<tr><td>GenerateUniqueID</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>FindClosestObjectTo</td><td><code>Interactable</code></td><td></td><td><code>InteractablePreset objectType, Vector3 closestTo, NewBuilding constrainToBuilding, NewGameLocation constrainToLocation, NewRoom constrainToRoom, out float distance, bool publicOnly = false</code></td></tr>
+<tr><td>FindFurnitureWithinGameLocation</td><td><code>FurnitureLocation</code></td><td></td><td><code>NewGameLocation location, FurnitureClass furnitureClass, out NewRoom room</code></td></tr>
+<tr><td>SetRectSize</td><td><code>void</code></td><td></td><td><code>RectTransform trs, float left, float top, float right, float bottom</code></td></tr>
+<tr><td>GetWorldRect</td><td><code>Rect</code></td><td></td><td><code>RectTransform rt, Vector2 scale</code></td></tr>
+<tr><td>CreateLayerMask</td><td><code>int</code></td><td><span class="badge">4</span> <span class="badge">0</span></td><td><code>Toolbox.LayerMaskMode castMode, params int[] aLayers</code></td></tr>
+<tr><td>GetMaterialProperties</td><td><code>MaterialGroupPreset</code></td><td><span class="badge">0</span></td><td><code>Material mat</code></td></tr>
+<tr><td>GetFurnitureFromMesh</td><td><code>FurniturePreset</code></td><td></td><td><code>Mesh mesh</code></td></tr>
+<tr><td>GetFurnitureFromGameObject</td><td><code>FurniturePreset</code></td><td></td><td><code>NewNode currentNode, GameObject gameObj</code></td></tr>
+<tr><td>GetInteractablePreset</td><td><code>InteractablePreset</code></td><td></td><td><code>string interactableName</code></td></tr>
+<tr><td>TransformRotation</td><td><code>Quaternion</code></td><td><span class="badge">interactableName</span></td><td><code>Quaternion worldRotation, Transform targetsLocal</code></td></tr>
+<tr><td>InverseTransformRotation</td><td><code>Quaternion</code></td><td></td><td><code>Quaternion localRotation, Transform target</code></td></tr>
+<tr><td>Shoot</td><td><code>void</code></td><td></td><td><code>Actor fromThis, Vector3 muzzlePoint, Vector3 aimPoint, float aimRange, float accuracy, float damage, MurderWeaponPreset weapon, bool ejectBrass, Vector3 ejectBrassPoint, bool forcePhysicsEjectBrass, bool firstShot = true</code></td></tr>
+<tr><td>CreateBulletSurfaceContactFX</td><td><code>void</code></td><td></td><td><code>MurderWeaponPreset weapon, RaycastHit hit</code></td></tr>
+<tr><td>GetPsuedoRandomNumber</td><td><code>float</code></td><td></td><td><code>float lowerRange, float upperRange, ref string seedInput, bool updateLastKey = false, bool addCitySeed = false</code></td></tr>
+<tr><td>GetPsuedoRandomNumber</td><td><code>int</code></td><td></td><td><code>int lowerRange, int upperRange, ref string seedInput, bool updateLastKey = false, bool addCitySeed = false</code></td></tr>
+<tr><td>GetPsuedoRandomNumber</td><td><code>float</code></td><td></td><td><code>float lowerRange, float upperRange, ref int seedInput, bool updateLastKey = false, bool addCitySeed = false</code></td></tr>
+<tr><td>GetPsuedoRandomNumber</td><td><code>int</code></td><td></td><td><code>int lowerRange, int upperRange, ref int seedInput, bool updateLastKey = false, bool addCitySeed = false</code></td></tr>
+<tr><td>Rand</td><td><code>float</code></td><td></td><td><code>float min, float max, bool definitelyNotPartOfCityGeneration = false</code></td></tr>
+<tr><td>Rand</td><td><code>int</code></td><td></td><td><code>int min, int max, bool definitelyNotPartOfCityGeneration = false</code></td></tr>
+<tr><td>SeedRand</td><td><code>float</code></td><td></td><td><code>float min, float max</code></td></tr>
+<tr><td>SeedRand</td><td><code>int</code></td><td></td><td><code>int min, int max</code></td></tr>
+<tr><td>VectorToRandom</td><td><code>float</code></td><td></td><td><code>Vector2 vec</code></td></tr>
+<tr><td>VectorToRandomSeedContained</td><td><code>float</code></td><td></td><td><code>Vector2 vec, ref string seedInput</code></td></tr>
+<tr><td>RandContained</td><td><code>float</code></td><td></td><td><code>float min, float max, ref string seedInput</code></td></tr>
+<tr><td>RandContained</td><td><code>int</code></td><td></td><td><code>int min, int max, ref string seedInput</code></td></tr>
+<tr><td>GetPsuedoRandomNumberContained</td><td><code>float</code></td><td></td><td><code>float lowerRange, float upperRange, ref string seedInput</code></td></tr>
+<tr><td>GetPsuedoRandomNumberContained</td><td><code>int</code></td><td></td><td><code>int lowerRange, int upperRange, ref string seedInput</code></td></tr>
+<tr><td>DDSTraitConditionLogicAcquaintance</td><td><code>bool</code></td><td></td><td><code>Human thisPerson, Acquaintance acquaintance, DDSSaveClasses.TraitConditionType logic, ref List&lt;string&gt; traitList</code></td></tr>
+<tr><td>DDSTraitConditionLogic</td><td><code>bool</code></td><td></td><td><code>Human thisPerson, Human otherPerson, DDSSaveClasses.TraitConditionType logic, ref List&lt;string&gt; traitList</code></td></tr>
+<tr><td>LoadInteractableToWorld</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ToBase26</td><td><code>string</code></td><td></td><td><code>int myNumber</code></td></tr>
+<tr><td>GenerateSeed</td><td><code>string</code></td><td></td><td><code>int digits = 16, bool useSeed = false, string newSeed = &quot;&quot;</code></td></tr>
+<tr><td>RaycastCheck</td><td><code>bool</code></td><td></td><td><code>Transform from, Transform to, float maxRange, out RaycastHit hit</code></td></tr>
+<tr><td>RaycastCheck</td><td><code>bool</code></td><td></td><td><code>Vector3 from, Transform to, float maxRange, out RaycastHit hit</code></td></tr>
+<tr><td>RaycastCheck</td><td><code>bool</code></td><td></td><td><code>Vector3 from, Collider to, float maxRange, out RaycastHit hit</code></td></tr>
+<tr><td>SetPivot</td><td><code>void</code></td><td></td><td><code>RectTransform rectTransform, Vector2 pivot</code></td></tr>
+<tr><td>SetAnchor</td><td><code>void</code></td><td></td><td><code>RectTransform rectTransform, Vector2 anchorMin, Vector2 anchorMax</code></td></tr>
+<tr><td>GetAllTransforms</td><td><code>Transform[]</code></td><td></td><td><code>Transform t</code></td></tr>
+<tr><td>SearchForTransform</td><td><code>Transform</code></td><td></td><td><code>Transform parent, string search, bool printDebug = false</code></td></tr>
+<tr><td>GetTagsWithinTransform</td><td><code>List&lt;Transform&gt;</code></td><td></td><td><code>Transform parent, string tag</code></td></tr>
+<tr><td>NewVmailThread</td><td><code>void</code></td><td></td><td><code>Human from, List&lt;Human&gt; otherParticipiants, string treeID, float timeStamp, int progress = 999, StateSaveData.CustomDataSource overrideDataSource = StateSaveData.CustomDataSource.sender, int newDataSourceID = -1</code></td></tr>
+<tr><td>NewVmailThread</td><td><code>StateSaveData.MessageThreadSave</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span></td><td><code>Human from, Human to1, Human to2, Human to3, List&lt;Human&gt; cc, string treeID, float timeStamp, int progress = 999, StateSaveData.CustomDataSource overrideDataSource = StateSaveData.CustomDataSource.sender, int newDataSourceID = -1</code></td></tr>
+<tr><td>GetMessageTreeLinkRankings</td><td><code>List&lt;Human.DDSRank&gt;</code></td><td><span class="badge">0</span></td><td><code>StateSaveData.MessageThreadSave thread, DDSSaveClasses.DDSMessageSettings thisMsg</code></td></tr>
+<tr><td>ProgressVmailThread</td><td><code>void</code></td><td></td><td><code>StateSaveData.MessageThreadSave thread, int addProgress</code></td></tr>
+<tr><td>GetVmailParticipant</td><td><code>bool</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>Human initiator, DDSSaveClasses.DDSParticipant participant, List&lt;Human&gt; banned, out Human chosen</code></td></tr>
+<tr><td>SelectMaterial</td><td><code>MaterialGroupPreset</code></td><td></td><td><code>RoomClassPreset roomType, float wealthLevel, DesignStylePreset designStyle, MaterialGroupPreset.MaterialType materialType, ref string seedInput</code></td></tr>
+<tr><td>SelectWallFrontage</td><td><code>WallFrontagePreset</code></td><td><span class="badge">designStyle</span> <span class="badge">designStyle</span> <span class="badge">materialType</span></td><td><code>DesignStylePreset designStyle, WallFrontageClass frontageClass, string seed</code></td></tr>
+<tr><td>GetNormalizedLandValue</td><td><code>float</code></td><td><span class="badge">designStyle</span> <span class="badge">designStyle</span> <span class="badge">frontageClass</span> <span class="badge">designStyle</span> <span class="badge">frontageClass</span></td><td><code>NewGameLocation location, bool print = false</code></td></tr>
+<tr><td>GetNormalizedLandValue</td><td><code>float</code></td><td><span class="badge">0</span></td><td><code>NewBuilding location</code></td></tr>
+<tr><td>GetFingerprintOwnerPool</td><td><code>List&lt;Human&gt;</code></td><td></td><td><code>NewRoom room, FurnitureLocation furn, Interactable inter, RoomConfiguration.PrintsSource source, Vector3 worldPos, bool forceFind</code></td></tr>
+<tr><td>SpawnWindowAfterSeconds</td><td><code>void</code></td><td></td><td><code>Evidence ev, float after</code></td></tr>
+<tr><td>SpawnTelephoneEntryWindow</td><td><code>IEnumerator</code></td><td></td><td><code>Evidence ev, float after</code></td></tr>
+<tr><td>GenerateCityInfoFile</td><td><code>CityInfoData</code></td><td></td><td><code>FileInfo citySave</code></td></tr>
+<tr><td>GetTelephoneNumberString</td><td><code>string</code></td><td><span class="badge">0</span> <span class="badge">1</span> <span class="badge">num</span> <span class="badge">2</span> <span class="badge">3</span></td><td><code>int number</code></td></tr>
+<tr><td>GetLockpicksNeeded</td><td><code>int</code></td><td><span class="badge">i</span></td><td><code>float lockStrength</code></td></tr>
+<tr><td>CreateTimeRange</td><td><code>Vector2</code></td><td></td><td><code>float actualTime, float accuracyMargin, bool limitToNow, bool round, int roundToMinutes</code></td></tr>
+<tr><td>ScrollScrollRectOLD</td><td><code>void</code></td><td></td><td><code>CustomScrollRect scrollRect, Vector3 targetPos, bool allowHorizontal, bool allowVertical, float timeTaken = 0.2f, float extraScrollThreshold = 0.2f</code></td></tr>
+<tr><td>ExecuteScrollScrollRectOLD</td><td><code>IEnumerator</code></td><td></td><td><code>CustomScrollRect scrollRect, Vector3 targetPos, bool allowHorizontal, bool allowVertical, float timeTaken = 0.2f, float extraScrollThreshold = 0.2f</code></td></tr>
+<tr><td>ScrollRectPosition</td><td><code>void</code></td><td></td><td><code>CustomScrollRect scrollRect, RectTransform target, bool allowHorizontal, bool allowVertical, float timeTaken = 0.2f</code></td></tr>
+<tr><td>LerpScrollRect</td><td><code>IEnumerator</code></td><td></td><td><code>CustomScrollRect scrollRect, Vector2 anchoredPos, float timeTaken = 0.2f</code></td></tr>
+<tr><td>PickNearbyNode</td><td><code>NewNode</code></td><td></td><td><code>NewNode toThis</code></td></tr>
+<tr><td>GetDoorSideNode</td><td><code>NewNode</code></td><td></td><td><code>NewNode currentNode, NewDoor door</code></td></tr>
+<tr><td>TestTimeRangeOverlap</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>AutomaticNavigationSetup</td><td><code>void</code></td><td></td><td><code>ref List&lt;Button&gt; selectables, float differenceBuffer = 2f</code></td></tr>
+<tr><td>AddNavigationInput</td><td><code>void</code></td><td></td><td><code>Selectable selectable, Selectable newLeft = null, Selectable newRight = null, Selectable newUp = null, Selectable newDown = null, bool clearOld = false</code></td></tr>
+<tr><td>SetTextureImporterFormat</td><td><code>void</code></td><td><span class="badge">static</span></td><td><code>Texture2D texture, bool isReadable</code></td></tr>
+<tr><td>GetRelocateAuthority</td><td><code>bool</code></td><td></td><td><code>Actor actor, Interactable obj</code></td></tr>
+<tr><td>GetNearestGroundLevelOutside</td><td><code>NewNode</code></td><td></td><td><code>Vector3 pos</code></td></tr>
+<tr><td>HandleLaserBehaviour</td><td><code>void</code></td><td></td><td><code>SecuritySystem secSystem, GameObject laser, Light laserLight, float maxRange = 16f</code></td></tr>
+<tr><td>GetLocalizedSnapshot</td><td><code>Interactable</code></td><td><span class="badge">human</span></td><td><code>Interactable obj</code></td></tr>
+<tr><td>RetroactiveSurveillanceAddition</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">6</span> <span class="badge">0</span> <span class="badge">num4</span> <span class="badge">2</span> <span class="badge">num5</span> <span class="badge">4</span> <span class="badge">num6</span></td><td><code>Human who, NewNode routeFrom, NewNode routeTo, bool addReturnJourney, NewNode returnTo, float arrivalTime, float stayTime, ClothesPreset.OutfitCategory outfit</code></td></tr>
+<tr><td>ExplodeGrenade</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">fromNode</span> <span class="badge">num</span> <span class="badge">j</span> <span class="badge">fromNode2</span> <span class="badge">num2</span></td><td><code>Interactable grenade</code></td></tr>
+<tr><td>RankRoomShadiness</td><td><code>bool</code></td><td><span class="badge">9</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">7</span> <span class="badge">8</span> <span class="badge">human</span> <span class="badge">human</span></td><td><code>NewRoom room, out float score</code></td></tr>
+<tr><td>RankNodeShadiness</td><td><code>bool</code></td><td></td><td><code>NewNode node, out float score</code></td></tr>
+<tr><td>TriggerBriefcaseBomb</td><td><code>void</code></td><td></td><td><code>Interactable briefcase, Human actor</code></td></tr>
+<tr><td>GetMailbox</td><td><code>Interactable</code></td><td></td><td><code>Human forHuman</code></td></tr>
+<tr><td>IsStoryMissionActive</td><td><code>bool</code></td><td></td><td><code>out Chapter script, out int chapter</code></td></tr>
+<tr><td>GetShareCode</td><td><code>string</code></td><td></td><td><code>ref CitySaveData cityData</code></td></tr>
+<tr><td>GetShareCode</td><td><code>string</code></td><td></td><td><code>string cityName, int citySizeX, int citySizeY, string version, string seed</code></td></tr>
+<tr><td>ParseShareCode</td><td><code>void</code></td><td></td><td><code>string input, out string cityName, out int citySizeX, out int citySizeY, out string version, out string seed</code></td></tr>
+<tr><td>VersionToNumbers</td><td><code>int</code></td><td><span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span></td><td><code>string version</code></td></tr>
+<tr><td>NumbersToVersion</td><td><code>string</code></td><td></td><td><code>int numbers</code></td></tr>
+<tr><td>GetCitySizeFromValue</td><td><code>Vector2</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>ToVector3</td><td><code>Vector3</code></td><td><span class="badge">val</span></td><td><code>Vector3Int input</code></td></tr>
+<tr><td>ToVector3</td><td><code>Vector3</code></td><td></td><td><code>int3 input</code></td></tr>
+<tr><td>ToFloat3</td><td><code>float3</code></td><td></td><td><code>Vector3Int input</code></td></tr>
+<tr><td>ToInt3</td><td><code>int3</code></td><td></td><td><code>Vector3Int input</code></td></tr>
+<tr><td>toVector3Int</td><td><code>Vector3Int</code></td><td></td><td><code>int3 input</code></td></tr>
+<tr><td>ToVector2</td><td><code>Vector2</code></td><td></td><td><code>Vector2Int input</code></td></tr>
+<tr><td>GetHotelRoom</td><td><code>GameplayController.HotelGuest</code></td><td></td><td><code>Human person</code></td></tr>
+<tr><td>GetCityFile</td><td><code>FileInfo</code></td><td><span class="badge">0</span></td><td><code>string code, out string codeVersion, out string codeSeed</code></td></tr>
+<tr><td>GetCityFile</td><td><code>FileInfo</code></td><td></td><td><code>string codeName, string codeSeed, int codeSizeX, int codeSizeY, string codeVersion</code></td></tr>
+<tr><td>IsConsoleBuild</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>CensorText</td><td><code>string</code></td><td></td><td><code>string inputText</code></td></tr>
+<tr><td>TryGetSniperVantagePoint</td><td><code>bool</code></td><td></td><td><code>Human sniper, NewGameLocation requiredTargetSite, out NewWall vantagePoint, out float vantageScore, List&lt;NewNode.NodeAccess&gt; accessCheckList = null</code></td></tr>
+<tr><td>ScanBuildingForSniperVantagePoints</td><td><code>bool</code></td><td></td><td><code>Human sniper, NewBuilding building, NewGameLocation requiredTargetSite, out NewWall vantagePoint, out float vantageScore, ref List&lt;NewNode.NodeAccess&gt; accessCheckList</code></td></tr>
+<tr><td>TryGetSniperVantagePoint</td><td><code>bool</code></td><td><span class="badge">i</span> <span class="badge">10</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">num5</span> <span class="badge">6</span> <span class="badge">7</span> <span class="badge">8</span> <span class="badge">9</span></td><td><code>NewGameLocation vantageLocation, out NewWall vantagePoint, out float vantageScore, out List&lt;NewGameLocation&gt; possibleTargetSites, NewGameLocation requiredTargetSite = null</code></td></tr>
+<tr><td>TryGetSniperVantagePoint</td><td><code>bool</code></td><td><span class="badge">13</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num2</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">7</span> <span class="badge">8</span> <span class="badge">9</span> <span class="badge">10</span> <span class="badge">11</span> <span class="badge">12</span></td><td><code>NewRoom vantageRoom, out NewWall vantagePoint, out float vantageScore, out List&lt;NewGameLocation&gt; possibleTargetSites, NewGameLocation requiredTargetSite = null</code></td></tr>
+<tr><td>GetFacingBuildingFromWindow</td><td><code>NewBuilding</code></td><td><span class="badge">6</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num2</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">i</span> <span class="badge">7</span> <span class="badge">0</span> <span class="badge">num5</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">11</span> <span class="badge">0</span> <span class="badge">num6</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">7</span> <span class="badge">8</span> <span class="badge">9</span> <span class="badge">10</span></td><td><code>NewNode.NodeAccess windowAccess, out Vector3 windowDir</code></td></tr>
+<tr><td>GetClosestTelephone</td><td><code>Telephone</code></td><td></td><td><code>Actor toActor, float maxDistance = 18f, bool prioritiseSameLocation = true, bool payPhonesOnly = false, bool mustHaveValidAccess = true</code></td></tr>
+<tr><td>GetSceneCaptureFromID</td><td><code>SceneRecorder.SceneCapture</code></td><td></td><td><code>int captureID</code></td></tr>
+<tr><td>GetNearestFactorOf</td><td><code>int</code></td><td></td><td><code>int inputValue, int factor = 4</code></td></tr>
+<tr><td>AddDigits</td><td><code>int</code></td><td></td><td><code>int n1, int n2</code></td></tr>
+<tr><td>CheckForLatin</td><td><code>bool</code></td><td></td><td><code>string stringToCheck</code></td></tr>
+<tr><td>ColorsAreClose</td><td><code>bool</code></td><td></td><td><code>Color a, Color z, float threshold</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class detected</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+</tbody></table>
+<h3>class not</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+</tbody></table>
+<h3>class MaterialKey</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>baseMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>mainColour</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>colour1</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>colour2</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>colour3</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>grubiness</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>LayerMaskMode</h3>
+<pre><code>castAllExcept
+onlyCast</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

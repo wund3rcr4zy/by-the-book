@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CruncherAppPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CruncherAppPreset</h1>
+      <div class="page-meta">Source file: <span class="code">CruncherAppPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CruncherAppPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>loadBackground</td><td><code>Material</code></td><td>The background image to display on load <span class="badge">Header: App Settings</span></td><td></td></tr>
+<tr><td>loadedBackground</td><td><code>Material</code></td><td>The background image to display once app has loaded</td><td></td></tr>
+<tr><td>useCursor</td><td><code>bool</code></td><td>Use the cursor if the player is controlling the computer</td><td>true</td></tr>
+<tr><td>cursorSprite</td><td><code>Sprite</code></td><td>The cursor to use</td><td></td></tr>
+<tr><td>useTimer</td><td><code>bool</code></td><td>Use timer to exit: The app will exit on this timer</td><td></td></tr>
+<tr><td>timerLength</td><td><code>float</code></td><td>Timer length in seconds <span class="badge">EnableIf(&quot;useTimer&quot;)</span></td><td>3f</td></tr>
+<tr><td>loadTime</td><td><code>float</code></td><td>Take this time to load in</td><td>1f</td></tr>
+<tr><td>loadDemand</td><td><code>float</code></td><td>How heavy this is on loading the machine (1 = constant) <span class="badge">Range(0f, 1f)</span></td><td>0.33f</td></tr>
+<tr><td>alwaysLoad</td><td><code>bool</code></td><td>Always load during the duration of this app</td><td></td></tr>
+<tr><td>alwaysLoadDemand</td><td><code>float</code></td><td>How heavy this is on loading the machine (1 = constant) <span class="badge">Range(0f, 1f)</span></td><td>0.33f</td></tr>
+<tr><td>desktopIcon</td><td><code>Sprite</code></td><td>App Icon displayed on desktop</td><td></td></tr>
+<tr><td>screenLightColourOnLoad</td><td><code>Color</code></td><td>Computer light emmits this colour</td><td>Color.white</td></tr>
+<tr><td>screenLightColourOnFinishLoad</td><td><code>Color</code></td><td>Computer light emmits this colour</td><td>Color.white</td></tr>
+<tr><td>alwaysInstalled</td><td><code>bool</code></td><td><span class="badge">Header: Access</span></td><td></td></tr>
+<tr><td>onlyIfCorporateSabotageSkill</td><td><code>bool</code></td><td><span class="badge">DisableIf(&quot;alwaysInstalled&quot;)</span></td><td></td></tr>
+<tr><td>companyOnly</td><td><code>bool</code></td><td><span class="badge">DisableIf(&quot;alwaysInstalled&quot;)</span></td><td></td></tr>
+<tr><td>salesRecordsOnly</td><td><code>bool</code></td><td><span class="badge">DisableIf(&quot;alwaysInstalled&quot;)</span></td><td></td></tr>
+<tr><td>onlyIfOwner</td><td><code>bool</code></td><td>Only installed if the login is an owner of the address <span class="badge">DisableIf(&quot;alwaysInstalled&quot;)</span></td><td></td></tr>
+<tr><td>installationConditions</td><td><code>List&lt;CruncherAppPreset.AppAccess&gt;</code></td><td><span class="badge">DisableIf(&quot;alwaysInstalled&quot;)</span></td><td>new List&lt;CruncherAppPreset.AppAccess&gt;()</td></tr>
+<tr><td>onlyInAddresses</td><td><code>List&lt;AddressPreset&gt;</code></td><td><span class="badge">DisableIf(&quot;alwaysInstalled&quot;)</span></td><td>new List&lt;AddressPreset&gt;()</td></tr>
+<tr><td>onlyIfResidential</td><td><code>bool</code></td><td><span class="badge">DisableIf(&quot;alwaysInstalled&quot;)</span></td><td></td></tr>
+<tr><td>appContent</td><td><code>List&lt;GameObject&gt;</code></td><td><span class="badge">Header: Content</span></td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>onStartSound</td><td><code>AudioEvent</code></td><td>Played when the app is started <span class="badge">Header: Audio</span></td><td></td></tr>
+<tr><td>onExitSound</td><td><code>AudioEvent</code></td><td>Played when the app is ended</td><td></td></tr>
+<tr><td>onFinishedLoadingSound</td><td><code>AudioEvent</code></td><td>Played when the app has finished loading</td><td></td></tr>
+<tr><td>openOnEnd</td><td><code>CruncherAppPreset</code></td><td>Open this app on end <span class="badge">Header: On Exit</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class AppAccess</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>rule</td><td><code>CharacterTrait.RuleType</code></td><td></td><td></td></tr>
+<tr><td>traitList</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StreetController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>StreetController</h1>
+      <div class="page-meta">Source file: <span class="code">StreetController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">StreetController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>streetID</td><td><code>int</code></td><td><span class="badge">Header: ID</span></td><td></td></tr>
+<tr><td>assignID</td><td><code>static int</code></td><td></td><td>1</td></tr>
+<tr><td>isPlayerEditedName</td><td><code>bool</code></td><td><span class="badge">Header: Custom Editor Flags</span></td><td></td></tr>
+<tr><td>playerEditedStreetName</td><td><code>string</code></td><td></td><td>&quot;&quot;</td></tr>
+<tr><td>tiles</td><td><code>List&lt;NewTile&gt;</code></td><td><span class="badge">Header: Details</span></td><td>new List&lt;NewTile&gt;()</td></tr>
+<tr><td>streetSuffix</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>isAlley</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isBackstreet</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>normalizedFootfall</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>chunkSize</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>staticBatchDictionary</td><td><code>Dictionary&lt;NewRoom.StaticBatchKey, List&lt;GameObject&gt;&gt;</code></td><td></td><td>new Dictionary&lt;NewRoom.StaticBatchKey, List&lt;GameObject&gt;&gt;()</td></tr>
+<tr><td>streetChunks</td><td><code>List&lt;PathFinder.StreetChunk&gt;</code></td><td><span class="badge">Header: Road Tile Setup</span></td><td>new List&lt;PathFinder.StreetChunk&gt;()</td></tr>
+<tr><td>streetSections</td><td><code>List&lt;StreetController.StreetTile&gt;</code></td><td></td><td>new List&lt;StreetController.StreetTile&gt;()</td></tr>
+<tr><td>loadedModelReference</td><td><code>Dictionary&lt;MeshRenderer, StreetTilePreset.StreetSectionModel&gt;</code></td><td></td><td>new Dictionary&lt;MeshRenderer, StreetTilePreset.StreetSectionModel&gt;()</td></tr>
+<tr><td>sharedGroundElements</td><td><code>List&lt;StreetController&gt;</code></td><td></td><td>new List&lt;StreetController&gt;()</td></tr>
+<tr><td>debugAddressSet</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Setup</td><td><code>void</code></td><td></td><td><code>DistrictController newDistrict</code></td></tr>
+<tr><td>Load</td><td><code>void</code></td><td></td><td><code>CitySaveData.StreetCitySave data</code></td></tr>
+<tr><td>AddTile</td><td><code>void</code></td><td><span class="badge">v</span> <span class="badge">0</span></td><td><code>NewTile newTile</code></td></tr>
+<tr><td>RemoveTile</td><td><code>void</code></td><td></td><td><code>NewTile newTile</code></td></tr>
+<tr><td>SetAsAlley</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetAsBackstreet</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetAsStreet</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateNameCustom</td><td><code>void</code></td><td></td><td><code>string userStreetName</code></td></tr>
+<tr><td>UpdateName</td><td><code>void</code></td><td></td><td><code>bool forceTrueRandom = false</code></td></tr>
+<tr><td>IsOutside</td><td><code>bool</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>AddChunk</td><td><code>void</code></td><td></td><td><code>PathFinder.StreetChunk newChunk</code></td></tr>
+<tr><td>GetNeighboringStreets</td><td><code>List&lt;StreetController&gt;</code></td><td></td><td><code></code></td></tr>
+<tr><td>CompareTo</td><td><code>int</code></td><td></td><td><code>StreetController otherObject</code></td></tr>
+<tr><td>CreateEvidence</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>SetupEvidence</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>GenerateSaveData</td><td><code>CitySaveData.StreetCitySave</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadStreetTiles</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadSections</td><td><code>void</code></td><td><span class="badge">v2</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">l</span> <span class="badge">m</span> <span class="badge">n</span></td><td><code></code></td></tr>
+<tr><td>AddForStaticBatching</td><td><code>void</code></td><td></td><td><code>GameObject obj, Mesh objectMesh, Material objectMat</code></td></tr>
+<tr><td>ExecuteStaticBatching</td><td><code>void</code></td><td><span class="badge">key</span> <span class="badge">key</span> <span class="badge">key</span></td><td><code></code></td></tr>
+<tr><td>GetModel</td><td><code>StreetTilePreset.StreetSectionModel</code></td><td><span class="badge">i</span> <span class="badge">0</span></td><td><code>StreetTilePreset.StreetSection section, string seed</code></td></tr>
+<tr><td>GetDestinationNode</td><td><code>NewNode</code></td><td><span class="badge">psuedoRandomNumber</span> <span class="badge">psuedoRandomNumber2</span></td><td><code></code></td></tr>
+<tr><td>Redecorate</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class StreetTile</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>worldPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>section</td><td><code>StreetTilePreset.StreetSection</code></td><td></td><td></td></tr>
+<tr><td>angle</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

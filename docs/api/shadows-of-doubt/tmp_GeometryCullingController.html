@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GeometryCullingController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>GeometryCullingController</h1>
+      <div class="page-meta">Source file: <span class="code">GeometryCullingController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">GeometryCullingController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>maxDistance</td><td><code>float</code></td><td><span class="badge">Header: Settings</span></td><td>100f</td></tr>
+<tr><td>maxAngleAtMinDistance</td><td><code>float</code></td><td>The max FoV angle calculated from the first entrance in the room loop <span class="badge">Range(0f, 100f)</span></td><td>90f</td></tr>
+<tr><td>maxAngleAtMaxDistance</td><td><code>float</code></td><td><span class="badge">Range(0f, 100f)</span></td><td>1f</td></tr>
+<tr><td>maximumLoopCount</td><td><code>int</code></td><td></td><td>3000</td></tr>
+<tr><td>doorsBlockSight</td><td><code>bool</code></td><td>If true, with realtime culling doors will blocks sight but the culling will have to be updated when doors open</td><td>true</td></tr>
+<tr><td>backgroundCachingEnabled</td><td><code>bool</code></td><td><span class="badge">Header: State</span></td><td></td></tr>
+<tr><td>currentRoomsCullingTree</td><td><code>HashSet&lt;NewRoom&gt;</code></td><td></td><td>new HashSet&lt;NewRoom&gt;()</td></tr>
+<tr><td>currentRoomsCullingWithImmediateStuffLoad</td><td><code>HashSet&lt;NewRoom&gt;</code></td><td></td><td>new HashSet&lt;NewRoom&gt;()</td></tr>
+<tr><td>currentDuctsCullingTree</td><td><code>HashSet&lt;AirDuctGroup&gt;</code></td><td></td><td>new HashSet&lt;AirDuctGroup&gt;()</td></tr>
+<tr><td>transformSyncRequired</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>debugLevel</td><td><code>int</code></td><td><span class="badge">Header: Debugging</span> <span class="badge">Range(0f, 2f)</span></td><td>2</td></tr>
+<tr><td>animateDrawDebugRays</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>rayDelay</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;animateDrawDebugRays&quot;)</span></td><td>0.01f</td></tr>
+<tr><td>rayTime</td><td><code>float</code></td><td></td><td>6f</td></tr>
+<tr><td>debugCurrentRoomsVisible</td><td><code>List&lt;NewRoom&gt;</code></td><td></td><td>new List&lt;NewRoom&gt;()</td></tr>
+<tr><td>debugRayCommands</td><td><code>List&lt;GeometryCullingController.DebugCullingRayCommands&gt;</code></td><td></td><td>new List&lt;GeometryCullingController.DebugCullingRayCommands&gt;()</td></tr>
+<tr><td>toCalculateList</td><td><code>List&lt;NewRoom&gt;</code></td><td>List of rooms set to be calculated using async methods <span class="badge">Header: Realtime Culling</span></td><td>new List&lt;NewRoom&gt;()</td></tr>
+<tr><td>roomsCalculated</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>asyncCullingTreeActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static GeometryCullingController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateCullingForRoom</td><td><code>void</code></td><td></td><td><code>NewRoom currentRoom, bool updateSound, bool inAirVent, AirDuctGroup currentDuct, bool immediateLoad = false</code></td></tr>
+<tr><td>ExecuteCurrentCullingTree</td><td><code>void</code></td><td></td><td><code>bool immediateLoad</code></td></tr>
+<tr><td>GenerateDynamicCulling</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code>NewRoom forRoom, int displayDebugLevel = 0</code></td></tr>
+<tr><td>IsRoomRenderableFromOrigin</td><td><code>bool</code></td><td><span class="badge">0</span></td><td><code>NewRoom startingRoom, NewRoom destinationRoom, int displayDebugLevel</code></td></tr>
+<tr><td>IsRoomRenderableFromThisRoom</td><td><code>bool</code></td><td></td><td><code>NewRoom adjacentRoom, NewRoom originRoom, NewRoom destinationRoom, NewNode.NodeAccess access, int displayDebugLevel</code></td></tr>
+<tr><td>IsAccessValid</td><td><code>bool</code></td><td></td><td><code>NewRoom currentRoom, NewRoom destinationRoom, NewNode.NodeAccess access, int displayDebugLevel</code></td></tr>
+<tr><td>DebugDynamicCulling</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>QueueDrawRay</td><td><code>void</code></td><td></td><td><code>Vector3 origin, Vector3 direction, Color colour, float duration, float delay</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnStartGame</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>StartCachingProcess</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>IsBackgroundCachingAllowed</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>IsAtLoadTime</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>ProcessCullingTreeForRoom</td><td><code>void</code></td><td></td><td><code>NewRoom room</code></td></tr>
+<tr><td>TaskedCullTreeGeneration</td><td><code>Task</code></td><td></td><td><code>NewRoom room, bool debugMode</code></td></tr>
+<tr><td>GetVisibleRooms</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class DebugCullingRayCommands</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>start</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>dir</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>color</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>duration</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>delay</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class CullingTreeData</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>room</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>initialAccessPoint</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>initialAccessFoward</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>pathPoint</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>pathDistance</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>accessCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>angleThresholds</td><td><code>Vector2</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

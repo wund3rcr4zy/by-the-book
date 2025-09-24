@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NewTile — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>NewTile</h1>
+      <div class="page-meta">Source file: <span class="code">NewTile.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">NewTile</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>tileID</td><td><code>int</code></td><td><span class="badge">Header: ID</span></td><td>-1</td></tr>
+<tr><td>assignID</td><td><code>static int</code></td><td></td><td></td></tr>
+<tr><td>name</td><td><code>string</code></td><td><span class="badge">Header: Transform</span></td><td></td></tr>
+<tr><td>position</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>parent</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>building</td><td><code>NewBuilding</code></td><td><span class="badge">Header: Location</span></td><td></td></tr>
+<tr><td>floor</td><td><code>NewFloor</code></td><td></td><td></td></tr>
+<tr><td>cityTile</td><td><code>CityTile</code></td><td></td><td></td></tr>
+<tr><td>floorCoord</td><td><code>Vector2Int</code></td><td></td><td></td></tr>
+<tr><td>globalTileCoord</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>streetChunk</td><td><code>PathFinder.StreetChunk</code></td><td></td><td></td></tr>
+<tr><td>nodes</td><td><code>List&lt;NewNode&gt;</code></td><td><span class="badge">Header: Tile Contents</span></td><td>new List&lt;NewNode&gt;()</td></tr>
+<tr><td>anchorNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>isSetup</td><td><code>bool</code></td><td><span class="badge">Header: Tile</span></td><td></td></tr>
+<tr><td>isLoaded</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isOutside</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isObstacle</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isMapCorner</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isEdge</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>rotation</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isEntrance</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isMainEntrance</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>entrancePair</td><td><code>NewTile</code></td><td></td><td></td></tr>
+<tr><td>isStairwell</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>stairwellRotation</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isInvertedStairwell</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>elevatorRotation</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isTop</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isBottom</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>streetController</td><td><code>StreetController</code></td><td><span class="badge">Header: Roads</span></td><td></td></tr>
+<tr><td>useOptimizedFloor</td><td><code>bool</code></td><td><span class="badge">Header: Optimization</span></td><td></td></tr>
+<tr><td>useOptimizedCeiling</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>entranceArrow</td><td><code>GameObject</code></td><td><span class="badge">Header: Spawned Objects</span></td><td></td></tr>
+<tr><td>stairwell</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>elevator</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>stairwellAssign</td><td><code>Elevator</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>SetupInterior</td><td><code>void</code></td><td></td><td><code>NewFloor newFloor, Vector2Int newCoord, bool newIsEdge</code></td></tr>
+<tr><td>SetupExterior</td><td><code>void</code></td><td></td><td><code>CityTile newCityTile, Vector3Int newCityCoord</code></td></tr>
+<tr><td>CommonSetup</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadPathfindTileData</td><td><code>void</code></td><td></td><td><code>CitySaveData.TileCitySave data</code></td></tr>
+<tr><td>LoadExterior</td><td><code>void</code></td><td></td><td><code>CitySaveData.TileCitySave data</code></td></tr>
+<tr><td>LoadInterior</td><td><code>void</code></td><td></td><td><code>CitySaveData.TileCitySave data</code></td></tr>
+<tr><td>AddNewNode</td><td><code>void</code></td><td></td><td><code>NewNode newNode</code></td></tr>
+<tr><td>RemoveNode</td><td><code>void</code></td><td></td><td><code>NewNode newNode</code></td></tr>
+<tr><td>SetRotation</td><td><code>void</code></td><td></td><td><code>int newRot</code></td></tr>
+<tr><td>SetAsEntrance</td><td><code>void</code></td><td></td><td><code>bool val, bool mainEntrance, bool set = false</code></td></tr>
+<tr><td>SetAsStairwell</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">6</span> <span class="badge">0</span> <span class="badge">num</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">5</span></td><td><code>bool val, bool spawnPrefabs, bool isInverted</code></td></tr>
+<tr><td>SetStairwellRotation</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span></td><td><code>int newRot</code></td></tr>
+<tr><td>SetAsTop</td><td><code>void</code></td><td></td><td><code>bool newIsTop</code></td></tr>
+<tr><td>SetAsBottom</td><td><code>void</code></td><td></td><td><code>bool newIsBottom</code></td></tr>
+<tr><td>CanBeOptimized</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetFloorCeilingOptimization</td><td><code>void</code></td><td></td><td><code>bool val, bool spawnPrefabs</code></td></tr>
+<tr><td>SetAsObstacle</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetAsOutside</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>CheckOffMap</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ConnectStairwell</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateSaveData</td><td><code>CitySaveData.TileCitySave</code></td><td><span class="badge">6</span> <span class="badge">0</span> <span class="badge">num</span> <span class="badge">2</span> <span class="badge">num2</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">newNode3</span> <span class="badge">newNode3</span> <span class="badge">newNode4</span> <span class="badge">newNode5</span> <span class="badge">newNode5</span> <span class="badge">newNode6</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

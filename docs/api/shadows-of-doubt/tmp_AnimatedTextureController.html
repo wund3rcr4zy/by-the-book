@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnimatedTextureController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>AnimatedTextureController</h1>
+      <div class="page-meta">Source file: <span class="code">AnimatedTextureController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">AnimatedTextureController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>animatedRenderer</td><td><code>Renderer</code></td><td><span class="badge">Header: Components</span></td><td></td></tr>
+<tr><td>animationCycleTime</td><td><code>float</code></td><td>How long it takes the animation to complete <span class="badge">Header: Settings</span></td><td></td></tr>
+<tr><td>texTileCount</td><td><code>Vector2</code></td><td>Count of X/Y frames within the base texture.</td><td></td></tr>
+<tr><td>playOnStart</td><td><code>bool</code></td><td>Play this when active</td><td></td></tr>
+<tr><td>destroyOnEnd</td><td><code>bool</code></td><td>Destroy self on end</td><td>true</td></tr>
+<tr><td>destroyIfInactive</td><td><code>bool</code></td><td>Destroy if inactive</td><td>true</td></tr>
+<tr><td>billboardingOn</td><td><code>bool</code></td><td>Always face the camera <span class="badge">Header: Billboarding</span></td><td></td></tr>
+<tr><td>faceOnStartOnly</td><td><code>bool</code></td><td>Only face towards camera when the animation starts playing... <span class="badge">EnableIf(&quot;billboardingOn&quot;)</span></td><td></td></tr>
+<tr><td>specialCase</td><td><code>AnimatedTextureController.SpecialCase</code></td><td><span class="badge">EnableIf(&quot;billboardingOn&quot;)</span></td><td></td></tr>
+<tr><td>alterEmission</td><td><code>bool</code></td><td><span class="badge">Header: Extra VFX</span></td><td>true</td></tr>
+<tr><td>startingEmission</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>midEmission</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>endEmission</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>alterScale</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>parentScaleTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>scaleX</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>scaleY</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>scaleZ</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>triggerAudio</td><td><code>AudioEvent</code></td><td><span class="badge">Header: Audio</span></td><td></td></tr>
+<tr><td>useSpeedOfSound</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>animtionTimer</td><td><code>float</code></td><td><span class="badge">Header: State</span></td><td></td></tr>
+<tr><td>animationProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>isPlaying</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>loop</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>nextFrameTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>spriteCursorX</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>spriteCursorY</td><td><code>int</code></td><td></td><td>-1</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Play</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>Stop</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Awake</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Billboard</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ApplyOffset</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>Vector2 offset</code></td></tr>
+<tr><td>ApplyScale</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>Vector2 scale</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>SpecialCase</h3>
+<pre><code>fireSmoke</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

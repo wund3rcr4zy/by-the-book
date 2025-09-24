@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RoomTypePreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>RoomTypePreset</h1>
+      <div class="page-meta">Source file: <span class="code">RoomTypePreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">RoomTypePreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>forceConfiguration</td><td><code>RoomConfiguration</code></td><td><span class="badge">Header: Contents</span></td><td></td></tr>
+<tr><td>chance</td><td><code>float</code></td><td>Chance this has of being included <span class="badge">Header: Size Settings</span> <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>minimumAddressSize</td><td><code>int</code></td><td>The address has to be this big for this rooom to be included <span class="badge">Range(0f, 90f)</span></td><td>18</td></tr>
+<tr><td>maximumRoomTypesPerAddress</td><td><code>int</code></td><td>Maximum number of these room types per addresses <span class="badge">Range(1f, 10f)</span></td><td>1</td></tr>
+<tr><td>cyclePriority</td><td><code>int</code></td><td>The priority given to this room: Higher priority rooms will override size variables of others. <span class="badge">Range(0f, 10f)</span></td><td>5</td></tr>
+<tr><td>minimumRoomAreaShape</td><td><code>Vector2</code></td><td>The room at it&#x27;s smallest must be able to fit this shape inside it. <span class="badge">Header: Room Shape Settings</span></td><td>new Vector2(2f, 2f)</td></tr>
+<tr><td>maximumRoomAreaShape</td><td><code>Vector2</code></td><td>The room at it&#x27;s largest can feature this shape.</td><td>new Vector2(10f, 10f)</td></tr>
+<tr><td>tesselationShape</td><td><code>Vector2</code></td><td>All nodes in the room must tesselate with this shape.</td><td>new Vector2(2f, 2f)</td></tr>
+<tr><td>floorSpaceWeight</td><td><code>int</code></td><td><span class="badge">Header: Room Placement Weighting</span> <span class="badge">Range(-3f, 3f)</span></td><td>1</td></tr>
+<tr><td>exteriorWallWeight</td><td><code>int</code></td><td><span class="badge">Range(-3f, 3f)</span></td><td>1</td></tr>
+<tr><td>exteriorWindowWeight</td><td><code>int</code></td><td><span class="badge">Range(-3f, 3f)</span></td><td>1</td></tr>
+<tr><td>entranceWeight</td><td><code>int</code></td><td><span class="badge">Range(-3f, 3f)</span></td><td></td></tr>
+<tr><td>mustAdjoinRooms</td><td><code>List&lt;RoomTypePreset&gt;</code></td><td>This must adjoin one of these rooms. If none adjoin all. <span class="badge">Header: Adjoining Rules</span></td><td>new List&lt;RoomTypePreset&gt;()</td></tr>
+<tr><td>doorPriority</td><td><code>int</code></td><td>Should I feature doors from this preset or the bordering preset? Choose the highest priority <span class="badge">Range(0f, 10f)</span></td><td>1</td></tr>
+<tr><td>chanceOfNoDoor</td><td><code>float</code></td><td>Chance of doorway not featuring a door <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>maxDoors</td><td><code>int</code></td><td>Maximum number of doors</td><td>99</td></tr>
+<tr><td>forceNoDoors</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>doorSetting</td><td><code>NewDoor.DoorSetting</code></td><td>Doors will use the &#x27;highest&#x27; privacy setting between the 2 rooms</td><td></td></tr>
+<tr><td>allowRoomDividers</td><td><code>bool</code></td><td>Entrances to this room can be replaced by a divider if there are 2 or more adjoining walls</td><td></td></tr>
+<tr><td>maxDividers</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;allowRoomDividers&quot;)</span></td><td>99</td></tr>
+<tr><td>onlyAllowDividersAdjoining</td><td><code>List&lt;RoomTypePreset&gt;</code></td><td>Only allow room dividers from these room types:</td><td>new List&lt;RoomTypePreset&gt;()</td></tr>
+<tr><td>allowMainAddressEntrance</td><td><code>bool</code></td><td>If true the address entrance is allowed to open into this room <span class="badge">Header: Special Rules</span></td><td></td></tr>
+<tr><td>allowSecondaryAddressEntrance</td><td><code>bool</code></td><td>If true the address entrance is allowed to open into this room</td><td></td></tr>
+<tr><td>preferMainAddressEntrance</td><td><code>bool</code></td><td>If both are present, prefer main entrance. Doubles entrance ranking score, so make sure it is &gt;0</td><td>true</td></tr>
+<tr><td>mustConnectWithEntrance</td><td><code>bool</code></td><td>If true this must be connected to an entrance, either by the entrance opening into it or otherwise through a created hallway. This will also skip the doorway creation process for this room.</td><td></td></tr>
+<tr><td>overridable</td><td><code>bool</code></td><td>If true this room can be overriden with no penalty</td><td></td></tr>
+<tr><td>overwriteWithPriorityUpTo</td><td><code>int</code></td><td>This room can be overwritten rooms with priority up to this value <span class="badge">Range(0f, 10f)</span></td><td>10</td></tr>
+<tr><td>blockOverridesFromType</td><td><code>List&lt;RoomTypePreset&gt;</code></td><td>Also block overrides from these room types</td><td>new List&lt;RoomTypePreset&gt;()</td></tr>
+<tr><td>overwriteLimit</td><td><code>int</code></td><td>If  the block list above is active then it makes sense to limit this room to only being overwritten once, so rooms outside of this block list can&#x27;t then overwrite this node again.</td><td>999</td></tr>
+<tr><td>expandIntoNull</td><td><code>bool</code></td><td>If true this room will exapnd into null space after all rooms are assigned, regardness of shape settings above.</td><td></td></tr>
+<tr><td>expandIntoNullAdjacencyMinimum</td><td><code>int</code></td><td>Limitations to null room expansion: Will only choose to expand if there are this many or more adjacent tiles</td><td>2</td></tr>
+<tr><td>shareFeaturesWithCommonAdjacent</td><td><code>bool</code></td><td>If true this will share common features with adjacent rooms of the same type (such as light switches and ceiling light styles</td><td></td></tr>
+<tr><td>allowCorridorReplacement</td><td><code>bool</code></td><td>If true corridor ends can be integrated into this room (eg ends of hallways etc)</td><td></td></tr>
+<tr><td>overrideFloorHeight</td><td><code>bool</code></td><td><span class="badge">Header: Floor Settings Override</span></td><td></td></tr>
+<tr><td>floorHeight</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;overrideFloorHeight&quot;)</span></td><td></td></tr>
+<tr><td>copyFrom</td><td><code>RoomConfiguration</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

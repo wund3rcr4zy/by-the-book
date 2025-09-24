@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CitizenBehaviour — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CitizenBehaviour</h1>
+      <div class="page-meta">Source file: <span class="code">CitizenBehaviour.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CitizenBehaviour</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnGameWorldLoop</td><td><code>event CitizenBehaviour.GameWorldLoop</code></td><td></td><td></td></tr>
+<tr><td>veryLowTickRate</td><td><code>List&lt;NewAIController&gt;</code></td><td></td><td>new List&lt;NewAIController&gt;()</td></tr>
+<tr><td>lowTickRate</td><td><code>List&lt;NewAIController&gt;</code></td><td></td><td>new List&lt;NewAIController&gt;()</td></tr>
+<tr><td>mediumTickRate</td><td><code>List&lt;NewAIController&gt;</code></td><td></td><td>new List&lt;NewAIController&gt;()</td></tr>
+<tr><td>highTickRate</td><td><code>List&lt;NewAIController&gt;</code></td><td></td><td>new List&lt;NewAIController&gt;()</td></tr>
+<tr><td>veryHighTickRate</td><td><code>List&lt;NewAIController&gt;</code></td><td></td><td>new List&lt;NewAIController&gt;()</td></tr>
+<tr><td>updateList</td><td><code>List&lt;NewAIController&gt;</code></td><td></td><td>new List&lt;NewAIController&gt;()</td></tr>
+<tr><td>tickCounter</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>AITicksPerFrame</td><td><code>int</code></td><td></td><td>20</td></tr>
+<tr><td>executionsThisFrame</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>aiTickBacklog</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>visibleHumans</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>frequentTickCounter</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>frequentTick5FPS</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>frequentTick20FPS</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>frequentTick50FPS</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lightUpdateQueue</td><td><code>List&lt;LightController&gt;</code></td><td></td><td>new List&lt;LightController&gt;()</td></tr>
+<tr><td>actorsInStealthMode</td><td><code>HashSet&lt;Actor&gt;</code></td><td></td><td>new HashSet&lt;Actor&gt;()</td></tr>
+<tr><td>passiveIncomeTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>initialPositioning</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>cancelUmbrellaAutoSelect</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>umbrellaAutoSelected</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>triggerHeadache</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>footprintMaxTime</td><td><code>const float</code></td><td></td><td>12f</td></tr>
+<tr><td>buildingEmissionTexturesToUpdate</td><td><code>List&lt;NewBuilding&gt;</code></td><td></td><td>new List&lt;NewBuilding&gt;()</td></tr>
+<tr><td>timeOnLastGameWorldUpdate</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>loadCitizensPerFrame</td><td><code>int</code></td><td><span class="badge">Header: Citizen Rendering</span></td><td>1</td></tr>
+<tr><td>citizensRenderQueue</td><td><code>HashSet&lt;Human&gt;</code></td><td></td><td>new HashSet&lt;Human&gt;()</td></tr>
+<tr><td>smokestacks</td><td><code>List&lt;CitizenBehaviour.Smokestack&gt;</code></td><td><span class="badge">Header: Smokestacks</span></td><td>new List&lt;CitizenBehaviour.Smokestack&gt;()</td></tr>
+<tr><td>sceneRecorders</td><td><code>List&lt;SceneRecorder&gt;</code></td><td><span class="badge">Header: Scene Captures</span></td><td>new List&lt;SceneRecorder&gt;()</td></tr>
+<tr><td>tempEscalationBoost</td><td><code>List&lt;NewGameLocation&gt;</code></td><td></td><td>new List&lt;NewGameLocation&gt;()</td></tr>
+<tr><td>_instance</td><td><code>static CitizenBehaviour</code></td><td></td><td></td></tr>
+<tr><td>toRemove</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GameSpeedChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RoutineCheck</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddToCitizenRenderQueue</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">l</span> <span class="badge">l</span> <span class="badge">l</span> <span class="badge">m</span> <span class="badge">m</span> <span class="badge">m</span></td><td><code>Human human</code></td></tr>
+<tr><td>RemoveFromCitizenRenderQueue</td><td><code>void</code></td><td></td><td><code>Human human</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LateUpdate</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">m</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>GameWorldCheck</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>UpdateRainHaptics</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">l</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">m</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">n</span> <span class="badge">num12</span> <span class="badge">num13</span> <span class="badge">num14</span> <span class="badge">0</span> <span class="badge">num15</span> <span class="badge">num16</span> <span class="badge">num17</span> <span class="badge">num18</span> <span class="badge">5</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num22</span> <span class="badge">4</span> <span class="badge">num25</span> <span class="badge">num26</span> <span class="badge">num28</span> <span class="badge">num29</span> <span class="badge">7</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num34</span> <span class="badge">4</span> <span class="badge">num35</span> <span class="badge">6</span> <span class="badge">0</span> <span class="badge">num39</span> <span class="badge">num39</span> <span class="badge">num37</span> <span class="badge">6</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">num42</span> <span class="badge">0</span> <span class="badge">num43</span> <span class="badge">num45</span> <span class="badge">num46</span> <span class="badge">num47</span> <span class="badge">num48</span> <span class="badge">num49</span> <span class="badge">num50</span> <span class="badge">num51</span></td><td><code></code></td></tr>
+<tr><td>LightLevelLoop</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnHourChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDayChange</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>UpdateForSale</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class Smokestack</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>building</td><td><code>NewBuilding</code></td><td></td><td></td></tr>
+<tr><td>timer</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

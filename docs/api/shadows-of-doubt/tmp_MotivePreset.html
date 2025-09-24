@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MotivePreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>MotivePreset</h1>
+      <div class="page-meta">Source file: <span class="code">MotivePreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">MotivePreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>allowHomelessPurps</td><td><code>bool</code></td><td><span class="badge">Header: Purpetrator</span></td><td></td></tr>
+<tr><td>allowJoblessPurps</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>purpMustLiveAtDifferentAddressToPoster</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>allowEnforcers</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>disallowEchelonHome</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>purpTraitModifiers</td><td><code>List&lt;MotivePreset.ModifierRule&gt;</code></td><td>Purps must follow these trait rules</td><td>new List&lt;MotivePreset.ModifierRule&gt;()</td></tr>
+<tr><td>usePurpJobs</td><td><code>bool</code></td><td>Purp must have one of these jobs...</td><td></td></tr>
+<tr><td>purpJobs</td><td><code>List&lt;OccupationPreset&gt;</code></td><td></td><td>new List&lt;OccupationPreset&gt;()</td></tr>
+<tr><td>allowHomelessPosters</td><td><code>bool</code></td><td><span class="badge">Header: Posters</span></td><td></td></tr>
+<tr><td>allowJoblessPosters</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>usePosterConnections</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>acceptableConnections</td><td><code>List&lt;Acquaintance.ConnectionType&gt;</code></td><td>Posters must be one of these connections (poster connection to purp)...</td><td>new List&lt;Acquaintance.ConnectionType&gt;()</td></tr>
+<tr><td>usePosterTraits</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>posterTraitModifiers</td><td><code>List&lt;MotivePreset.ModifierRule&gt;</code></td><td><span class="badge">EnableIf(&quot;usePosterTraits&quot;)</span></td><td>new List&lt;MotivePreset.ModifierRule&gt;()</td></tr>
+<tr><td>purpIsExemptFromPostingOtherJobs</td><td><code>bool</code></td><td>The chosen purp is exempt from further side jobs. <span class="badge">Header: Exempt</span></td><td>true</td></tr>
+<tr><td>purpIsExemptFromPurpingOtherJobs</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>posterIsExemptFromPostingOtherJobs</td><td><code>bool</code></td><td>The chosen poster is exempt from further side jobs.</td><td>true</td></tr>
+<tr><td>posterIsExemptFromPurpingOtherJobs</td><td><code>bool</code></td><td></td><td>true</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class ModifierRule</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>rule</td><td><code>CharacterTrait.RuleType</code></td><td></td><td></td></tr>
+<tr><td>traitList</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>mustPassForApplication</td><td><code>bool</code></td><td>If this isn&#x27;t true then it won&#x27;t be picked for application at all.</td><td>true</td></tr>
+<tr><td>score</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

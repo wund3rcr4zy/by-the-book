@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MainMenuController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>MainMenuController</h1>
+      <div class="page-meta">Source file: <span class="code">MainMenuController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">MainMenuController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>mainMenuContainer</td><td><code>RectTransform</code></td><td><span class="badge">Header: Background</span></td><td></td></tr>
+<tr><td>backgroundImage</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>logoImage</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>buildText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>buildNameObject</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>time</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>previousComponent</td><td><code>MainMenuController.Component</code></td><td><span class="badge">Header: Components</span></td><td></td></tr>
+<tr><td>currentComponent</td><td><code>MainMenuController.MenuComponent</code></td><td></td><td></td></tr>
+<tr><td>componentMotion</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>feedbackForm</td><td><code>FeedbackForm</code></td><td></td><td></td></tr>
+<tr><td>feedbackPlayerInfo</td><td><code>FormField</code></td><td></td><td></td></tr>
+<tr><td>saveDof</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>betaMessageText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>raycaster</td><td><code>GraphicRaycaster</code></td><td></td><td></td></tr>
+<tr><td>askedStreamerQuestion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>acceptedEULA</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>components</td><td><code>List&lt;MainMenuController.MenuComponent&gt;</code></td><td></td><td>new List&lt;MainMenuController.MenuComponent&gt;()</td></tr>
+<tr><td>loadingTipsDDSTree</td><td><code>string</code></td><td><span class="badge">Header: Tips</span></td><td></td></tr>
+<tr><td>loadingTips</td><td><code>List&lt;MainMenuController.LoadingTip&gt;</code></td><td></td><td>new List&lt;MainMenuController.LoadingTip&gt;()</td></tr>
+<tr><td>nextTipTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>languageDropdown</td><td><code>DropdownController</code></td><td><span class="badge">Header: Dropdowns</span></td><td></td></tr>
+<tr><td>resolutionsDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>fullScreenModeDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>startTimeDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>gameDifficultyDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>gameDifficultyDropdown2</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>gameLengthDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>selectCityDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>playerGenderDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>partnerGenderDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>citySizeDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>cityPopDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>statusEffectsDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>aaModeDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>aaQualityDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>dlssModeDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>hyperacusisDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>bassReductionDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>statusEffectToggles</td><td><code>List&lt;ToggleController&gt;</code></td><td></td><td>new List&lt;ToggleController&gt;()</td></tr>
+<tr><td>saveGameButton</td><td><code>ButtonController</code></td><td><span class="badge">Header: Main Menu</span></td><td></td></tr>
+<tr><td>loadGameButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>sandboxGameButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>cityGenButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>resumeGameButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>helpButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>bugReportButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>modsButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>selectedCityShareCode</td><td><code>TextMeshProUGUI</code></td><td><span class="badge">Header: City Setup Menu</span></td><td></td></tr>
+<tr><td>selectedCityDetailsText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>selectedCityContinueButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>selectedCityInfoData</td><td><code>CityInfoData</code></td><td></td><td></td></tr>
+<tr><td>selectedCityCopyShareCodeButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>deleteCityButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>cityMapFiles</td><td><code>List&lt;FileInfo&gt;</code></td><td></td><td>new List&lt;FileInfo&gt;()</td></tr>
+<tr><td>cityInfoFiles</td><td><code>List&lt;FileInfo&gt;</code></td><td></td><td>new List&lt;FileInfo&gt;()</td></tr>
+<tr><td>cityInfoDict</td><td><code>Dictionary&lt;string, CityInfoData&gt;</code></td><td></td><td>new Dictionary&lt;string, CityInfoData&gt;()</td></tr>
+<tr><td>developerOptionsButton</td><td><code>ButtonController</code></td><td><span class="badge">Header: Dev Controls</span></td><td></td></tr>
+<tr><td>windSlider</td><td><code>Slider</code></td><td></td><td></td></tr>
+<tr><td>rainSlider</td><td><code>Slider</code></td><td></td><td></td></tr>
+<tr><td>lightningSlider</td><td><code>Slider</code></td><td></td><td></td></tr>
+<tr><td>snowSlider</td><td><code>Slider</code></td><td></td><td></td></tr>
+<tr><td>fogSlider</td><td><code>Slider</code></td><td></td><td></td></tr>
+<tr><td>setWeatherButton</td><td><code>Button</code></td><td></td><td></td></tr>
+<tr><td>allowLicensedMusicToggle</td><td><code>ToggleController</code></td><td></td><td></td></tr>
+<tr><td>playerNameButton</td><td><code>ButtonController</code></td><td><span class="badge">Header: New Character</span></td><td></td></tr>
+<tr><td>playerSkinToneSelect</td><td><code>MultiSelectController</code></td><td></td><td></td></tr>
+<tr><td>shareCodeText</td><td><code>TextMeshProUGUI</code></td><td><span class="badge">Header: City Generation</span></td><td></td></tr>
+<tr><td>pasteShareCodeButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>changeCityNameButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>generationWarningText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>creditsText</td><td><code>TextMeshProUGUI</code></td><td><span class="badge">Header: Credits</span></td><td></td></tr>
+<tr><td>creditsPageContent</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>mouseOverText</td><td><code>TextMeshProUGUI</code></td><td><span class="badge">Header: Main Menu</span></td><td></td></tr>
+<tr><td>mainMenuActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>loadedLanguage</td><td><code>string</code></td><td><span class="badge">Header: Language</span></td><td></td></tr>
+<tr><td>loadingText</td><td><code>TextMeshProUGUI</code></td><td><span class="badge">Header: Loading Bar</span></td><td></td></tr>
+<tr><td>loadingSlider</td><td><code>Slider</code></td><td></td><td></td></tr>
+<tr><td>tipText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>tipImg</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>fadeOverlay</td><td><code>CanvasRenderer</code></td><td><span class="badge">Header: Menu Fading</span></td><td></td></tr>
+<tr><td>desiredFade</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>fade</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>exitMainMenuAfterFade</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>loadGameContentRect</td><td><code>RectTransform</code></td><td><span class="badge">Header: Save/Load Game</span></td><td></td></tr>
+<tr><td>saveGameContentRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>saveGameEntryPrefab</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>spawnedSaveGames</td><td><code>List&lt;SaveGameEntryController&gt;</code></td><td></td><td>new List&lt;SaveGameEntryController&gt;()</td></tr>
+<tr><td>spawnedLoadGames</td><td><code>List&lt;SaveGameEntryController&gt;</code></td><td></td><td>new List&lt;SaveGameEntryController&gt;()</td></tr>
+<tr><td>selectedSave</td><td><code>SaveGameEntryController</code></td><td></td><td></td></tr>
+<tr><td>saveButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>loadButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>deleteButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>deleteButton2</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>newSaveGameEntry</td><td><code>SaveGameEntryController</code></td><td></td><td></td></tr>
+<tr><td>selectedSaveText1</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>selectedSaveText2</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>bugSaveDropdown</td><td><code>DropdownController</code></td><td><span class="badge">Header: Bug Report (New)</span></td><td></td></tr>
+<tr><td>priorityDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>categoryDropdown</td><td><code>DropdownController</code></td><td></td><td></td></tr>
+<tr><td>bugNameInput</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>bugDetailsInput</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>sendScreenshotToggle</td><td><code>ToggleController</code></td><td></td><td></td></tr>
+<tr><td>sendSystemSpecsToggle</td><td><code>ToggleController</code></td><td></td><td></td></tr>
+<tr><td>sendPrevLogToggle</td><td><code>ToggleController</code></td><td></td><td></td></tr>
+<tr><td>bugReportTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>ffPriority</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>ffCategory</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>ffNameInput</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>ffDescriptionInput</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>ffSystemInfo</td><td><code>FormField</code></td><td></td><td></td></tr>
+<tr><td>ffPrevLogCollector</td><td><code>FormElement</code></td><td></td><td></td></tr>
+<tr><td>disableWithDynamicResolution</td><td><code>List&lt;DropdownController&gt;</code></td><td><span class="badge">Header: Special Cases</span></td><td>new List&lt;DropdownController&gt;()</td></tr>
+<tr><td>enableWithDynamicResolution</td><td><code>List&lt;DropdownController&gt;</code></td><td></td><td>new List&lt;DropdownController&gt;()</td></tr>
+<tr><td>activeBackButtons</td><td><code>List&lt;ButtonController&gt;</code></td><td></td><td>new List&lt;ButtonController&gt;()</td></tr>
+<tr><td>topBarRend</td><td><code>CanvasRenderer</code></td><td><span class="badge">Header: Animation</span></td><td></td></tr>
+<tr><td>bottomBarRend</td><td><code>CanvasRenderer</code></td><td></td><td></td></tr>
+<tr><td>titleText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>titleTextKerningAnimation</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static MainMenuController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadDropdownContent</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>OnNewMouseOver</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">k</span> <span class="badge">l</span> <span class="badge">m</span> <span class="badge">n</span></td><td><code></code></td></tr>
+<tr><td>EnableMainMenu</td><td><code>void</code></td><td></td><td><code>bool val, bool useFade = false, bool exitMain = false, MainMenuController.Component menuPhase = MainMenuController.Component.mainMenuButtons</code></td></tr>
+<tr><td>SelectHighestRankedActiveButton</td><td><code>void</code></td><td></td><td><code>bool prioritisePreviouslySelected = true</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>FadeMenu</td><td><code>IEnumerator</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetMenuComponent</td><td><code>void</code></td><td></td><td><code>int newComponent</code></td></tr>
+<tr><td>SetMenuComponent</td><td><code>void</code></td><td></td><td><code>MainMenuController.Component newComponent</code></td></tr>
+<tr><td>SetToStreamerMode</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CancelStreamerMode</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AcceptEULA</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DeclineEULA</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>MenuMotion</td><td><code>IEnumerator</code></td><td></td><td><code>bool skipMotion</code></td></tr>
+<tr><td>IsSaveGameAllowed</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnMenuComponentSwitchComplete</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetBackButtonControllerIcons</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SelectCityButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RefreshMapDropdown</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnNewCitySelected</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>LoadCityInfo</td><td><code>void</code></td><td></td><td><code>FileInfo fileInfo</code></td></tr>
+<tr><td>SelectGenNewCity</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">num</span></td><td><code></code></td></tr>
+<tr><td>RandomCityName</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PasteShareCode</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ParseShareCode</td><td><code>void</code></td><td></td><td><code>string newCode</code></td></tr>
+<tr><td>CopyShareCodeGenerate</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CustomShareCodeButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeShareCodePopupCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeShareCodePopupConfirm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnGenerateNewSeed</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeCityNameButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeCityNamePopupCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeCityNamePopupConfirm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeCityGenerationOption</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>NewCharacter</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">1</span></td><td><code></code></td></tr>
+<tr><td>SetPlayerName</td><td><code>void</code></td><td></td><td><code>string newName</code></td></tr>
+<tr><td>RandomPlayerName</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code>bool surnameOnly = false</code></td></tr>
+<tr><td>OnChangeNameButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeNamePopupCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeNamePopupConfirm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPlayerNameChanged</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPlayerGenderChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPartnerGenderChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RandomPlayerGender</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RandomPartnerGender</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RandomSkinTone</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnSkinToneChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SaveGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnSaveButton</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>CancelOverwriteSave</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OverwriteSave</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartSaveAsync</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SaveCompleteMessage</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDeleteSaveButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CancelDeleteSave</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DeleteSave</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RefreshSaveEntries</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SelectNewSave</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span></td><td><code>SaveGameEntryController sec</code></td></tr>
+<tr><td>DeleteCityButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CancelDeleteCity</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DeleteCity</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExitGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResumeGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Help</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>BugReport</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>FeedbackForm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnFeedbackFormClosed</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnOpenBugReport</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCloseBugReport</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SumbitBugReport</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RefreshSaveGameDropdown</td><td><code>void</code></td><td><span class="badge">1</span></td><td><code></code></td></tr>
+<tr><td>ResetBugReportDetails</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeBugNameButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeBugNameCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeBugNameConfirm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeBugDetailsButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeBugDetailsCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeBugDetailsConfirm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PlayButtonClick</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PlayForwardButtonClick</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PlayBackButtonClick</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PlayTickbox</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnLanguageChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LangRestartGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LangCancelRestartGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnChangeResolution</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LowResolutionTextScalingCheck</td><td><code>void</code></td><td><span class="badge">num</span> <span class="badge">num</span> <span class="badge">num</span></td><td><code></code></td></tr>
+<tr><td>CopyShareCodeToClipboard</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>NewGameTypeButton</td><td><code>void</code></td><td></td><td><code>bool sandbox</code></td></tr>
+<tr><td>PreviousMenu</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadTip</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ShadowsWebsiteLink</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnEffectStatusChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetStatusEffectOptionsAccordingToDropdown</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetDropdownAccordingToStatusEffects</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetControls</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnOpenModMenu</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnContinueCityGeneration</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ConfirmCityGeneration</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RejectCityGeneration</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class MenuComponent</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>component</td><td><code>MainMenuController.Component</code></td><td></td><td></td></tr>
+<tr><td>rect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>xPhase</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>onscreenAnchoredPosition</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>buttons</td><td><code>List&lt;ButtonController&gt;</code></td><td></td><td>new List&lt;ButtonController&gt;()</td></tr>
+<tr><td>previouslySelected</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>skipMotion</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class LoadingTip</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>dictRef</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>image</td><td><code>Sprite</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>Component</h3>
+<pre><code>none
+mainMenuButtons
+settings
+newGameSelect
+city
+citySelect
+generateCity
+charSetup
+interfaceSettings
+graphicsSettings
+audioSettings
+gameplaySettings
+controlSettings
+devSettings
+saveGame
+loadGame
+credits
+loadingCity
+splash
+controlDetect
+streamingSettings
+bugReport
+mods</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

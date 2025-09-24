@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>brotli — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>brotli</h1>
+      <div class="page-meta">Source file: <span class="code">brotli.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">brotli</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>libname</td><td><code>const string</code></td><td></td><td>&quot;libbrotli&quot;</td></tr>
+<tr><td>nativeBuffer</td><td><code>static IntPtr</code></td><td></td><td>IntPtr.Zero</td></tr>
+<tr><td>nativeBufferIsBeingUsed</td><td><code>static bool</code></td><td></td><td>false</td></tr>
+<tr><td>nativeOffset</td><td><code>static int</code></td><td></td><td>0</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>brCompress</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libbrotli&quot;)</span></td><td><code>string inFile, string outFile, IntPtr proc, int quality, int lgwin, int lgblock, int mode</code></td></tr>
+<tr><td>brDecompresss</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libbrotli&quot;)</span></td><td><code>string inFile, string outFile, IntPtr proc, IntPtr FileBuffer, int fileBufferLength</code></td></tr>
+<tr><td>brReleaseBuffer</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libbrotli&quot;)</span></td><td><code>IntPtr buffer</code></td></tr>
+<tr><td>brCreate_Buffer</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libbrotli&quot;)</span></td><td><code>int size</code></td></tr>
+<tr><td>brAddTo_Buffer</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libbrotli&quot;)</span></td><td><code>IntPtr destination, int offset, IntPtr buffer, int len</code></td></tr>
+<tr><td>brCompressBuffer</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libbrotli&quot;)</span></td><td><code>int bufferLength, IntPtr buffer, IntPtr encodedSize, IntPtr proc, int quality, int lgwin, int lgblock, int mode</code></td></tr>
+<tr><td>brGetDecodedSize</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libbrotli&quot;)</span></td><td><code>int bufferLength, IntPtr buffer</code></td></tr>
+<tr><td>brDecompressBuffer</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libbrotli&quot;)</span></td><td><code>int bufferLength, IntPtr buffer, int outLength, IntPtr outbuffer</code></td></tr>
+<tr><td>setFilePermissions</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string filePath, string _user, string _group, string _other</code></td></tr>
+<tr><td>gcA</td><td><code>GCHandle</code></td><td><span class="badge">static</span></td><td><code>object o</code></td></tr>
+<tr><td>checkObject</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>object fileBuffer, string filePath, ref GCHandle fbuf, ref IntPtr fileBufferPointer, ref int fileBufferLength</code></td></tr>
+<tr><td>compressFile</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string inFile, string outFile, ulong[] proc, int quality = 9, int lgwin = 19, int lgblock = 0, int mode = 0</code></td></tr>
+<tr><td>decompressFile</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span></td><td><code>string inFile, string outFile, ulong[] proc, object fileBuffer = null</code></td></tr>
+<tr><td>getDecodedSize</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span></td><td><code>byte[] inBuffer</code></td></tr>
+<tr><td>compressBuffer</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>byte[] inBuffer, ref byte[] outBuffer, ulong[] proc, bool includeSize = false, int quality = 9, int lgwin = 19, int lgblock = 0, int mode = 0</code></td></tr>
+<tr><td>compressBuffer</td><td><code>byte[]</code></td><td><span class="badge">static</span> <span class="badge">1</span> <span class="badge">4</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">0</span></td><td><code>byte[] inBuffer, int[] proc, bool includeSize = false, int quality = 9, int lgwin = 19, int lgblock = 0, int mode = 0</code></td></tr>
+<tr><td>compressBuffer</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span> <span class="badge">4</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">0</span></td><td><code>byte[] inBuffer, byte[] outBuffer, int[] proc, bool includeSize = false, int quality = 9, int lgwin = 19, int lgblock = 0, int mode = 0</code></td></tr>
+<tr><td>decompressBuffer</td><td><code>bool</code></td><td><span class="badge">static</span> <span class="badge">1</span> <span class="badge">4</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span></td><td><code>byte[] inBuffer, ref byte[] outBuffer, bool useFooter = false, int unCompressedSize = 0</code></td></tr>
+<tr><td>decompressBuffer</td><td><code>byte[]</code></td><td><span class="badge">static</span></td><td><code>byte[] inBuffer, bool useFooter = false, int unCompressedSize = 0</code></td></tr>
+<tr><td>decompressBuffer</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">num2</span></td><td><code>byte[] inBuffer, byte[] outBuffer, bool useFooter = false, int unCompressedSize = 0</code></td></tr>
+<tr><td>downloadBrFileNative</td><td><code>IEnumerator</code></td><td><span class="badge">static</span></td><td><code>string url, Action&lt;bool&gt; downloadDone, Action&lt;IntPtr&gt; pointer = null, Action&lt;int&gt; fileSize = null</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class CustomWebRequest5</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

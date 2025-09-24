@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClothesPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>ClothesPreset</h1>
+      <div class="page-meta">Source file: <span class="code">ClothesPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">ClothesPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>covers</td><td><code>List&lt;CitizenOutfitController.CharacterAnchor&gt;</code></td><td>Covers these components: If an anchor here is NOT covered by this outfit, it will look for other elements in outfits. <span class="badge">Header: Setup</span></td><td>new List&lt;CitizenOutfitController.CharacterAnchor&gt;()</td></tr>
+<tr><td>outfitCategories</td><td><code>List&lt;ClothesPreset.OutfitCategory&gt;</code></td><td></td><td>new List&lt;ClothesPreset.OutfitCategory&gt;()</td></tr>
+<tr><td>suitableForGenders</td><td><code>List&lt;Human.Gender&gt;</code></td><td></td><td>new List&lt;Human.Gender&gt;()</td></tr>
+<tr><td>suitableForBuilds</td><td><code>List&lt;Descriptors.BuildType&gt;</code></td><td></td><td>new List&lt;Descriptors.BuildType&gt;()</td></tr>
+<tr><td>tags</td><td><code>List&lt;ClothesPreset.ClothesTags&gt;</code></td><td></td><td>new List&lt;ClothesPreset.ClothesTags&gt;()</td></tr>
+<tr><td>enableFacialFeatureSetup</td><td><code>bool</code></td><td>If true enable facial-feature specific setup</td><td></td></tr>
+<tr><td>suitableForHairstyle</td><td><code>List&lt;Descriptors.HairStyle&gt;</code></td><td></td><td>new List&lt;Descriptors.HairStyle&gt;()</td></tr>
+<tr><td>isHead</td><td><code>bool</code></td><td><span class="badge">Header: Head</span></td><td></td></tr>
+<tr><td>pupilsOffset</td><td><code>Vector3</code></td><td><span class="badge">EnableIf(&quot;isHead&quot;)</span></td><td>new Vector3(0f, 0.15f, 0.1205f)</td></tr>
+<tr><td>eyebrowsOffset</td><td><code>Vector3</code></td><td><span class="badge">EnableIf(&quot;isHead&quot;)</span></td><td>new Vector3(0f, 0.1719f, 0.133f)</td></tr>
+<tr><td>mouthOffset</td><td><code>Vector3</code></td><td><span class="badge">EnableIf(&quot;isHead&quot;)</span></td><td>new Vector3(0f, 0.045f, 0.151f)</td></tr>
+<tr><td>hatRenderCompatible</td><td><code>bool</code></td><td>This needs to be true for the game to render both the hair and hat <span class="badge">Header: Hair</span></td><td></td></tr>
+<tr><td>excludeHats</td><td><code>List&lt;ClothesPreset&gt;</code></td><td>Exclude these types of hats from compatibility... <span class="badge">EnableIf(&quot;hatRenderCompatible&quot;)</span></td><td>new List&lt;ClothesPreset&gt;()</td></tr>
+<tr><td>hairRenderMode</td><td><code>ClothesPreset.HairRenderSetting</code></td><td><span class="badge">Header: Hat</span></td><td></td></tr>
+<tr><td>setFootwear</td><td><code>bool</code></td><td><span class="badge">Header: Feet</span></td><td></td></tr>
+<tr><td>footwear</td><td><code>Human.ShoeType</code></td><td><span class="badge">EnableIf(&quot;setFootwear&quot;)</span></td><td>Human.ShoeType.barefoot</td></tr>
+<tr><td>priority</td><td><code>int</code></td><td>Controls which clothing will be loaded first. If this is important to the outfit, eg wearing a coat outdoors, increase the priority. <span class="badge">Header: Compatibility</span> <span class="badge">Range(0f, 5f)</span></td><td>2</td></tr>
+<tr><td>onlyChooseIfAllModelPartsAreAvailable</td><td><code>bool</code></td><td>Only choose this preset if the model can display all elements in the &#x27;models&#x27; section below. Only applies when using clothing elements not from the category (eg using casual for outdoors casual)</td><td></td></tr>
+<tr><td>incompatibility</td><td><code>List&lt;ClothesPreset.IncompatibilitySetting&gt;</code></td><td>This cannot be chosen if these existing clothes are chosen</td><td>new List&lt;ClothesPreset.IncompatibilitySetting&gt;()</td></tr>
+<tr><td>useWealthValues</td><td><code>bool</code></td><td>The citizen/company must have at least this much wealth to have this outfit</td><td></td></tr>
+<tr><td>minimumWealth</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;useWealthValues&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>maximumWealth</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;useWealthValues&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>baseColourSource</td><td><code>ClothesPreset.ClothingColourSource</code></td><td><span class="badge">Header: Colours</span></td><td>ClothesPreset.ClothingColourSource.white</td></tr>
+<tr><td>colourBase</td><td><code>List&lt;ColourPalettePreset&gt;</code></td><td></td><td>new List&lt;ColourPalettePreset&gt;()</td></tr>
+<tr><td>colour1Source</td><td><code>ClothesPreset.ClothingColourSource</code></td><td></td><td></td></tr>
+<tr><td>colour1</td><td><code>List&lt;ColourPalettePreset&gt;</code></td><td></td><td>new List&lt;ColourPalettePreset&gt;()</td></tr>
+<tr><td>colour2Source</td><td><code>ClothesPreset.ClothingColourSource</code></td><td></td><td></td></tr>
+<tr><td>colour2</td><td><code>List&lt;ColourPalettePreset&gt;</code></td><td></td><td>new List&lt;ColourPalettePreset&gt;()</td></tr>
+<tr><td>colour3Source</td><td><code>ClothesPreset.ClothingColourSource</code></td><td></td><td></td></tr>
+<tr><td>colour3</td><td><code>List&lt;ColourPalettePreset&gt;</code></td><td></td><td>new List&lt;ColourPalettePreset&gt;()</td></tr>
+<tr><td>includeInPersonalityMatching</td><td><code>bool</code></td><td>Include this when using citizen stats to pick a style <span class="badge">Header: Suited Personality</span></td><td>true</td></tr>
+<tr><td>baseChance</td><td><code>int</code></td><td>The base chance of selecting this item of clothing. This is added to by HEXACO and Traits below... <span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;includeInPersonalityMatching&quot;)</span></td><td>1</td></tr>
+<tr><td>useHEXACO</td><td><code>bool</code></td><td>Use the below hexaco values to match to personality.</td><td></td></tr>
+<tr><td>hexaco</td><td><code>HEXACO</code></td><td></td><td></td></tr>
+<tr><td>useTraits</td><td><code>bool</code></td><td>Use character traits to match to personality.</td><td></td></tr>
+<tr><td>characterTraits</td><td><code>List&lt;ClothesPreset.TraitPickRule&gt;</code></td><td></td><td>new List&lt;ClothesPreset.TraitPickRule&gt;()</td></tr>
+<tr><td>models</td><td><code>List&lt;ClothesPreset.ModelSettings&gt;</code></td><td><span class="badge">Header: Models</span></td><td>new List&lt;ClothesPreset.ModelSettings&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class MaterialSettings</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>colour</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>weighting</td><td><code>int</code></td><td><span class="badge">Range(1f, 5f)</span></td><td>3</td></tr>
+</tbody></table>
+<h3>class ModelSettings</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>prefab</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>anchor</td><td><code>CitizenOutfitController.CharacterAnchor</code></td><td></td><td></td></tr>
+<tr><td>offsetPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>offsetEuler</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>exclusiveAnchorModel</td><td><code>bool</code></td><td></td><td>true</td></tr>
+</tbody></table>
+<h3>class IncompatibilitySetting</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>incompatibleIf</td><td><code>ClothesPreset.Incompatibility</code></td><td></td><td></td></tr>
+<tr><td>tags</td><td><code>List&lt;ClothesPreset.ClothesTags&gt;</code></td><td></td><td></td></tr>
+<tr><td>featured</td><td><code>ClothesPreset</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class TraitPickRule</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>rule</td><td><code>CharacterTrait.RuleType</code></td><td></td><td></td></tr>
+<tr><td>traitList</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>mustPassForApplication</td><td><code>bool</code></td><td>If this isn&#x27;t true then it won&#x27;t be picked for application at all. <span class="badge">ShowIf(&quot;isTrait&quot;)</span></td><td>true</td></tr>
+<tr><td>addChance</td><td><code>int</code></td><td>If the rules match, then apply this to the base chance... <span class="badge">ShowIf(&quot;isTrait&quot;)</span> <span class="badge">Range(-10f, 10f)</span></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>OutfitCategory</h3>
+<pre><code>casual
+work
+smart
+outdoorsCasual
+outdoorsWork
+outdoorsSmart
+undressed
+bed
+underwear</code></pre>
+<h3>ClothingColourSource</h3>
+<pre><code>none
+garment
+skin
+white
+hair
+underneathColour1
+underneathColour2
+underneathColour3
+workUniformColour</code></pre>
+<h3>ClothesTags</h3>
+<pre><code>longGarment
+noLongGarments</code></pre>
+<h3>HairRenderSetting</h3>
+<pre><code>renderHatCompatibleHair
+renderAllHair
+dontRenderAnyHair</code></pre>
+<h3>Incompatibility</h3>
+<pre><code>inAnyCategory
+inThisCategory</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

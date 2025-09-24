@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CutSceneController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CutSceneController</h1>
+      <div class="page-meta">Source file: <span class="code">CutSceneController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CutSceneController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>displayImage</td><td><code>Image</code></td><td><span class="badge">Header: Components</span></td><td></td></tr>
+<tr><td>displayImageRend</td><td><code>CanvasRenderer</code></td><td></td><td></td></tr>
+<tr><td>cutSceneSkipText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>cutSceneActive</td><td><code>bool</code></td><td><span class="badge">Header: State</span></td><td></td></tr>
+<tr><td>sceneTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>preset</td><td><code>CutScenePreset</code></td><td></td><td></td></tr>
+<tr><td>cursor</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>previousElement</td><td><code>CutScenePreset.CutSceneElement</code></td><td></td><td></td></tr>
+<tr><td>currentCamMovement</td><td><code>List&lt;CutScenePreset.CameraMovement&gt;</code></td><td></td><td></td></tr>
+<tr><td>currentFrom</td><td><code>CutScenePreset.CameraMovement</code></td><td></td><td></td></tr>
+<tr><td>currentTo</td><td><code>CutScenePreset.CameraMovement</code></td><td></td><td></td></tr>
+<tr><td>currentShotTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>playerSavedPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>camSavedLocalQuat</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+<tr><td>savedFreeCam</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>savedInaudible</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>savedInvisible</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>savedInvincible</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>savedPhotoMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>triggeredFadeOut</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>finalShot</td><td><code>CutScenePreset.CutSceneElement</code></td><td></td><td></td></tr>
+<tr><td>triggeredImage</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>imageFadeIn</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>imageFadeOut</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>debugLoad</td><td><code>CutScenePreset</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+<tr><td>_instance</td><td><code>static CutSceneController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PlayCutScene</td><td><code>void</code></td><td></td><td><code>CutScenePreset newPreset</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>UpdateCam</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">1</span> <span class="badge">num2</span></td><td><code>Vector3 position, Quaternion rotation, bool updateMixing</code></td></tr>
+<tr><td>SetActive</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>PlayScene</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>StopScene</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

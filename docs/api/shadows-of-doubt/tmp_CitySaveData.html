@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CitySaveData — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CitySaveData</h1>
+      <div class="page-meta">Source file: <span class="code">CitySaveData.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CitySaveData</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>build</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>cityName</td><td><code>string</code></td><td></td><td>&quot;New City&quot;</td></tr>
+<tr><td>seed</td><td><code>string</code></td><td></td><td>&quot;Abaos93rmnisf932&quot;</td></tr>
+<tr><td>citySize</td><td><code>Vector2</code></td><td></td><td>new Vector2(5f, 5f)</td></tr>
+<tr><td>population</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>playersApartment</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>districts</td><td><code>List&lt;CitySaveData.DistrictCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.DistrictCitySave&gt;()</td></tr>
+<tr><td>streets</td><td><code>List&lt;CitySaveData.StreetCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.StreetCitySave&gt;()</td></tr>
+<tr><td>cityTiles</td><td><code>List&lt;CitySaveData.CityTileCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.CityTileCitySave&gt;()</td></tr>
+<tr><td>citizens</td><td><code>List&lt;CitySaveData.HumanCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.HumanCitySave&gt;()</td></tr>
+<tr><td>interactables</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>groups</td><td><code>List&lt;GroupsController.SocialGroup&gt;</code></td><td></td><td>new List&lt;GroupsController.SocialGroup&gt;()</td></tr>
+<tr><td>pipes</td><td><code>List&lt;PipeConstructor.PipeGroup&gt;</code></td><td></td><td>new List&lt;PipeConstructor.PipeGroup&gt;()</td></tr>
+<tr><td>criminals</td><td><code>List&lt;CitySaveData.OccupationCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.OccupationCitySave&gt;()</td></tr>
+<tr><td>multiPage</td><td><code>List&lt;CitySaveData.EvidenceStateSave&gt;</code></td><td></td><td>new List&lt;CitySaveData.EvidenceStateSave&gt;()</td></tr>
+<tr><td>metas</td><td><code>List&lt;MetaObject&gt;</code></td><td></td><td>new List&lt;MetaObject&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class DistrictCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>preset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>districtID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>blocks</td><td><code>List&lt;CitySaveData.BlockCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.BlockCitySave&gt;()</td></tr>
+<tr><td>averageLandValue</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dominantEthnicities</td><td><code>List&lt;SocialStatistics.EthnicityFrequency&gt;</code></td><td></td><td>new List&lt;SocialStatistics.EthnicityFrequency&gt;()</td></tr>
+</tbody></table>
+<h3>class BlockCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>blockID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>averageDensity</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>averageLandValue</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class CityTileCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>blockID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>districtID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>cityCoord</td><td><code>Vector2Int</code></td><td></td><td></td></tr>
+<tr><td>building</td><td><code>CitySaveData.BuildingCitySave</code></td><td></td><td></td></tr>
+<tr><td>outsideTiles</td><td><code>List&lt;CitySaveData.TileCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.TileCitySave&gt;()</td></tr>
+<tr><td>density</td><td><code>BuildingPreset.Density</code></td><td></td><td>BuildingPreset.Density.medium</td></tr>
+<tr><td>landValue</td><td><code>BuildingPreset.LandValue</code></td><td></td><td>BuildingPreset.LandValue.medium</td></tr>
+</tbody></table>
+<h3>class BuildingCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>buildingID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>floors</td><td><code>List&lt;CitySaveData.FloorCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.FloorCitySave&gt;()</td></tr>
+<tr><td>preset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>facing</td><td><code>NewBuilding.Direction</code></td><td></td><td></td></tr>
+<tr><td>isInaccessible</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>sideSigns</td><td><code>List&lt;NewBuilding.SideSign&gt;</code></td><td></td><td></td></tr>
+<tr><td>airDucts</td><td><code>List&lt;CitySaveData.AirDuctGroupCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.AirDuctGroupCitySave&gt;()</td></tr>
+<tr><td>designStyle</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>wood</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>floorMaterial</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>floorMatKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>ceilingMaterial</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>ceilingMatKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>defaultWallMaterial</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>defaultWallKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>extWallMaterial</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>extWallKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>colourScheme</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>floorMatOverride</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>ceilingMatOverride</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>wallMatOverride</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>floorMatOverrideB</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>ceilingMatOverrideB</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>wallMatOverrideB</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class AirDuctGroupCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>ext</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>airVents</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>airDucts</td><td><code>List&lt;CitySaveData.AirDuctSegmentCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.AirDuctSegmentCitySave&gt;()</td></tr>
+<tr><td>ventRooms</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>adjoining</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+</tbody></table>
+<h3>class AirDuctSegmentCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>level</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>index</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>duct</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>previous</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>next</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>node</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>peek</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>addRot</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class AirVentSave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>ventType</td><td><code>NewAddress.AirVent</code></td><td></td><td></td></tr>
+<tr><td>wall</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>node</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>rNode</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class FloorCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>floorID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>floor</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>addresses</td><td><code>List&lt;CitySaveData.AddressCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.AddressCitySave&gt;()</td></tr>
+<tr><td>tiles</td><td><code>List&lt;CitySaveData.TileCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.TileCitySave&gt;()</td></tr>
+<tr><td>size</td><td><code>Vector2</code></td><td></td><td>new Vector2(1f, 1f)</td></tr>
+<tr><td>defaultFloorHeight</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>defaultCeilingHeight</td><td><code>int</code></td><td></td><td>42</td></tr>
+<tr><td>layoutIndex</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>echelons</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>breakerSec</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>breakerLights</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>breakerDoors</td><td><code>int</code></td><td></td><td>-1</td></tr>
+</tbody></table>
+<h3>class TileCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>tileID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>floorCoord</td><td><code>Vector2Int</code></td><td></td><td></td></tr>
+<tr><td>globalTileCoord</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>isEdge</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>rotation</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isEntrance</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isMainEntrance</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isStairwell</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>stairwellRotation</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isElevator</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>elevatorRotation</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isTop</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isBottom</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class StreetCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>access</td><td><code>AddressPreset.AccessType</code></td><td></td><td></td></tr>
+<tr><td>rooms</td><td><code>List&lt;CitySaveData.RoomCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.RoomCitySave&gt;()</td></tr>
+<tr><td>designStyle</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>streetID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>district</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>tiles</td><td><code>List&lt;Vector3Int&gt;</code></td><td></td><td>new List&lt;Vector3Int&gt;()</td></tr>
+<tr><td>streetSuffix</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>isAlley</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isBackstreet</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>sharedGround</td><td><code>List&lt;int&gt;</code></td><td></td><td></td></tr>
+<tr><td>streetTiles</td><td><code>List&lt;StreetController.StreetTile&gt;</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class AddressCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>residenceNumber</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isLobby</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isOutside</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>access</td><td><code>AddressPreset.AccessType</code></td><td></td><td></td></tr>
+<tr><td>rooms</td><td><code>List&lt;CitySaveData.RoomCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.RoomCitySave&gt;()</td></tr>
+<tr><td>designStyle</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>neonHor</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>neonVer</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>neonVerticalIndex</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>neonColour</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>neonFont</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>landValue</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>passcode</td><td><code>GameplayController.Passcode</code></td><td></td><td></td></tr>
+<tr><td>protectedNodes</td><td><code>List&lt;Vector3&gt;</code></td><td></td><td>new List&lt;Vector3&gt;()</td></tr>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>address</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>preset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>wood</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>residence</td><td><code>CitySaveData.ResidenceCitySave</code></td><td></td><td></td></tr>
+<tr><td>company</td><td><code>CitySaveData.CompanyCitySave</code></td><td></td><td></td></tr>
+<tr><td>isOutsideAddress</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isLobbyAddress</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>breakerSec</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>breakerLights</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>breakerDoors</td><td><code>int</code></td><td></td><td>-1</td></tr>
+</tbody></table>
+<h3>class ResidenceCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>mail</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class CompanyCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>companyRoster</td><td><code>List&lt;CitySaveData.OccupationCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.OccupationCitySave&gt;()</td></tr>
+<tr><td>shortName</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>nameAltTags</td><td><code>List&lt;string&gt;</code></td><td></td><td></td></tr>
+<tr><td>passedWorkLocation</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>menuItems</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>itemCosts</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+</tbody></table>
+<h3>class OccupationCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>preset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>name</td><td><code>string</code></td><td></td><td>&quot;worker&quot;</td></tr>
+<tr><td>teamLeader</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>boss</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>paygrade</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>teamID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isOwner</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>work</td><td><code>OccupationPreset.workType</code></td><td></td><td></td></tr>
+<tr><td>tags</td><td><code>List&lt;OccupationPreset.workTags&gt;</code></td><td></td><td>new List&lt;OccupationPreset.workTags&gt;()</td></tr>
+<tr><td>shift</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>startTime</td><td><code>float</code></td><td></td><td>9f</td></tr>
+<tr><td>endTime</td><td><code>float</code></td><td></td><td>17f</td></tr>
+<tr><td>workDaysList</td><td><code>List&lt;SessionData.WeekDay&gt;</code></td><td></td><td>new List&lt;SessionData.WeekDay&gt;()</td></tr>
+<tr><td>salary</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>salaryString</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+</tbody></table>
+<h3>class RoomCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>nodes</td><td><code>List&lt;CitySaveData.NodeCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.NodeCitySave&gt;()</td></tr>
+<tr><td>openPlanElements</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>lightZones</td><td><code>List&lt;CitySaveData.LightZoneSave&gt;</code></td><td></td><td>new List&lt;CitySaveData.LightZoneSave&gt;()</td></tr>
+<tr><td>commonRooms</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>floorID</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>id</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>fID</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>iID</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>preset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>reachableFromEntrance</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isOutsideWindow</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>allowCoving</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>floorMaterial</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>floorMatKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>ceilingMaterial</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>ceilingMatKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>defaultWallMaterial</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>defaultWallKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>miscKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>colourScheme</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>mainLightPreset</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>isBaseNullRoom</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>middle</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>f</td><td><code>List&lt;CitySaveData.FurnitureClusterCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.FurnitureClusterCitySave&gt;()</td></tr>
+<tr><td>owners</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>airVents</td><td><code>List&lt;CitySaveData.AirVentSave&gt;</code></td><td></td><td>new List&lt;CitySaveData.AirVentSave&gt;()</td></tr>
+<tr><td>password</td><td><code>GameplayController.Passcode</code></td><td></td><td></td></tr>
+<tr><td>cf</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>cullTree</td><td><code>List&lt;CitySaveData.CullTreeSave&gt;</code></td><td></td><td>new List&lt;CitySaveData.CullTreeSave&gt;()</td></tr>
+<tr><td>above</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>below</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>adj</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>occ</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+</tbody></table>
+<h3>class CullTreeSave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>r</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>d</td><td><code>List&lt;int&gt;</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class LightZoneSave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>n</td><td><code>List&lt;Vector3Int&gt;</code></td><td></td><td>new List&lt;Vector3Int&gt;()</td></tr>
+<tr><td>areaLightColour</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>areaLightBright</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class NodeCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>nc</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>w</td><td><code>List&lt;CitySaveData.WallCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.WallCitySave&gt;()</td></tr>
+<tr><td>ft</td><td><code>NewNode.FloorTileType</code></td><td></td><td>NewNode.FloorTileType.floorAndCeiling</td></tr>
+<tr><td>fr</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>frr</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class WallCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>wo</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>id</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>p</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>ow</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>pw</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>cw</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>oo</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>oa</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>cl</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>sw</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>fr</td><td><code>List&lt;CitySaveData.WallFrontageSave&gt;</code></td><td></td><td>new List&lt;CitySaveData.WallFrontageSave&gt;()</td></tr>
+<tr><td>dm</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>dmk</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>ds</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>ls</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class WallFrontageSave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>str</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>matKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>o</td><td><code>Vector3</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class FurnitureClusterCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>cluster</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>anchorNode</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>angle</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>objs</td><td><code>List&lt;CitySaveData.FurnitureClusterObjectCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.FurnitureClusterObjectCitySave&gt;()</td></tr>
+</tbody></table>
+<h3>class FurnitureClusterObjectCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>furnitureClasses</td><td><code>List&lt;string&gt;</code></td><td></td><td></td></tr>
+<tr><td>angle</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>anchorNode</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>coversNodes</td><td><code>List&lt;Vector3Int&gt;</code></td><td></td><td></td></tr>
+<tr><td>offset</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>furniture</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>art</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>up</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>scale</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>matKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>artMatKet</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>owners</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+</tbody></table>
+<h3>class HumanCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>humanID</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>home</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>speedModifier</td><td><code>float</code></td><td></td><td>0.12f</td></tr>
+<tr><td>job</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>birthday</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>societalClass</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>descriptors</td><td><code>Descriptors</code></td><td></td><td></td></tr>
+<tr><td>blood</td><td><code>Human.BloodType</code></td><td></td><td></td></tr>
+<tr><td>citizenName</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>firstName</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>casualName</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>surName</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>homeless</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>slangUsage</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>genderScale</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>gender</td><td><code>Human.Gender</code></td><td></td><td></td></tr>
+<tr><td>bGender</td><td><code>Human.Gender</code></td><td></td><td></td></tr>
+<tr><td>sexuality</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>homosexuality</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>attractedTo</td><td><code>List&lt;Human.Gender&gt;</code></td><td></td><td>new List&lt;Human.Gender&gt;()</td></tr>
+<tr><td>partner</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>paramour</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>anniversary</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>sleepNeedMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>snoring</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>snoreDelay</td><td><code>float</code></td><td></td><td>2f</td></tr>
+<tr><td>humility</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>emotionality</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>extraversion</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>agreeableness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>conscientiousness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>creativity</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>acquaintances</td><td><code>List&lt;CitySaveData.AcquaintanceCitySave&gt;</code></td><td></td><td>new List&lt;CitySaveData.AcquaintanceCitySave&gt;()</td></tr>
+<tr><td>traits</td><td><code>List&lt;CitySaveData.CharTraitSave&gt;</code></td><td></td><td>new List&lt;CitySaveData.CharTraitSave&gt;()</td></tr>
+<tr><td>password</td><td><code>GameplayController.Passcode</code></td><td></td><td></td></tr>
+<tr><td>maxHealth</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>recoveryRate</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>combatSkill</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>combatHeft</td><td><code>float</code></td><td></td><td>0.25f</td></tr>
+<tr><td>maxNerve</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>breathRecovery</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>handwriting</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>sightingMemory</td><td><code>int</code></td><td></td><td>100</td></tr>
+<tr><td>favItems</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>favItemRanks</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>favCat</td><td><code>List&lt;CompanyPreset.CompanyCategory&gt;</code></td><td></td><td>new List&lt;CompanyPreset.CompanyCategory&gt;()</td></tr>
+<tr><td>favAddresses</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>outfits</td><td><code>List&lt;CitizenOutfitController.Outfit&gt;</code></td><td></td><td>new List&lt;CitizenOutfitController.Outfit&gt;()</td></tr>
+<tr><td>favCol</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class CharTraitSave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>traitID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>trait</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>reason</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>date</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class AcquaintanceCitySave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>from</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>with</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>connections</td><td><code>List&lt;Acquaintance.ConnectionType&gt;</code></td><td></td><td>new List&lt;Acquaintance.ConnectionType&gt;()</td></tr>
+<tr><td>secret</td><td><code>Acquaintance.ConnectionType</code></td><td></td><td></td></tr>
+<tr><td>compatible</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>known</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>like</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dataKeys</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td></td><td>new List&lt;Evidence.DataKey&gt;()</td></tr>
+</tbody></table>
+<h3>class EvidenceStateSave</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>page</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>mpContent</td><td><code>List&lt;EvidenceMultiPage.MultiPageContent&gt;</code></td><td></td><td>new List&lt;EvidenceMultiPage.MultiPageContent&gt;()</td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

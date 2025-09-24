@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Human — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Human</h1>
+      <div class="page-meta">Source file: <span class="code">Human.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Human</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>humanID</td><td><code>int</code></td><td><span class="badge">Header: ID</span></td><td>-1</td></tr>
+<tr><td>assignID</td><td><code>static int</code></td><td></td><td>2</td></tr>
+<tr><td>assignTraitID</td><td><code>static int</code></td><td></td><td>1</td></tr>
+<tr><td>seed</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>footwear</td><td><code>Human.ShoeType</code></td><td><span class="badge">Header: Current Variables</span></td><td></td></tr>
+<tr><td>footstepEvent</td><td><code>AudioEvent</code></td><td></td><td></td></tr>
+<tr><td>footstepDirt</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>footstepBlood</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>leftFoot</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>rightFoot</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>removedFromWorld</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>home</td><td><code>NewAddress</code></td><td><span class="badge">Header: Human Attributes</span></td><td></td></tr>
+<tr><td>residence</td><td><code>ResidenceController</code></td><td></td><td></td></tr>
+<tr><td>den</td><td><code>NewAddress</code></td><td></td><td></td></tr>
+<tr><td>speedMultiplier</td><td><code>float</code></td><td>Used for variation of the base values <span class="badge">Header: Movement</span></td><td>1f</td></tr>
+<tr><td>movementWalkSpeed</td><td><code>float</code></td><td>Calculated walking speed</td><td>1.85f</td></tr>
+<tr><td>movementRunSpeed</td><td><code>float</code></td><td>Calculated running speed</td><td>2f</td></tr>
+<tr><td>walkingSpeedRatio</td><td><code>float</code></td><td>The calculated walking speed ratio</td><td>0.4625f</td></tr>
+<tr><td>currentNormalizedSpeed</td><td><code>float</code></td><td>Speed as a ratio of maximum (0 - 1)</td><td></td></tr>
+<tr><td>desiredNormalizedSpeed</td><td><code>float</code></td><td>The desired movement speed</td><td></td></tr>
+<tr><td>currentMovementSpeed</td><td><code>float</code></td><td>The actual movement speed</td><td>1.85f</td></tr>
+<tr><td>breathRecoveryRate</td><td><code>float</code></td><td>Recovery rate</td><td>1f</td></tr>
+<tr><td>currentVehicle</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>job</td><td><code>Occupation</code></td><td><span class="badge">Header: Job</span></td><td></td></tr>
+<tr><td>director</td><td><code>Company</code></td><td></td><td></td></tr>
+<tr><td>societalClass</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>descriptors</td><td><code>Descriptors</code></td><td><span class="badge">Header: Personal Data</span></td><td></td></tr>
+<tr><td>outfitController</td><td><code>CitizenOutfitController</code></td><td></td><td></td></tr>
+<tr><td>handwriting</td><td><code>HandwritingPreset</code></td><td></td><td></td></tr>
+<tr><td>birthday</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>citizenName</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>firstName</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>casualName</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>surName</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>genderScale</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>gender</td><td><code>Human.Gender</code></td><td></td><td></td></tr>
+<tr><td>birthGender</td><td><code>Human.Gender</code></td><td></td><td></td></tr>
+<tr><td>slangUsage</td><td><code>float</code></td><td>How often this person uses the below slang terms</td><td>0.5f</td></tr>
+<tr><td>sexuality</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>homosexuality</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>attractedTo</td><td><code>List&lt;Human.Gender&gt;</code></td><td></td><td>new List&lt;Human.Gender&gt;()</td></tr>
+<tr><td>partner</td><td><code>Citizen</code></td><td></td><td></td></tr>
+<tr><td>anniversary</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>paramour</td><td><code>Citizen</code></td><td></td><td></td></tr>
+<tr><td>fingerprintLoop</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>bloodType</td><td><code>Human.BloodType</code></td><td></td><td>Human.BloodType.Apos</td></tr>
+<tr><td>favColourIndex</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>humility</td><td><code>float</code></td><td><span class="badge">Header: Human Traits &amp; Personality</span></td><td></td></tr>
+<tr><td>emotionality</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>extraversion</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>agreeableness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>conscientiousness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>creativity</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>sleepNeedMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>snoring</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>snoreDelay</td><td><code>float</code></td><td></td><td>1.5f</td></tr>
+<tr><td>limitHumility</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>limitEmotionality</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>limitExtraversion</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>limitAgreeableness</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>limitConscientiousness</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>limitCreativity</td><td><code>Vector2</code></td><td></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>characterTraits</td><td><code>List&lt;Human.Trait&gt;</code></td><td></td><td>new List&lt;Human.Trait&gt;()</td></tr>
+<tr><td>groups</td><td><code>List&lt;GroupsController.SocialGroup&gt;</code></td><td><span class="badge">Header: Groups</span></td><td>new List&lt;GroupsController.SocialGroup&gt;()</td></tr>
+<tr><td>nourishment</td><td><code>float</code></td><td><span class="badge">Header: Status Stats</span></td><td></td></tr>
+<tr><td>hydration</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>alertness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>energy</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>excitement</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>chores</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>hygiene</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>bladder</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>breath</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>heat</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>drunk</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>sick</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>headache</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>wet</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>brokenLeg</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>bruised</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>blackEye</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>blackedOut</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>numb</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>poisoned</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>bleeding</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>wellRested</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>starchAddiction</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>syncDiskInstall</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>blinded</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>poisoner</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>CorpseCollisionCorrection</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>acquaintances</td><td><code>List&lt;Acquaintance&gt;</code></td><td><span class="badge">Header: Acquaintances</span></td><td>new List&lt;Acquaintance&gt;()</td></tr>
+<tr><td>dds</td><td><code>Dictionary&lt;DDSSaveClasses.TriggerPoint, List&lt;DDSSaveClasses.DDSTreeSave&gt;&gt;</code></td><td><span class="badge">Header: Vocab</span></td><td>new Dictionary&lt;DDSSaveClasses.TriggerPoint, List&lt;DDSSaveClasses.DDSTreeSave&gt;&gt;()</td></tr>
+<tr><td>currentConversation</td><td><code>Human.ConversationInstance</code></td><td></td><td></td></tr>
+<tr><td>nextCasualSpeechValidAt</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lastSightings</td><td><code>Dictionary&lt;Human, Human.Sighting&gt;</code></td><td></td><td>new Dictionary&lt;Human, Human.Sighting&gt;()</td></tr>
+<tr><td>sightingMemoryLimit</td><td><code>int</code></td><td></td><td>100</td></tr>
+<tr><td>speechHistory</td><td><code>Dictionary&lt;DDSSaveClasses.DDSTreeSave, List&lt;Human.SpeechHistory&gt;&gt;</code></td><td></td><td>new Dictionary&lt;DDSSaveClasses.DDSTreeSave, List&lt;Human.SpeechHistory&gt;&gt;()</td></tr>
+<tr><td>messageThreadsStarted</td><td><code>List&lt;StateSaveData.MessageThreadSave&gt;</code></td><td></td><td>new List&lt;StateSaveData.MessageThreadSave&gt;()</td></tr>
+<tr><td>messageThreadFeatures</td><td><code>List&lt;StateSaveData.MessageThreadSave&gt;</code></td><td></td><td>new List&lt;StateSaveData.MessageThreadSave&gt;()</td></tr>
+<tr><td>messageThreadCCd</td><td><code>List&lt;StateSaveData.MessageThreadSave&gt;</code></td><td></td><td>new List&lt;StateSaveData.MessageThreadSave&gt;()</td></tr>
+<tr><td>addressBook</td><td><code>Evidence</code></td><td><span class="badge">Header: Possessions</span></td><td></td></tr>
+<tr><td>setupAddressBook</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>workID</td><td><code>Evidence</code></td><td></td><td></td></tr>
+<tr><td>birthdayCards</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>currentConsumables</td><td><code>List&lt;InteractablePreset&gt;</code></td><td></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>trash</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>anywhereTrash</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>death</td><td><code>Human.Death</code></td><td></td><td></td></tr>
+<tr><td>currentWounds</td><td><code>List&lt;Human.Wound&gt;</code></td><td></td><td>new List&lt;Human.Wound&gt;()</td></tr>
+<tr><td>walletItems</td><td><code>List&lt;Human.WalletItem&gt;</code></td><td></td><td>new List&lt;Human.WalletItem&gt;()</td></tr>
+<tr><td>factDictionary</td><td><code>Dictionary&lt;string, Fact&gt;</code></td><td></td><td>new Dictionary&lt;string, Fact&gt;()</td></tr>
+<tr><td>personalAffects</td><td><code>List&lt;InteractablePreset&gt;</code></td><td><span class="badge">Header: Personal Affects</span></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>workAffects</td><td><code>List&lt;InteractablePreset&gt;</code></td><td></td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>workPosition</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>sleepPosition</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>preferredBookCount</td><td><code>int</code></td><td></td><td>3</td></tr>
+<tr><td>library</td><td><code>List&lt;BookPreset&gt;</code></td><td></td><td>new List&lt;BookPreset&gt;()</td></tr>
+<tr><td>nonShelfBooks</td><td><code>List&lt;BookPreset&gt;</code></td><td></td><td>new List&lt;BookPreset&gt;()</td></tr>
+<tr><td>booksAwayFromShelf</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>itemRanking</td><td><code>Dictionary&lt;RetailItemPreset, int&gt;</code></td><td></td><td>new Dictionary&lt;RetailItemPreset, int&gt;()</td></tr>
+<tr><td>favouritePlaces</td><td><code>Dictionary&lt;CompanyPreset.CompanyCategory, NewAddress&gt;</code></td><td></td><td>new Dictionary&lt;CompanyPreset.CompanyCategory, NewAddress&gt;()</td></tr>
+<tr><td>recentPurchases</td><td><code>Dictionary&lt;RetailItemPreset, float&gt;</code></td><td></td><td>new Dictionary&lt;RetailItemPreset, float&gt;()</td></tr>
+<tr><td>passcode</td><td><code>GameplayController.Passcode</code></td><td><span class="badge">Header: Passwords</span></td><td></td></tr>
+<tr><td>passwordTrait</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>simulatedPreviousBehaviour</td><td><code>List&lt;float&gt;</code></td><td><span class="badge">Header: Simulated Behaviour</span></td><td>new List&lt;float&gt;()</td></tr>
+<tr><td>lastUsedCCTVScreenPoint</td><td><code>Vector2</code></td><td><span class="badge">Header: Misc</span></td><td></td></tr>
+<tr><td>updateMeshList</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>debugConversation</td><td><code>Human.ConversationInstance</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+<tr><td>debugLastChangedNodeAt</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>p</td><td><code>BookPreset</code></td><td></td><td></td></tr>
+<tr><td>rank</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>SetJob</td><td><code>void</code></td><td></td><td><code>Occupation newJob</code></td></tr>
+<tr><td>SetSexualityAndGender</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetBirthGender</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateSuitableGenderAndSexualityForParnter</td><td><code>void</code></td><td></td><td><code>Citizen newPartner</code></td></tr>
+<tr><td>SetPersonality</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetTraitChance</td><td><code>float</code></td><td><span class="badge">j</span> <span class="badge">j</span> <span class="badge">psuedoRandomNumberContained</span> <span class="badge">psuedoRandomNumberContained</span> <span class="badge">0</span></td><td><code>CharacterTrait trait</code></td></tr>
+<tr><td>TraitExists</td><td><code>bool</code></td><td></td><td><code>CharacterTrait searchTrait</code></td></tr>
+<tr><td>GetChance</td><td><code>float</code></td><td></td><td><code>ref List&lt;CharacterTrait.TraitPickRule&gt; pickRules, float baseChance</code></td></tr>
+<tr><td>AddCharacterTrait</td><td><code>Human.Trait</code></td><td></td><td><code>CharacterTrait newTrait</code></td></tr>
+<tr><td>SetPartner</td><td><code>void</code></td><td></td><td><code>Citizen newLover</code></td></tr>
+<tr><td>SetResidence</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>ResidenceController newHome, bool removePreviousResidence = true</code></td></tr>
+<tr><td>SetDen</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>NewAddress newAddress, MurderMO decorateUsingRules = null</code></td></tr>
+<tr><td>UpdateTickRateOnProx</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetupGeneral</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateBloodType</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetBloodTypeString</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateSlang</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetPhysicalModelParams</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CreateEvidence</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>CreateDetails</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CalculateAge</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>GetAge</td><td><code>int</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">psuedoRandomNumberContained</span> <span class="badge">psuedoRandomNumberContained</span> <span class="badge">psuedoRandomNumberContained</span> <span class="badge">psuedoRandomNumberContained</span></td><td><code></code></td></tr>
+<tr><td>GetAgeGroup</td><td><code>Descriptors.Age</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">2</span></td><td><code></code></td></tr>
+<tr><td>PickPassword</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PrepForStart</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">2</span></td><td><code></code></td></tr>
+<tr><td>GenerateVocab</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddDDSVocab</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>DDSSaveClasses.DDSTreeSave newTree</code></td></tr>
+<tr><td>GeneratePastVmails</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetupInteractables</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Load</td><td><code>void</code></td><td></td><td><code>CitySaveData.HumanCitySave data</code></td></tr>
+<tr><td>LoadAcquaintances</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">1</span></td><td><code>CitySaveData.HumanCitySave data</code></td></tr>
+<tr><td>LoadFavourites</td><td><code>void</code></td><td></td><td><code>CitySaveData.HumanCitySave data</code></td></tr>
+<tr><td>GenerateRoutineGoals</td><td><code>void</code></td><td><span class="badge">k</span> <span class="badge">k</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>TraitGoalTest</td><td><code>bool</code></td><td><span class="badge">0</span></td><td><code>AIGoalPreset goalPreset, out float priorityMultiplier</code></td></tr>
+<tr><td>SetVisible</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>bool vis, bool force = false</code></td></tr>
+<tr><td>OnGameLocationChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>bool enableSocialSightings = true, bool forceDisableLocationMemory = false</code></td></tr>
+<tr><td>OnRoomChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>OnNodeChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>IsTrespassing</td><td><code>bool</code></td><td><span class="badge">override</span></td><td><code>NewRoom room, out int trespassEscalation, bool enforcersAllowedEverywhere = true</code></td></tr>
+<tr><td>CreateAcquaintances</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>FindAcquaintanceExists</td><td><code>bool</code></td><td><span class="badge">i</span></td><td><code>Human findC, out Acquaintance returnAcq</code></td></tr>
+<tr><td>AddAcquaintance</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code>Human addC, float known, Acquaintance.ConnectionType newConnection, bool addInverse = true, bool secretConnection = false, Acquaintance.ConnectionType newSecretConnection = Acquaintance.ConnectionType.friend, GroupsController.SocialGroup group = null</code></td></tr>
+<tr><td>AddDetailToDict</td><td><code>void</code></td><td></td><td><code>string key, Fact det</code></td></tr>
+<tr><td>Murder</td><td><code>void</code></td><td></td><td><code>Human killer, bool setTimeOfDeath, MurderController.Murder murder, Interactable weapon, float chanceToScream = 1f</code></td></tr>
+<tr><td>RemoveFromWorld</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>GoToSleep</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>WakeUp</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>bool forceImmediate = false</code></td></tr>
+<tr><td>AddNourishment</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddHydration</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddAlertness</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddEnergy</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddExcitement</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddChores</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddHygiene</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBladder</td><td><code>void</code></td><td></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBreath</td><td><code>void</code></td><td></td><td><code>float addVal</code></td></tr>
+<tr><td>AddHeat</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddDrunk</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddSick</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddHeadache</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddWet</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBrokenLeg</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBruised</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBlackEye</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBlackedOut</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddNumb</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddPoisoned</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal, Human byWho</code></td></tr>
+<tr><td>AddBleeding</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBlinded</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddStarchAddiction</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddWellRested</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddSyncDiskInstall</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float addVal</code></td></tr>
+<tr><td>SetAsDirector</td><td><code>void</code></td><td></td><td><code>Company newComp</code></td></tr>
+<tr><td>SetFootwear</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>Human.ShoeType newType</code></td></tr>
+<tr><td>OnFootstep</td><td><code>void</code></td><td></td><td><code>bool isRight</code></td></tr>
+<tr><td>AddPersonalAffect</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code>InteractablePreset interactable, bool isWork = false</code></td></tr>
+<tr><td>RemovePersonalAffect</td><td><code>void</code></td><td></td><td><code>InteractablePreset interactable, bool isWork = false</code></td></tr>
+<tr><td>FindSafeTeleport</td><td><code>NewNode</code></td><td></td><td><code>NewGameLocation gameLoc, bool prioritiseWindows = false, bool allowTrespass = true</code></td></tr>
+<tr><td>FindSafeTeleport</td><td><code>NewNode</code></td><td><span class="badge">5</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num3</span> <span class="badge">4</span></td><td><code>NewRoom room, bool prioritiseWindows = false</code></td></tr>
+<tr><td>FindSafeTeleport</td><td><code>NewNode</code></td><td></td><td><code>NewRoom room, out float bestScore, bool prioritiseWindows = false</code></td></tr>
+<tr><td>GenerateItemFavs</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>SpawnInventoryItems</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>WeaponTraitTest</td><td><code>bool</code></td><td></td><td><code>Citizen cit, ref List&lt;MurderPreset.MurdererModifierRule&gt; rules, out float output</code></td></tr>
+<tr><td>PlaceFavouriteItems</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetSimulatedTimeRange</td><td><code>float</code></td><td></td><td><code>NewGameLocation where, float maxTimeAgo</code></td></tr>
+<tr><td>WriteNote</td><td><code>Interactable</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span></td><td><code>Human.NoteObject newPresetType, string treeID, Human reciever, NewGameLocation placement, int security = 0, InteractablePreset.OwnedPlacementRule ownershipPlacement = InteractablePreset.OwnedPlacementRule.both, int priority = 1, HashSet&lt;NewRoom&gt; dontPlaceInRooms = null, bool printDebug = false, int toneFriendly = 0, int toneFormal = 0, string loadGUID = null</code></td></tr>
+<tr><td>WriteNote</td><td><code>Interactable</code></td><td></td><td><code>List&lt;Human.NoteObject&gt; newPresetType, string treeID, Human reciever, NewGameLocation placement, int security = 0, InteractablePreset.OwnedPlacementRule ownershipPlacement = InteractablePreset.OwnedPlacementRule.both, int priority = 1, HashSet&lt;NewRoom&gt; dontPlaceInRooms = null, bool printDebug = false, int toneFriendly = 0, int toneFormal = 0, string loadGUID = null</code></td></tr>
+<tr><td>GenerateSaveData</td><td><code>CitySaveData.HumanCitySave</code></td><td></td><td><code></code></td></tr>
+<tr><td>CompareTo</td><td><code>int</code></td><td></td><td><code>Human comp</code></td></tr>
+<tr><td>SpeechTriggerPoint</td><td><code>void</code></td><td></td><td><code>DDSSaveClasses.TriggerPoint triggerPoint, Actor trackedTarget, AIActionPreset onAction = null</code></td></tr>
+<tr><td>DDSParticipantConditionCheck</td><td><code>bool</code></td><td><span class="badge">triggerPoint</span> <span class="badge">i</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>Human initiator, DDSSaveClasses.DDSParticipant conditions, DDSSaveClasses.TreeType treeType</code></td></tr>
+<tr><td>ExecuteConversationTree</td><td><code>void</code></td><td></td><td><code>DDSSaveClasses.DDSTreeSave newTree, List&lt;Human&gt; otherParticipants</code></td></tr>
+<tr><td>SetInConversation</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">newTree</span> <span class="badge">newTree</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span></td><td><code>Human.ConversationInstance newInstance, bool endCall = true</code></td></tr>
+<tr><td>ParseDDSMessage</td><td><code>List&lt;string&gt;</code></td><td><span class="badge">0</span></td><td><code>DDSSaveClasses.DDSMessageSettings settings, Acquaintance aq, object passedObject = null</code></td></tr>
+<tr><td>ParseDDSMessage</td><td><code>List&lt;string&gt;</code></td><td></td><td><code>string msgID, Acquaintance aq, out List&lt;int&gt; outputDisplayGroups, bool forceRealRandom = false, object passedObject = null, bool debug = false</code></td></tr>
+<tr><td>SetDesiredSpeed</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">i</span> <span class="badge">num</span> <span class="badge">j</span> <span class="badge">0</span></td><td><code>float newSpeedRatio</code></td></tr>
+<tr><td>SetDesiredSpeed</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>Human.MovementSpeed newMovement</code></td></tr>
+<tr><td>UpdateMovementSpeed</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>SetBed</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>Interactable passSpecificInteractable</code></td></tr>
+<tr><td>SetWorkFurniture</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>Interactable passSpecificInteractable</code></td></tr>
+<tr><td>UpdateConversation</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>GetConversationTreeLinkRankings</td><td><code>List&lt;Human.DDSRank&gt;</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>DDSSaveClasses.DDSMessageSettings thisMsg</code></td></tr>
+<tr><td>AddCurrentConsumable</td><td><code>void</code></td><td></td><td><code>InteractablePreset newPreset</code></td></tr>
+<tr><td>RemoveCurrentConsumable</td><td><code>void</code></td><td></td><td><code>InteractablePreset newPreset</code></td></tr>
+<tr><td>AddTrash</td><td><code>void</code></td><td></td><td><code>InteractablePreset trashItem, Human writer, List&lt;Interactable.Passed&gt; passedVars = null</code></td></tr>
+<tr><td>PickConsumable</td><td><code>InteractablePreset</code></td><td></td><td><code>ref Dictionary&lt;InteractablePreset, int&gt; prices, out int price, List&lt;InteractablePreset&gt; ignore = null</code></td></tr>
+<tr><td>GetDoctor</td><td><code>Human</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetLandlord</td><td><code>Human</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddMeshes</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>List&lt;MeshRenderer&gt; renderers, bool addToOutline = true, bool forceMeshListUpdate = false</code></td></tr>
+<tr><td>AddMesh</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>GameObject newObject, bool addToOutline = true, bool forceMeshListUpdate = false</code></td></tr>
+<tr><td>AddMesh</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">0</span> <span class="badge">1</span></td><td><code>MeshRenderer newMesh, bool addToOutline = true, bool forceMeshListUpdate = false, bool addToLOD1 = false, bool addToBoth = false</code></td></tr>
+<tr><td>RemoveMesh</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>MeshRenderer newMesh, bool removeFromOutline = true, bool forceMeshListUpdate = false</code></td></tr>
+<tr><td>UpdateMeshList</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>AddNerve</td><td><code>void</code></td><td><span class="badge">override</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">k</span></td><td><code>float amount, Actor scaredBy = null</code></td></tr>
+<tr><td>UpdateLODs</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetHexacoScore</td><td><code>int</code></td><td><span class="badge">3</span> <span class="badge">num</span> <span class="badge">num2</span> <span class="badge">num3</span></td><td><code>ref HEXACO hex</code></td></tr>
+<tr><td>WalletItemCheck</td><td><code>void</code></td><td></td><td><code>int maxNewItems</code></td></tr>
+<tr><td>UpdateLastSighting</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Human citizen, bool phoneCall = false, int isSound = 0</code></td></tr>
+<tr><td>GetSightingDirection</td><td><code>Vector2</code></td><td><span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">citizen</span> <span class="badge">human2</span> <span class="badge">human2</span></td><td><code>Human.Sighting sighting, out NewGameLocation newDestination</code></td></tr>
+<tr><td>RevealSighting</td><td><code>void</code></td><td></td><td><code>Human prospectCitizen, bool allowCalls, bool allowSounds, bool allowGeneralClue = true</code></td></tr>
+<tr><td>RevealSighting</td><td><code>void</code></td><td><span class="badge">prospectCitizen</span> <span class="badge">prospectCitizen</span> <span class="badge">prospectCitizen</span></td><td><code>Human prospectCitizen, Human.Sighting sighting</code></td></tr>
+<tr><td>GetNearestVert</td><td><code>Vector3</code></td><td></td><td><code>Vector3 worldPosition, out CitizenOutfitController.CharacterAnchor nearestBodyPart</code></td></tr>
+<tr><td>GetCitizenName</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetFirstName</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetCasualName</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetSurName</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetInitialledName</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetInitials</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetFirstInitial</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>DebugGetAge</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>TryGiveItem</td><td><code>bool</code></td><td></td><td><code>Interactable givenItem, Human givenBy, bool defaultSuccess, bool enableSpeech = true</code></td></tr>
+<tr><td>GetReceiptDifficulty</td><td><code>int</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>GetReceiptDifficultyBaseNameInfo</td><td><code>string</code></td><td></td><td><code>bool includeLink, out Strings.LinkData nameLink</code></td></tr>
+<tr><td>SetVehicle</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>Transform newVehicle</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class Trait</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>traitID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>trait</td><td><code>CharacterTrait</code></td><td></td><td></td></tr>
+<tr><td>reason</td><td><code>Human.Trait</code></td><td></td><td></td></tr>
+<tr><td>date</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class Sighting</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>time</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>node</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>mov</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>dest</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>run</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>exp</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>drunk</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>phone</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>poi</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>sound</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class ConversationInstance</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>active</td><td><code>bool</code></td><td>True if active</td><td></td></tr>
+<tr><td>room</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>tree</td><td><code>DDSSaveClasses.DDSTreeSave</code></td><td></td><td></td></tr>
+<tr><td>participantA</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>participantB</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>participantC</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>participantD</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>previouslyTalking</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>currentlyTalking</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>currentlyTalkingTo</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>speechTriggered</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>currentMessage</td><td><code>DDSSaveClasses.DDSMessageSettings</code></td><td></td><td></td></tr>
+<tr><td>currentLink</td><td><code>DDSSaveClasses.DDSMessageLink</code></td><td></td><td></td></tr>
+<tr><td>linkDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>timeUntilNextSpeech</td><td><code>float</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+<tr><td>currentlyTalkingSpeechQueue</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>treeName</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class DDSRank</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>linkRef</td><td><code>DDSSaveClasses.DDSMessageLink</code></td><td></td><td></td></tr>
+<tr><td>rankRef</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class SpeechHistory</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>timeStamp</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>participants</td><td><code>List&lt;Human&gt;</code></td><td></td><td>new List&lt;Human&gt;()</td></tr>
+</tbody></table>
+<h3>class Wound</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>humanID</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>interactable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>anchor</td><td><code>CitizenOutfitController.CharacterAnchor</code></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>bloodPoolID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>bloodPoolAmount</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>human</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>bloodPool</td><td><code>Interactable</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class Death</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>isDead</td><td><code>bool</code></td><td><span class="badge">Header: Death</span></td><td></td></tr>
+<tr><td>location</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>time</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>timeOfDeathRange</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>weapon</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>murder</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>victim</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>killer</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>discoveredBy</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>discoveredAt</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>reported</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>reportType</td><td><code>Human.Death.ReportType</code></td><td></td><td></td></tr>
+<tr><td>smell</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class WalletItem</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>itemType</td><td><code>Human.WalletItemType</code></td><td></td><td></td></tr>
+<tr><td>meta</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>money</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>ShoeType</h3>
+<pre><code>normal
+boots
+heel
+barefoot</code></pre>
+<h3>MovementSpeed</h3>
+<pre><code>stopped
+walking
+running</code></pre>
+<h3>Gender</h3>
+<pre><code>male
+female
+nonBinary</code></pre>
+<h3>BloodType</h3>
+<pre><code>unassigned
+Apos
+Aneg
+Bpos
+Bneg
+Opos
+Oneg
+ABpos
+ABneg</code></pre>
+<h3>DisposalType</h3>
+<pre><code>anywhere
+homeOnly
+workOnly
+homeOrWork</code></pre>
+<h3>ReportType</h3>
+<pre><code>visual
+smell
+audio</code></pre>
+<h3>WalletItemType</h3>
+<pre><code>nothing
+money
+evidence
+key</code></pre>
+<h3>NoteObject</h3>
+<pre><code>note
+letter
+travelReceipt
+vmailLetter</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

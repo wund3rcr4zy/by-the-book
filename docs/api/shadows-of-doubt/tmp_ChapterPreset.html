@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChapterPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>ChapterPreset</h1>
+      <div class="page-meta">Source file: <span class="code">ChapterPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">ChapterPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>chapterNumber</td><td><code>int</code></td><td>The number of the chapter. This must be exclusive. <span class="badge">Header: Settings</span></td><td></td></tr>
+<tr><td>scriptObject</td><td><code>GameObject</code></td><td>The prefab that contains the logic for this chapter</td><td></td></tr>
+<tr><td>dictionary</td><td><code>string</code></td><td>The chapter script reference</td><td>&quot;chapter.1&quot;</td></tr>
+<tr><td>askToEnableTutorial</td><td><code>bool</code></td><td>Ask to enable the tutorial if this chapter is played.</td><td></td></tr>
+<tr><td>startingHour</td><td><code>float</code></td><td><span class="badge">Header: Starting Time</span></td><td>2.56f</td></tr>
+<tr><td>startingDate</td><td><code>int</code></td><td></td><td>2</td></tr>
+<tr><td>startingMonth</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>startingYear</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>yearZeroLeapYearCycle</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>dayZero</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>rainAmount</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span> <span class="badge">Header: Starting Weather</span></td><td></td></tr>
+<tr><td>windAmount</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>snowAmount</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>fogAmount</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td>0.75f</td></tr>
+<tr><td>lightningAmount</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>transitionSpeed</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>usePreSimulation</td><td><code>bool</code></td><td>Simulate at fast forward until a certain point (dictated manually) <span class="badge">Header: Pre-Simulation</span></td><td>true</td></tr>
+<tr><td>minimumPreSimLength</td><td><code>float</code></td><td>The minimum amount of time to pre-simulate <span class="badge">EnableIf(&quot;usePreSimulation&quot;)</span></td><td>23.5f</td></tr>
+<tr><td>audioEvents</td><td><code>List&lt;AudioEvent&gt;</code></td><td><span class="badge">Header: Bespoke Audio Events</span></td><td>new List&lt;AudioEvent&gt;()</td></tr>
+<tr><td>dialogEvents</td><td><code>List&lt;DialogPreset&gt;</code></td><td><span class="badge">Header: Bespoke Dialog</span></td><td>new List&lt;DialogPreset&gt;()</td></tr>
+<tr><td>crimePool</td><td><code>List&lt;MurderPreset&gt;</code></td><td><span class="badge">Header: Crimes</span></td><td>new List&lt;MurderPreset&gt;()</td></tr>
+<tr><td>MOPool</td><td><code>List&lt;MurderMO&gt;</code></td><td></td><td>new List&lt;MurderMO&gt;()</td></tr>
+<tr><td>partNames</td><td><code>List&lt;string&gt;</code></td><td>Included mostly for reference: You can use the chapter controller to switch between these. <span class="badge">Header: Chapter Parts</span></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>startingPart</td><td><code>int</code></td><td>The part to load when the chapter is loaded. You can use this to skip parts for testing.</td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>SkipToChapterPart</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

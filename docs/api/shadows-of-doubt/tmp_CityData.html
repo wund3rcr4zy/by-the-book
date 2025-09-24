@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CityData — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CityData</h1>
+      <div class="page-meta">Source file: <span class="code">CityData.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CityData</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>cityName</td><td><code>string</code></td><td></td><td>&quot;New City&quot;</td></tr>
+<tr><td>citySize</td><td><code>Vector2</code></td><td></td><td>new Vector2(2f, 2f)</td></tr>
+<tr><td>cityBuiltWith</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>citizensToGenerate</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>populationMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>seed</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>maxCoord</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>boundaryLeft</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>boundaryRight</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>boundaryUp</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>boundaryDown</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>borderBlock</td><td><code>BlockController</code></td><td></td><td></td></tr>
+<tr><td>floorData</td><td><code>Dictionary&lt;string, FloorSaveData&gt;</code></td><td></td><td>new Dictionary&lt;string, FloorSaveData&gt;()</td></tr>
+<tr><td>streetDirectory</td><td><code>List&lt;StreetController&gt;</code></td><td></td><td>new List&lt;StreetController&gt;()</td></tr>
+<tr><td>addressDirectory</td><td><code>List&lt;NewAddress&gt;</code></td><td></td><td>new List&lt;NewAddress&gt;()</td></tr>
+<tr><td>floorDirectory</td><td><code>List&lt;NewFloor&gt;</code></td><td></td><td>new List&lt;NewFloor&gt;()</td></tr>
+<tr><td>addressDictionary</td><td><code>Dictionary&lt;int, NewAddress&gt;</code></td><td></td><td>new Dictionary&lt;int, NewAddress&gt;()</td></tr>
+<tr><td>gameLocationDirectory</td><td><code>List&lt;NewGameLocation&gt;</code></td><td></td><td>new List&lt;NewGameLocation&gt;()</td></tr>
+<tr><td>roomDirectory</td><td><code>List&lt;NewRoom&gt;</code></td><td></td><td>new List&lt;NewRoom&gt;()</td></tr>
+<tr><td>roomDictionary</td><td><code>Dictionary&lt;int, NewRoom&gt;</code></td><td></td><td>new Dictionary&lt;int, NewRoom&gt;()</td></tr>
+<tr><td>residenceDirectory</td><td><code>List&lt;ResidenceController&gt;</code></td><td></td><td>new List&lt;ResidenceController&gt;()</td></tr>
+<tr><td>companyDirectory</td><td><code>List&lt;Company&gt;</code></td><td></td><td>new List&lt;Company&gt;()</td></tr>
+<tr><td>citizenDirectory</td><td><code>List&lt;Citizen&gt;</code></td><td></td><td>new List&lt;Citizen&gt;()</td></tr>
+<tr><td>homelessDirectory</td><td><code>List&lt;Citizen&gt;</code></td><td></td><td>new List&lt;Citizen&gt;()</td></tr>
+<tr><td>homedDirectory</td><td><code>List&lt;Citizen&gt;</code></td><td></td><td>new List&lt;Citizen&gt;()</td></tr>
+<tr><td>citizenDictionary</td><td><code>Dictionary&lt;int, Human&gt;</code></td><td></td><td>new Dictionary&lt;int, Human&gt;()</td></tr>
+<tr><td>deadCitizensDirectory</td><td><code>List&lt;Human&gt;</code></td><td></td><td>new List&lt;Human&gt;()</td></tr>
+<tr><td>jobsDirectory</td><td><code>List&lt;Occupation&gt;</code></td><td></td><td>new List&lt;Occupation&gt;()</td></tr>
+<tr><td>assignedJobsDirectory</td><td><code>List&lt;Occupation&gt;</code></td><td></td><td>new List&lt;Occupation&gt;()</td></tr>
+<tr><td>unemployedDirectory</td><td><code>List&lt;Occupation&gt;</code></td><td></td><td>new List&lt;Occupation&gt;()</td></tr>
+<tr><td>criminalJobDirectory</td><td><code>List&lt;Occupation&gt;</code></td><td></td><td>new List&lt;Occupation&gt;()</td></tr>
+<tr><td>reflectionProbeDirectory</td><td><code>List&lt;ReflectionProbeController&gt;</code></td><td></td><td>new List&lt;ReflectionProbeController&gt;()</td></tr>
+<tr><td>jobBoardsDirectory</td><td><code>List&lt;FurnitureLocation&gt;</code></td><td></td><td>new List&lt;FurnitureLocation&gt;()</td></tr>
+<tr><td>doorDictionary</td><td><code>Dictionary&lt;int, NewDoor&gt;</code></td><td></td><td>new Dictionary&lt;int, NewDoor&gt;()</td></tr>
+<tr><td>airDuctGroupDirectory</td><td><code>List&lt;AirDuctGroup&gt;</code></td><td></td><td>new List&lt;AirDuctGroup&gt;()</td></tr>
+<tr><td>airVentDirectory</td><td><code>List&lt;AirDuctGroup.AirVent&gt;</code></td><td></td><td>new List&lt;AirDuctGroup.AirVent&gt;()</td></tr>
+<tr><td>interactableDirectory</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>surveillanceDirectory</td><td><code>List&lt;SceneRecorder&gt;</code></td><td></td><td>new List&lt;SceneRecorder&gt;()</td></tr>
+<tr><td>phoneDictionary</td><td><code>Dictionary&lt;int, Telephone&gt;</code></td><td></td><td>new Dictionary&lt;int, Telephone&gt;()</td></tr>
+<tr><td>savableInteractableDictionary</td><td><code>Dictionary&lt;int, Interactable&gt;</code></td><td></td><td>new Dictionary&lt;int, Interactable&gt;()</td></tr>
+<tr><td>caseTrays</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>metaObjectDictionary</td><td><code>Dictionary&lt;int, MetaObject&gt;</code></td><td></td><td>new Dictionary&lt;int, MetaObject&gt;()</td></tr>
+<tr><td>dynamicShadowSystemLights</td><td><code>List&lt;LightController&gt;</code></td><td></td><td>new List&lt;LightController&gt;()</td></tr>
+<tr><td>homlessAssign</td><td><code>List&lt;Citizen&gt;</code></td><td></td><td>new List&lt;Citizen&gt;()</td></tr>
+<tr><td>addressTypeReference</td><td><code>Dictionary&lt;AddressPreset, List&lt;NewAddress&gt;&gt;</code></td><td></td><td>new Dictionary&lt;AddressPreset, List&lt;NewAddress&gt;&gt;()</td></tr>
+<tr><td>itemSingletons</td><td><code>Dictionary&lt;RetailItemPreset, Evidence&gt;</code></td><td></td><td>new Dictionary&lt;RetailItemPreset, Evidence&gt;()</td></tr>
+<tr><td>visibleRooms</td><td><code>HashSet&lt;NewRoom&gt;</code></td><td></td><td>new HashSet&lt;NewRoom&gt;()</td></tr>
+<tr><td>visibleActors</td><td><code>List&lt;Actor&gt;</code></td><td></td><td>new List&lt;Actor&gt;()</td></tr>
+<tr><td>floorRange</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>residentialBuildings</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>commercialBuildings</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>industrialBuildings</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>municipalBuildings</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>parkBuildings</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>inhabitedResidences</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>employedCitizens</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>extraUnemloyedCreated</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>averageShoeSize</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>cityDirectory</td><td><code>Evidence</code></td><td></td><td></td></tr>
+<tr><td>elevatorControls</td><td><code>Evidence</code></td><td></td><td></td></tr>
+<tr><td>telephone</td><td><code>EvidenceWitness</code></td><td></td><td></td></tr>
+<tr><td>hospitalBed</td><td><code>EvidenceWitness</code></td><td></td><td></td></tr>
+<tr><td>cityDirText</td><td><code>Dictionary&lt;int, string&gt;</code></td><td></td><td>new Dictionary&lt;int, string&gt;()</td></tr>
+<tr><td>echelonFloorMatKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>echelonCeilingMatKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>echelonDefaultWallKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static CityData</code></td><td></td><td></td></tr>
+<tr><td>tileLocation</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>roomID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>tileAccessList</td><td><code>List&lt;Vector2&gt;</code></td><td></td><td></td></tr>
+<tr><td>designation</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>tileType</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>addressAnchor</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>floorRotation</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>doorsAccess</td><td><code>List&lt;Vector2&gt;</code></td><td></td><td></td></tr>
+<tr><td>windowsAccess</td><td><code>Dictionary&lt;Vector2, int&gt;</code></td><td></td><td></td></tr>
+<tr><td>lightswitch</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>cctv</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DestroySelf</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ParseFloorData</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CityTileToTile</td><td><code>Vector3Int</code></td><td><span class="badge">i</span></td><td><code>Vector2Int coords</code></td></tr>
+<tr><td>PathmapToGroundmap</td><td><code>Vector2Int</code></td><td></td><td><code>Vector3Int coords</code></td></tr>
+<tr><td>RealPosToGroundmap</td><td><code>Vector2Int</code></td><td></td><td><code>Vector3 coords</code></td></tr>
+<tr><td>RealPosToPathmap</td><td><code>Vector3Int</code></td><td></td><td><code>Vector3 coords</code></td></tr>
+<tr><td>RealPosToPathmapIncludingZ</td><td><code>Vector3Int</code></td><td></td><td><code>Vector3 coords</code></td></tr>
+<tr><td>RealPosToNode</td><td><code>Vector3</code></td><td></td><td><code>Vector3 coords</code></td></tr>
+<tr><td>RealPosToNodeFloat</td><td><code>Vector3</code></td><td></td><td><code>Vector3 coords</code></td></tr>
+<tr><td>RealPosToNodeInt</td><td><code>Vector3Int</code></td><td></td><td><code>Vector3 coords</code></td></tr>
+<tr><td>CityTileToRealpos</td><td><code>Vector3</code></td><td></td><td><code>Vector2 coords</code></td></tr>
+<tr><td>TileToRealpos</td><td><code>Vector3</code></td><td></td><td><code>Vector3Int coords</code></td></tr>
+<tr><td>TileToRealpos</td><td><code>Vector3</code></td><td></td><td><code>Vector3 coords</code></td></tr>
+<tr><td>NodeToRealpos</td><td><code>Vector3</code></td><td></td><td><code>Vector3 coords</code></td></tr>
+<tr><td>NodeToRealposInt</td><td><code>Vector3</code></td><td></td><td><code>Vector3Int coords</code></td></tr>
+<tr><td>GetTileHeight</td><td><code>float</code></td><td></td><td><code>Vector2 coords</code></td></tr>
+<tr><td>CreateSingletons</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CreateCityDirectory</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateEchelonDecorData</td><td><code>void</code></td><td><span class="badge">5</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num</span> <span class="badge">4</span> <span class="badge">i</span> <span class="badge">2</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>GetOffsetFromDirection</td><td><code>Vector2Int</code></td><td></td><td><code>CityData.BlockingDirection dir</code></td></tr>
+<tr><td>FindMetaObject</td><td><code>MetaObject</code></td><td></td><td><code>int id</code></td></tr>
+<tr><td>GetHuman</td><td><code>bool</code></td><td></td><td><code>int id, out Human output, bool includePlayer = true</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class ParsedFloorData</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>unitData</td><td><code>Dictionary&lt;int, List&lt;CityData.ParsedFloorTile&gt;&gt;</code></td><td></td><td></td></tr>
+<tr><td>allTiles</td><td><code>List&lt;CityData.ParsedFloorTile&gt;</code></td><td></td><td>new List&lt;CityData.ParsedFloorTile&gt;()</td></tr>
+<tr><td>mainEntranceOutside</td><td><code>Vector2</code></td><td></td><td>new Vector2(-1f, -1f)</td></tr>
+<tr><td>mainEntranceInside</td><td><code>Vector2</code></td><td></td><td>new Vector2(-1f, -1f)</td></tr>
+<tr><td>additionalEntrances</td><td><code>Dictionary&lt;Vector2, Vector2&gt;</code></td><td></td><td>new Dictionary&lt;Vector2, Vector2&gt;()</td></tr>
+<tr><td>floorHeight</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>ceilingHeight</td><td><code>float</code></td><td></td><td>0.8f</td></tr>
+</tbody></table>
+<h3>class CityDirectoryEntry</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>linkID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>entryName</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>sortString</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>BlockingDirection</h3>
+<pre><code>none
+behindLeft
+behind
+behindRight
+left
+right
+frontLeft
+front
+frontRight</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

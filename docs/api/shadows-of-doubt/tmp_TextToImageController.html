@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TextToImageController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>TextToImageController</h1>
+      <div class="page-meta">Source file: <span class="code">TextToImageController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">TextToImageController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>captureTextCanvasRect</td><td><code>RectTransform</code></td><td><span class="badge">Header: Components</span></td><td></td></tr>
+<tr><td>captureText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>newsTickerMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>newsTickerFont</td><td><code>TMP_FontAsset</code></td><td></td><td></td></tr>
+<tr><td>newsTickerFontSize</td><td><code>float</code></td><td></td><td>40f</td></tr>
+<tr><td>newsTickerDivider</td><td><code>float</code></td><td></td><td>128f</td></tr>
+<tr><td>newsTickerSpeedDivider</td><td><code>float</code></td><td></td><td>4f</td></tr>
+<tr><td>saveDebugScreenshot</td><td><code>bool</code></td><td><span class="badge">Header: Settings</span></td><td></td></tr>
+<tr><td>maxSize</td><td><code>Vector2</code></td><td></td><td>new Vector2(2048f, 128f)</td></tr>
+<tr><td>defaultSettings</td><td><code>TextToImageController.TextToImageSettings</code></td><td></td><td>new TextToImageController.TextToImageSettings()</td></tr>
+<tr><td>lastText</td><td><code>string</code></td><td><span class="badge">Header: Preview</span></td><td></td></tr>
+<tr><td>lastFontSize</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lastDimenstions</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>currentShot</td><td><code>Texture2D</code></td><td></td><td></td></tr>
+<tr><td>instancedRender</td><td><code>RenderTexture</code></td><td></td><td></td></tr>
+<tr><td>tickerImg</td><td><code>Texture2D</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static TextToImageController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CaptureTextToImage</td><td><code>Texture2D</code></td><td><span class="badge">Button(null, 0)</span></td><td><code>TextToImageController.TextToImageSettings settings = null, bool returnReadOnly = true</code></td></tr>
+<tr><td>UpdateNewsTickerHeadline</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code>string newString = &quot;&quot;</code></td></tr>
+<tr><td>ProcessImage</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code>TextToImageController.TextToImageSettings settings = null</code></td></tr>
+<tr><td>SavePNG</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class TextToImageSettings</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>textString</td><td><code>string</code></td><td></td><td>&quot;Example&quot;</td></tr>
+<tr><td>textSize</td><td><code>float</code></td><td></td><td>42f</td></tr>
+<tr><td>font</td><td><code>TMP_FontAsset</code></td><td></td><td></td></tr>
+<tr><td>enableProcessing</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>contrast</td><td><code>float</code></td><td></td><td>1.2f</td></tr>
+<tr><td>trim</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>trimPadding</td><td><code>int</code></td><td></td><td>4</td></tr>
+<tr><td>useAlpha</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>color</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

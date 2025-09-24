@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnimationFrameReference — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>AnimationFrameReference</h1>
+      <div class="page-meta">Source file: <span class="code">AnimationFrameReference.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">AnimationFrameReference</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>reference</td><td><code>List&lt;AnimationFrameReference.AnimationReference&gt;</code></td><td><span class="badge">Header: Database</span></td><td>new List&lt;AnimationFrameReference.AnimationReference&gt;()</td></tr>
+<tr><td>walkingReference</td><td><code>List&lt;AnimationFrameReference.AnimationReference&gt;</code></td><td></td><td>new List&lt;AnimationFrameReference.AnimationReference&gt;()</td></tr>
+<tr><td>runningReference</td><td><code>List&lt;AnimationFrameReference.AnimationReference&gt;</code></td><td></td><td>new List&lt;AnimationFrameReference.AnimationReference&gt;()</td></tr>
+<tr><td>captureFrom</td><td><code>CitizenOutfitController</code></td><td><span class="badge">Header: Capture</span></td><td></td></tr>
+<tr><td>captureIdle</td><td><code>CitizenAnimationController.IdleAnimationState</code></td><td></td><td></td></tr>
+<tr><td>captureArms</td><td><code>CitizenAnimationController.ArmsBoolSate</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static AnimationFrameReference</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetAnimationReference</td><td><code>AnimationFrameReference.AnimationReference</code></td><td></td><td><code>CitizenAnimationController.ArmsBoolSate arms, string seed</code></td></tr>
+<tr><td>GetAnimationReference</td><td><code>AnimationFrameReference.AnimationReference</code></td><td></td><td><code>CitizenAnimationController.IdleAnimationState idle, string seed</code></td></tr>
+<tr><td>CaptureState</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>CaptureWalkingState</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>CaptureRunningState</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class AnimationReference</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>isArms</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>idle</td><td><code>CitizenAnimationController.IdleAnimationState</code></td><td></td><td></td></tr>
+<tr><td>arms</td><td><code>CitizenAnimationController.ArmsBoolSate</code></td><td></td><td></td></tr>
+<tr><td>anim</td><td><code>List&lt;AnimationFrameReference.AnimationAnchorRef&gt;</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class AnimationAnchorRef</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>anchor</td><td><code>CitizenOutfitController.CharacterAnchor</code></td><td></td><td></td></tr>
+<tr><td>localPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>localRot</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

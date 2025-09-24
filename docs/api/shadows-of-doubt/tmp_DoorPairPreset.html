@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DoorPairPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>DoorPairPreset</h1>
+      <div class="page-meta">Source file: <span class="code">DoorPairPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">DoorPairPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>parentWallsLong</td><td><code>List&lt;GameObject&gt;</code></td><td>The wall model of the parent wall <span class="badge">Header: Model Options</span></td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>childWallsLong</td><td><code>List&lt;GameObject&gt;</code></td><td>The wall model of the child wall</td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>parentWallsShort</td><td><code>List&lt;GameObject&gt;</code></td><td>Short walls: There should be 3 here - left, middle and right</td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>childWallsShort</td><td><code>List&lt;GameObject&gt;</code></td><td>Short walls: There should be 3 here - left, middle and right</td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>corners</td><td><code>List&lt;GameObject&gt;</code></td><td>The corner model. Always on the outside walls.</td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>quoins</td><td><code>List&lt;GameObject&gt;</code></td><td>The corner model for outside facing exterior walls (overrides above)</td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>optimizeSections</td><td><code>bool</code></td><td>If true, the game will use optimization to replaces walls of 3x rows with a larger section</td><td></td></tr>
+<tr><td>appearInEditor</td><td><code>bool</code></td><td>If true, user is able to place this in the editor</td><td></td></tr>
+<tr><td>supportsWallProps</td><td><code>bool</code></td><td>If true, this section can support lightswitches or other wall props</td><td>true</td></tr>
+<tr><td>isFence</td><td><code>bool</code></td><td>If true, the game will continue to draw building corners around this</td><td></td></tr>
+<tr><td>divider</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>dividerLeft</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>dividerRight</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>canFeatureDoor</td><td><code>bool</code></td><td>Door object <span class="badge">Header: Door Options</span></td><td></td></tr>
+<tr><td>doorOffset</td><td><code>Vector3</code></td><td>Door offset position</td><td>new Vector3(0.7f, 0f, 0f)</td></tr>
+<tr><td>sectionClass</td><td><code>DoorPairPreset.WallSectionClass</code></td><td>The class of this wall section. When a procedural address is generated, it may override this with another more appropriate model with the same class. <span class="badge">Header: Procedural Overrides</span></td><td></td></tr>
+<tr><td>ignoreCullingRaycasts</td><td><code>bool</code></td><td>If true then this will force this section to ignore raycasts when generating room culling.</td><td></td></tr>
+<tr><td>raisedFloorOverride</td><td><code>DoorPairPreset</code></td><td>Override with this if the floor height is above 0</td><td></td></tr>
+<tr><td>materialOverride</td><td><code>MaterialGroupPreset</code></td><td><span class="badge">Header: Material Override</span></td><td></td></tr>
+<tr><td>mapOverride</td><td><code>List&lt;Texture2D&gt;</code></td><td>Override map graphics with this <span class="badge">Header: Map Overrides</span></td><td>new List&lt;Texture2D&gt;()</td></tr>
+<tr><td>overrideWallNormal</td><td><code>bool</code></td><td><span class="badge">Header: Duct Overrides</span></td><td></td></tr>
+<tr><td>wallNormalOverrride</td><td><code>DoorPairPreset</code></td><td><span class="badge">EnableIf(&quot;overrideWallNormal&quot;)</span></td><td></td></tr>
+<tr><td>overrideDuctLower</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ductLowerOverrride</td><td><code>DoorPairPreset</code></td><td><span class="badge">EnableIf(&quot;overrideDuctLower&quot;)</span></td><td></td></tr>
+<tr><td>overrideDuctUpper</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ductUpperOverrride</td><td><code>DoorPairPreset</code></td><td><span class="badge">EnableIf(&quot;overrideDuctUpper&quot;)</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>UpdateIDs</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>WallSectionClass</h3>
+<pre><code>wall
+window
+windowLarge
+entrance
+ventUpper
+ventLower
+ventTop</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

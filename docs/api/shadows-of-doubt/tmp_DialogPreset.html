@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DialogPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>DialogPreset</h1>
+      <div class="page-meta">Source file: <span class="code">DialogPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">DialogPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>msgID</td><td><code>string</code></td><td><span class="badge">Header: Setup</span></td><td></td></tr>
+<tr><td>defaultOption</td><td><code>bool</code></td><td>Is this option added to citizens at the start?</td><td></td></tr>
+<tr><td>telephoneCallOption</td><td><code>bool</code></td><td>Is this used for the telephone calling dialog? <span class="badge">EnableIf(&quot;defaultOption&quot;)</span></td><td></td></tr>
+<tr><td>hospitalDecisionOption</td><td><code>bool</code></td><td>Is this used for the hospital decision tree dialog?</td><td></td></tr>
+<tr><td>tiedToKey</td><td><code>Evidence.DataKey</code></td><td>Must have access to this key for this option to appear</td><td>Evidence.DataKey.photo</td></tr>
+<tr><td>ranking</td><td><code>int</code></td><td>Ranking within options</td><td></td></tr>
+<tr><td>removeAfterSaying</td><td><code>bool</code></td><td>Remove this after it&#x27;s been said</td><td>true</td></tr>
+<tr><td>dailyReplenish</td><td><code>bool</code></td><td>Replenish after each day: Every 24 hours this will be added to every citizen if not already added <span class="badge">EnableIf(&quot;defaultOption&quot;)</span></td><td></td></tr>
+<tr><td>isJobDetails</td><td><code>bool</code></td><td>This dialog will give the player the mission details</td><td></td></tr>
+<tr><td>ignoreActiveJobRequirement</td><td><code>bool</code></td><td>If false, this will only be active when the associated job is active. If true, this requirement will be ignored.</td><td></td></tr>
+<tr><td>specialCase</td><td><code>DialogPreset.SpecialCase</code></td><td>Special cases</td><td></td></tr>
+<tr><td>cost</td><td><code>int</code></td><td>This option is selectable for a cost</td><td></td></tr>
+<tr><td>usePercentageCost</td><td><code>bool</code></td><td>If ture, the above is a percentage cost of the player&#x27;s total wealth</td><td></td></tr>
+<tr><td>useAllWealthIfNotEnough</td><td><code>bool</code></td><td>If true, and the player doesn&#x27;t have enough to cover the cost then use the total amount of player&#x27;s wealth</td><td></td></tr>
+<tr><td>displayIfPasswordUnknown</td><td><code>bool</code></td><td>Only displayed if the current address requires a password</td><td></td></tr>
+<tr><td>inputBox</td><td><code>DialogPreset.InputSetting</code></td><td>Player must input correct string before forcing a success or fail</td><td></td></tr>
+<tr><td>displayAsIllegal</td><td><code>bool</code></td><td>Display this dialog in red (illegal)</td><td></td></tr>
+<tr><td>preceedingSyntax</td><td><code>string</code></td><td>Preceeding syntax</td><td></td></tr>
+<tr><td>followingSyntax</td><td><code>string</code></td><td>Following syntax</td><td></td></tr>
+<tr><td>useSuccessTest</td><td><code>bool</code></td><td>Use a success test to determin the outcome response <span class="badge">Header: Success Test</span></td><td></td></tr>
+<tr><td>requiresPassword</td><td><code>bool</code></td><td>Requires the correct password to be successful, if there is one <span class="badge">EnableIf(&quot;useSuccessTest&quot;)</span></td><td></td></tr>
+<tr><td>baseChance</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span> <span class="badge">EnableIf(&quot;useSuccessTest&quot;)</span></td><td></td></tr>
+<tr><td>affectChanceIfRestrained</td><td><code>float</code></td><td>If restrained, the success change is affected this much... <span class="badge">EnableIf(&quot;useSuccessTest&quot;)</span></td><td></td></tr>
+<tr><td>modifySuccessChanceTraits</td><td><code>List&lt;CharacterTrait.TraitPickRule&gt;</code></td><td>Modify success based on below traits...</td><td>new List&lt;CharacterTrait.TraitPickRule&gt;()</td></tr>
+<tr><td>responses</td><td><code>List&lt;AIActionPreset.AISpeechPreset&gt;</code></td><td><span class="badge">Header: Responses</span></td><td>new List&lt;AIActionPreset.AISpeechPreset&gt;()</td></tr>
+<tr><td>followUpDialogSuccess</td><td><code>List&lt;DialogPreset&gt;</code></td><td>Add these as player responses following... <span class="badge">Header: Follow up</span></td><td>new List&lt;DialogPreset&gt;()</td></tr>
+<tr><td>followUpDialogFail</td><td><code>List&lt;DialogPreset&gt;</code></td><td></td><td>new List&lt;DialogPreset&gt;()</td></tr>
+<tr><td>removeDialog</td><td><code>List&lt;DialogPreset&gt;</code></td><td>Remove these other options</td><td>new List&lt;DialogPreset&gt;()</td></tr>
+<tr><td>removeDialogOnSuccess</td><td><code>List&lt;DialogPreset&gt;</code></td><td></td><td>new List&lt;DialogPreset&gt;()</td></tr>
+<tr><td>removeDialogOnFail</td><td><code>List&lt;DialogPreset&gt;</code></td><td></td><td>new List&lt;DialogPreset&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>GetCost</td><td><code>int</code></td><td></td><td><code>Actor talkingTo, Actor talking = null</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>InputSetting</h3>
+<pre><code>none
+addressPassword</code></pre>
+<h3>SpecialCase</h3>
+<pre><code>none
+backroomBribe
+publicFacingWorkplace
+working
+workingGuestPass
+callInSuspect
+talkingToJobPoster
+inputName
+lastCaller
+knowName
+lookAroundHome
+returnJobItemA
+medicalCosts
+starchPitch
+mugging
+neverDisplay
+loanSharkAccept
+loanSharkPayment
+loanSharkPaymentRefuse
+loanSharkAsk
+revealHiddenitemPhoto
+hotelBill
+rentHotelRoomCheap
+rentHotelRoomExpensive
+hotelCheckOut
+hotelRentRoom
+mustHaveRoomAtHotel
+mustBeMurdererForSuccess
+killerCleanUp
+killerCleanUpAccept
+killerCleanUpReject
+killerCleanUpSuccess
+ransomInvestigate
+kidnapperOnly</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

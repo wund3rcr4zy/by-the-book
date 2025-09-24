@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VirtualKeyboardController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>VirtualKeyboardController</h1>
+      <div class="page-meta">Source file: <span class="code">VirtualKeyboardController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">VirtualKeyboardController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>keyboardButtons</td><td><code>List&lt;ButtonController&gt;</code></td><td></td><td>new List&lt;ButtonController&gt;()</td></tr>
+<tr><td>capsToggle</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>capsSprite</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>lowerCaseSprite</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static VirtualKeyboardController</code></td><td></td><td></td></tr>
+<tr><td>isActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>keyboardCanvas</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>keyboardLabelText</td><td><code>TMP_Text</code></td><td></td><td></td></tr>
+<tr><td>virtualInputField</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>_targetInputField</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>_lineIndex</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>cursorIndex</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>_player</td><td><code>Player</code></td><td></td><td></td></tr>
+<tr><td>defaultButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>isCapsLock</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isSymbols</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isSingleLine</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>forceSteamInput</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lineBreakButton</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>_gamepadTextInputDismissed</td><td><code>Callback&lt;GamepadTextInputDismissed_t&gt;</code></td><td></td><td></td></tr>
+<tr><td>_floatingGamepadTextInputDismissed</td><td><code>Callback&lt;FloatingGamepadTextInputDismissed_t&gt;</code></td><td></td><td></td></tr>
+<tr><td>steamKeyboardLaunched</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>apiText</td><td><code>TMP_Text</code></td><td></td><td></td></tr>
+<tr><td>keyboardText</td><td><code>TMP_Text</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>OnEnable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnFloatingGamepadTextInputDismissed</td><td><code>void</code></td><td></td><td><code>FloatingGamepadTextInputDismissed_t callback</code></td></tr>
+<tr><td>OnGamepadTextInputDismissed</td><td><code>void</code></td><td></td><td><code>GamepadTextInputDismissed_t callback</code></td></tr>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ProcessHotkeys</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetButtonIcon</td><td><code>void</code></td><td></td><td><code>ButtonController buttonController, InteractablePreset.InteractionKey key, UnityAction action</code></td></tr>
+<tr><td>SetCaretVisible</td><td><code>void</code></td><td></td><td><code>int pos</code></td></tr>
+<tr><td>ToggleSymbols</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ToggleCapsLock</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>EnterLineBreak</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>MoveCursorUp</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>EnumerateLines</td><td><code>IEnumerable&lt;string&gt;</code></td><td></td><td><code>TMP_Text text</code></td></tr>
+<tr><td>ForceSteamApiCall</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>ActivateVirtualKeyboard</td><td><code>void</code></td><td></td><td><code>bool isMultiline, string labelText = &quot;&quot;, string existingText = &quot;&quot;</code></td></tr>
+<tr><td>DeactivateVirtualKeyboard</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SendStringToVirtualKeyboardInput</td><td><code>void</code></td><td></td><td><code>string letter</code></td></tr>
+<tr><td>InitializeTextFromTarget</td><td><code>void</code></td><td></td><td><code>TMP_InputField originInputField, string targetText</code></td></tr>
+<tr><td>UpdateVirtualKeyboardLabel</td><td><code>void</code></td><td></td><td><code>string labelText</code></td></tr>
+<tr><td>SubmitText</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetIndexes</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SelectOnAwake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Backspace</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>MoveCursorBack</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SpaceBar</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>MoveCursorForward</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

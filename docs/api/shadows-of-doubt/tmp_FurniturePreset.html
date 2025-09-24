@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FurniturePreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>FurniturePreset</h1>
+      <div class="page-meta">Source file: <span class="code">FurniturePreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">FurniturePreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>classes</td><td><code>List&lt;FurnitureClass&gt;</code></td><td>Classes that this furniture belongs to <span class="badge">Header: Rules</span></td><td>new List&lt;FurnitureClass&gt;()</td></tr>
+<tr><td>prefab</td><td><code>GameObject</code></td><td><span class="badge">Header: Visuals</span></td><td></td></tr>
+<tr><td>allowStaticBatching</td><td><code>bool</code></td><td>If true this will seach for identical furniture in a room to batch with</td><td></td></tr>
+<tr><td>spawnRange</td><td><code>ObjectPoolingController.ObjectLoadRange</code></td><td></td><td>ObjectPoolingController.ObjectLoadRange.far</td></tr>
+<tr><td>allowWeatherAffectedMaterials</td><td><code>bool</code></td><td>Allows this furniture to check for weather affected material (only works without custom colour keys or material changes <span class="badge">DisableIf(&quot;inheritColouringFromDecor&quot;)</span></td><td></td></tr>
+<tr><td>integratedInteractables</td><td><code>List&lt;FurniturePreset.IntegratedInteractable&gt;</code></td><td>What interatables will be instanced on this? These won&#x27;t be spawned but created and searched for within the furniture prefab <span class="badge">Header: AI Interaction</span></td><td>new List&lt;FurniturePreset.IntegratedInteractable&gt;()</td></tr>
+<tr><td>universalDesignStyle</td><td><code>bool</code></td><td>If true use across all design styles <span class="badge">Header: Decor Settings</span></td><td></td></tr>
+<tr><td>designStyles</td><td><code>List&lt;DesignStylePreset&gt;</code></td><td></td><td>new List&lt;DesignStylePreset&gt;()</td></tr>
+<tr><td>inheritColouringFromDecor</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>shareColours</td><td><code>FurniturePreset.ShareColours</code></td><td>If true the same material colours will be shared over all instances of this furniture for the room</td><td></td></tr>
+<tr><td>inheritGrubFromDecor</td><td><code>bool</code></td><td>If true this furniture will inherit a grub value from the decor/room</td><td>true</td></tr>
+<tr><td>variations</td><td><code>List&lt;MaterialGroupPreset.MaterialVariation&gt;</code></td><td></td><td>new List&lt;MaterialGroupPreset.MaterialVariation&gt;()</td></tr>
+<tr><td>furnitureGroup</td><td><code>FurniturePreset.FurnitureGroup</code></td><td>If this is a part of a group, furntiure of the same group will be chosen in this room.</td><td></td></tr>
+<tr><td>groupID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>concrete</td><td><code>float</code></td><td><span class="badge">Header: Material Composition</span> <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>plaster</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>wood</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>carpet</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>tile</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>metal</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>glass</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>fabric</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>minimumRoomSize</td><td><code>int</code></td><td>This is secondary to the same property in the class preset. <span class="badge">Header: Suitability</span></td><td>99</td></tr>
+<tr><td>allowedInOpenPlan</td><td><code>FurnitureCluster.AllowedOpenPlan</code></td><td>Is this allowed in open plan rooms?</td><td></td></tr>
+<tr><td>onlyAllowInFollowing</td><td><code>bool</code></td><td>Only allow this in certain inhabitant presets</td><td></td></tr>
+<tr><td>allowedInAddressesOfType</td><td><code>List&lt;AddressPreset&gt;</code></td><td></td><td>new List&lt;AddressPreset&gt;()</td></tr>
+<tr><td>banInFollowing</td><td><code>bool</code></td><td>Ban this in certain inhabitant presets</td><td></td></tr>
+<tr><td>bannedInAddressesOfType</td><td><code>List&lt;AddressPreset&gt;</code></td><td></td><td>new List&lt;AddressPreset&gt;()</td></tr>
+<tr><td>OnlyAllowInBuildings</td><td><code>bool</code></td><td>Only allow this in certain buildings</td><td></td></tr>
+<tr><td>allowedInBuildings</td><td><code>List&lt;BuildingPreset&gt;</code></td><td><span class="badge">EnableIf(&quot;OnlyAllowInBuildings&quot;)</span></td><td>new List&lt;BuildingPreset&gt;()</td></tr>
+<tr><td>banFromBuildings</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>notAllowedInBuildings</td><td><code>List&lt;BuildingPreset&gt;</code></td><td><span class="badge">EnableIf(&quot;banFromBuildings&quot;)</span></td><td>new List&lt;BuildingPreset&gt;()</td></tr>
+<tr><td>OnlyAllowInDistricts</td><td><code>bool</code></td><td>Only allow this in certain districts</td><td></td></tr>
+<tr><td>allowedInDistricts</td><td><code>List&lt;DistrictPreset&gt;</code></td><td><span class="badge">EnableIf(&quot;OnlyAllowInDistricts&quot;)</span></td><td>new List&lt;DistrictPreset&gt;()</td></tr>
+<tr><td>banFromDistricts</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>notAllowedInDistricts</td><td><code>List&lt;DistrictPreset&gt;</code></td><td><span class="badge">EnableIf(&quot;banFromDistricts&quot;)</span></td><td>new List&lt;DistrictPreset&gt;()</td></tr>
+<tr><td>requiresGenderedInhabitants</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>enableIfGenderPresent</td><td><code>List&lt;Human.Gender&gt;</code></td><td></td><td>new List&lt;Human.Gender&gt;()</td></tr>
+<tr><td>allowedRoomFilters</td><td><code>List&lt;RoomTypeFilter&gt;</code></td><td>The furniture is only allowed in these room types</td><td>new List&lt;RoomTypeFilter&gt;()</td></tr>
+<tr><td>minimumWealth</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>subObjects</td><td><code>List&lt;FurniturePreset.SubObject&gt;</code></td><td><span class="badge">Header: Sub Objects</span></td><td>new List&lt;FurniturePreset.SubObject&gt;()</td></tr>
+<tr><td>testForModifiers</td><td><code>FurniturePreset.ModifierTest</code></td><td>Use this setting to test for subobject spawn modifiers (see &#x27;SubObjectClassPreset&#x27;)</td><td></td></tr>
+<tr><td>forcePublicIllegal</td><td><code>bool</code></td><td>Objects with illegal actions on this will override the public area allowance set in the interactable setup</td><td></td></tr>
+<tr><td>hidingEnterTransition</td><td><code>PlayerTransitionPreset</code></td><td><span class="badge">Header: Hiding</span></td><td></td></tr>
+<tr><td>hidingExitTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>hidingEnterTransition2</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>hidingExitTransition2</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>map</td><td><code>Texture2D</code></td><td><span class="badge">Header: Map</span></td><td></td></tr>
+<tr><td>drawUnderWalls</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ignoreDirection</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>fingerprintsEnabled</td><td><code>bool</code></td><td>Should there be fingerprints here? <span class="badge">Header: Fingerprints</span></td><td>true</td></tr>
+<tr><td>printsSource</td><td><code>RoomConfiguration.PrintsSource</code></td><td>The source of the prints</td><td>RoomConfiguration.PrintsSource.inhabitants</td></tr>
+<tr><td>fingerprintDensity</td><td><code>float</code></td><td>Fingerprint density <span class="badge">Range(0f, 5f)</span></td><td>1f</td></tr>
+<tr><td>alterAreaLighting</td><td><code>bool</code></td><td>Change area colours <span class="badge">Header: Environment</span></td><td></td></tr>
+<tr><td>possibleColours</td><td><code>List&lt;Color&gt;</code></td><td><span class="badge">EnableIf(&quot;alterAreaLighting&quot;)</span></td><td>new List&lt;Color&gt;()</td></tr>
+<tr><td>lightOperation</td><td><code>DistrictPreset.AffectStreetAreaLights</code></td><td>This is used in combination with the following to adjust street area lighting <span class="badge">EnableIf(&quot;alterAreaLighting&quot;)</span></td><td></td></tr>
+<tr><td>lightAmount</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;alterAreaLighting&quot;)</span></td><td>0.12f</td></tr>
+<tr><td>brightnessModifier</td><td><code>float</code></td><td>This is added to brightness <span class="badge">EnableIf(&quot;alterAreaLighting&quot;)</span></td><td>10f</td></tr>
+<tr><td>purchasable</td><td><code>bool</code></td><td><span class="badge">Header: Decor Edit</span></td><td>true</td></tr>
+<tr><td>disableFromDecorMenu</td><td><code>bool</code></td><td>If true this will not appear in the current room list in the decor menu</td><td></td></tr>
+<tr><td>cost</td><td><code>int</code></td><td></td><td>100</td></tr>
+<tr><td>decorClass</td><td><code>FurniturePreset.DecorClass</code></td><td></td><td>FurniturePreset.DecorClass.misc</td></tr>
+<tr><td>staticImage</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>imagePos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>imageRot</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>imageScale</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>imagePrefabOverride</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>isJobBoard</td><td><code>bool</code></td><td>Is this a board where jobs can be posted? <span class="badge">Header: Special</span></td><td></td></tr>
+<tr><td>isWorkPosition</td><td><code>bool</code></td><td>Is this a desk (for work)? If true furniture ownership will be assigned based on jobs.</td><td></td></tr>
+<tr><td>isPlant</td><td><code>bool</code></td><td>Can spawn a variety of plants</td><td></td></tr>
+<tr><td>isArt</td><td><code>bool</code></td><td>Does this require the game to pick a piece of art to fit this?</td><td></td></tr>
+<tr><td>isSecurityCamera</td><td><code>bool</code></td><td>Is this a security camera? (Special limitations)</td><td></td></tr>
+<tr><td>onLoadAdjacentPlayerTeleport</td><td><code>bool</code></td><td>If true, if the player is here, upon load the game will teleport the player to an available adjacent space</td><td></td></tr>
+<tr><td>artOrientation</td><td><code>ArtPreset.ArtOrientation</code></td><td><span class="badge">EnableIf(&quot;isArt&quot;)</span></td><td></td></tr>
+<tr><td>createSelfEmployed</td><td><code>CompanyPreset</code></td><td>Does this require a special self employed job?</td><td></td></tr>
+<tr><td>workPositionID</td><td><code>InteractableController.InteractableID</code></td><td>If above is true: Which slot contains the work position?</td><td></td></tr>
+<tr><td>spawnObjectOnChance</td><td><code>float</code></td><td>Chance to spawn the below objects; works on a item-by-item basis</td><td>1f</td></tr>
+<tr><td>spawnObjectsOnPlacement</td><td><code>List&lt;InteractablePreset&gt;</code></td><td>Spawns these objects once placed</td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class SubObject</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>SubObjectClassPreset</code></td><td></td><td></td></tr>
+<tr><td>parent</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>localPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>localRot</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>belongsTo</td><td><code>FurniturePreset.SubObjectOwnership</code></td><td></td><td></td></tr>
+<tr><td>security</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class IntegratedInteractable</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>pairToController</td><td><code>InteractableController.InteractableID</code></td><td></td><td></td></tr>
+<tr><td>belongsTo</td><td><code>FurniturePreset.SubObjectOwnership</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>SubObjectOwnership</h3>
+<pre><code>nobody
+everybody
+person0
+person1
+person2
+person3
+person4
+person5
+person6
+person7
+person8
+person9
+person10
+person11
+person12
+person13
+person14
+person15
+person16
+person17
+person18
+person19
+person20
+person21
+person22
+person23
+person24
+person25
+person26
+person27
+person28
+person29</code></pre>
+<h3>ShareColours</h3>
+<pre><code>none
+seating
+wallFrontage
+cabinets
+cubicles
+curtains
+telephone
+wood
+doors
+shelving
+bins
+blinds</code></pre>
+<h3>FurnitureGroup</h3>
+<pre><code>none
+seating
+windowDecor</code></pre>
+<h3>ModifierTest</h3>
+<pre><code>none
+testOwner
+testInhbitants</code></pre>
+<h3>DecorClass</h3>
+<pre><code>chairs
+tables
+units
+electronics
+structural
+decoration
+misc</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

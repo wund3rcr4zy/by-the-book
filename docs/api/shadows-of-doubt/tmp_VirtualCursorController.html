@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VirtualCursorController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>VirtualCursorController</h1>
+      <div class="page-meta">Source file: <span class="code">VirtualCursorController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">VirtualCursorController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>_instance</td><td><code>static VirtualCursorController</code></td><td></td><td></td></tr>
+<tr><td>standardInput</td><td><code>StandaloneInputModule</code></td><td></td><td></td></tr>
+<tr><td>rewiredInput</td><td><code>RewiredStandaloneInputModule</code></td><td></td><td></td></tr>
+<tr><td>mouse</td><td><code>PlayerMouse</code></td><td></td><td></td></tr>
+<tr><td>isActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>animatingTransition</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>alpha</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>activatedBefore</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>animationTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>animateActiveScale</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>animateInactiveScale</td><td><code>AnimationCurve</code></td><td></td><td></td></tr>
+<tr><td>cursorObject</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>cursorImage</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>cursorRaw</td><td><code>RawImage</code></td><td></td><td></td></tr>
+<tr><td>lastKnownPos</td><td><code>Vector2</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>TryActivateVirtualCursor</td><td><code>void</code></td><td></td><td><code>VirtualCursorController.StartingMousePosition startingPos = VirtualCursorController.StartingMousePosition.usePrevious, RectTransform setToRectTransform = null</code></td></tr>
+<tr><td>UpdateCursorSpeed</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetCursorPosition</td><td><code>void</code></td><td></td><td><code>Vector2 screenPosition</code></td></tr>
+<tr><td>SetCursorPosition</td><td><code>void</code></td><td></td><td><code>RectTransform objectRect</code></td></tr>
+<tr><td>DeactivateVirtualCursor</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>StartingMousePosition</h3>
+<pre><code>usePrevious
+centreScreen
+coordinate</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

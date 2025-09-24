@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DoorMovementController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>DoorMovementController</h1>
+      <div class="page-meta">Source file: <span class="code">DoorMovementController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">DoorMovementController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>door</td><td><code>Transform</code></td><td><span class="badge">Header: State Positions</span></td><td></td></tr>
+<tr><td>interactable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>spawnedDoorColliders</td><td><code>Dictionary&lt;Collider, int&gt;</code></td><td></td><td>new Dictionary&lt;Collider, int&gt;()</td></tr>
+<tr><td>closedLocalPos</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>openLocalPos</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>closedLocalEuler</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>openLocalEuler</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>closedLocalScale</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>openLocalScale</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>desiredPos</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>desiredEuler</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>desiredScale</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>preset</td><td><code>DoorMovementPreset</code></td><td><span class="badge">Header: Door State</span></td><td></td></tr>
+<tr><td>desiredTransition</td><td><code>float</code></td><td>0 = Closed, 1 = Open</td><td></td></tr>
+<tr><td>currentTransition</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>isOpen</td><td><code>bool</code></td><td>True if open</td><td></td></tr>
+<tr><td>interacting</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>isAnimating</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isSetup</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isOpening</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isClosing</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>updateLoopingParams</td><td><code>bool</code></td><td>If true this will update looping audio params while animating. Useful for fridge doors etc where the animation is tied to a sfx param.</td><td></td></tr>
+<tr><td>removePlayerCollisionsWhileAnimating</td><td><code>bool</code></td><td>If true this will remove collisions with player while animating</td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Setup</td><td><code>void</code></td><td></td><td><code>Interactable newInteractable, bool inheritOpenStatusFromInteractable = true</code></td></tr>
+<tr><td>SetOpen</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>float newAjar, Actor interactor, bool skipAnimation = false</code></td></tr>
+<tr><td>SetCollisionsWithPlayerActive</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>OnEnable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OpenDoor</td><td><code>IEnumerator</code></td><td></td><td><code>Actor interactor</code></td></tr>
+<tr><td>SetDoorPosition</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnClose</td><td><code>void</code></td><td></td><td><code>Actor interactor, bool playSound = true</code></td></tr>
+<tr><td>OnOpen</td><td><code>void</code></td><td></td><td><code>Actor interactor, bool playSound = true</code></td></tr>
+<tr><td>OnCollisionEnter</td><td><code>void</code></td><td></td><td><code>Collision collision</code></td></tr>
+<tr><td>OnCollisionExit</td><td><code>void</code></td><td></td><td><code>Collision collision</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

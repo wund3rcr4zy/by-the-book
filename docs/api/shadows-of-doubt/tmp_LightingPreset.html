@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LightingPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>LightingPreset</h1>
+      <div class="page-meta">Source file: <span class="code">LightingPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">LightingPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>coolColours</td><td><code>List&lt;CityControls.WindowColour&gt;</code></td><td>Cool Colours <span class="badge">Header: Light</span></td><td>new List&lt;CityControls.WindowColour&gt;()</td></tr>
+<tr><td>warmColours</td><td><code>List&lt;CityControls.WindowColour&gt;</code></td><td>Warm Colours</td><td>new List&lt;CityControls.WindowColour&gt;()</td></tr>
+<tr><td>defaultIntensity</td><td><code>float</code></td><td>If no room is assigned, use this intensity</td><td>550f</td></tr>
+<tr><td>defaultRange</td><td><code>float</code></td><td></td><td>9f</td></tr>
+<tr><td>intensityRoomSizeMultiplier</td><td><code>float</code></td><td>how much the intensity changes per room size, also range</td><td>1f</td></tr>
+<tr><td>intensityRange</td><td><code>Vector2</code></td><td>Clamped intensity range</td><td>new Vector2(100f, 1600f)</td></tr>
+<tr><td>fadeOnOff</td><td><code>bool</code></td><td>Fade in or out when turned on or off</td><td>true</td></tr>
+<tr><td>fadeSpeed</td><td><code>float</code></td><td>Fade in/out by this speed</td><td>10f</td></tr>
+<tr><td>onByDefault</td><td><code>bool</code></td><td>When setup, set the light</td><td>true</td></tr>
+<tr><td>fadeDistance</td><td><code>float</code></td><td>Distance at which the emission is culled completely</td><td>40f</td></tr>
+<tr><td>useBroadcastMaterial</td><td><code>bool</code></td><td>If true, uses the tv broadcast material <span class="badge">Header: Materials</span></td><td></td></tr>
+<tr><td>useOnMaterial</td><td><code>Material</code></td><td>Use an alternate material when on (shared) <span class="badge">DisableIf(&quot;useBroadcastMaterial&quot;)</span></td><td></td></tr>
+<tr><td>useInstancedEmissive</td><td><code>bool</code></td><td>Dynamically alter emissive (create instanced material)</td><td></td></tr>
+<tr><td>emissionMultiplier</td><td><code>float</code></td><td>Emmission multiplier <span class="badge">EnableIf(&quot;useInstancedEmissive&quot;)</span></td><td>1f</td></tr>
+<tr><td>isAtriumLight</td><td><code>bool</code></td><td>Special option to make this hang down <span class="badge">Header: Atrium Lights</span></td><td></td></tr>
+<tr><td>minimumFloors</td><td><code>int</code></td><td>What is the minimum number of floors this atrium covers before it is allowed to feature this light? <span class="badge">EnableIf(&quot;isAtriumLight&quot;)</span></td><td>2</td></tr>
+<tr><td>cablePrefab</td><td><code>GameObject</code></td><td><span class="badge">EnableIf(&quot;isAtriumLight&quot;)</span></td><td></td></tr>
+<tr><td>bulbPrefab</td><td><code>GameObject</code></td><td><span class="badge">EnableIf(&quot;isAtriumLight&quot;)</span></td><td></td></tr>
+<tr><td>endBulbPrefab</td><td><code>GameObject</code></td><td><span class="badge">EnableIf(&quot;isAtriumLight&quot;)</span></td><td></td></tr>
+<tr><td>heightInterval</td><td><code>float</code></td><td>Spawn a bulb every x metres <span class="badge">EnableIf(&quot;isAtriumLight&quot;)</span></td><td>8f</td></tr>
+<tr><td>allowCeilingFans</td><td><code>bool</code></td><td>Can this light also spawn a ceiling fan? Must be set up in lighting config <span class="badge">Header: Additional</span></td><td></td></tr>
+<tr><td>enableVolumetrics</td><td><code>bool</code></td><td><span class="badge">Header: Volumetrics</span></td><td>true</td></tr>
+<tr><td>atmosphereMultiplier</td><td><code>float</code></td><td>The atmosphere setting in the room preset is multiplied by this</td><td>1f</td></tr>
+<tr><td>enableShadows</td><td><code>bool</code></td><td><span class="badge">Header: Shadows</span></td><td>true</td></tr>
+<tr><td>shadowMode</td><td><code>LightingPreset.ShadowMode</code></td><td></td><td></td></tr>
+<tr><td>resolution</td><td><code>LightingPreset.ShadowResolution</code></td><td></td><td>LightingPreset.ShadowResolution.medium</td></tr>
+<tr><td>shadowFadeDistance</td><td><code>float</code></td><td>Distance at which shadows are culled completely.</td><td>40f</td></tr>
+<tr><td>chanceOfFlicker</td><td><code>float</code></td><td><span class="badge">Header: Flickering</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>flickerMultiplierRange</td><td><code>Vector2</code></td><td>When flickering, use this multiplier on the flicker colour to determin the actual colour (basically a darker version of flicker colour)</td><td>new Vector2(0f, 0.2f)</td></tr>
+<tr><td>flickerPulseRange</td><td><code>Vector2</code></td><td>When flickering, how fast it pulses</td><td>new Vector2(1f, 1.1f)</td></tr>
+<tr><td>flickerIntervalRange</td><td><code>Vector2</code></td><td>Flickering lasts this long</td><td>new Vector2(0.25f, 2f)</td></tr>
+<tr><td>flickerNormalityIntervalRange</td><td><code>Vector2</code></td><td>Intervals between flickering are this long</td><td>new Vector2(0.1f, 10f)</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>ShadowMode</h3>
+<pre><code>everyFrame
+onEnable
+onDemand
+dynamicSystemStatic
+dynamicSystemSlowerUpdate</code></pre>
+<h3>ShadowResolution</h3>
+<pre><code>low
+medium
+high
+ultra</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Player — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Player</h1>
+      <div class="page-meta">Source file: <span class="code">Player.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Player</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnTransitionCompleted</td><td><code>event Player.TransitionCompleted</code></td><td></td><td></td></tr>
+<tr><td>OnExecuteAutoTravel</td><td><code>event Player.StartAutoTravel</code></td><td></td><td></td></tr>
+<tr><td>OnEndAutoTravel</td><td><code>event Player.AutoTravelEnd</code></td><td></td><td></td></tr>
+<tr><td>OnNewGameLocation</td><td><code>event Player.GameLocationChange</code></td><td></td><td></td></tr>
+<tr><td>OnNewRoom</td><td><code>event Player.RoomChange</code></td><td></td><td></td></tr>
+<tr><td>fpsMode</td><td><code>bool</code></td><td><span class="badge">Header: Player Attributes</span></td><td></td></tr>
+<tr><td>fps</td><td><code>FirstPersonController</code></td><td></td><td></td></tr>
+<tr><td>charController</td><td><code>CharacterController</code></td><td></td><td></td></tr>
+<tr><td>transitionDamageTrigger</td><td><code>CapsuleCollider</code></td><td></td><td></td></tr>
+<tr><td>cam</td><td><code>CameraController</code></td><td></td><td></td></tr>
+<tr><td>camHeightParent</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>playerContainer</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>previousDuctSection</td><td><code>AirDuctGroup.AirDuctSection</code></td><td></td><td></td></tr>
+<tr><td>currentDuctSection</td><td><code>AirDuctGroup.AirDuctSection</code></td><td></td><td></td></tr>
+<tr><td>isCrunchingDatabase</td><td><code>bool</code></td><td><span class="badge">Header: Player specific flags</span></td><td></td></tr>
+<tr><td>sceneRecorder</td><td><code>SceneRecorder</code></td><td></td><td></td></tr>
+<tr><td>setAlarmMode</td><td><code>bool</code></td><td><span class="badge">Header: Watch Alarm</span></td><td></td></tr>
+<tr><td>editingHours</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>setAlarmFlashCounter</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>alarm</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>alarmFlash</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>setAlarmModeAfterDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>spendingTimeDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>spendingTimeMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>autoTravelActive</td><td><code>bool</code></td><td><span class="badge">Header: Auto Travel</span></td><td></td></tr>
+<tr><td>toleranceRecalcTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>autoTravelDoor</td><td><code>NewDoor</code></td><td></td><td></td></tr>
+<tr><td>currentAutoTravelDest</td><td><code>NewNode.NodeAccess</code></td><td></td><td></td></tr>
+<tr><td>currentNodeSpaceDest</td><td><code>NewNode.NodeSpace</code></td><td></td><td></td></tr>
+<tr><td>currentNodeSpaceDestTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>autoTravelDistanceToNext</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>autoTravelForward</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>answeringPhone</td><td><code>Telephone</code></td><td><span class="badge">Header: Telephone</span></td><td></td></tr>
+<tr><td>activeCall</td><td><code>TelephoneController.PhoneCall</code></td><td></td><td></td></tr>
+<tr><td>footstepSoundObjects</td><td><code>List&lt;CanvasRenderer&gt;</code></td><td><span class="badge">Header: Audio</span></td><td>new List&lt;CanvasRenderer&gt;()</td></tr>
+<tr><td>crouchedTransition</td><td><code>float</code></td><td><span class="badge">Header: Player State</span></td><td></td></tr>
+<tr><td>crouchTransitionActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>updateNodeSpace</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>takeDamageIndicatorTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>takeDamageDisplaySpeed</td><td><code>float</code></td><td></td><td>2f</td></tr>
+<tr><td>spawnProtection</td><td><code>float</code></td><td></td><td>2f</td></tr>
+<tr><td>wasMoving</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>nearbyInteractableUpdate</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>gasLevel</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>hurt</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>bed</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>cityTilesInVicinity</td><td><code>List&lt;CityTile&gt;</code></td><td></td><td>new List&lt;CityTile&gt;()</td></tr>
+<tr><td>playerKeyringInt</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>forceLookAtActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>forceLookAtInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>forceLookAtTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lookAtTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lookAtProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>originalLookAtModRotationGlobal</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+<tr><td>transitionActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>transitionTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>transitionProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>transitionInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>currentTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>exitTransition</td><td><code>PlayerTransitionPreset</code></td><td></td><td></td></tr>
+<tr><td>originalPlayerPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>originalModPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>originalPlayerHeight</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>originalCamHeight</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>startingLookPointWorldPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>transitionRecoilState</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>soundsPlayed</td><td><code>List&lt;PlayerTransitionPreset.SFXSetting&gt;</code></td><td></td><td>new List&lt;PlayerTransitionPreset.SFXSetting&gt;()</td></tr>
+<tr><td>originalModRotationGlobal</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+<tr><td>originalModRotationLocal</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+<tr><td>additionalLookMultiplier</td><td><code>Vector3</code></td><td></td><td>Vector3.one</td></tr>
+<tr><td>rollMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>transitionForceTime</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>transtionForcedTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>transitionLookAt</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>movementOnTransitionComplete</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>restoreHolsterOnTransitionComplete</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>citizensArrestActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>disabledActions</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>forcedLeanState</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>extraLeanSpeed</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>normalStepOffset</td><td><code>float</code></td><td></td><td>0.25f</td></tr>
+<tr><td>airVentStepOffset</td><td><code>float</code></td><td></td><td>0.25f</td></tr>
+<tr><td>storedTransitionPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>desiredWalkSpeed</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>desiredRunSpeed</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>playerKOFadeOut</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>paidFines</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>KOTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>KOTimePassed</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>KORecovery</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>dirtyDeath</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>debtPayment</td><td><code>GameplayController.LoanDebt</code></td><td></td><td></td></tr>
+<tr><td>pausedRememberPlayerMovement</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>hideInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>hideReference</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>phoneInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>computerInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>restrainedInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>restrainedHandcuffsSlot</td><td><code>FirstPersonItemController.InventorySlot</code></td><td></td><td></td></tr>
+<tr><td>searchInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>genericActionInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>nodesTraversedWhileWalking</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>lastDamageAt</td><td><code>float</code></td><td><span class="badge">Header: Damage Block</span></td><td></td></tr>
+<tr><td>lastDmgFrom</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>illegalActionTimer</td><td><code>float</code></td><td><span class="badge">Header: Illegal State</span></td><td>1f</td></tr>
+<tr><td>seenProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>seenProgressLag</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>persuedProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>persuedProgressLag</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>trespassingSnapshot</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>combatSnapshot</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>syncMachineSnapshot</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>onlyMusicSnapshot</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>wristwatchLoop</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>visibilityLag</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>stealthLag</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>seenIconLag</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>spotCheckTimer</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>playerKOInProgress</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isLockpicking</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isGrounded</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>wasGrounded</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>claimedAccidentCover</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>foodHygeinePhotos</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>sanitaryHygeinePhotos</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>illegalOpsPhotos</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>firstFrame</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>lateFixedUpdate</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>drinkLoopStarted</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>drinkLoop</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>apartmentsOwned</td><td><code>List&lt;NewAddress&gt;</code></td><td><span class="badge">Header: Apartments</span></td><td>new List&lt;NewAddress&gt;()</td></tr>
+<tr><td>cullingUpdateRequest</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>cullingUpdateTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>updateCullingAction</td><td><code>Action</code></td><td></td><td></td></tr>
+<tr><td>updateStatusAction</td><td><code>Action</code></td><td></td><td></td></tr>
+<tr><td>spottedByPlayer</td><td><code>List&lt;Actor&gt;</code></td><td></td><td>new List&lt;Actor&gt;()</td></tr>
+<tr><td>spottedWhileHiding</td><td><code>List&lt;Actor&gt;</code></td><td></td><td>new List&lt;Actor&gt;()</td></tr>
+<tr><td>hidingInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static Player</code></td><td></td><td></td></tr>
+<tr><td>requiredVicinity</td><td><code>List&lt;CityTile&gt;</code></td><td></td><td>new List&lt;CityTile&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>EnablePlayerMovement</td><td><code>void</code></td><td></td><td><code>bool val, bool updateCulling = true</code></td></tr>
+<tr><td>EnablePlayerMouseLook</td><td><code>void</code></td><td></td><td><code>bool val, bool forceHideMouseOnDisable = false</code></td></tr>
+<tr><td>OnPauseChange</td><td><code>void</code></td><td></td><td><code>bool openDesktopMode</code></td></tr>
+<tr><td>UpdateGameLocation</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float feetOffset = 0f</code></td></tr>
+<tr><td>OnDuctGroupChange</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">5</span> <span class="badge">0</span> <span class="badge">num3</span> <span class="badge">2</span> <span class="badge">num4</span> <span class="badge">4</span></td><td><code></code></td></tr>
+<tr><td>OnDuctSectionChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCityTileChange</td><td><code>void</code></td><td><span class="badge">override</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>OnGameLocationChange</td><td><code>void</code></td><td><span class="badge">override</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">j</span></td><td><code>bool enableSocialSightings = true, bool forceDisableLocationMemory = false</code></td></tr>
+<tr><td>ResetNegativeStatuses</td><td><code>void</code></td><td></td><td><code>float resetLevel</code></td></tr>
+<tr><td>OnBuildingChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>UpdateCurrentBuildingModelVisibility</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>OnNodeChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>DoFallThroughFloorCheck</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>FixedUpdate</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">this</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">j</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>LateUpdate</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetRotationalLerpValue</td><td><code>float</code></td><td></td><td><code>Quaternion originalRotation, Quaternion targetRotation, float multiplier, out float angleBetween, float distanceToNext</code></td></tr>
+<tr><td>UpdateMovementPhysics</td><td><code>void</code></td><td></td><td><code>bool forceUpdateBeforeGameStart = false</code></td></tr>
+<tr><td>ExecuteTransition</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ConvertModifierMovementToPlayerMovement</td><td><code>void</code></td><td></td><td><code>bool resetCamRoll = true</code></td></tr>
+<tr><td>ConvertPlayerMovementToModifierMovement</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ForceLookAt</td><td><code>void</code></td><td></td><td><code>Interactable interactable, float time</code></td></tr>
+<tr><td>ExecuteForceLookAt</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RestorePlayerMovementSpeed</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">5</span> <span class="badge">0</span> <span class="badge">num</span> <span class="badge">2</span> <span class="badge">num2</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">0</span> <span class="badge">num3</span> <span class="badge">2</span> <span class="badge">num4</span> <span class="badge">4</span></td><td><code></code></td></tr>
+<tr><td>UpdateSkinWidth</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ReturnFromTransform</td><td><code>void</code></td><td></td><td><code>bool immediate = false, bool restorePlayerTransform = true</code></td></tr>
+<tr><td>OnTransitionComplete</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>EnableCharacterController</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>UpdateIllegalStatus</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>IsTrespassing</td><td><code>bool</code></td><td><span class="badge">override</span></td><td><code>NewRoom room, out int trespassEscalation, bool enforcersAllowedEverywhere = true</code></td></tr>
+<tr><td>OnStealthModeChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>OnCrouchedChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>SetLockpickingState</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetMaxSpeed</td><td><code>void</code></td><td></td><td><code>float newWalkSpeed, float newRunSpeed</code></td></tr>
+<tr><td>SetCameraHeight</td><td><code>void</code></td><td></td><td><code>float newHeight</code></td></tr>
+<tr><td>SetPlayerHeight</td><td><code>void</code></td><td></td><td><code>float newHeight, bool stayOnFloorPlane = true</code></td></tr>
+<tr><td>UpdateLightLevel</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>OnRoomChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>OnTileChange</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>UpdateCullingShortly</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateCullingOnEndOfFrame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateCulling</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetResidence</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>ResidenceController newHome, bool removePreviousResidence = true</code></td></tr>
+<tr><td>AddToKeyring</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>NewAddress ad, bool gameMessage = true</code></td></tr>
+<tr><td>AddToKeyring</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>NewDoor ac, bool gameMessage = true</code></td></tr>
+<tr><td>AddToKeyring</td><td><code>void</code></td><td></td><td><code>Interactable inter, bool gameMessage = true</code></td></tr>
+<tr><td>RemoveFromKeyring</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>NewDoor ac</code></td></tr>
+<tr><td>RemoveFromKeyring</td><td><code>void</code></td><td></td><td><code>Interactable inter</code></td></tr>
+<tr><td>TriggerPlayerKO</td><td><code>void</code></td><td></td><td><code>Vector3 KODirection, float RollMP, bool forceDirtyDeath = false</code></td></tr>
+<tr><td>TriggerPlayerRecovery</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Teleport</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>NewNode teleportLocation, Interactable.UsagePoint usagePoint, bool cancelVent = true, bool teleportYPostionOnly = false, bool goalDeeactivation = true</code></td></tr>
+<tr><td>SetPosition</td><td><code>void</code></td><td><span class="badge">6</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num</span> <span class="badge">4</span> <span class="badge">5</span></td><td><code>Vector3 newWorldPos, Quaternion newRot</code></td></tr>
+<tr><td>UpdatePlayerAmbientState</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnHide</td><td><code>void</code></td><td></td><td><code>Interactable newHideInteractable, int reference = 0, bool instant = false, bool allowReturnPositionWrite = true</code></td></tr>
+<tr><td>OnReturnFromHide</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnAnswerPhone</td><td><code>void</code></td><td></td><td><code>Interactable newPhone</code></td></tr>
+<tr><td>OnReturnFromAnswerPhone</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCrawlIntoVent</td><td><code>void</code></td><td></td><td><code>Interactable vent, bool instant = false</code></td></tr>
+<tr><td>OnCrawlOutOfVent</td><td><code>void</code></td><td></td><td><code>Interactable vent, bool instant = false</code></td></tr>
+<tr><td>EnterVent</td><td><code>void</code></td><td></td><td><code>bool restoreTransform = false</code></td></tr>
+<tr><td>ExitVent</td><td><code>void</code></td><td></td><td><code>bool restoreTransform = false</code></td></tr>
+<tr><td>OnUseComputer</td><td><code>void</code></td><td></td><td><code>Interactable newComp, bool instant = false</code></td></tr>
+<tr><td>OnReturnFromUseComputer</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnTakePrint</td><td><code>void</code></td><td></td><td><code>Interactable newHand</code></td></tr>
+<tr><td>OnCompleteTakePrint</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnReturnFromTakePrint</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnSearch</td><td><code>void</code></td><td></td><td><code>Interactable newSearchItem</code></td></tr>
+<tr><td>OnCompleteSearch</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnReturnFromSearch</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDrink</td><td><code>void</code></td><td></td><td><code>Interactable newSearchItem</code></td></tr>
+<tr><td>DrinkProgress</td><td><code>void</code></td><td></td><td><code>float amountChangeThisFrame, float amountToal</code></td></tr>
+<tr><td>OnLookAwayFromFountain</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCompleteDrink</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnReturnFromDrink</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnInteractionActionProgress</td><td><code>void</code></td><td></td><td><code>float amountThisFrame, float interactionActionAmount</code></td></tr>
+<tr><td>OnGenericTimedAction</td><td><code>void</code></td><td></td><td><code>string actionName, float threshold, float increaseRate, Interactable newItem, bool playObjectsSearchLoop = false</code></td></tr>
+<tr><td>OnReturnFromGenericAction</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnHandcuff</td><td><code>void</code></td><td></td><td><code>Interactable newBody</code></td></tr>
+<tr><td>OnCompleteHandcuff</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnReturnFromHandcuff</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>EnableGhostMovement</td><td><code>void</code></td><td></td><td><code>bool ghost, bool clipping = false, float stickToGround = 0f</code></td></tr>
+<tr><td>SetActionDisable</td><td><code>void</code></td><td></td><td><code>string newString, bool val</code></td></tr>
+<tr><td>ClearAllDisabledActions</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetVehicle</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>Transform newVehicle</code></td></tr>
+<tr><td>SetSettingAlarmMode</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>AddToAlarmTime</td><td><code>void</code></td><td></td><td><code>float plusTime</code></td></tr>
+<tr><td>SetSpendingTimeMode</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>RecieveDamage</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float amount, Actor fromWho, Vector3 damagePosition, Vector3 damageDirection, SpatterPatternPreset forwardSpatter, SpatterPatternPreset backSpatter, SpatterSimulation.EraseMode eraseMode = SpatterSimulation.EraseMode.quickDespawn, bool alertSurrounding = true, bool forceRagdoll = false, float forcedRagdollDuration = 0f, float shockMP = 1f, bool enableKill = false, bool allowRecoil = true, float ragdollForceMP = 1f</code></td></tr>
+<tr><td>SetFootwear</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>Human.ShoeType newType</code></td></tr>
+<tr><td>AddHealth</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float amount, bool affectedByGameDifficulty = true, bool displayDamageIndicator = false</code></td></tr>
+<tr><td>SetHealth</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float amount</code></td></tr>
+<tr><td>SightingCheck</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float fov, bool ignoreLightAndStealth = false</code></td></tr>
+<tr><td>PrepForStart</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>AddNourishment</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddHydration</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddEnergy</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddAlertness</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddHygiene</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddHeat</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddDrunk</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddSick</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddHeadache</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddWet</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBrokenLeg</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBruised</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBlackEye</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBlackedOut</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddNumb</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddBleeding</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddStarchAddiction</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>AddSyncDiskInstall</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>float addVal</code></td></tr>
+<tr><td>StatusCheckEndOfFrame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetOnStreet</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>bool val</code></td></tr>
+<tr><td>Trip</td><td><code>void</code></td><td></td><td><code>float damage, bool forwards = false, bool playSound = true</code></td></tr>
+<tr><td>SetHiding</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>bool val, Interactable newHidingPlace</code></td></tr>
+<tr><td>GetPlayerHeightNormal</td><td><code>float</code></td><td><span class="badge">this</span></td><td><code></code></td></tr>
+<tr><td>GetPlayerHeightCrouched</td><td><code>float</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteAutoTravel</td><td><code>void</code></td><td></td><td><code>Evidence toLocation, bool fastTravel = false</code></td></tr>
+<tr><td>ExecuteAutoTravel</td><td><code>void</code></td><td></td><td><code>NewGameLocation toLocation, bool fastTravel = false</code></td></tr>
+<tr><td>ExecuteAutoTravel</td><td><code>void</code></td><td></td><td><code>NewBuilding toBuilding, bool fastTravel = false</code></td></tr>
+<tr><td>ExecuteAutoTravel</td><td><code>void</code></td><td></td><td><code>NewNode toNode, bool fastTravel = false</code></td></tr>
+<tr><td>EndAutoTravel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>KillPlayer</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>GetCurrentNodeCoord</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

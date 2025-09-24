@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TelephoneController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>TelephoneController</h1>
+      <div class="page-meta">Source file: <span class="code">TelephoneController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">TelephoneController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnPlayerCall</td><td><code>event TelephoneController.PlayerCall</code></td><td></td><td></td></tr>
+<tr><td>activeCalls</td><td><code>List&lt;TelephoneController.PhoneCall&gt;</code></td><td><span class="badge">Header: Telecoms</span></td><td>new List&lt;TelephoneController.PhoneCall&gt;()</td></tr>
+<tr><td>gameTimeLastLoop</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>engagedEvents</td><td><code>Dictionary&lt;Interactable, EventInstance&gt;</code></td><td></td><td>new Dictionary&lt;Interactable, EventInstance&gt;()</td></tr>
+<tr><td>fakeTelephoneDictionary</td><td><code>Dictionary&lt;int, TelephoneController.CallSource&gt;</code></td><td></td><td>new Dictionary&lt;int, TelephoneController.CallSource&gt;()</td></tr>
+<tr><td>debugNumber</td><td><code>int</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+<tr><td>_instance</td><td><code>static TelephoneController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CreateNewCall</td><td><code>TelephoneController.PhoneCall</code></td><td></td><td><code>int from, int to, Human caller, Human intendedReceiver, TelephoneController.CallSource callSource, float maxRingTime = 0.1f, bool specificRecevier = false</code></td></tr>
+<tr><td>CreateNewCall</td><td><code>TelephoneController.PhoneCall</code></td><td></td><td><code>Telephone from, Telephone to, Human caller, Human intendedReceiver, TelephoneController.CallSource callSource, float maxRingTime = 0.1f, bool specificRecevier = false</code></td></tr>
+<tr><td>OnPlayerCalls</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddFakeNumber</td><td><code>void</code></td><td></td><td><code>int number, TelephoneController.CallSource source</code></td></tr>
+<tr><td>RemoveFakeNumber</td><td><code>void</code></td><td></td><td><code>int number</code></td></tr>
+<tr><td>AddActiveCall</td><td><code>void</code></td><td></td><td><code>TelephoneController.PhoneCall newCall</code></td></tr>
+<tr><td>RemoveActiveCall</td><td><code>void</code></td><td></td><td><code>TelephoneController.PhoneCall newCall</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>FindTelephoneByNumber</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>FindTelephonesAtPlayerLocation</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class CallSource</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>callType</td><td><code>TelephoneController.CallType</code></td><td></td><td></td></tr>
+<tr><td>dds</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>audio</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>dialog</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>job</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>convoType</td><td><code>InteractionController.ConversationType</code></td><td></td><td></td></tr>
+<tr><td>audioEvent</td><td><code>AudioEvent</code></td><td></td><td></td></tr>
+<tr><td>dialogGreeting</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class PhoneCall</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>from</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>to</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>time</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>duration</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>caller</td><td><code>int</code></td><td></td><td>-2</td></tr>
+<tr><td>receiver</td><td><code>int</code></td><td></td><td>-2</td></tr>
+<tr><td>intendedReceiver</td><td><code>int</code></td><td></td><td>-2</td></tr>
+<tr><td>source</td><td><code>TelephoneController.CallSource</code></td><td></td><td></td></tr>
+<tr><td>previousSate</td><td><code>TelephoneController.CallState</code></td><td></td><td>TelephoneController.CallState.denied</td></tr>
+<tr><td>state</td><td><code>TelephoneController.CallState</code></td><td></td><td></td></tr>
+<tr><td>ringTime</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>specRecevier</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>dialingTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>ringDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>fromNS</td><td><code>Telephone</code></td><td></td><td></td></tr>
+<tr><td>toNS</td><td><code>Telephone</code></td><td></td><td></td></tr>
+<tr><td>callerNS</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>recevierNS</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>intendedReceiverNS</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>lineRingingLoop</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>lineActiveLoopCaller</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>lineActiveLoopReceiver</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>callAudioInstance</td><td><code>EventInstance</code></td><td></td><td></td></tr>
+<tr><td>connecting</td><td><code>EventInstance</code></td><td></td><td></td></tr>
+<tr><td>hangUpCaller</td><td><code>EventInstance</code></td><td></td><td></td></tr>
+<tr><td>hangUpReciever</td><td><code>EventInstance</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>CallState</h3>
+<pre><code>dialing
+denied
+ringing
+started
+ended</code></pre>
+<h3>CallType</h3>
+<pre><code>dds
+audioEvent
+player
+fakeOutbound</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

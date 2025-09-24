@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MurderPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>MurderPreset</h1>
+      <div class="page-meta">Source file: <span class="code">MurderPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">MurderPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>caseType</td><td><code>MurderPreset.CaseType</code></td><td><span class="badge">Header: Basic Settings</span></td><td></td></tr>
+<tr><td>disabled</td><td><code>bool</code></td><td><span class="badge">Header: Preset Picking</span></td><td></td></tr>
+<tr><td>frequency</td><td><code>int</code></td><td>How often this is picked compared to others... <span class="badge">Range(0f, 10f)</span></td><td>3</td></tr>
+<tr><td>murdererRandomScoreRange</td><td><code>Vector2</code></td><td><span class="badge">Header: Murderer Picking</span></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>murdererTraitModifiers</td><td><code>List&lt;MurderPreset.MurdererModifierRule&gt;</code></td><td></td><td>new List&lt;MurderPreset.MurdererModifierRule&gt;()</td></tr>
+<tr><td>useHexaco</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>hexaco</td><td><code>HEXACO</code></td><td><span class="badge">ShowIf(&quot;useHexaco&quot;)</span></td><td></td></tr>
+<tr><td>pickDen</td><td><code>bool</code></td><td>Pick a den <span class="badge">Header: Other</span></td><td></td></tr>
+<tr><td>kidnapperTimeUntilKill</td><td><code>float</code></td><td></td><td>5f</td></tr>
+<tr><td>minimumTimeBetweenMurders</td><td><code>float</code></td><td></td><td>5f</td></tr>
+<tr><td>nonHomeMaximumOccupantsTrigger</td><td><code>int</code></td><td>When not at home, how many occupants are allowed here at maximum for the murder to trigger at this location</td><td>2</td></tr>
+<tr><td>nonHomeMaximumOccupantsCancel</td><td><code>int</code></td><td>When not at home, how many occupants are allowed here at maximum for the triggered murder to be cancelled</td><td>4</td></tr>
+<tr><td>requiresAcquirePhase</td><td><code>bool</code></td><td><span class="badge">Header: Phase 1: Acquire Murder Weapon/Ammo</span></td><td>true</td></tr>
+<tr><td>acquirePassInteractable</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>acquirePassRoom</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>acquireActionSetup</td><td><code>List&lt;AIGoalPreset.GoalActionSetup&gt;</code></td><td></td><td>new List&lt;AIGoalPreset.GoalActionSetup&gt;()</td></tr>
+<tr><td>requiresResearchPhase</td><td><code>bool</code></td><td>Does this require a research state? <span class="badge">Header: Phase 2: Research</span></td><td></td></tr>
+<tr><td>killerMeetsVicim</td><td><code>bool</code></td><td>If true this will set up a situation where the killer and victim meet at an eatery <span class="badge">EnableIf(&quot;requiresResearchPhase&quot;)</span></td><td></td></tr>
+<tr><td>researchPassInteractable</td><td><code>bool</code></td><td><span class="badge">EnableIf(&quot;requiresResearchPhase&quot;)</span></td><td>true</td></tr>
+<tr><td>researchPassRoom</td><td><code>bool</code></td><td><span class="badge">EnableIf(&quot;requiresResearchPhase&quot;)</span></td><td>true</td></tr>
+<tr><td>researchActionSetup</td><td><code>List&lt;AIGoalPreset.GoalActionSetup&gt;</code></td><td><span class="badge">EnableIf(&quot;requiresResearchPhase&quot;)</span></td><td>new List&lt;AIGoalPreset.GoalActionSetup&gt;()</td></tr>
+<tr><td>blockVictimFromLeavingLocation</td><td><code>bool</code></td><td>Once the murderer has started travelling, block the victim from leaving their location... <span class="badge">Header: Phase 3: Travel To</span></td><td>true</td></tr>
+<tr><td>travelSuccessTrigger</td><td><code>MurderPreset.SuccessfulTravelTrigger</code></td><td></td><td></td></tr>
+<tr><td>travelPassInteractable</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>travelPassRoom</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>travelActionSetup</td><td><code>List&lt;AIGoalPreset.GoalActionSetup&gt;</code></td><td></td><td>new List&lt;AIGoalPreset.GoalActionSetup&gt;()</td></tr>
+<tr><td>executePassInteractable</td><td><code>bool</code></td><td><span class="badge">Header: Phase 4: Execution</span></td><td>true</td></tr>
+<tr><td>executePassRoom</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>executionActionSetup</td><td><code>List&lt;AIGoalPreset.GoalActionSetup&gt;</code></td><td></td><td>new List&lt;AIGoalPreset.GoalActionSetup&gt;()</td></tr>
+<tr><td>postPassInteractable</td><td><code>bool</code></td><td><span class="badge">Header: Phase 5: Post</span></td><td>true</td></tr>
+<tr><td>postPassRoom</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>postActionSetup</td><td><code>List&lt;AIGoalPreset.GoalActionSetup&gt;</code></td><td></td><td>new List&lt;AIGoalPreset.GoalActionSetup&gt;()</td></tr>
+<tr><td>escapePassInteractable</td><td><code>bool</code></td><td><span class="badge">Header: Phase 6: Escape</span></td><td>true</td></tr>
+<tr><td>escapePassRoom</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>escapeActionSetup</td><td><code>List&lt;AIGoalPreset.GoalActionSetup&gt;</code></td><td></td><td>new List&lt;AIGoalPreset.GoalActionSetup&gt;()</td></tr>
+<tr><td>leads</td><td><code>List&lt;MurderPreset.MurderLeadItem&gt;</code></td><td><span class="badge">Header: Leads</span></td><td>new List&lt;MurderPreset.MurderLeadItem&gt;()</td></tr>
+<tr><td>useCustomResolveQuestions</td><td><code>bool</code></td><td>If true the case will use custom resolve questions <span class="badge">Header: Resolve</span></td><td></td></tr>
+<tr><td>customResolveQuestions</td><td><code>List&lt;Case.ResolveQuestion&gt;</code></td><td><span class="badge">EnableIf(&quot;useCustomResolveQuestions&quot;)</span></td><td>new List&lt;Case.ResolveQuestion&gt;()</td></tr>
+<tr><td>copyFrom</td><td><code>MurderPreset</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>CopyLeads</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class MurdererModifierRule</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>rule</td><td><code>CharacterTrait.RuleType</code></td><td></td><td></td></tr>
+<tr><td>traitList</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>mustPassForApplication</td><td><code>bool</code></td><td>If this isn&#x27;t true then it won&#x27;t be picked for application at all. <span class="badge">ShowIf(&quot;isTrait&quot;)</span></td><td>true</td></tr>
+<tr><td>scoreModifier</td><td><code>float</code></td><td>Add this to a default priority multiplier of 1.</td><td>0.5f</td></tr>
+</tbody></table>
+<h3>class MurderModifierRule</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>who</td><td><code>MurderPreset.LeadCitizen</code></td><td></td><td></td></tr>
+<tr><td>rule</td><td><code>CharacterTrait.RuleType</code></td><td></td><td></td></tr>
+<tr><td>traitList</td><td><code>List&lt;CharacterTrait&gt;</code></td><td></td><td>new List&lt;CharacterTrait&gt;()</td></tr>
+<tr><td>mustPassForApplication</td><td><code>bool</code></td><td>If this isn&#x27;t true then it won&#x27;t be picked for application at all. <span class="badge">ShowIf(&quot;isTrait&quot;)</span></td><td>true</td></tr>
+<tr><td>chanceModifier</td><td><code>float</code></td><td>Add this to a default priority multiplier of 1.</td><td></td></tr>
+</tbody></table>
+<h3>class MurderLeadItem</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>compatibleWithAllMotives</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>compatibleWithMotives</td><td><code>List&lt;MurderMO&gt;</code></td><td><span class="badge">DisableIf(&quot;compatibleWithAllMotives&quot;)</span></td><td>new List&lt;MurderMO&gt;()</td></tr>
+<tr><td>spawnOnPhase</td><td><code>MurderController.MurderState</code></td><td></td><td>MurderController.MurderState.acquireEuipment</td></tr>
+<tr><td>tryToSpawnWithEachNewMurder</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>belongsTo</td><td><code>MurderPreset.LeadCitizen</code></td><td></td><td>MurderPreset.LeadCitizen.victim</td></tr>
+<tr><td>chance</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span> <span class="badge">DisableIf(&quot;useOrGroup&quot;)</span></td><td>1f</td></tr>
+<tr><td>useTraits</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>traitModifiers</td><td><code>List&lt;MurderPreset.MurderModifierRule&gt;</code></td><td><span class="badge">EnableIf(&quot;useTraits&quot;)</span></td><td>new List&lt;MurderPreset.MurderModifierRule&gt;()</td></tr>
+<tr><td>useIf</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ifTag</td><td><code>JobPreset.JobTag</code></td><td>Only spawn if a previous object of this letter is spawned... <span class="badge">EnableIf(&quot;useIf&quot;)</span></td><td></td></tr>
+<tr><td>useOrGroup</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>orGroup</td><td><code>JobPreset.JobTag</code></td><td>If enabled, only one chosen item from this group will be spawned... <span class="badge">EnableIf(&quot;useOrGroup&quot;)</span></td><td></td></tr>
+<tr><td>chanceRatio</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useOrGroup&quot;)</span> <span class="badge">Range(0f, 10f)</span></td><td>4</td></tr>
+<tr><td>itemTag</td><td><code>JobPreset.JobTag</code></td><td></td><td></td></tr>
+<tr><td>spawnItem</td><td><code>InteractablePreset</code></td><td>What?</td><td></td></tr>
+<tr><td>vmailThread</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>vmailProgressThreshold</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>writer</td><td><code>MurderPreset.LeadCitizen</code></td><td>Writer is valid for objects and V-mails (person A)</td><td></td></tr>
+<tr><td>receiver</td><td><code>MurderPreset.LeadCitizen</code></td><td>Writer is valid for objects and V-mails (person B)</td><td></td></tr>
+<tr><td>vmailOtherParticipants</td><td><code>List&lt;MurderPreset.LeadCitizen&gt;</code></td><td>Only valid for v-mails (persons C &amp; D)</td><td>new List&lt;MurderPreset.LeadCitizen&gt;()</td></tr>
+<tr><td>where</td><td><code>MurderPreset.LeadSpawnWhere</code></td><td>Where?</td><td></td></tr>
+<tr><td>security</td><td><code>int</code></td><td></td><td>3</td></tr>
+<tr><td>priority</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>ownershipRule</td><td><code>InteractablePreset.OwnedPlacementRule</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>CaseType</h3>
+<pre><code>murder
+sniper
+kidnap</code></pre>
+<h3>SuccessfulTravelTrigger</h3>
+<pre><code>whenMurdererIsAtTheSameLocation
+whenMurdererIsAtVantagePoint</code></pre>
+<h3>LeadCitizen</h3>
+<pre><code>nobody
+victim
+killer
+victimsClosest
+killersClosest
+victimsDoctor
+killersDoctor
+ransom
+victimsLandlord
+KillersLandlord</code></pre>
+<h3>LeadSpawnWhere</h3>
+<pre><code>victimHome
+victimWork
+killerHome
+killerWork
+ransom
+killerDen</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

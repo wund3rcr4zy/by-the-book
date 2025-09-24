@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MatchPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>MatchPreset</h1>
+      <div class="page-meta">Source file: <span class="code">MatchPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">MatchPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>canOnlyBeMatchedWith</td><td><code>bool</code></td><td>True if this match preset can only be matched with <span class="badge">Header: Matching Conditions</span></td><td></td></tr>
+<tr><td>matchConditions</td><td><code>List&lt;MatchPreset.MatchCondition&gt;</code></td><td>These conditions must return true for it to register as a match. No conditions will result in a match between evidence with this match preset.</td><td>new List&lt;MatchPreset.MatchCondition&gt;()</td></tr>
+<tr><td>onlyMatchWithMatchParents</td><td><code>bool</code></td><td>Only match with a match parent, and not with non-parents</td><td></td></tr>
+<tr><td>canMatchWithItself</td><td><code>bool</code></td><td>Can this match with evidence that is technically itself?</td><td></td></tr>
+<tr><td>onlyMatchWithThis</td><td><code>MatchPreset</code></td><td>Only match with evidence with this other match condition</td><td></td></tr>
+<tr><td>linkFromKeys</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td>Link from data key</td><td>new List&lt;Evidence.DataKey&gt;()</td></tr>
+<tr><td>linkToKeys</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td>Link to data key</td><td>new List&lt;Evidence.DataKey&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>MatchCondition</h3>
+<pre><code>bloodGroup
+fingerprint
+time
+visualDescriptors
+retailPresetMatch
+murderWeapon</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

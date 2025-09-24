@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ActionController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>ActionController</h1>
+      <div class="page-meta">Source file: <span class="code">ActionController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">ActionController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnPlayerAction</td><td><code>event ActionController.PlayerAction</code></td><td></td><td></td></tr>
+<tr><td>allActions</td><td><code>List&lt;AIActionPreset&gt;</code></td><td></td><td>new List&lt;AIActionPreset&gt;()</td></tr>
+<tr><td>actionRef</td><td><code>Dictionary&lt;AIActionPreset, MethodInfo&gt;</code></td><td></td><td>new Dictionary&lt;AIActionPreset, MethodInfo&gt;()</td></tr>
+<tr><td>bargeDoor</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static ActionController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteAction</td><td><code>void</code></td><td></td><td><code>AIActionPreset action, Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOnMainLight</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOffMainLight</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOnSecondaryLight</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOffSecondaryLight</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOnTV</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOffTV</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PickUp</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PutDown</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Throw</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>OpenDoor</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>CloseDoor</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Open</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>KnockOnDoor</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>LockDoor</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>UnlockDoor</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Lockpick</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PeekUnderDoor</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Hide</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>AnswerTelephone</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>AIHangUp</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Return</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PullPlayerFromHidingPlace</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeKey</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeBlueprints</td><td><code>void</code></td><td><span class="badge">key</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeMoney</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>AIPickUpItemFromFloor</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>AIPutBack</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>CleanUp</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeSyncDisk</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeLockpick</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeLockpickKit</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Rob</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Inspect</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>InspectRemove</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>InspectComputer</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>InspectMultiPage</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TalkTo</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Call</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Dial</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>CallSomeone</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Say</td><td><code>void</code></td><td><span class="badge">index</span> <span class="badge">0</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>_DialogInputBox</td><td><code>IEnumerator</code></td><td></td><td><code>Interactable what, NewNode where, Actor who, DialogButtonController button, DialogPreset preset</code></td></tr>
+<tr><td>_InvokeDialog</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who, DialogButtonController button, DialogPreset preset, DialogController.ForceSuccess forceSuccess</code></td></tr>
+<tr><td>_InvokeDialog</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who, EvidenceWitness.DialogOption option, DialogPreset preset, DialogController.ForceSuccess forceSuccess</code></td></tr>
+<tr><td>CrawlIntoVent</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>UseKeypad</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>NextPage</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PreviousPage</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>SetCurrentMonth</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Sleep</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>GetUp</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>CallElevator</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PassTime</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>CancelPassTime</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>HoursMinutesToggle</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>ActivateTimePass</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>WatchForward</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>WatchBack</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>HideInstant</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>BargeDoor</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>BargeReturn</td><td><code>void</code></td><td></td><td><code>bool restoreTransform = false</code></td></tr>
+<tr><td>UseComputer</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>ReturnComputer</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TriggerAlarm</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Search</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Vomit</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakePrint</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>NextChoice</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PreviousChoice</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeFirstPersonItem</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>AddFirstPersonItemDelay</td><td><code>IEnumerator</code></td><td></td><td><code>Interactable newInteractable</code></td></tr>
+<tr><td>TakeFirstPersonItemUsed</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Buy</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeConsumable</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>MakeCoffeeStart</td><td><code>void</code></td><td><span class="badge">j</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>MakeCoffeeEnd</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOnHob</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOffHob</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOnMusic</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TurnOffMusic</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PurchaseItem</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Consume</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Dispose</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PostJob</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>LogOnComputer</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Sabotage</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>DryOff</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>OpenSyncDisks</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>CallEnforcers</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PutUpPoliceTape</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>RemovePoliceTape</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PutUpStreetCrimeScene</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>GetCaseForm</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>HandInCase</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>RetirementConfirm</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RetirementCancel</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CheckPulse</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeActiveCodebreaker</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeActiveDoorWedge</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeActiveTracker</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeActiveFlashBomb</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeActiveIncapacitator</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>OpenBreaker</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>CloseBreaker</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>ShootPoolBall</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>ResetPoolGame</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PutBack</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Release</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>TakeDetectiveStuff</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Mugging</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>DebtCollection</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>NextTrack</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>PreviousTrack</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>CancelPutDownHomeInventoryItem</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>RotatePhysicsLeft</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>RotatePhysicsRight</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>Drink</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+<tr><td>LoiteringConfront</td><td><code>void</code></td><td></td><td><code>Interactable what, NewNode where, Actor who</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BroadcastPreset — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>BroadcastPreset</h1>
+      <div class="page-meta">Source file: <span class="code">BroadcastPreset.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">BroadcastPreset</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>audioEvent</td><td><code>AudioEvent</code></td><td><span class="badge">Header: Contents</span></td><td></td></tr>
+<tr><td>changeImageEvery</td><td><code>float</code></td><td>Change image every x seconds (real time)</td><td>2f</td></tr>
+<tr><td>order</td><td><code>BroadcastPreset.ImageOrder</code></td><td>What order these images display in</td><td></td></tr>
+<tr><td>endOfShowTrigger</td><td><code>BroadcastPreset.EndOfShow</code></td><td></td><td></td></tr>
+<tr><td>spriteSheet</td><td><code>Texture2D</code></td><td><span class="badge">Header: Atlas</span></td><td></td></tr>
+<tr><td>spriteResolution</td><td><code>Vector2</code></td><td></td><td>new Vector2(32f, 32f)</td></tr>
+<tr><td>indexWidth</td><td><code>int</code></td><td></td><td>5</td></tr>
+<tr><td>indexHeight</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>totalSpriteCount</td><td><code>int</code></td><td></td><td>5</td></tr>
+<tr><td>useDynamicClips</td><td><code>bool</code></td><td><span class="badge">Header: Dynamic Sounds</span></td><td></td></tr>
+<tr><td>dynamicClips</td><td><code>List&lt;BroadcastPreset.DynamicClip&gt;</code></td><td><span class="badge">EnableIf(&quot;useDynamicClips&quot;)</span></td><td>new List&lt;BroadcastPreset.DynamicClip&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class DynamicClip</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>chance</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>possibleEvents</td><td><code>List&lt;BroadcastPreset.DynamicClipEvent&gt;</code></td><td></td><td>new List&lt;BroadcastPreset.DynamicClipEvent&gt;()</td></tr>
+<tr><td>followingDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>nextMode</td><td><code>BroadcastPreset.FollowingIndexMode</code></td><td></td><td></td></tr>
+<tr><td>nextIndex</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>onFailToGetEvent</td><td><code>BroadcastPreset.FollowingIndexMode</code></td><td></td><td></td></tr>
+<tr><td>onFailIndex</td><td><code>int</code></td><td></td><td>1</td></tr>
+</tbody></table>
+<h3>class DynamicClipEvent</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>conditionMode</td><td><code>BroadcastPreset.ConditionMode</code></td><td></td><td></td></tr>
+<tr><td>OrConditions</td><td><code>List&lt;BroadcastPreset.DynamicShowCondition&gt;</code></td><td></td><td>new List&lt;BroadcastPreset.DynamicShowCondition&gt;()</td></tr>
+<tr><td>audioEvents</td><td><code>List&lt;AudioEvent&gt;</code></td><td></td><td>new List&lt;AudioEvent&gt;()</td></tr>
+<tr><td>applyParameters</td><td><code>List&lt;BroadcastPreset.DynamicShowParam&gt;</code></td><td></td><td>new List&lt;BroadcastPreset.DynamicShowParam&gt;()</td></tr>
+<tr><td>overrideCrowdNoiseParam</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>crowdLayerVolume</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;overrideCrowdNoiseParam&quot;)</span></td><td>1f</td></tr>
+<tr><td>triggerCrowdReaction</td><td><code>BroadcastPreset.CrowdReaction</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class DynamicShowCondition</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>condition</td><td><code>BroadcastPreset.DynamicConditionType</code></td><td></td><td></td></tr>
+<tr><td>parametersList</td><td><code>List&lt;BroadcastPreset.DynamicShowParam&gt;</code></td><td></td><td>new List&lt;BroadcastPreset.DynamicShowParam&gt;()</td></tr>
+</tbody></table>
+<h3>class DynamicShowParam</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>paramType</td><td><code>BroadcastPreset.ShowParamType</code></td><td></td><td></td></tr>
+<tr><td>applicationMode</td><td><code>BroadcastPreset.ParamApplicationMode</code></td><td></td><td></td></tr>
+<tr><td>value</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>ImageOrder</h3>
+<pre><code>random
+ordered</code></pre>
+<h3>EndOfShow</h3>
+<pre><code>atEndOfAudioEvent
+onEndOfDynamicClips</code></pre>
+<h3>DynamicConditionType</h3>
+<pre><code>IfParamIsPresent
+IfParamEquals
+IfParamDoesntEqual
+team1TakesLeadWithCurrentScore
+team2TakesLeadWithCurrentScore
+isDraw
+team1Wins
+team2Wins</code></pre>
+<h3>ShowParamType</h3>
+<pre><code>team1
+team2
+scoreTeam1
+scoreTeam2
+playersTeamOne1
+playersTeamTwo1
+playersTeamOne2
+playersTeamTwo2
+playersTeamOne3
+playersTeamTwo3
+playerNameInterjection
+lastPlay
+currentBalls
+playersPlayed
+currentScore
+currentTeam
+innings</code></pre>
+<h3>ConditionMode</h3>
+<pre><code>OR
+AND</code></pre>
+<h3>CrowdReaction</h3>
+<pre><code>none
+cheerSmall
+cheerMedium
+cheerLarge
+boo
+nearMiss</code></pre>
+<h3>ParamApplicationMode</h3>
+<pre><code>set
+add</code></pre>
+<h3>FollowingIndexMode</h3>
+<pre><code>next
+goToIndex</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

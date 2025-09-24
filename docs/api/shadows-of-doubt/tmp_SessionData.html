@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SessionData — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>SessionData</h1>
+      <div class="page-meta">Source file: <span class="code">SessionData.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">SessionData</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnPauseChange</td><td><code>event SessionData.OnPauseUnPause</code></td><td></td><td></td></tr>
+<tr><td>OnWeatherChange</td><td><code>event SessionData.WeatherChange</code></td><td></td><td></td></tr>
+<tr><td>OnHourChange</td><td><code>event SessionData.HourChange</code></td><td></td><td></td></tr>
+<tr><td>OnTutorialNotificationChange</td><td><code>event SessionData.TutorialNotificationChange</code></td><td></td><td></td></tr>
+<tr><td>isFloorEdit</td><td><code>bool</code></td><td><span class="badge">Header: Flags</span></td><td></td></tr>
+<tr><td>isDialogEdit</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isCityEdit</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isTestScene</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>dirtyScene</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isDecorEdit</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>enableUserPause</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>enableFirstPersonMap</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>play</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>enableTutorialText</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>tutorialTextTriggered</td><td><code>HashSet&lt;string&gt;</code></td><td></td><td>new HashSet&lt;string&gt;()</td></tr>
+<tr><td>startedGame</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>pauseUnpauseDelay</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>drunkOscillatorX</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>drunkOscillatorY</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>drunkOscillation</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>shiverOscillatorX</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>shiverOscillatorY</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>shiverProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>shiverOscillation</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>drunkLensProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>headacheProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>sunShadowFrameCounter</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>gameTime</td><td><code>float</code></td><td><span class="badge">Header: Time</span></td><td></td></tr>
+<tr><td>gameTimeDouble</td><td><code>double</code></td><td></td><td></td></tr>
+<tr><td>gameTimePassedThisFrame</td><td><code>double</code></td><td></td><td></td></tr>
+<tr><td>prevHour</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>watchChangeCounter</td><td><code>double</code></td><td></td><td>9999.0</td></tr>
+<tr><td>decimalClock</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>decimalClockDouble</td><td><code>double</code></td><td></td><td></td></tr>
+<tr><td>currentTimeSpeed</td><td><code>SessionData.TimeSpeed</code></td><td></td><td></td></tr>
+<tr><td>currentTimeMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>behaviourDelay</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>timeOfDay</td><td><code>SessionData.TimeOfDay</code></td><td></td><td></td></tr>
+<tr><td>dayInt</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>day</td><td><code>SessionData.WeekDay</code></td><td></td><td></td></tr>
+<tr><td>dateInt</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>month</td><td><code>SessionData.Month</code></td><td></td><td></td></tr>
+<tr><td>monthInt</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>daysInMonths</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>yearInt</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>publicYear</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>leapYearCycle</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>gameTimeLimit</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentRain</td><td><code>float</code></td><td><span class="badge">Header: Weather</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>desiredRain</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>currentWind</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>desiredWind</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>currentSnow</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>desiredSnow</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>currentLightning</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>desiredLightning</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>currentFog</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>desiredFog</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>transitionSpeed</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>weatherChangeTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>monthTempMultiplier</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>temperature</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lightningTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>windDirection</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>windForce</td><td><code>float</code></td><td></td><td>20f</td></tr>
+<tr><td>dayProgress</td><td><code>float</code></td><td><span class="badge">Header: Scene</span></td><td></td></tr>
+<tr><td>nearRainSheet</td><td><code>RainSheetController</code></td><td></td><td></td></tr>
+<tr><td>farRainSheet</td><td><code>RainSheetController</code></td><td></td><td></td></tr>
+<tr><td>nearRainAlpha1Threshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(0.9f, 0.9f)</td></tr>
+<tr><td>nearRainAlpha2Threshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(0.5f, 0.5f)</td></tr>
+<tr><td>nearRainSpeedThreshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(5f, 5f)</td></tr>
+<tr><td>nearRainXTile1Threshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(10f, 10f)</td></tr>
+<tr><td>nearRainXTile2Threshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(20f, 20f)</td></tr>
+<tr><td>farRainAlpha1Threshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(1f, 1f)</td></tr>
+<tr><td>farRainAlpha2Threshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(1f, 1f)</td></tr>
+<tr><td>farRainSpeedThreshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(5f, 5f)</td></tr>
+<tr><td>farRainXTile1Threshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(40f, 40f)</td></tr>
+<tr><td>farRainXTile2Threshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(40f, 40f)</td></tr>
+<tr><td>particalRainCountThreshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(200f, 800f)</td></tr>
+<tr><td>particalSnowCountThreshold</td><td><code>Vector2</code></td><td></td><td>new Vector2(200f, 800f)</td></tr>
+<tr><td>cityWetness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>citySnow</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>wetMaterials</td><td><code>List&lt;SessionData.WetMaterial&gt;</code></td><td>Configuration of materials where instancing will occur and weather params within them changed and updated</td><td>new List&lt;SessionData.WetMaterial&gt;()</td></tr>
+<tr><td>weatherMaterialsReference</td><td><code>Dictionary&lt;Material, SessionData.WetMaterial&gt;</code></td><td></td><td>new Dictionary&lt;Material, SessionData.WetMaterial&gt;()</td></tr>
+<tr><td>customPasses</td><td><code>List&lt;CustomPassVolume&gt;</code></td><td></td><td>new List&lt;CustomPassVolume&gt;()</td></tr>
+<tr><td>rainyWindowFrontageObjects</td><td><code>Dictionary&lt;GameObject, WallFrontagePreset&gt;</code></td><td></td><td>new Dictionary&lt;GameObject, WallFrontagePreset&gt;()</td></tr>
+<tr><td>autoPauseTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>autoResetTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lightswitchPulse</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>lightswitchPulseMode</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>currentProfile</td><td><code>SessionData.SceneProfile</code></td><td><span class="badge">Header: PP Profiles</span></td><td></td></tr>
+<tr><td>currentSceneProfile</td><td><code>CityControls.PPProfile</code></td><td></td><td></td></tr>
+<tr><td>desiredSceneProfile</td><td><code>CityControls.PPProfile</code></td><td></td><td></td></tr>
+<tr><td>globalVolume</td><td><code>Volume</code></td><td>The global (outdoors) profile <span class="badge">Header: HDRP</span></td><td></td></tr>
+<tr><td>gradientSky</td><td><code>GradientSky</code></td><td></td><td></td></tr>
+<tr><td>volFog</td><td><code>Fog</code></td><td></td><td></td></tr>
+<tr><td>dof</td><td><code>DepthOfField</code></td><td></td><td></td></tr>
+<tr><td>vignette</td><td><code>Vignette</code></td><td></td><td></td></tr>
+<tr><td>motionBlur</td><td><code>MotionBlur</code></td><td></td><td></td></tr>
+<tr><td>grain</td><td><code>FilmGrain</code></td><td></td><td></td></tr>
+<tr><td>toneMapping</td><td><code>Tonemapping</code></td><td></td><td></td></tr>
+<tr><td>bloom</td><td><code>Bloom</code></td><td></td><td></td></tr>
+<tr><td>chromaticAberration</td><td><code>ChromaticAberration</code></td><td></td><td></td></tr>
+<tr><td>lgg</td><td><code>LiftGammaGain</code></td><td></td><td></td></tr>
+<tr><td>colour</td><td><code>ColorAdjustments</code></td><td></td><td></td></tr>
+<tr><td>lensDistort</td><td><code>LensDistortion</code></td><td></td><td></td></tr>
+<tr><td>exposure</td><td><code>Exposure</code></td><td></td><td></td></tr>
+<tr><td>channelMixer</td><td><code>ChannelMixer</code></td><td></td><td></td></tr>
+<tr><td>ssReflection</td><td><code>ScreenSpaceReflection</code></td><td></td><td></td></tr>
+<tr><td>skyboxGradientIndex</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>fromSkyboxColours</td><td><code>SessionData.SkyboxGradient</code></td><td></td><td></td></tr>
+<tr><td>toSkyboxColours</td><td><code>SessionData.SkyboxGradient</code></td><td></td><td></td></tr>
+<tr><td>activeElevators</td><td><code>List&lt;Elevator&gt;</code></td><td><span class="badge">Header: Elevators</span></td><td>new List&lt;Elevator&gt;()</td></tr>
+<tr><td>particleSystems</td><td><code>List&lt;InteractableController&gt;</code></td><td><span class="badge">Header: Particle Systems</span></td><td>new List&lt;InteractableController&gt;()</td></tr>
+<tr><td>broadcastMaterial</td><td><code>Material</code></td><td><span class="badge">Header: Television</span></td><td></td></tr>
+<tr><td>televisionChannels</td><td><code>List&lt;SessionData.TelevisionChannel&gt;</code></td><td></td><td>new List&lt;SessionData.TelevisionChannel&gt;()</td></tr>
+<tr><td>pauseText</td><td><code>TextMeshProUGUI</code></td><td><span class="badge">Header: References</span></td><td></td></tr>
+<tr><td>pauseLensFlare</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>pauseButtonImg</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>normalSpeedButtonImg</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>fastSpeedButtonImg</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>veryFastSpeedButtonImg</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>newWatchTimeText</td><td><code>TextMeshPro</code></td><td></td><td></td></tr>
+<tr><td>newWatchDateText</td><td><code>TextMeshPro</code></td><td></td><td></td></tr>
+<tr><td>clockText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>dayText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>pauseButtonIcon</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>pauseIcon</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>playIcon</td><td><code>Sprite</code></td><td></td><td></td></tr>
+<tr><td>startingNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>interfaceActiveAudio</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>debugDecimalRange</td><td><code>Vector2</code></td><td><span class="badge">Header: Debug</span></td><td>new Vector2(18f, 6f)</td></tr>
+<tr><td>debugDayList</td><td><code>List&lt;SessionData.WeekDay&gt;</code></td><td></td><td>new List&lt;SessionData.WeekDay&gt;()</td></tr>
+<tr><td>UnloadPipes</td><td><code>Action</code></td><td></td><td></td></tr>
+<tr><td>pipesToUnload</td><td><code>List&lt;PipeConstructor.PipeGroup&gt;</code></td><td></td><td>new List&lt;PipeConstructor.PipeGroup&gt;()</td></tr>
+<tr><td>_instance</td><td><code>static SessionData</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetupTelevisionChannels</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartTestScene</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetGameTime</td><td><code>void</code></td><td><span class="badge">vector3Int3</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>int newYear, int newMonth, int newDate, int newDay, float newStartingTime, int newLeapYearCycle</code></td></tr>
+<tr><td>SetGameTime</td><td><code>void</code></td><td></td><td><code>float newGameTime, int newLeapYearCycle</code></td></tr>
+<tr><td>UpdateSkyboxGraidentTargets</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetTimeSpeed</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">0</span></td><td><code>SessionData.TimeSpeed newTimeSpeed</code></td></tr>
+<tr><td>GetGameSpeedMotionBlurModifier</td><td><code>float</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetSceneProfile</td><td><code>void</code></td><td></td><td><code>SessionData.SceneProfile newProfile, bool immediate = false</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateGameTimerText</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">l</span></td><td><code></code></td></tr>
+<tr><td>EndDemo</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteSyncPhysics</td><td><code>void</code></td><td></td><td><code>SessionData.PhysicsSyncType syncType</code></td></tr>
+<tr><td>ExecuteWeatherChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteWetnessChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteWindChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetWeatherAffectedMaterial</td><td><code>Material</code></td><td></td><td><code>Material inputMat, MeshRenderer inputRenderer</code></td></tr>
+<tr><td>ExecuteLightningStrike</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetSceneVisuals</td><td><code>void</code></td><td></td><td><code>float newDecimalClock</code></td></tr>
+<tr><td>SetEnablePause</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span></td><td><code>bool val</code></td></tr>
+<tr><td>ParseTimeData</td><td><code>void</code></td><td></td><td><code>float newTime, out float decimalHourOut, out int dayIntOut, out int dateIntOut, out int monthIntOut, out int yearIntOut, out SessionData.WeekDay dayEnumOut, out SessionData.Month monthEnumOut, out int leapCycleOut</code></td></tr>
+<tr><td>ParseTimeData</td><td><code>void</code></td><td><span class="badge">monthIntOut</span></td><td><code>float newTime, out float decimalHourOut, out int dayIntOut, out int dateIntOut, out int monthIntOut, out int yearIntOut</code></td></tr>
+<tr><td>ParseTimeData</td><td><code>void</code></td><td></td><td><code>float newTime, out float decimalHourOut, out SessionData.WeekDay dayEnumOut, out int dateIntOut, out SessionData.Month monthEnumOut, out int yearIntOut</code></td></tr>
+<tr><td>ParseGameTime</td><td><code>float</code></td><td></td><td><code>float decimalHourIn, int dateIntIn, int monthIntIn, int yearIntIn, out int dayCount, out int leapYear</code></td></tr>
+<tr><td>FloatDecimal24H</td><td><code>float</code></td><td><span class="badge">l</span> <span class="badge">num3</span></td><td><code>float time</code></td></tr>
+<tr><td>FloatMinutes24H</td><td><code>float</code></td><td></td><td><code>float newTime</code></td></tr>
+<tr><td>FloatMinutes12H</td><td><code>float</code></td><td></td><td><code>float newTime</code></td></tr>
+<tr><td>DecimalToClockString</td><td><code>string</code></td><td></td><td><code>float newTime, bool useZeroHoursMethod</code></td></tr>
+<tr><td>DecimalToTimeLengthString</td><td><code>string</code></td><td></td><td><code>float newTime</code></td></tr>
+<tr><td>GameTimeToClock24String</td><td><code>string</code></td><td></td><td><code>float newGameTime, bool useZeroHoursMethod</code></td></tr>
+<tr><td>GameTimeToClock12String</td><td><code>string</code></td><td></td><td><code>float newGameTime, bool useZeroHoursMethod</code></td></tr>
+<tr><td>MinutesToClockString</td><td><code>string</code></td><td></td><td><code>float formatted, bool useZeroHoursMethod</code></td></tr>
+<tr><td>CurrentTimeString</td><td><code>string</code></td><td></td><td><code>bool useZeroHoursMethod, bool use12HourClock = false</code></td></tr>
+<tr><td>ShortDateString</td><td><code>string</code></td><td></td><td><code>float newGameTime, bool shortenYear</code></td></tr>
+<tr><td>CurrentShortDateString</td><td><code>string</code></td><td></td><td><code>bool shortenYear</code></td></tr>
+<tr><td>LongDateString</td><td><code>string</code></td><td></td><td><code>float newGameTime, bool includeDay, bool shortenDay, bool includeMonth, bool shortenMonth, bool includeDate, bool includeYear, bool shortenYear, bool useCommas</code></td></tr>
+<tr><td>CurrentLongDateString</td><td><code>string</code></td><td></td><td><code>bool includeDay, bool shortenDay, bool includeMonth, bool shortenMonth, bool includeDate, bool includeYear, bool shortenYear, bool useCommas</code></td></tr>
+<tr><td>TimeString</td><td><code>string</code></td><td></td><td><code>float newGameTime, bool useZeroHoursMethod</code></td></tr>
+<tr><td>TimeStringOnDay</td><td><code>string</code></td><td></td><td><code>float newGameTime, bool useZeroHoursMethod, bool shortenDay</code></td></tr>
+<tr><td>TimeAndDate</td><td><code>string</code></td><td></td><td><code>float newGameTime, bool useZeroHoursMethod, bool shortenDay, bool shortenYear</code></td></tr>
+<tr><td>OnDay</td><td><code>string</code></td><td></td><td><code>int newDay, bool shortenDay</code></td></tr>
+<tr><td>GetNextOrPreviousGameTimeForThisHour</td><td><code>float</code></td><td></td><td><code>ref List&lt;SessionData.WeekDay&gt; days, float startHour, float endHour</code></td></tr>
+<tr><td>GetNextOrPreviousGameTimeForThisHour</td><td><code>float</code></td><td></td><td><code>float forThisGameTime, float forThisDecimalHour, SessionData.WeekDay forThisWeekday, ref List&lt;SessionData.WeekDay&gt; validWeekDays, float startDecimalHour, float endDecimalHour</code></td></tr>
+<tr><td>GetTimeDifference</td><td><code>float</code></td><td></td><td><code>float time1, float time2</code></td></tr>
+<tr><td>CompareTimes</td><td><code>bool</code></td><td></td><td><code>float time1, float time2</code></td></tr>
+<tr><td>WeekdayFromInt</td><td><code>SessionData.WeekDay</code></td><td></td><td><code>int weekInt</code></td></tr>
+<tr><td>MonthFromInt</td><td><code>SessionData.Month</code></td><td></td><td><code>int monthInt</code></td></tr>
+<tr><td>SetWeather</td><td><code>void</code></td><td></td><td><code>float newRain, float newWind, float newSnow, float newLightning, float newFog, float newTransitionSpeed = 0.1f, bool updateInstantly = false</code></td></tr>
+<tr><td>UpdateWatchText</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateWatchDay</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>TogglePause</td><td><code>void</code></td><td></td><td><code>bool openDesktopMode = true</code></td></tr>
+<tr><td>PauseGame</td><td><code>void</code></td><td></td><td><code>bool showPauseText, bool delayOverride = false, bool openDesktopMode = true</code></td></tr>
+<tr><td>ResumeGame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetDisplayTutorialText</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>bool val</code></td></tr>
+<tr><td>TutorialTrigger</td><td><code>void</code></td><td></td><td><code>string str, bool isSilent = false</code></td></tr>
+<tr><td>UpdateTutorialNotifications</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteUnloadPipes</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnSceneExit</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DebugPreviousOrLastTime</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class WetMaterial</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>mat</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>instancedMat</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>affectedRenderers</td><td><code>List&lt;MeshRenderer&gt;</code></td><td></td><td>new List&lt;MeshRenderer&gt;()</td></tr>
+<tr><td>affectRain</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>rainMinMax</td><td><code>Vector2</code></td><td><span class="badge">MinMaxSlider(0f, 1f)</span> <span class="badge">ShowIf(&quot;affectRain&quot;)</span></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>rainMultiplier</td><td><code>float</code></td><td><span class="badge">ShowIf(&quot;affectRain&quot;)</span></td><td>1f</td></tr>
+<tr><td>affectCityWetness</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>cityWetnessMinMax</td><td><code>Vector2</code></td><td><span class="badge">MinMaxSlider(0f, 1f)</span> <span class="badge">ShowIf(&quot;affectCityWetness&quot;)</span></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>cityWetnessMultiplier</td><td><code>float</code></td><td><span class="badge">ShowIf(&quot;affectCityWetness&quot;)</span></td><td>1f</td></tr>
+<tr><td>cityWetnessLogScale</td><td><code>bool</code></td><td><span class="badge">ShowIf(&quot;affectCityWetness&quot;)</span></td><td></td></tr>
+<tr><td>affectCitySnow</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>citySnowMinMax</td><td><code>Vector2</code></td><td><span class="badge">ShowIf(&quot;affectCitySnow&quot;)</span> <span class="badge">MinMaxSlider(0f, 1f)</span></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>citySnowMultiplier</td><td><code>float</code></td><td><span class="badge">ShowIf(&quot;affectCitySnow&quot;)</span></td><td>1f</td></tr>
+<tr><td>affectCoatMask</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>coatMaskMinMax</td><td><code>Vector2</code></td><td><span class="badge">MinMaxSlider(0f, 1f)</span> <span class="badge">ShowIf(&quot;affectCoatMask&quot;)</span></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>coatMaskMultiplier</td><td><code>float</code></td><td><span class="badge">ShowIf(&quot;affectCoatMask&quot;)</span></td><td>1f</td></tr>
+<tr><td>affectWind</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>windMinMax</td><td><code>Vector2</code></td><td><span class="badge">ShowIf(&quot;affectWind&quot;)</span> <span class="badge">MinMaxSlider(0f, 1f)</span></td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>windMultiplier</td><td><code>float</code></td><td><span class="badge">ShowIf(&quot;affectWind&quot;)</span></td><td>1f</td></tr>
+</tbody></table>
+<h3>class SkyboxGradient</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>time</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>skyColour</td><td><code>Color</code></td><td></td><td>Color.cyan</td></tr>
+<tr><td>fogAlbedo</td><td><code>Color</code></td><td></td><td>Color.cyan</td></tr>
+<tr><td>ambientLightTop</td><td><code>Color</code></td><td></td><td>Color.cyan</td></tr>
+<tr><td>ambientLightMiddle</td><td><code>Color</code></td><td></td><td>Color.cyan</td></tr>
+<tr><td>ambientLightBottom</td><td><code>Color</code></td><td></td><td>Color.cyan</td></tr>
+<tr><td>ambientLightingColour</td><td><code>Color</code></td><td></td><td>Color.cyan</td></tr>
+<tr><td>fogColour</td><td><code>Color</code></td><td></td><td>Color.cyan</td></tr>
+<tr><td>seaEmission</td><td><code>Color</code></td><td></td><td>Color.black</td></tr>
+<tr><td>smokeEmission</td><td><code>Color</code></td><td></td><td>Color.black</td></tr>
+</tbody></table>
+<h3>class TelevisionChannel</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>currentBroadcastSchedule</td><td><code>BroadcastSchedule</code></td><td></td><td></td></tr>
+<tr><td>currentShow</td><td><code>BroadcastPreset</code></td><td></td><td></td></tr>
+<tr><td>broadcastMaterialInstanced</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>currentScheduleIndex</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>currentShowProgressSeconds</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentShowImageProgress</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentShowEventDescription</td><td><code>EventDescription</code></td><td></td><td></td></tr>
+<tr><td>currentShowAudioLength</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>currentShowImageLength</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>currentImageIndex</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>crowdParam</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>dynamicShowActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>currentDynamicClip</td><td><code>BroadcastPreset.DynamicClip</code></td><td></td><td></td></tr>
+<tr><td>currentDynamicEvent</td><td><code>BroadcastPreset.DynamicClipEvent</code></td><td></td><td></td></tr>
+<tr><td>currentDynamicAudio</td><td><code>AudioEvent</code></td><td></td><td></td></tr>
+<tr><td>currentClipProgressSeconds</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentClipAudioLength</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>currentClipEventDescription</td><td><code>EventDescription</code></td><td></td><td></td></tr>
+<tr><td>clipIndex</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>appliedParameters</td><td><code>List&lt;BroadcastPreset.DynamicShowParam&gt;</code></td><td></td><td>new List&lt;BroadcastPreset.DynamicShowParam&gt;()</td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>TimeSpeed</h3>
+<pre><code>slow
+normal
+fast
+veryFast
+simulation</code></pre>
+<h3>TimeOfDay</h3>
+<pre><code>morning
+afternoon
+evening</code></pre>
+<h3>WeekDay</h3>
+<pre><code>monday
+tuesday
+wednesday
+thursday
+friday
+saturday
+sunday</code></pre>
+<h3>Month</h3>
+<pre><code>jan
+feb
+mar
+apr
+may
+jun
+jul
+aug
+sep
+oct
+nov
+dec</code></pre>
+<h3>SceneProfile</h3>
+<pre><code>outdoors
+indoors
+grimey
+clean
+corporate
+cbd
+chinatown
+industrial
+residential
+warm</code></pre>
+<h3>PhysicsSyncType</h3>
+<pre><code>now
+onPlayerMovement
+both</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

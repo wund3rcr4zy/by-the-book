@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactable — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Interactable</h1>
+      <div class="page-meta">Source file: <span class="code">Interactable.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Interactable</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnSwitchChange</td><td><code>event Interactable.SwitchChange</code></td><td></td><td></td></tr>
+<tr><td>OnState1Change</td><td><code>event Interactable.State1Change</code></td><td></td><td></td></tr>
+<tr><td>OnDelete</td><td><code>event Interactable.Deleted</code></td><td></td><td></td></tr>
+<tr><td>OnRemovedFromWorld</td><td><code>event Interactable.RemovedFromWorld</code></td><td></td><td></td></tr>
+<tr><td>id</td><td><code>int</code></td><td><span class="badge">Header: Serializable</span></td><td></td></tr>
+<tr><td>worldAssignID</td><td><code>static int</code></td><td></td><td>100000000</td></tr>
+<tr><td>wPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>wEuler</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>lPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>lEuler</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>spWPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>spWEuler</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>p</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>pv</td><td><code>List&lt;Interactable.Passed&gt;</code></td><td></td><td></td></tr>
+<tr><td>fp</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>fsoi</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>dp</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>mk</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>lcd</td><td><code>Interactable.LightConfiguration</code></td><td></td><td></td></tr>
+<tr><td>lp</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>dds</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>w</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>r</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>b</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>inv</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>val</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>cs</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>wo</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>bo</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>sd</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>sw0</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>sw1</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>sw2</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>sw3</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>locked</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>lzs</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>ml</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ssp</td><td><code>List&lt;InteractablePreset.SubSpawnSlot&gt;</code></td><td></td><td></td></tr>
+<tr><td>mtr</td><td><code>float</code></td><td></td><td>-1f</td></tr>
+<tr><td>cr</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>rem</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>rPl</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>spCh</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>force</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>df</td><td><code>List&lt;Interactable.DynamicFingerprint&gt;</code></td><td></td><td>new List&lt;Interactable.DynamicFingerprint&gt;()</td></tr>
+<tr><td>print</td><td><code>List&lt;Interactable.SavedPrint&gt;</code></td><td></td><td>new List&lt;Interactable.SavedPrint&gt;()</td></tr>
+<tr><td>cap</td><td><code>List&lt;SceneRecorder.SceneCapture&gt;</code></td><td></td><td>new List&lt;SceneRecorder.SceneCapture&gt;()</td></tr>
+<tr><td>sCap</td><td><code>List&lt;SceneRecorder.SceneCapture&gt;</code></td><td></td><td>new List&lt;SceneRecorder.SceneCapture&gt;()</td></tr>
+<tr><td>nEvKey</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>ft</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>passcode</td><td><code>GameplayController.Passcode</code></td><td></td><td></td></tr>
+<tr><td>name</td><td><code>string</code></td><td><span class="badge">Header: Non Serialized</span></td><td></td></tr>
+<tr><td>spNode</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>pt</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>mov</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>phy</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>audioLoopStarted</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>t</td><td><code>Telephone</code></td><td></td><td></td></tr>
+<tr><td>seed</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>save</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isTampered</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>distanceFromSpawn</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>originalPosition</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>cvp</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>cve</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>evidence</td><td><code>Evidence</code></td><td></td><td></td></tr>
+<tr><td>sceneRecorder</td><td><code>SceneRecorder</code></td><td></td><td></td></tr>
+<tr><td>spawnParent</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>parentTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>inInventory</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>preset</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>furnitureParent</td><td><code>FurnitureLocation</code></td><td></td><td></td></tr>
+<tr><td>subObject</td><td><code>FurniturePreset.SubObject</code></td><td></td><td></td></tr>
+<tr><td>jobParent</td><td><code>SideJob</code></td><td></td><td></td></tr>
+<tr><td>murderParent</td><td><code>MurderController.Murder</code></td><td></td><td></td></tr>
+<tr><td>speechController</td><td><code>SpeechController</code></td><td></td><td></td></tr>
+<tr><td>controller</td><td><code>InteractableController</code></td><td></td><td></td></tr>
+<tr><td>lightController</td><td><code>LightController</code></td><td></td><td></td></tr>
+<tr><td>lockInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>thisDoor</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>passwordSource</td><td><code>object</code></td><td></td><td></td></tr>
+<tr><td>spawnedObject</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>node</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>spawnNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>worldObjectRoomParent</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>usagePoint</td><td><code>Interactable.UsagePoint</code></td><td></td><td></td></tr>
+<tr><td>nextAIInteraction</td><td><code>NewAIAction</code></td><td></td><td></td></tr>
+<tr><td>isLight</td><td><code>LightingPreset</code></td><td></td><td></td></tr>
+<tr><td>objectRef</td><td><code>object</code></td><td></td><td></td></tr>
+<tr><td>writer</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>reciever</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>belongsTo</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>isActor</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>book</td><td><code>BookPreset</code></td><td></td><td></td></tr>
+<tr><td>syncDisk</td><td><code>SyncDiskPreset</code></td><td></td><td></td></tr>
+<tr><td>group</td><td><code>GroupsController.SocialGroup</code></td><td></td><td></td></tr>
+<tr><td>recentCallCheck</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>ceilingFan</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>forSale</td><td><code>NewAddress</code></td><td></td><td></td></tr>
+<tr><td>proxy</td><td><code>List&lt;Human&gt;</code></td><td></td><td></td></tr>
+<tr><td>spawnedDecals</td><td><code>List&lt;SpatterSimulation.DecalSpawnData&gt;</code></td><td></td><td></td></tr>
+<tr><td>actionLoop</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>loadedGeometry</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>currentActions</td><td><code>Dictionary&lt;InteractablePreset.InteractionKey, Interactable.InteractableCurrentAction&gt;</code></td><td></td><td>new Dictionary&lt;InteractablePreset.InteractionKey, Interactable.InteractableCurrentAction&gt;()</td></tr>
+<tr><td>highlightActions</td><td><code>List&lt;InteractablePreset.InteractionAction&gt;</code></td><td></td><td>new List&lt;InteractablePreset.InteractionAction&gt;()</td></tr>
+<tr><td>disabledActions</td><td><code>List&lt;InteractablePreset.InteractionAction&gt;</code></td><td></td><td>new List&lt;InteractablePreset.InteractionAction&gt;()</td></tr>
+<tr><td>aiActionReference</td><td><code>Dictionary&lt;AIActionPreset, InteractablePreset.InteractionAction&gt;</code></td><td></td><td>new Dictionary&lt;AIActionPreset, InteractablePreset.InteractionAction&gt;()</td></tr>
+<tr><td>readingDelay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>actionAudioEventOverrides</td><td><code>Dictionary&lt;AIActionPreset, AudioEvent&gt;</code></td><td></td><td>new Dictionary&lt;AIActionPreset, AudioEvent&gt;()</td></tr>
+<tr><td>loopingAudio</td><td><code>List&lt;AudioController.LoopingSoundInfo&gt;</code></td><td></td><td>new List&lt;AudioController.LoopingSoundInfo&gt;()</td></tr>
+<tr><td>isSetup</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>wasLoadedFromSave</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>mainSetupRun</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>printDebug</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>MainSetupStart</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdatePassedVariables</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCreate</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>OnLoad</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>MainSetupEnd</td><td><code>void</code></td><td><span class="badge">9</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">num</span> <span class="badge">8</span></td><td><code></code></td></tr>
+<tr><td>OnDecorItemMoveToStorage</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDecorItemRePlace</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateSpecialCaseReferences</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RemoveSpecialCaseReferences</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>SpawnCheck</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateLightData</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetMaterialKey</td><td><code>void</code></td><td></td><td><code>Toolbox.MaterialKey newMatKey</code></td></tr>
+<tr><td>SetPolymorphicReference</td><td><code>void</code></td><td></td><td><code>object newRef</code></td></tr>
+<tr><td>SetValue</td><td><code>void</code></td><td></td><td><code>float newValue</code></td></tr>
+<tr><td>SetExtraStateValue</td><td><code>void</code></td><td></td><td><code>float newValue, bool setSpecialCaseValues = true</code></td></tr>
+<tr><td>GetExtraStateValue</td><td><code>float</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetDDSOverride</td><td><code>void</code></td><td></td><td><code>string newTreeID</code></td></tr>
+<tr><td>AssignIDWorld</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AssignRoomBasedID</td><td><code>void</code></td><td></td><td><code>NewRoom r</code></td></tr>
+<tr><td>AssignFurnitureBasedID</td><td><code>void</code></td><td></td><td><code>FurnitureLocation f</code></td></tr>
+<tr><td>MoveInteractable</td><td><code>void</code></td><td></td><td><code>Vector3 newWorldPos, Vector3 newEulerAngle, bool updateSpawnPosition</code></td></tr>
+<tr><td>SetNewPositionAndParent</td><td><code>void</code></td><td></td><td><code>Transform newParent, Vector3 newLocalPos, Vector3 newLocalEuler, bool updateSpawnPosition</code></td></tr>
+<tr><td>SetNewPosition</td><td><code>void</code></td><td></td><td><code>Vector3 newLocalPos, Vector3 newLocalEuler, bool updateSpawnPosition</code></td></tr>
+<tr><td>GetWorldPosition</td><td><code>Vector3</code></td><td></td><td><code>bool useSpawnedPosition = true</code></td></tr>
+<tr><td>UpdateWorldPositionAndNode</td><td><code>Vector3</code></td><td></td><td><code>bool updateSpawnPosition, bool forceUpdate = false</code></td></tr>
+<tr><td>SetPasswordSource</td><td><code>void</code></td><td><span class="badge">11</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">num2</span> <span class="badge">5</span> <span class="badge">num3</span> <span class="badge">7</span> <span class="badge">8</span> <span class="badge">9</span> <span class="badge">10</span> <span class="badge">7</span> <span class="badge">0</span> <span class="badge">num6</span> <span class="badge">2</span> <span class="badge">num7</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span></td><td><code>object newPSource</code></td></tr>
+<tr><td>SetOwner</td><td><code>void</code></td><td></td><td><code>Human newOwner, bool updateName = true</code></td></tr>
+<tr><td>SetWriter</td><td><code>void</code></td><td></td><td><code>Human newWriter</code></td></tr>
+<tr><td>SetReciever</td><td><code>void</code></td><td></td><td><code>Human newReciever</code></td></tr>
+<tr><td>GetName</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateName</td><td><code>void</code></td><td></td><td><code>bool assignNewNamingEvidenceKey = false, Evidence.DataKey newKey = Evidence.DataKey.name</code></td></tr>
+<tr><td>SetInInventory</td><td><code>void</code></td><td></td><td><code>Human newActor</code></td></tr>
+<tr><td>SetAsNotInventory</td><td><code>void</code></td><td><span class="badge">num</span></td><td><code>NewNode newNode</code></td></tr>
+<tr><td>UpdateCurrentActions</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>SetSwitchState</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">key</span> <span class="badge">key</span> <span class="badge">i</span> <span class="badge">8</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">num</span> <span class="badge">6</span> <span class="badge">num2</span></td><td><code>bool val, Actor interactor, bool playSFX = true, bool forceUpdate = false, bool forceInstantLights = false</code></td></tr>
+<tr><td>SetCustomState1</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">this</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">1</span></td><td><code>bool val, Actor interactor, bool playSFX = true, bool forceUpdate = false, bool forceInstantLights = false</code></td></tr>
+<tr><td>SetCustomState2</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">this</span></td><td><code>bool val, Actor interactor, bool playSFX = true, bool forceUpdate = false, bool forceInstantLights = false</code></td></tr>
+<tr><td>SetCustomState3</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">this</span></td><td><code>bool val, Actor interactor, bool playSFX = true, bool forceUpdate = false, bool forceInstantLights = false</code></td></tr>
+<tr><td>SetLockedState</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">this</span></td><td><code>bool val, Actor interactor, bool playSFX = true, bool forceUpdate = false</code></td></tr>
+<tr><td>SetPhysicsPickupState</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">this</span></td><td><code>bool val, Actor interactor, bool playSFX = true, bool forceUpdate = false</code></td></tr>
+<tr><td>ResetToDefaultSwitchState</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateSwitchStateAudio</td><td><code>void</code></td><td></td><td><code>InteractablePreset.IfSwitchStateSFX aud, bool swState, List&lt;NewNode&gt; doorNodes, Actor interactor</code></td></tr>
+<tr><td>MusicPlayerNextTrack</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code>int add</code></td></tr>
+<tr><td>UpdateMusicPlayer</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateLoopingAudioParams</td><td><code>void</code></td><td><span class="badge">num</span> <span class="badge">num</span></td><td><code></code></td></tr>
+<tr><td>OnInteraction</td><td><code>void</code></td><td></td><td><code>InteractablePreset.InteractionKey input, Actor who</code></td></tr>
+<tr><td>OnInteraction</td><td><code>void</code></td><td></td><td><code>InteractablePreset.InteractionAction action, Actor who, bool allowDelays = true, float additionalDelay = 0f</code></td></tr>
+<tr><td>LoadInteractableToWorld</td><td><code>void</code></td><td><span class="badge">8</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">num</span> <span class="badge">6</span> <span class="badge">num2</span></td><td><code>bool respawn = false, bool forceSpawnImmediate = false</code></td></tr>
+<tr><td>SetSpawnPositionRelevent</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>IsSpawnPositionRelevent</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>SpawnObject</td><td><code>void</code></td><td></td><td><code>out bool wasPooled</code></td></tr>
+<tr><td>UnloadInteractable</td><td><code>void</code></td><td><span class="badge">14</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num</span> <span class="badge">4</span> <span class="badge">num2</span> <span class="badge">6</span> <span class="badge">num3</span> <span class="badge">8</span> <span class="badge">9</span> <span class="badge">10</span> <span class="badge">num4</span> <span class="badge">12</span> <span class="badge">num5</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">1</span></td><td><code></code></td></tr>
+<tr><td>DespawnObject</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnSpawn</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SpawnLock</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>MarkAsTrash</td><td><code>void</code></td><td></td><td><code>bool val, bool forceTime = false, float forcedTime = 0f</code></td></tr>
+<tr><td>RemoveFromPlacement</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>SafeDelete</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>bool removeFromInventory = false</code></td></tr>
+<tr><td>Delete</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>IsSafeToDelete</td><td><code>bool</code></td><td><span class="badge">i</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">l</span></td><td><code></code></td></tr>
+<tr><td>IsSaveStateEligable</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetReasonForSaveStateEligable</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetAsLight</td><td><code>void</code></td><td></td><td><code>LightingPreset newLightPreset, int newLightZoneSize, bool newIsMainLight, Interactable.LightConfiguration preconfiguredLight</code></td></tr>
+<tr><td>SetNextAIInteraction</td><td><code>void</code></td><td></td><td><code>NewAIAction newAction, NewAIController ai</code></td></tr>
+<tr><td>OnDoorMovementClosed</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDoorMovementOpened</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetPasswordFromSource</td><td><code>List&lt;int&gt;</code></td><td></td><td><code>out List&lt;string&gt; notePlacements</code></td></tr>
+<tr><td>GetPasswordSource</td><td><code>GameplayController.Passcode</code></td><td><span class="badge">4</span></td><td><code></code></td></tr>
+<tr><td>AddPasswordSourceToAcquired</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetActionHighlight</td><td><code>void</code></td><td></td><td><code>string newString, bool val</code></td></tr>
+<tr><td>SetActionDisable</td><td><code>void</code></td><td></td><td><code>string newString, bool val</code></td></tr>
+<tr><td>SetOriginalPosition</td><td><code>void</code></td><td></td><td><code>bool newVal, bool setGameTime = true, bool forceUpdate = false</code></td></tr>
+<tr><td>SetTampered</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>AddNewDynamicFingerprint</td><td><code>void</code></td><td></td><td><code>Human from, Interactable.PrintLife life</code></td></tr>
+<tr><td>RemoveDynamicPrint</td><td><code>void</code></td><td></td><td><code>Interactable.DynamicFingerprint print</code></td></tr>
+<tr><td>OnHourChange</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnLockpick</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>OnLockpickLookedAway</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnLockpickProgressChange</td><td><code>void</code></td><td></td><td><code>float amountChangeThisFrame, float amountToal</code></td></tr>
+<tr><td>OnCompleteLockpick</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnReturnFromLockpick</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ConvertToFurnitureSpawnedObject</td><td><code>void</code></td><td></td><td><code>FurnitureLocation newFurniture, FurniturePreset.SubObject newSubObject, bool updatePosition = true, bool updateSpawnPosition = true</code></td></tr>
+<tr><td>ConvertToWorldObject</td><td><code>void</code></td><td></td><td><code>bool updatePosition = true</code></td></tr>
+<tr><td>ResetToFurnitureObject</td><td><code>void</code></td><td></td><td><code>bool updatePosition = true</code></td></tr>
+<tr><td>IsLitter</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>PickUpTarget</td><td><code>bool</code></td><td></td><td><code>Human pickerUpper, bool pickUpLitter = false</code></td></tr>
+<tr><td>RemoveManuallyCreatedFingerprints</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetReachDistance</td><td><code>float</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>GetSecurityStrength</td><td><code>float</code></td><td></td><td><code></code></td></tr>
+<tr><td>IsInteractablePhysicsObject</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetSwitchQuery</td><td><code>bool</code></td><td></td><td><code>InteractablePreset.Switch switchState</code></td></tr>
+<tr><td>SetSwtichByType</td><td><code>void</code></td><td></td><td><code>InteractablePreset.Switch switchState, bool val, Actor interactor, bool playSFX = true, bool forceUpdate = false</code></td></tr>
+<tr><td>TryGetCreationTime</td><td><code>bool</code></td><td></td><td><code>out float creationTime</code></td></tr>
+<tr><td>MarkInspected</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>MarkLastMovedAt</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetLastMovedAt</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetObjectSpawnPriority</td><td><code>void</code></td><td></td><td><code>int val</code></td></tr>
+<tr><td>GetObjectSpawnPriority</td><td><code>int</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetDistanceRecognitionMode</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>GetDistanceRecognitionMode</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>CopyState</td><td><code>void</code></td><td></td><td><code>Interactable existing</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class LightConfiguration</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>colour</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>intensity</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>flickerColourMultiplier</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>pulseSpeed</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>intervalTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>flicker</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>range</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class SavedPrint</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>worldPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>interactableID</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class DynamicFingerprint</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>created</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>seed</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>life</td><td><code>Interactable.PrintLife</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class InteractableCurrentAction</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>currentAction</td><td><code>InteractablePreset.InteractionAction</code></td><td></td><td></td></tr>
+<tr><td>display</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>enabled</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>overrideInteractionName</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>forcePositioning</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>forcePosition</td><td><code>ControlDisplayController.ControlPositioning</code></td><td></td><td></td></tr>
+<tr><td>highlight</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class UsagePoint</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>useSetting</td><td><code>InteractablePreset.AIUseSetting</code></td><td></td><td></td></tr>
+<tr><td>interactable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>node</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>users</td><td><code>Dictionary&lt;Interactable.UsePointSlot, Human&gt;</code></td><td></td><td>new Dictionary&lt;Interactable.UsePointSlot, Human&gt;()</td></tr>
+<tr><td>reserved</td><td><code>GroupsController.SocialGroup</code></td><td></td><td></td></tr>
+<tr><td>useageWorldPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>worldLookAtPoint</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>debugDefaultSlot</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>debugSlot1</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>debugSlot2</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>slotLog</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+</tbody></table>
+<h3>class Passed</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>varType</td><td><code>Interactable.PassedVarType</code></td><td></td><td></td></tr>
+<tr><td>value</td><td><code>float</code></td><td></td><td>-1f</td></tr>
+<tr><td>str</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>PrintLife</h3>
+<pre><code>timed
+manualRemoval</code></pre>
+<h3>UsePointSlot</h3>
+<pre><code>defaultSlot
+slot1
+slot2</code></pre>
+<h3>PassedVarType</h3>
+<pre><code>jobID
+humanID
+noteID
+roomID
+addressID
+time
+savedSceneCapID
+menuIndex
+vmailThreadID
+consumableAmount
+companyID
+stringInteractablePreset
+isTrash
+jobTag
+groupID
+ddsOverride
+metaObjectID
+murderID
+decal
+decalDynamicText
+ownedByAddress
+vmailThreadMsgIndex
+phoneNumber
+lostItemPreset
+lostItemBuilding
+lostItemReward
+lostItemFloorX
+lostItemFloorY
+creationTime
+stateValue
+inspected
+lma
+spR
+spP
+phy
+drm
+lhc</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>
+
+

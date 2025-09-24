@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ParticleEffect — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>ParticleEffect</h1>
+      <div class="page-meta">Source file: <span class="code">ParticleEffect.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">ParticleEffect</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>damageBreakPoint</td><td><code>float</code></td><td>The relative velocity this has to be travelling at on collision to break <span class="badge">Header: Breakage</span></td><td>0.1f</td></tr>
+<tr><td>deleteObject</td><td><code>bool</code></td><td>Deletes the object completely</td><td>true</td></tr>
+<tr><td>effectPrefab</td><td><code>GameObject</code></td><td><span class="badge">Header: VFX</span></td><td></td></tr>
+<tr><td>shatter</td><td><code>bool</code></td><td><span class="badge">Header: Shatter</span> <span class="badge">EnableIf(&quot;deleteObject&quot;)</span></td><td>true</td></tr>
+<tr><td>shardSize</td><td><code>Vector3</code></td><td>The size of the shards created</td><td>new Vector3(0.025f, 0.025f, 0.025f)</td></tr>
+<tr><td>shardEveryXPixels</td><td><code>int</code></td><td>Create a shard every this amount of pixels on the texture</td><td>64</td></tr>
+<tr><td>shatterForceMultiplier</td><td><code>float</code></td><td></td><td>2.4f</td></tr>
+<tr><td>isGlass</td><td><code>bool</code></td><td>Use a glass shard material</td><td></td></tr>
+<tr><td>spatterTrigger</td><td><code>ParticleEffect.SpatterTrigger</code></td><td><span class="badge">Header: Spatter</span></td><td></td></tr>
+<tr><td>spatter</td><td><code>SpatterPatternPreset</code></td><td></td><td></td></tr>
+<tr><td>countMultiplier</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>stickToActors</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>spatterIsVandalism</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>vandalismFine</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;spatterIsVandalism&quot;)</span></td><td>20</td></tr>
+<tr><td>creationTrigger</td><td><code>ParticleEffect.SpatterTrigger</code></td><td><span class="badge">Header: Object Creation</span></td><td></td></tr>
+<tr><td>objectPool</td><td><code>List&lt;GameObject&gt;</code></td><td></td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>instances</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>useRandomRotation</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>localEuler</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>impactEvents</td><td><code>List&lt;AudioEvent&gt;</code></td><td><span class="badge">Header: Audio</span></td><td>new List&lt;AudioEvent&gt;()</td></tr>
+<tr><td>breakEvents</td><td><code>List&lt;AudioEvent&gt;</code></td><td></td><td>new List&lt;AudioEvent&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>SpatterTrigger</h3>
+<pre><code>off
+onBreak
+onAnyImpact
+whileInAirOrAnyImpact</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CityControls — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CityControls</h1>
+      <div class="page-meta">Source file: <span class="code">CityControls.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CityControls</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>wardName</td><td><code>string</code></td><td><span class="badge">Header: City</span></td><td>&quot;Downtown&quot;</td></tr>
+<tr><td>cityCustoms</td><td><code>string</code></td><td></td><td>&quot;Whitaker Customs Department&quot;</td></tr>
+<tr><td>cityCustomsAbr</td><td><code>string</code></td><td></td><td>&quot;WCD&quot;</td></tr>
+<tr><td>cityTax</td><td><code>string</code></td><td></td><td>&quot;Whitaker Revenue Service&quot;</td></tr>
+<tr><td>cityTaxAbr</td><td><code>string</code></td><td></td><td>&quot;WRS&quot;</td></tr>
+<tr><td>cityCurrency</td><td><code>string</code></td><td></td><td>&quot;$&quot;</td></tr>
+<tr><td>citySizes</td><td><code>List&lt;CityControls.CitySize&gt;</code></td><td><span class="badge">Header: Size</span></td><td>new List&lt;CityControls.CitySize&gt;()</td></tr>
+<tr><td>cityTileSize</td><td><code>Vector3</code></td><td>Exact measurements of groundmap tiles in unity units (metres) <span class="badge">Header: Infrastructure</span></td><td>new Vector3(3.15f, 3.15f, 2f)</td></tr>
+<tr><td>tileMultiplier</td><td><code>int</code></td><td>Tiles are multiplied by this per ground map unit for pathmap grid</td><td>5</td></tr>
+<tr><td>nodeMultiplier</td><td><code>int</code></td><td>Nodes are multiplied by this per tile</td><td>3</td></tr>
+<tr><td>maxBlockSize</td><td><code>int</code></td><td>Maximum size of a city block</td><td>7</td></tr>
+<tr><td>blockExpandChance</td><td><code>float</code></td><td>Chance block will expand into adjacent tile</td><td>100f</td></tr>
+<tr><td>blockExpandCentreMultiplier</td><td><code>float</code></td><td>?</td><td>2f</td></tr>
+<tr><td>nonFavouredExpandMultiplier</td><td><code>float</code></td><td>?</td><td>0.25f</td></tr>
+<tr><td>districtSizeMin</td><td><code>int</code></td><td>Minimum size of a district</td><td>4</td></tr>
+<tr><td>districtSizeMax</td><td><code>int</code></td><td>Maximum size of a district</td><td>8</td></tr>
+<tr><td>sideAlleyChance</td><td><code>float</code></td><td>Chances of a side alley being formed</td><td>0.33f</td></tr>
+<tr><td>sideAlleyExtentionChance</td><td><code>float</code></td><td>Chances of a side alley being extended matching a previous side alley</td><td>0.33f</td></tr>
+<tr><td>overheadStreet</td><td><code>bool</code></td><td>Enable overhead street placement</td><td>true</td></tr>
+<tr><td>travelTimeCrowFliesMultiplierEstimate</td><td><code>float</code></td><td>Amount to multiply the travel time distance by for calculating travel time guesses. X and Y planes only, IE Descrepencey between as the crow flies, and actual street route distance. <span class="badge">Header: Population</span></td><td>1.66f</td></tr>
+<tr><td>travelTimeMultiplier</td><td><code>float</code></td><td>Multiplier for travel time vs distance. Applied for guesses and calculated</td><td>1.2f</td></tr>
+<tr><td>homelessMultiplier</td><td><code>float</code></td><td>The city size (tile count) * by this will be created</td><td>2f</td></tr>
+<tr><td>residentialRatio</td><td><code>float</code></td><td><span class="badge">Header: Zoning</span></td><td>0.5f</td></tr>
+<tr><td>commercialRatio</td><td><code>float</code></td><td></td><td>0.22f</td></tr>
+<tr><td>industrialRatio</td><td><code>float</code></td><td></td><td>0.19f</td></tr>
+<tr><td>municipalRatio</td><td><code>float</code></td><td></td><td>0.04f</td></tr>
+<tr><td>parksRatio</td><td><code>float</code></td><td></td><td>0.05f</td></tr>
+<tr><td>lobbyPreset</td><td><code>AddressPreset</code></td><td>The address preset for lobbies/hallways <span class="badge">Header: Buildings</span></td><td></td></tr>
+<tr><td>smallUnitRange</td><td><code>Vector2</code></td><td>An internal address/unit of this many tiles is categorised as...</td><td>new Vector2(0f, 4f)</td></tr>
+<tr><td>mediumUnitRange</td><td><code>Vector2</code></td><td>An internal address/unit of this many tiles is categorised as...</td><td>new Vector2(5f, 8f)</td></tr>
+<tr><td>lageUnitRange</td><td><code>Vector2</code></td><td>An internal address/unit of this many tiles is categorised as...</td><td>new Vector2(9f, 999f)</td></tr>
+<tr><td>defaultStyle</td><td><code>DesignStylePreset</code></td><td>The default design style</td><td></td></tr>
+<tr><td>defaultWalls</td><td><code>DoorPairPreset</code></td><td>Reference to default walls</td><td></td></tr>
+<tr><td>defaultFloorMaterialGroup</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>defaultCeilingMaterialGroup</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>defaultWallMaterialGroup</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>nullDefaultRoom</td><td><code>RoomConfiguration</code></td><td>Setup for interior &#x27;null space&#x27;</td><td></td></tr>
+<tr><td>streetRoom</td><td><code>RoomConfiguration</code></td><td>Setup for interior hallways</td><td></td></tr>
+<tr><td>alleyRoom</td><td><code>RoomConfiguration</code></td><td></td><td></td></tr>
+<tr><td>backstreetRoom</td><td><code>RoomConfiguration</code></td><td></td><td></td></tr>
+<tr><td>outsideLayoutConfig</td><td><code>LayoutConfiguration</code></td><td><span class="badge">Header: Layout Configs</span></td><td></td></tr>
+<tr><td>lobbyLayoutConfig</td><td><code>LayoutConfiguration</code></td><td></td><td></td></tr>
+<tr><td>street</td><td><code>DesignStylePreset</code></td><td>Street design styles</td><td></td></tr>
+<tr><td>lowestFloor</td><td><code>int</code></td><td></td><td>-2</td></tr>
+<tr><td>lowestFloorLightMultiplier</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>lowestFloorIncreaseFlickerChance</td><td><code>float</code></td><td></td><td>0.5f</td></tr>
+<tr><td>basementWaterLevel</td><td><code>float</code></td><td></td><td>-9.6f</td></tr>
+<tr><td>fallbackStyle</td><td><code>DesignStylePreset</code></td><td><span class="badge">Header: Interior fallback</span></td><td></td></tr>
+<tr><td>fallbackColourScheme</td><td><code>ColourSchemePreset</code></td><td></td><td></td></tr>
+<tr><td>fallbackFloorMat</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>fallbackWallMat</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>fallbackCeilingMat</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>sunLight</td><td><code>Light</code></td><td>The directional light representing the sun <span class="badge">Header: Lighting</span></td><td></td></tr>
+<tr><td>sunPosition</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>hdrpLightSunData</td><td><code>HDAdditionalLightData</code></td><td></td><td></td></tr>
+<tr><td>exteriorAmbientLight</td><td><code>Light</code></td><td></td><td></td></tr>
+<tr><td>exteriorAmbientHDRP</td><td><code>HDAdditionalLightData</code></td><td></td><td></td></tr>
+<tr><td>interiorAmbientLight</td><td><code>Light</code></td><td></td><td></td></tr>
+<tr><td>interiorAmbientHDRP</td><td><code>HDAdditionalLightData</code></td><td></td><td></td></tr>
+<tr><td>seaMaterial</td><td><code>Material</code></td><td><span class="badge">Header: Materials</span></td><td></td></tr>
+<tr><td>seaRenderer</td><td><code>MeshRenderer</code></td><td></td><td></td></tr>
+<tr><td>skylineMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>skylineRenderers</td><td><code>List&lt;MeshRenderer&gt;</code></td><td></td><td>new List&lt;MeshRenderer&gt;()</td></tr>
+<tr><td>smokeMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>echelonDesignStyle</td><td><code>DesignStylePreset</code></td><td></td><td></td></tr>
+<tr><td>echelonWood</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>echelonFloorMaterial</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>echelonFloorVariation</td><td><code>MaterialGroupPreset.MaterialVariation</code></td><td></td><td>new MaterialGroupPreset.MaterialVariation()</td></tr>
+<tr><td>echelonCeilingMaterial</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>echelonCeilingVariation</td><td><code>MaterialGroupPreset.MaterialVariation</code></td><td></td><td>new MaterialGroupPreset.MaterialVariation()</td></tr>
+<tr><td>echelonDefaultWallMaterial</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>echelonWallVariation</td><td><code>MaterialGroupPreset.MaterialVariation</code></td><td></td><td>new MaterialGroupPreset.MaterialVariation()</td></tr>
+<tr><td>echelonColourScheme</td><td><code>ColourSchemePreset</code></td><td></td><td></td></tr>
+<tr><td>sceneProfileSetup</td><td><code>List&lt;CityControls.PPProfile&gt;</code></td><td><span class="badge">Header: PP Profiles</span></td><td>new List&lt;CityControls.PPProfile&gt;()</td></tr>
+<tr><td>captureSceneNormal</td><td><code>CityControls.PPProfile</code></td><td></td><td></td></tr>
+<tr><td>captureSceneCCTV</td><td><code>CityControls.PPProfile</code></td><td></td><td></td></tr>
+<tr><td>ships1</td><td><code>Transform</code></td><td><span class="badge">Header: Skybox</span></td><td></td></tr>
+<tr><td>angleOfSun</td><td><code>float</code></td><td>Angle of North</td><td></td></tr>
+<tr><td>lightsOff</td><td><code>Vector2</code></td><td>Interior/Street Lights off</td><td>new Vector2(8.5f, 9f)</td></tr>
+<tr><td>lightsOn</td><td><code>Vector2</code></td><td>Interior/Street Lights on</td><td>new Vector2(15f, 16f)</td></tr>
+<tr><td>alleyBlockWallPreset</td><td><code>DoorPairPreset</code></td><td>Alley blocking wall preset <span class="badge">Header: Street Furniture</span></td><td></td></tr>
+<tr><td>weatherSettings</td><td><code>FogPreset</code></td><td><span class="badge">Header: Fog</span></td><td></td></tr>
+<tr><td>timeForCityToGetWet</td><td><code>float</code></td><td>How long it takes in gametime for the city to get wet on max rain (1) <span class="badge">Header: Weather</span></td><td>0.1f</td></tr>
+<tr><td>timeForCityToGetDry</td><td><code>float</code></td><td>How long it takes in gametime for the city to get dry on min rain (0)</td><td>0.7f</td></tr>
+<tr><td>timeForCityToGetSnow</td><td><code>float</code></td><td>How long it takes in gametime for the city to get snowy on max rain (1)</td><td>0.1f</td></tr>
+<tr><td>timeForCityToGetNotSnow</td><td><code>float</code></td><td>How long it takes in gametime for the city to get not snowy on min rain (0)</td><td>0.7f</td></tr>
+<tr><td>neonMaterial</td><td><code>Material</code></td><td>The default neon material <span class="badge">Header: Signage</span></td><td></td></tr>
+<tr><td>neonIntensity</td><td><code>float</code></td><td>Neon HDR intensity</td><td>1.85f</td></tr>
+<tr><td>neonColours</td><td><code>List&lt;CityControls.NeonMaterial&gt;</code></td><td>Neon colours that can appear in signage, along with generated material references</td><td>new List&lt;CityControls.NeonMaterial&gt;()</td></tr>
+<tr><td>cables</td><td><code>List&lt;CityControls.StreetCable&gt;</code></td><td><span class="badge">Header: Street Cables</span></td><td>new List&lt;CityControls.StreetCable&gt;()</td></tr>
+<tr><td>maximumCableAngle</td><td><code>float</code></td><td></td><td>0.25f</td></tr>
+<tr><td>park</td><td><code>LayoutConfiguration</code></td><td><span class="badge">Header: Misc. References</span></td><td></td></tr>
+<tr><td>hotelCostLower</td><td><code>int</code></td><td>Upper and lower ends for hotel rooms in the city <span class="badge">Header: Hotels</span></td><td>100</td></tr>
+<tr><td>hotelCostUpper</td><td><code>int</code></td><td>Upper and lower ends for hotel rooms in the city</td><td>200</td></tr>
+<tr><td>kickoutTime</td><td><code>float</code></td><td>Time until the player is kicked out of their hotel room for not paying</td><td>8f</td></tr>
+<tr><td>basementWaterTransform</td><td><code>Transform</code></td><td><span class="badge">Header: Basement Water</span></td><td></td></tr>
+<tr><td>lostAndFoundNote</td><td><code>InteractablePreset</code></td><td><span class="badge">Header: Lost &amp; Found</span></td><td></td></tr>
+<tr><td>lostAndFoundItems</td><td><code>List&lt;InteractablePreset&gt;</code></td><td>Items that can be lost and posted about</td><td>new List&lt;InteractablePreset&gt;()</td></tr>
+<tr><td>dividerCenter</td><td><code>DoorPairPreset</code></td><td></td><td></td></tr>
+<tr><td>dividerLeft</td><td><code>DoorPairPreset</code></td><td></td><td></td></tr>
+<tr><td>dividerRight</td><td><code>DoorPairPreset</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static CityControls</code></td><td></td><td></td></tr>
+<tr><td>colourOne</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>colourTwo</td><td><code>Color</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class NeonMaterial</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>neonColour</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+<tr><td>altColour2</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+<tr><td>altColour3</td><td><code>Color</code></td><td></td><td>Color.white</td></tr>
+<tr><td>regularMat</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>flickingMat</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>flickerAudio</td><td><code>AudioEvent</code></td><td></td><td></td></tr>
+<tr><td>flicker</td><td><code>bool</code></td><td>Does this light flicker?</td><td></td></tr>
+<tr><td>flickerColourMultiplier</td><td><code>float</code></td><td>When flickering, use this multiplier on the flicker colour to determin the actual colour (basically a darker version of flicker colour)</td><td></td></tr>
+<tr><td>pulseSpeed</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>flickerState</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>flickerSwitch</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>flickerInterval</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>interval</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>intervalTime</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>brightness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>colourTag</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class CitySize</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>size</td><td><code>CityControls.Size</code></td><td></td><td></td></tr>
+<tr><td>v2</td><td><code>Vector2</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class PPProfile</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>profile</td><td><code>SessionData.SceneProfile</code></td><td></td><td></td></tr>
+<tr><td>volume</td><td><code>Volume</code></td><td></td><td></td></tr>
+<tr><td>objectRef</td><td><code>GameObject</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class StreetCable</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>prefab</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>maximumWidth</td><td><code>float</code></td><td></td><td>15f</td></tr>
+<tr><td>frequency</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>maximumCableAngle</td><td><code>float</code></td><td>The maximum angle deviation for cables. 0 is only straight.</td><td>0.25f</td></tr>
+<tr><td>minimumHeight</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>maximumHeight</td><td><code>float</code></td><td></td><td>999f</td></tr>
+<tr><td>onlyFromZoneType</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>zone</td><td><code>BuildingPreset.ZoneType</code></td><td></td><td></td></tr>
+<tr><td>disitrctFrequencyModifier</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>districts</td><td><code>List&lt;DistrictPreset&gt;</code></td><td></td><td>new List&lt;DistrictPreset&gt;()</td></tr>
+<tr><td>frequencyModifier</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>alterAreaLighting</td><td><code>bool</code></td><td>Change area colours</td><td></td></tr>
+<tr><td>possibleColours</td><td><code>List&lt;Color&gt;</code></td><td><span class="badge">EnableIf(&quot;alterAreaLighting&quot;)</span></td><td>new List&lt;Color&gt;()</td></tr>
+<tr><td>lightOperation</td><td><code>DistrictPreset.AffectStreetAreaLights</code></td><td>This is used in combination with the following to adjust street area lighting <span class="badge">EnableIf(&quot;alterAreaLighting&quot;)</span></td><td></td></tr>
+<tr><td>lightAmount</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;alterAreaLighting&quot;)</span></td><td>0.12f</td></tr>
+<tr><td>brightnessModifier</td><td><code>float</code></td><td>This is added to brightness <span class="badge">EnableIf(&quot;alterAreaLighting&quot;)</span></td><td>10f</td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>Size</h3>
+<pre><code>small
+medium
+large
+veryLarge</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PipeConstructor — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>PipeConstructor</h1>
+      <div class="page-meta">Source file: <span class="code">PipeConstructor.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">PipeConstructor</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>pipeConfig</td><td><code>List&lt;PipeConstructor.PipeSetup&gt;</code></td><td><span class="badge">Header: Components</span></td><td>new List&lt;PipeConstructor.PipeSetup&gt;()</td></tr>
+<tr><td>generated</td><td><code>List&lt;PipeConstructor.PipeGroup&gt;</code></td><td><span class="badge">Header: Generated</span></td><td>new List&lt;PipeConstructor.PipeGroup&gt;()</td></tr>
+<tr><td>debugGetWall1</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>debugGetWall2</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static PipeConstructor</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>WallPathfind</td><td><code>List&lt;NewWall&gt;</code></td><td></td><td><code>NewWall from, NewWall to, PipeConstructor.PipeGroup existingGroup</code></td></tr>
+<tr><td>IsLeftOf</td><td><code>bool</code></td><td><span class="badge">newWall</span> <span class="badge">newWall</span> <span class="badge">current</span> <span class="badge">current</span> <span class="badge">w</span> <span class="badge">w</span> <span class="badge">w</span> <span class="badge">w</span> <span class="badge">w</span> <span class="badge">newNode</span> <span class="badge">current</span> <span class="badge">w</span> <span class="badge">w</span> <span class="badge">w</span> <span class="badge">w</span> <span class="badge">w</span> <span class="badge">newNode2</span> <span class="badge">current</span></td><td><code>NewWall one, NewWall two</code></td></tr>
+<tr><td>IsRightOf</td><td><code>bool</code></td><td></td><td><code>NewWall one, NewWall two</code></td></tr>
+<tr><td>IsFrontOf</td><td><code>bool</code></td><td></td><td><code>NewWall one, NewWall two</code></td></tr>
+<tr><td>GeneratePipes</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetWall</td><td><code>void</code></td><td><span class="badge">breakerSecurity</span> <span class="badge">breakerSecurity</span> <span class="badge">0</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>LeftRightCheck</td><td><code>void</code></td><td><span class="badge">6</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">num</span> <span class="badge">3</span> <span class="badge">num2</span> <span class="badge">5</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class PipeSetup</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>type</td><td><code>PipeConstructor.PipeType</code></td><td></td><td></td></tr>
+<tr><td>material</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>models</td><td><code>List&lt;GameObject&gt;</code></td><td></td><td>new List&lt;GameObject&gt;()</td></tr>
+</tbody></table>
+<h3>class PipeGroup</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>type</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>routes</td><td><code>List&lt;PipeConstructor.PipeRoute&gt;</code></td><td></td><td>new List&lt;PipeConstructor.PipeRoute&gt;()</td></tr>
+<tr><td>rooms</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>spawned</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>isVisible</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class PipeRoute</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>w</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>s</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>PipeType</h3>
+<pre><code>wire
+wire2</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

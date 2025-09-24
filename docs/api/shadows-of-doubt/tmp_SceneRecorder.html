@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SceneRecorder — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>SceneRecorder</h1>
+      <div class="page-meta">Source file: <span class="code">SceneRecorder.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">SceneRecorder</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnNewCapture</td><td><code>event SceneRecorder.OnCapture</code></td><td></td><td></td></tr>
+<tr><td>interactable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>coversRooms</td><td><code>List&lt;NewRoom&gt;</code></td><td></td><td>new List&lt;NewRoom&gt;()</td></tr>
+<tr><td>coveredNodes</td><td><code>Dictionary&lt;NewNode, List&lt;int&gt;&gt;</code></td><td></td><td>new Dictionary&lt;NewNode, List&lt;int&gt;&gt;()</td></tr>
+<tr><td>scenePoserPool</td><td><code>static List&lt;ScenePoserController&gt;</code></td><td></td><td>new List&lt;ScenePoserController&gt;()</td></tr>
+<tr><td>objectPoserPool</td><td><code>static Dictionary&lt;string, List&lt;GameObject&gt;&gt;</code></td><td></td><td>new Dictionary&lt;string, List&lt;GameObject&gt;&gt;()</td></tr>
+<tr><td>lastCaptureAt</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>assignCapID</td><td><code>static int</code></td><td></td><td>1</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>RefreshCoveredArea</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ExecuteCapture</td><td><code>SceneRecorder.SceneCapture</code></td><td></td><td><code>bool onlyIfMovement, bool detailedCapture = false, bool prepToSaveCapture = true, bool useFlashlight = false, bool useFlash = false</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class SceneCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>recorder</td><td><code>SceneRecorder</code></td><td></td><td></td></tr>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>drp</td><td><code>List&lt;SceneRecorder.DynamicRecordPosition&gt;</code></td><td></td><td></td></tr>
+<tr><td>t</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>k</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>l</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>a</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>rCap</td><td><code>List&lt;SceneRecorder.RoomCapture&gt;</code></td><td></td><td>new List&lt;SceneRecorder.RoomCapture&gt;()</td></tr>
+<tr><td>dCap</td><td><code>List&lt;SceneRecorder.DoorCapture&gt;</code></td><td></td><td>new List&lt;SceneRecorder.DoorCapture&gt;()</td></tr>
+<tr><td>aCap</td><td><code>List&lt;SceneRecorder.ActorCapture&gt;</code></td><td></td><td>new List&lt;SceneRecorder.ActorCapture&gt;()</td></tr>
+<tr><td>oCap</td><td><code>List&lt;SceneRecorder.InteractableCapture&gt;</code></td><td></td><td>new List&lt;SceneRecorder.InteractableCapture&gt;()</td></tr>
+<tr><td>oSCap</td><td><code>List&lt;SceneRecorder.InteractableStateCapture&gt;</code></td><td></td><td>new List&lt;SceneRecorder.InteractableStateCapture&gt;()</td></tr>
+</tbody></table>
+<h3>class DynamicRecordPosition</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>pos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>rot</td><td><code>Vector3</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class RoomCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>light</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class TransformCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>wP</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>wR</td><td><code>Quaternion</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class DoorCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>a</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class InteractableCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>p</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>d</td><td><code>List&lt;string&gt;</code></td><td></td><td></td></tr>
+<tr><td>poser</td><td><code>GameObject</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class InteractableStateCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>sw</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class ActorCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>o</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>pos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>rot</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>main</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>arms</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>sp</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>limb</td><td><code>List&lt;SceneRecorder.LimbCapture&gt;</code></td><td></td><td></td></tr>
+<tr><td>lH</td><td><code>SceneRecorder.HandItemCapture</code></td><td></td><td></td></tr>
+<tr><td>rH</td><td><code>SceneRecorder.HandItemCapture</code></td><td></td><td></td></tr>
+<tr><td>poser</td><td><code>ScenePoserController</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class LimbCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>a</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class HandItemCapture</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>i</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

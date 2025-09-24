@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Chapter</h1>
+      <div class="page-meta">Source file: <span class="code">Chapter.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Chapter</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>ChapterPreset</code></td><td></td><td></td></tr>
+<tr><td>thisCase</td><td><code>Case</code></td><td></td><td></td></tr>
+<tr><td>loadedFromSave</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>gameStart</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>blackTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>blurTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>blackFade</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>blurFade</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>currentPartLocation</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>teleportPlayerToChapter</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>chapterFrameDelay</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>invokeOnDelay</td><td><code>Dictionary&lt;string, float&gt;</code></td><td></td><td>new Dictionary&lt;string, float&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnLoaded</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnLoadFinalize</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnObjectsCreated</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>OnGameStart</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>ClearAllObjectives</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ClearObjective</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span></td><td><code>string clearThis</code></td></tr>
+<tr><td>OnNewChapterPart</td><td><code>void</code></td><td><span class="badge">virtual</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code>bool delay = false, bool teleportPlayer = false</code></td></tr>
+<tr><td>ChapterActivationDelay</td><td><code>IEnumerator</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnGameWorldLoop</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>InvokeAfterDelay</td><td><code>void</code></td><td><span class="badge">key</span> <span class="badge">text</span></td><td><code>string command, float delayRealSeconds</code></td></tr>
+<tr><td>SetCurrentPartLocation</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>NewNode newNode</code></td></tr>
+<tr><td>GetChapterSaveData</td><td><code>StateSaveData.ChaperStateSave</code></td><td><span class="badge">virtual</span></td><td><code></code></td></tr>
+<tr><td>LoadStateSaveData</td><td><code>void</code></td><td><span class="badge">virtual</span></td><td><code>StateSaveData.ChaperStateSave newData</code></td></tr>
+<tr><td>LoadInteractableFromData</td><td><code>Interactable</code></td><td></td><td><code>string reference, ref StateSaveData.ChaperStateSave saveData</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

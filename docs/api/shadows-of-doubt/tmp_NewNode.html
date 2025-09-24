@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NewNode — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>NewNode</h1>
+      <div class="page-meta">Source file: <span class="code">NewNode.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">NewNode</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td><span class="badge">Header: Transform</span></td><td></td></tr>
+<tr><td>position</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>physicalObject</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>building</td><td><code>NewBuilding</code></td><td><span class="badge">Header: Location</span></td><td></td></tr>
+<tr><td>floor</td><td><code>NewFloor</code></td><td></td><td></td></tr>
+<tr><td>gameLocation</td><td><code>NewGameLocation</code></td><td></td><td></td></tr>
+<tr><td>room</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>tile</td><td><code>NewTile</code></td><td></td><td></td></tr>
+<tr><td>floorCoord</td><td><code>Vector2Int</code></td><td></td><td></td></tr>
+<tr><td>localTileCoord</td><td><code>Vector2Int</code></td><td></td><td></td></tr>
+<tr><td>nodeCoord</td><td><code>Vector3Int</code></td><td></td><td></td></tr>
+<tr><td>walls</td><td><code>List&lt;NewWall&gt;</code></td><td><span class="badge">Header: Node Contents</span></td><td>new List&lt;NewWall&gt;()</td></tr>
+<tr><td>wallDict</td><td><code>Dictionary&lt;Vector2, NewWall&gt;</code></td><td></td><td>new Dictionary&lt;Vector2, NewWall&gt;()</td></tr>
+<tr><td>floorHeight</td><td><code>int</code></td><td><span class="badge">Header: Details</span></td><td></td></tr>
+<tr><td>floorType</td><td><code>NewNode.FloorTileType</code></td><td></td><td>NewNode.FloorTileType.floorAndCeiling</td></tr>
+<tr><td>preventEntrances</td><td><code>List&lt;Vector2&gt;</code></td><td></td><td></td></tr>
+<tr><td>floorPrefab</td><td><code>GameObject</code></td><td><span class="badge">Header: Spawned Objects</span></td><td></td></tr>
+<tr><td>spawnedFloor</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>ceilingPrefab</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>spawnedCeiling</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>nodeWeightMultiplier</td><td><code>float</code></td><td><span class="badge">Header: AI Navigation</span></td><td>1f</td></tr>
+<tr><td>isObstacle</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isOutside</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isConnected</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>stairwellLowerLink</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>stairwellUpperLink</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isInaccessable</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isIndoorsEntrance</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>ceilingAirVent</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>floorAirVent</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>noPassThrough</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>noAccess</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>forcedRoom</td><td><code>RoomConfiguration</code></td><td></td><td></td></tr>
+<tr><td>forcedRoomRef</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>defaultSpace</td><td><code>NewNode.NodeSpace</code></td><td></td><td></td></tr>
+<tr><td>walkableNodeSpace</td><td><code>Dictionary&lt;Vector3, NewNode.NodeSpace&gt;</code></td><td></td><td>new Dictionary&lt;Vector3, NewNode.NodeSpace&gt;()</td></tr>
+<tr><td>occupiedSpace</td><td><code>HashSet&lt;NewNode.NodeSpace&gt;</code></td><td></td><td>new HashSet&lt;NewNode.NodeSpace&gt;()</td></tr>
+<tr><td>detectGeometry</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>allowNewFurniture</td><td><code>bool</code></td><td><span class="badge">Header: Furniture</span></td><td>true</td></tr>
+<tr><td>individualFurniture</td><td><code>List&lt;FurnitureLocation&gt;</code></td><td></td><td>new List&lt;FurnitureLocation&gt;()</td></tr>
+<tr><td>interactables</td><td><code>List&lt;Interactable&gt;</code></td><td><span class="badge">Header: Interactables</span></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>airDucts</td><td><code>List&lt;AirDuctGroup.AirDuctSection&gt;</code></td><td><span class="badge">Header: Air Ducts</span></td><td>new List&lt;AirDuctGroup.AirDuctSection&gt;()</td></tr>
+<tr><td>audioEvent</td><td><code>AudioEvent</code></td><td><span class="badge">Header: Audio Source</span></td><td></td></tr>
+<tr><td>loop</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>audioOffset</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>accessToOtherNodes</td><td><code>Dictionary&lt;NewNode, NewNode.NodeAccess&gt;</code></td><td></td><td>new Dictionary&lt;NewNode, NewNode.NodeAccess&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Setup</td><td><code>void</code></td><td></td><td><code>NewTile newTile, NewGameLocation newGameLoc, Vector2Int newLocalCoord</code></td></tr>
+<tr><td>TransformPoint</td><td><code>Vector3</code></td><td></td><td><code>Vector3 localPos</code></td></tr>
+<tr><td>InverseTransformPoint</td><td><code>Vector3</code></td><td></td><td><code>Vector3 worldPos</code></td></tr>
+<tr><td>Load</td><td><code>void</code></td><td></td><td><code>CitySaveData.NodeCitySave data, NewRoom newRoom</code></td></tr>
+<tr><td>AddNewWall</td><td><code>void</code></td><td></td><td><code>NewWall newWall</code></td></tr>
+<tr><td>RemoveWall</td><td><code>void</code></td><td></td><td><code>NewWall newWall</code></td></tr>
+<tr><td>SpawnFloor</td><td><code>void</code></td><td></td><td><code>bool prepForCombinedMeshes</code></td></tr>
+<tr><td>SpawnCeiling</td><td><code>void</code></td><td></td><td><code>bool prepForCombinedMeshes</code></td></tr>
+<tr><td>SetFloorType</td><td><code>void</code></td><td></td><td><code>NewNode.FloorTileType newType</code></td></tr>
+<tr><td>SetAsObstacle</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetAsOutside</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>AddAccessToOtherNode</td><td><code>void</code></td><td></td><td><code>NewNode newNode, bool twoWay = true, bool forceAccessType = false, NewNode.NodeAccess.AccessType forcedAccessType = NewNode.NodeAccess.AccessType.adjacent, bool forceWalkable = false</code></td></tr>
+<tr><td>RemoveAccessToOtherNode</td><td><code>void</code></td><td><span class="badge">newNode</span> <span class="badge">newNode</span> <span class="badge">this</span> <span class="badge">this</span></td><td><code>NewNode newNode, bool twoWay = true</code></td></tr>
+<tr><td>SetForcedRoom</td><td><code>void</code></td><td><span class="badge">newNode</span> <span class="badge">this</span></td><td><code>RoomConfiguration newRoom</code></td></tr>
+<tr><td>AddInteractable</td><td><code>void</code></td><td></td><td><code>Interactable newInteractable</code></td></tr>
+<tr><td>RemoveInteractable</td><td><code>void</code></td><td></td><td><code>Interactable newInteractable</code></td></tr>
+<tr><td>DebugTeleportPlayerToLocation</td><td><code>void</code></td><td><span class="badge">Button(&quot;Teleport Player&quot;, 0)</span></td><td><code></code></td></tr>
+<tr><td>SetFloorHeight</td><td><code>void</code></td><td></td><td><code>int val, bool setTest = true</code></td></tr>
+<tr><td>AddFurniture</td><td><code>void</code></td><td></td><td><code>FurnitureLocation newFurn</code></td></tr>
+<tr><td>ResetFurniture</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>SetAllowNewFurniture</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>AddToNodeWeightMultiplier</td><td><code>void</code></td><td></td><td><code>float val</code></td></tr>
+<tr><td>GenerateSaveData</td><td><code>CitySaveData.NodeCitySave</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddHumanTraveller</td><td><code>bool</code></td><td></td><td><code>Actor newActor, Interactable.UsagePoint usagePoint, out Vector3 usePosition, bool useRandomNodeSublocation = false</code></td></tr>
+<tr><td>UpdateWalkableSublocations</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">i</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>ClearTravellers</td><td><code>void</code></td><td><span class="badge">vector</span> <span class="badge">vector</span> <span class="badge">vector</span></td><td><code></code></td></tr>
+<tr><td>SetAsAudioSource</td><td><code>void</code></td><td></td><td><code>AudioEvent newEvent, Vector3 newOffset</code></td></tr>
+<tr><td>SetCeilingVent</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>SetFloorVent</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>HasValidFloor</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>HasValidCeiling</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class NodeSpace</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>node</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>occ</td><td><code>NewNode.NodeSpaceOccupancy</code></td><td></td><td></td></tr>
+<tr><td>occupier</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>position</td><td><code>Vector3</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class NodeAccess</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>id</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>assignId</td><td><code>static int</code></td><td></td><td></td></tr>
+<tr><td>weight</td><td><code>float</code></td><td></td><td>1.8f</td></tr>
+<tr><td>door</td><td><code>NewDoor</code></td><td></td><td></td></tr>
+<tr><td>wall</td><td><code>NewWall</code></td><td></td><td></td></tr>
+<tr><td>accessType</td><td><code>NewNode.NodeAccess.AccessType</code></td><td></td><td>NewNode.NodeAccess.AccessType.adjacent</td></tr>
+<tr><td>fromNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>toNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>walkingAccess</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>employeeDoor</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>worldAccessPoint</td><td><code>Vector3</code></td><td></td><td>Vector3.zero</td></tr>
+<tr><td>oppositeAccess</td><td><code>NewNode.NodeAccess</code></td><td></td><td></td></tr>
+<tr><td>entranceWeights</td><td><code>Dictionary&lt;NewNode.NodeAccess, float&gt;</code></td><td></td><td>new Dictionary&lt;NewNode.NodeAccess, float&gt;()</td></tr>
+<tr><td>hasHash</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>hash</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>FloorTileType</h3>
+<pre><code>none
+floorAndCeiling
+floorOnly
+CeilingOnly
+noneButIndoors</code></pre>
+<h3>NodeSpaceOccupancy</h3>
+<pre><code>empty
+position
+reserved</code></pre>
+<h3>AccessType</h3>
+<pre><code>streetToStreet
+door
+openDoorway
+verticalSpace
+adjacent
+window
+bannister</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

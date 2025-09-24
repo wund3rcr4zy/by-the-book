@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MeshPoolingController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>MeshPoolingController</h1>
+      <div class="page-meta">Source file: <span class="code">MeshPoolingController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">MeshPoolingController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>generatedRoomMeshes</td><td><code>int</code></td><td><span class="badge">Header: State</span></td><td></td></tr>
+<tr><td>colliderCookingOptions</td><td><code>MeshColliderCookingOptions</code></td><td><span class="badge">Header: Settings</span></td><td></td></tr>
+<tr><td>bakeMeshesWithJobSystem</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>backgroundCachingEnabled</td><td><code>bool</code></td><td><span class="badge">Header: Background Caching</span></td><td></td></tr>
+<tr><td>cacheRoomPerXFrames</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>frameCounter</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>maxCache</td><td><code>int</code></td><td></td><td>2000</td></tr>
+<tr><td>uncachedRooms</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>toCache</td><td><code>List&lt;NewRoom&gt;</code></td><td></td><td>new List&lt;NewRoom&gt;()</td></tr>
+<tr><td>threads</td><td><code>List&lt;MeshPoolingController.LoaderThread&gt;</code></td><td></td><td>new List&lt;MeshPoolingController.LoaderThread&gt;()</td></tr>
+<tr><td>roomMeshes</td><td><code>Dictionary&lt;NewRoom, MeshPoolingController.RoomMeshCache&gt;</code></td><td></td><td>new Dictionary&lt;NewRoom, MeshPoolingController.RoomMeshCache&gt;()</td></tr>
+<tr><td>_instance</td><td><code>static MeshPoolingController</code></td><td></td><td></td></tr>
+<tr><td>meshData</td><td><code>Mesh.MeshDataArray</code></td><td></td><td></td></tr>
+<tr><td>outputMesh</td><td><code>Mesh.MeshData</code></td><td></td><td></td></tr>
+<tr><td>vertexStart</td><td><code>NativeArray&lt;int&gt;</code></td><td></td><td></td></tr>
+<tr><td>indexStart</td><td><code>NativeArray&lt;int&gt;</code></td><td></td><td></td></tr>
+<tr><td>xform</td><td><code>NativeArray&lt;float4x4&gt;</code></td><td></td><td></td></tr>
+<tr><td>bounds</td><td><code>NativeArray&lt;float3x2&gt;</code></td><td></td><td></td></tr>
+<tr><td>tempVertices</td><td><code>NativeArray&lt;float3&gt;</code></td><td></td><td></td></tr>
+<tr><td>tempNormals</td><td><code>NativeArray&lt;float3&gt;</code></td><td></td><td></td></tr>
+<tr><td>tempTangents</td><td><code>NativeArray&lt;float4&gt;</code></td><td></td><td></td></tr>
+<tr><td>tempUVs</td><td><code>NativeArray&lt;float2&gt;</code></td><td></td><td></td></tr>
+<tr><td>meshId</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SpawnMeshesForRoom</td><td><code>void</code></td><td></td><td><code>NewRoom room</code></td></tr>
+<tr><td>SpawnModularRoomElements</td><td><code>void</code></td><td></td><td><code>NewRoom room, bool prepForCombineMeshes, out List&lt;MeshFilter&gt; wallChildMeshes, out Dictionary&lt;NewBuilding, List&lt;MeshFilter&gt;&gt; separateWallChildMeshes, out List&lt;MeshFilter&gt; floorChildMeshes, out List&lt;MeshFilter&gt; ceilingChildMeshes</code></td></tr>
+<tr><td>SpawnExtraRoomElements</td><td><code>void</code></td><td></td><td><code>NewRoom room</code></td></tr>
+<tr><td>GetCombinedRoomMeshes</td><td><code>void</code></td><td></td><td><code>NewRoom room, out GameObject floor, out GameObject walls, out Dictionary&lt;NewBuilding, GameObject&gt; additionalWalls, out GameObject ceiling, out MeshRenderer floorRend, out MeshRenderer wallsRend, out MeshRenderer ceilingRend</code></td></tr>
+<tr><td>BuildCombinedMeshesForRoom</td><td><code>void</code></td><td></td><td><code>NewRoom room, out Mesh floorMesh, out Mesh wallMesh, out Dictionary&lt;NewBuilding, Mesh&gt; additionalWallMeshes, out Mesh ceilingMesh, bool returnGameObjects, out GameObject floor, out GameObject walls, out Dictionary&lt;NewBuilding, GameObject&gt; additionalWalls, out GameObject ceiling, out MeshRenderer floorRend, out MeshRenderer wallsRend, out MeshRenderer ceilingRend</code></td></tr>
+<tr><td>CombineMeshes</td><td><code>Mesh</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">newRoom</span> <span class="badge">room</span></td><td><code>ref List&lt;MeshFilter&gt; childMeshes, bool markNoLongerReadable = true, bool bakePhysics = true, string meshName = &quot;CombinedMesh&quot;</code></td></tr>
+<tr><td>CombineMeshesWithMeshAPI</td><td><code>Mesh</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code>ref List&lt;MeshFilter&gt; meshFilters, bool markNoLongerReadable = true, bool bakePhysics = true, string meshName = &quot;CombinedMesh&quot;</code></td></tr>
+<tr><td>WeldVertices</td><td><code>Mesh</code></td><td><span class="badge">static</span> <span class="badge">i</span> <span class="badge">num3</span> <span class="badge">num3</span> <span class="badge">num3</span> <span class="badge">num3</span> <span class="badge">0</span> <span class="badge">j</span></td><td><code>Mesh aMesh</code></td></tr>
+<tr><td>CreateGameObjectFromMesh</td><td><code>GameObject</code></td><td></td><td><code>Mesh mesh, NewRoom room, string newName, ShadowCastingMode shadowMode, out MeshRenderer meshRenderer</code></td></tr>
+<tr><td>ProcessWall</td><td><code>void</code></td><td></td><td><code>GameObject wallObject, NewRoom room, NewBuilding building = null</code></td></tr>
+<tr><td>ProcessFloor</td><td><code>void</code></td><td></td><td><code>GameObject floorObject, NewRoom room</code></td></tr>
+<tr><td>ProcessCeiling</td><td><code>void</code></td><td></td><td><code>GameObject ceilingObject, NewRoom room</code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>IsBackgroundCachingAllowed</td><td><code>bool</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>ThreadedMeshGeneration</td><td><code>IEnumerator</code></td><td></td><td><code>MeshPoolingController.LoaderThread loaderReference</code></td></tr>
+<tr><td>IsAtLoadTime</td><td><code>bool</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartCachingProcess</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>CreateInputArrays</td><td><code>void</code></td><td><span class="badge">BurstCompile</span></td><td><code>int meshCount</code></td></tr>
+<tr><td>Execute</td><td><code>void</code></td><td></td><td><code>int index</code></td></tr>
+<tr><td>Execute</td><td><code>void</code></td><td><span class="badge">BurstCompile</span></td><td><code>int index</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class RoomMeshCache</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>floorMesh</td><td><code>Mesh</code></td><td></td><td></td></tr>
+<tr><td>wallMesh</td><td><code>Mesh</code></td><td></td><td></td></tr>
+<tr><td>additionalWallMesh</td><td><code>Dictionary&lt;NewBuilding, Mesh&gt;</code></td><td></td><td></td></tr>
+<tr><td>ceilingMesh</td><td><code>Mesh</code></td><td></td><td></td></tr>
+<tr><td>lastAccessed</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class LoaderThread</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>thread</td><td><code>Coroutine</code></td><td></td><td></td></tr>
+<tr><td>location</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>isDone</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

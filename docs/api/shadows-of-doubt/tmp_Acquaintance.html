@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acquaintance — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>Acquaintance</h1>
+      <div class="page-meta">Source file: <span class="code">Acquaintance.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">Acquaintance</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>from</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>with</td><td><code>Human</code></td><td></td><td></td></tr>
+<tr><td>secretConnection</td><td><code>Acquaintance.ConnectionType</code></td><td></td><td></td></tr>
+<tr><td>compatible</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>known</td><td><code>float</code></td><td></td><td>0.1f</td></tr>
+<tr><td>like</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>group</td><td><code>GroupsController.SocialGroup</code></td><td></td><td></td></tr>
+<tr><td>connections</td><td><code>List&lt;Acquaintance.ConnectionType&gt;</code></td><td></td><td>new List&lt;Acquaintance.ConnectionType&gt;()</td></tr>
+<tr><td>customSort</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>dataKeys</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td></td><td>new List&lt;Evidence.DataKey&gt;()</td></tr>
+<tr><td>connectionFacts</td><td><code>List&lt;Fact&gt;</code></td><td></td><td>new List&lt;Fact&gt;()</td></tr>
+<tr><td>customComparison</td><td><code>static Comparison&lt;Acquaintance&gt;</code></td><td></td><td>(Acquaintance object1, Acquaintance object2) =&gt; object1.customSort.CompareTo(object2.customSort)</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>AddConnection</td><td><code>void</code></td><td></td><td><code>float newKnown, Acquaintance.ConnectionType newConnection</code></td></tr>
+<tr><td>SetupFacts</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CalculateCompatible</td><td><code>float</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetOther</td><td><code>Human</code></td><td></td><td><code>Human other</code></td></tr>
+<tr><td>AddKnow</td><td><code>void</code></td><td></td><td><code>float plusKnow</code></td></tr>
+<tr><td>CalculateLike</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OthersKnowledgeUpdate</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CompareTo</td><td><code>int</code></td><td></td><td><code>Acquaintance comp</code></td></tr>
+<tr><td>GenerateSaveData</td><td><code>CitySaveData.AcquaintanceCitySave</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>ConnectionType</h3>
+<pre><code>friend
+neighbor
+housemate
+lover
+boss
+workTeam
+workOther
+regularCustomer
+regularStaff
+familiarResidence
+familiarWork
+publicFigure
+stranger
+paramour
+player
+anyoneNotPlayer
+friendOrWork
+knowsName
+anyAcquaintance
+anyone
+workNotBoss
+relationshipMatch
+corpDove
+spamVmail
+corpStarch
+corpIndigo
+corpKaizen
+corpElgen
+corpCandor
+flairQuotes
+randomSpamVmail
+noReplyVmail
+bookGrubs
+pestControl
+landlord
+groupMember
+storyPartner</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

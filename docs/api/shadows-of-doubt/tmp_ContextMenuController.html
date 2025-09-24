@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ContextMenuController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>ContextMenuController</h1>
+      <div class="page-meta">Source file: <span class="code">ContextMenuController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">ContextMenuController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnOpenMenu</td><td><code>event ContextMenuController.OpenedMenu</code></td><td></td><td></td></tr>
+<tr><td>useLeftButton</td><td><code>bool</code></td><td><span class="badge">Header: Usage</span></td><td></td></tr>
+<tr><td>pos</td><td><code>Vector2</code></td><td><span class="badge">Header: Positioning &amp; Size</span></td><td>new Vector2(0f, -0.5f)</td></tr>
+<tr><td>useCursorPos</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>cursorPosOffset</td><td><code>Vector2</code></td><td><span class="badge">EnableIf(&quot;useCursorPos&quot;)</span></td><td>new Vector2(10f, -7f)</td></tr>
+<tr><td>useGlobalWidth</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>width</td><td><code>float</code></td><td><span class="badge">DisableIf(&quot;useGlobalWidth&quot;)</span></td><td>190f</td></tr>
+<tr><td>flag</td><td><code>ContextMenuController.MenuFlag</code></td><td><span class="badge">Header: Configuration</span></td><td></td></tr>
+<tr><td>menuButtons</td><td><code>List&lt;ContextMenuController.ContextMenuButtonSetup&gt;</code></td><td></td><td>new List&lt;ContextMenuController.ContextMenuButtonSetup&gt;()</td></tr>
+<tr><td>disabledItems</td><td><code>List&lt;string&gt;</code></td><td>Disabled items</td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>commandObject</td><td><code>MonoBehaviour</code></td><td></td><td></td></tr>
+<tr><td>activeMenu</td><td><code>static ContextMenuController</code></td><td><span class="badge">Header: Spawned</span></td><td></td></tr>
+<tr><td>lastButton</td><td><code>ContextButtonController</code></td><td></td><td></td></tr>
+<tr><td>spawnedMenu</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>menuRect</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>OnPointerClick</td><td><code>void</code></td><td></td><td><code>PointerEventData eventData</code></td></tr>
+<tr><td>OpenMenu</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnCommand</td><td><code>void</code></td><td></td><td><code>ContextButtonController button</code></td></tr>
+<tr><td>ForceClose</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ClampToWindow</td><td><code>Vector2</code></td><td></td><td><code>Vector2 rawPointerPosition</code></td></tr>
+<tr><td>SetScreenPosition</td><td><code>void</code></td><td><span class="badge">4</span> <span class="badge">0</span> <span class="badge">2</span> <span class="badge">0</span> <span class="badge">2</span></td><td><code>Vector2 pointerPosition</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class ContextMenuButtonSetup</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>commandString</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>useText</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>overrideText</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>useColour</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>colour</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>devOnly</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>MenuFlag</h3>
+<pre><code>none
+pinnedSelected</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

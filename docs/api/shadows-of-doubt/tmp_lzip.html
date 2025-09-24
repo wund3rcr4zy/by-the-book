@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lzip — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>lzip</h1>
+      <div class="page-meta">Source file: <span class="code">lzip.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">lzip</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>libname</td><td><code>const string</code></td><td></td><td>&quot;libzipw&quot;</td></tr>
+<tr><td>nativeBuffer</td><td><code>static IntPtr</code></td><td></td><td>IntPtr.Zero</td></tr>
+<tr><td>nativeBufferIsBeingUsed</td><td><code>static bool</code></td><td></td><td>false</td></tr>
+<tr><td>nativeOffset</td><td><code>static int</code></td><td></td><td>0</td></tr>
+<tr><td>ninfo</td><td><code>static List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>uinfo</td><td><code>static List&lt;ulong&gt;</code></td><td></td><td>new List&lt;ulong&gt;()</td></tr>
+<tr><td>cinfo</td><td><code>static List&lt;ulong&gt;</code></td><td></td><td>new List&lt;ulong&gt;()</td></tr>
+<tr><td>localOffset</td><td><code>static List&lt;ulong&gt;</code></td><td></td><td>new List&lt;ulong&gt;()</td></tr>
+<tr><td>zipFiles</td><td><code>static int</code></td><td></td><td></td></tr>
+<tr><td>zipFolders</td><td><code>static int</code></td><td></td><td></td></tr>
+<tr><td>totalCompressedSize</td><td><code>static ulong</code></td><td></td><td></td></tr>
+<tr><td>totalUncompressedSize</td><td><code>static ulong</code></td><td></td><td></td></tr>
+<tr><td>zinfo</td><td><code>static List&lt;lzip.zipInfo&gt;</code></td><td></td><td></td></tr>
+<tr><td>VersionMadeBy</td><td><code>short</code></td><td></td><td></td></tr>
+<tr><td>MinimumVersionToExtract</td><td><code>short</code></td><td></td><td></td></tr>
+<tr><td>BitFlag</td><td><code>short</code></td><td></td><td></td></tr>
+<tr><td>CompressionMethod</td><td><code>short</code></td><td></td><td></td></tr>
+<tr><td>FileLastModificationTime</td><td><code>short</code></td><td></td><td></td></tr>
+<tr><td>FileLastModificationDate</td><td><code>short</code></td><td></td><td></td></tr>
+<tr><td>CRC</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>CompressedSize</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>UncompressedSize</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>DiskNumberWhereFileStarts</td><td><code>short</code></td><td></td><td></td></tr>
+<tr><td>InternalFileAttributes</td><td><code>short</code></td><td></td><td></td></tr>
+<tr><td>ExternalFileAttributes</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>RelativeOffsetOfLocalFileHeader</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>AbsoluteOffsetOfLocalFileHeaderStore</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>filename</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>extraField</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>fileComment</td><td><code>string</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>setTarEncoding</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>uint encoding</code></td></tr>
+<tr><td>setEncoding</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>uint encoding</code></td></tr>
+<tr><td>releaseBuffer</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr buffer</code></td></tr>
+<tr><td>createBuffer</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>int size</code></td></tr>
+<tr><td>addToBuffer</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr destination, int offset, IntPtr buffer, int len</code></td></tr>
+<tr><td>zipCompressBuffer</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr source, int sourceLen, int levelOfCompression, ref int v</code></td></tr>
+<tr><td>zipDecompressBuffer</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr source, int sourceLen, ref int v</code></td></tr>
+<tr><td>freeMemStruct</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr buffer</code></td></tr>
+<tr><td>initMemStruct</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code></code></td></tr>
+<tr><td>initFileStruct</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code></code></td></tr>
+<tr><td>freeMemZ</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr pointer</code></td></tr>
+<tr><td>freeFileZ</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr pointer</code></td></tr>
+<tr><td>zipCDMemStart</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr info, IntPtr pnt, IntPtr fileStruct, IntPtr memStruct</code></td></tr>
+<tr><td>zipCDMemClose</td><td><code>IntPtr</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr zf, IntPtr memStruct, IntPtr info, int err</code></td></tr>
+<tr><td>zipGzip</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr source, int sourceLen, IntPtr outBuffer, int levelOfCompression, bool addHeader, bool addFooter</code></td></tr>
+<tr><td>zipUnGzip</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr source, int sourceLen, IntPtr outBuffer, int outLen, bool hasHeader, bool hasFooter</code></td></tr>
+<tr><td>zipUnGzip2</td><td><code>int</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code>IntPtr source, int sourceLen, IntPtr outBuffer, int outLen</code></td></tr>
+<tr><td>setCancel</td><td><code>void</code></td><td><span class="badge">extern</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;)</span></td><td><code></code></td></tr>
+<tr><td>gcA</td><td><code>GCHandle</code></td><td><span class="badge">static</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Ansi)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Ansi)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Ansi)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Ansi)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">DllImport(&quot;libzipw&quot;, CharSet = CharSet.Auto)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span> <span class="badge">MarshalAs(UnmanagedType.LPWStr)</span></td><td><code>object o</code></td></tr>
+<tr><td>checkObject</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>object o, string zipArchive, ref int len, ref IntPtr ptr</code></td></tr>
+<tr><td>getFileInfo</td><td><code>ulong</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>string zipArchive, object fileBuffer = null</code></td></tr>
+<tr><td>getEntryIndex</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code>string entry</code></td></tr>
+<tr><td>getTotalFiles</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">i</span></td><td><code>string zipArchive, object fileBuffer = null</code></td></tr>
+<tr><td>getTotalEntries</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, object fileBuffer = null</code></td></tr>
+<tr><td>getEntrySize</td><td><code>ulong</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, string entry, object fileBuffer = null</code></td></tr>
+<tr><td>entryExists</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, string entry, object fileBuffer = null</code></td></tr>
+<tr><td>setFilePermissions</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string filePath, string _user, string _group, string _other</code></td></tr>
+<tr><td>buffer2File</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>int levelOfCompression, string zipArchive, string arcFilename, byte[] buffer, bool append = false, string comment = null, string password = null, bool useBz2 = false</code></td></tr>
+<tr><td>delete_entry</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, string arcFilename</code></td></tr>
+<tr><td>replace_entry</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, string arcFilename, string newFilePath, int level = 9, string comment = null, string password = null, bool useBz2 = false</code></td></tr>
+<tr><td>replace_entry</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, string arcFilename, byte[] newFileBuffer, int level = 9, string password = null, bool useBz2 = false</code></td></tr>
+<tr><td>extract_entry</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, string arcFilename, string outpath, object fileBuffer = null, ulong[] proc = null, string password = null</code></td></tr>
+<tr><td>extract_entries</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span></td><td><code>string zipArchive, string[] fileList, string outpath, object fileBuffer = null, ulong[] proc = null, string password = null</code></td></tr>
+<tr><td>decompress_File</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">num</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">1</span> <span class="badge">num</span> <span class="badge">num</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">l</span> <span class="badge">l</span></td><td><code>string zipArchive, string outPath = null, int[] progress = null, object fileBuffer = null, ulong[] proc = null, string password = null</code></td></tr>
+<tr><td>compress_File</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span></td><td><code>int levelOfCompression, string zipArchive, string inFilePath, bool append = false, string fileName = &quot;&quot;, string comment = null, string password = null, bool useBz2 = false, int diskSize = 0, ulong[] byteProgress = null</code></td></tr>
+<tr><td>compress_File_List</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>int levelOfCompression, string zipArchive, string[] inFilePath, int[] progress = null, bool append = false, string[] fileName = null, string password = null, bool useBz2 = false, int diskSize = 0, ulong[] byteProgress = null</code></td></tr>
+<tr><td>compressDir</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">i</span> <span class="badge">1</span> <span class="badge">1</span> <span class="badge">j</span> <span class="badge">j</span></td><td><code>string sourceDir, int levelOfCompression, string zipArchive = null, bool includeRoot = false, int[] progress = null, string password = null, bool useBz2 = false, int diskSize = 0, bool append = false, ulong[] byteProgress = null</code></td></tr>
+<tr><td>fillPointers</td><td><code>void</code></td><td><span class="badge">static</span></td><td><code>string outFile, string[] fileName, string[] inFilePath, ref IntPtr[] fp, ref IntPtr[] np</code></td></tr>
+<tr><td>fillLists</td><td><code>void</code></td><td><span class="badge">static</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span></td><td><code>string fdir, bool includeRoot, ref List&lt;string&gt; inFilePath, ref List&lt;string&gt; fileName</code></td></tr>
+<tr><td>getAllFiles</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string dir</code></td></tr>
+<tr><td>getFileSize</td><td><code>long</code></td><td><span class="badge">static</span></td><td><code>string file</code></td></tr>
+<tr><td>getDirSize</td><td><code>ulong</code></td><td><span class="badge">static</span></td><td><code>string dir</code></td></tr>
+<tr><td>tarExtract</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">i</span></td><td><code>string inFile, string outPath = null, int[] progress = null, ulong[] byteProgress = null</code></td></tr>
+<tr><td>tarExtractEntry</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string inFile, string entry, string outPath = null, bool fullPaths = true, ulong[] byteProgress = null</code></td></tr>
+<tr><td>tarDir</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string sourceDir, string outFile = null, bool includeRoot = false, int[] progress = null, ulong[] byteProgress = null</code></td></tr>
+<tr><td>tarList</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string outFile, string[] inFilePath, string[] fileName = null, int[] progress = null, ulong[] byteProgress = null</code></td></tr>
+<tr><td>getTarInfo</td><td><code>ulong</code></td><td><span class="badge">static</span> <span class="badge">i</span> <span class="badge">j</span> <span class="badge">j</span></td><td><code>string tarArchive</code></td></tr>
+<tr><td>entryDateTime</td><td><code>DateTime</code></td><td><span class="badge">static</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code>string zipArchive, string entry, object fileBuffer = null</code></td></tr>
+<tr><td>free_inmemory</td><td><code>void</code></td><td><span class="badge">static</span></td><td><code>lzip.inMemory t</code></td></tr>
+<tr><td>inMemoryZipStart</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>lzip.inMemory t</code></td></tr>
+<tr><td>inMemoryZipAdd</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>lzip.inMemory t, int levelOfCompression, byte[] buffer, string fileName, string comment = null, string password = null, bool useBz2 = false</code></td></tr>
+<tr><td>inMemoryZipClose</td><td><code>IntPtr</code></td><td><span class="badge">static</span></td><td><code>lzip.inMemory t</code></td></tr>
+<tr><td>compress_Buf2Mem</td><td><code>IntPtr</code></td><td><span class="badge">static</span></td><td><code>lzip.inMemory t, int levelOfCompression, byte[] buffer, string fileName, string comment = null, string password = null, bool useBz2 = false</code></td></tr>
+<tr><td>decompress_Mem2File</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>lzip.inMemory t, string outPath, int[] progress = null, ulong[] proc = null, string password = null</code></td></tr>
+<tr><td>entry2BufferMem</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span> <span class="badge">1</span> <span class="badge">0</span></td><td><code>lzip.inMemory t, string entry, ref byte[] buffer, string password = null</code></td></tr>
+<tr><td>entry2BufferMem</td><td><code>byte[]</code></td><td><span class="badge">static</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>lzip.inMemory t, string entry, string password = null</code></td></tr>
+<tr><td>entry2FixedBufferMem</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">0</span> <span class="badge">num</span> <span class="badge">0</span></td><td><code>lzip.inMemory t, string entry, ref byte[] fixedBuffer, string password = null</code></td></tr>
+<tr><td>getFileInfoMem</td><td><code>ulong</code></td><td><span class="badge">static</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>lzip.inMemory t</code></td></tr>
+<tr><td>entry2Buffer</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code>string zipArchive, string entry, ref byte[] buffer, object fileBuffer = null, string password = null</code></td></tr>
+<tr><td>entry2FixedBuffer</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, string entry, ref byte[] fixedBuffer, object fileBuffer = null, string password = null</code></td></tr>
+<tr><td>entry2Buffer</td><td><code>byte[]</code></td><td><span class="badge">static</span></td><td><code>string zipArchive, string entry, object fileBuffer = null, string password = null</code></td></tr>
+<tr><td>validateFile</td><td><code>bool</code></td><td><span class="badge">static</span> <span class="badge">num</span></td><td><code>string zipArchive, object fileBuffer = null</code></td></tr>
+<tr><td>getZipInfo</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>string fileName</code></td></tr>
+<tr><td>getZipInfoMerged</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>string fileName, ref int pos, ref int size, bool getCentralDirectory = false</code></td></tr>
+<tr><td>getZipInfoMerged</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>byte[] buffer, ref int pos, ref int size, bool getCentralDirectory = false</code></td></tr>
+<tr><td>getZipInfoMerged</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>byte[] buffer</code></td></tr>
+<tr><td>findPK</td><td><code>bool</code></td><td><span class="badge">static</span></td><td><code>BinaryReader reader</code></td></tr>
+<tr><td>findEnd</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>BinaryReader reader, ref int pos, ref int size</code></td></tr>
+<tr><td>getCentralDir</td><td><code>void</code></td><td><span class="badge">static</span></td><td><code>BinaryReader reader, int count</code></td></tr>
+<tr><td>getMergedZip</td><td><code>byte[]</code></td><td><span class="badge">static</span></td><td><code>string filePath, ref int position, ref int siz</code></td></tr>
+<tr><td>getMergedZip</td><td><code>byte[]</code></td><td><span class="badge">static</span> <span class="badge">num2</span></td><td><code>string filePath</code></td></tr>
+<tr><td>getMergedZip</td><td><code>byte[]</code></td><td><span class="badge">static</span> <span class="badge">num2</span></td><td><code>byte[] buffer, ref int position, ref int siz</code></td></tr>
+<tr><td>getMergedZip</td><td><code>byte[]</code></td><td><span class="badge">static</span> <span class="badge">num2</span></td><td><code>byte[] buffer</code></td></tr>
+<tr><td>decompressZipMerged</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">num2</span></td><td><code>string file, string outPath, int[] progress = null, ulong[] proc = null, string password = null</code></td></tr>
+<tr><td>decompressZipMerged</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>byte[] buffer, string outPath, int[] progress = null, ulong[] proc = null, string password = null</code></td></tr>
+<tr><td>writeFile</td><td><code>void</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>byte[] tb, string entry, string outPath, string overrideEntryName, ref int res</code></td></tr>
+<tr><td>entry2FileMerged</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string file, string entry, string outPath, string overrideEntryName = null, string password = null</code></td></tr>
+<tr><td>entry2FileMerged</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>byte[] buffer, string entry, string outPath, string overrideEntryName = null, string password = null</code></td></tr>
+<tr><td>entry2BufferMerged</td><td><code>byte[]</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>string file, string entry, string password = null</code></td></tr>
+<tr><td>entry2BufferMerged</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>string file, string entry, ref byte[] refBuffer, string password = null</code></td></tr>
+<tr><td>entry2FixedBufferMerged</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>string file, string entry, ref byte[] fixedBuffer, string password = null</code></td></tr>
+<tr><td>entry2BufferMerged</td><td><code>byte[]</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>byte[] buffer, string entry, string password = null</code></td></tr>
+<tr><td>entry2BufferMerged</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>byte[] buffer, string entry, ref byte[] refBuffer, string password = null</code></td></tr>
+<tr><td>entry2FixedBufferMerged</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>byte[] buffer, string entry, ref byte[] fixedBuffer, string password = null</code></td></tr>
+<tr><td>compressBuffer</td><td><code>bool</code></td><td><span class="badge">static</span> <span class="badge">0</span></td><td><code>byte[] source, ref byte[] outBuffer, int levelOfCompression</code></td></tr>
+<tr><td>compressBufferFixed</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>byte[] source, ref byte[] outBuffer, int levelOfCompression, bool safe = true</code></td></tr>
+<tr><td>compressBuffer</td><td><code>byte[]</code></td><td><span class="badge">static</span></td><td><code>byte[] source, int levelOfCompression</code></td></tr>
+<tr><td>decompressBuffer</td><td><code>bool</code></td><td><span class="badge">static</span> <span class="badge">num</span></td><td><code>byte[] source, ref byte[] outBuffer</code></td></tr>
+<tr><td>decompressBufferFixed</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>byte[] source, ref byte[] outBuffer, bool safe = true</code></td></tr>
+<tr><td>decompressBuffer</td><td><code>byte[]</code></td><td><span class="badge">static</span></td><td><code>byte[] source</code></td></tr>
+<tr><td>gzip</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">num</span></td><td><code>byte[] source, byte[] outBuffer, int level, bool addHeader = true, bool addFooter = true, bool overrideDateTimeWithLength = false</code></td></tr>
+<tr><td>gzipUncompressedSize</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span> <span class="badge">7</span> <span class="badge">9</span></td><td><code>byte[] source</code></td></tr>
+<tr><td>gzipCompressedSize</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>byte[] source, int offset = 0</code></td></tr>
+<tr><td>findGzStart</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>byte[] buffer</code></td></tr>
+<tr><td>unGzip</td><td><code>int</code></td><td><span class="badge">static</span> <span class="badge">i</span></td><td><code>byte[] source, byte[] outBuffer, bool hasHeader = true, bool hasFooter = true</code></td></tr>
+<tr><td>unGzip2</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>object source, byte[] outBuffer, int intPtrLength = 0</code></td></tr>
+<tr><td>unGzip2Merged</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>byte[] source, int offset, int bufferLength, byte[] outBuffer</code></td></tr>
+<tr><td>gzipFile</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string inFile, string outFile = null, int level = 9, ulong[] progress = null, bool addHeader = true</code></td></tr>
+<tr><td>ungzipFile</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string inFile, string outFile = null, ulong[] progress = null</code></td></tr>
+<tr><td>bz2Create</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string inFile, string outFile = null, int level = 9, ulong[] byteProgress = null</code></td></tr>
+<tr><td>bz2Decompress</td><td><code>int</code></td><td><span class="badge">static</span></td><td><code>string inFile, string outFile = null, ulong[] byteProgress = null</code></td></tr>
+<tr><td>downloadZipFileNative</td><td><code>IEnumerator</code></td><td><span class="badge">static</span></td><td><code>string url, Action&lt;bool&gt; downloadDone, Action&lt;lzip.inMemory&gt; inmem, Action&lt;IntPtr&gt; pointer = null, Action&lt;int&gt; fileSize = null</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class inMemory</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>pointer</td><td><code>IntPtr</code></td><td></td><td>IntPtr.Zero</td></tr>
+<tr><td>zf</td><td><code>IntPtr</code></td><td></td><td>IntPtr.Zero</td></tr>
+<tr><td>memStruct</td><td><code>IntPtr</code></td><td></td><td>IntPtr.Zero</td></tr>
+<tr><td>fileStruct</td><td><code>IntPtr</code></td><td></td><td>IntPtr.Zero</td></tr>
+<tr><td>info</td><td><code>int[]</code></td><td></td><td>new int[3]</td></tr>
+<tr><td>lastResult</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>isClosed</td><td><code>bool</code></td><td></td><td>true</td></tr>
+</tbody></table>
+<h3>class CustomWebRequest</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FloorEditController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>FloorEditController</h1>
+      <div class="page-meta">Source file: <span class="code">FloorEditController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">FloorEditController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>cityTile</td><td><code>CityTile</code></td><td><span class="badge">Header: General References</span></td><td></td></tr>
+<tr><td>building</td><td><code>NewBuilding</code></td><td></td><td></td></tr>
+<tr><td>editorFloorParent</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>enabledInScrollView</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>toolOptionsWindow</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>displayMode</td><td><code>FloorEditController.EditorDisplayMode</code></td><td></td><td></td></tr>
+<tr><td>selectionModeType</td><td><code>FloorEditController.EditorSelectionMode</code></td><td></td><td></td></tr>
+<tr><td>lightswitchPreset</td><td><code>InteractablePreset</code></td><td></td><td></td></tr>
+<tr><td>fakeCitizenHolder</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>heldDown</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>heldDownOriginNode</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>heldDownTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>recalculationDelay</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>currentRecalculation</td><td><code>string</code></td><td></td><td>string.Empty</td></tr>
+<tr><td>isSaving</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>loaded</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>rightMouse</td><td><code>bool</code></td><td><span class="badge">Header: Movement</span></td><td></td></tr>
+<tr><td>selectionLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>wallsSelectionMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>newFloorWindow</td><td><code>RectTransform</code></td><td><span class="badge">Header: New Floor</span></td><td></td></tr>
+<tr><td>newFloorName</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>newFloorSizeX</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>newFloorSizeY</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>newFloorFloorHeight</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>newFloorCeilingHeight</td><td><code>TMP_InputField</code></td><td></td><td></td></tr>
+<tr><td>saveAsFloorWindow</td><td><code>RectTransform</code></td><td><span class="badge">Header: Save As</span></td><td></td></tr>
+<tr><td>newSaveAsFloorName</td><td><code>InputField</code></td><td></td><td></td></tr>
+<tr><td>loadFloorWindow</td><td><code>RectTransform</code></td><td><span class="badge">Header: Load</span></td><td></td></tr>
+<tr><td>loadDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>loadFilePaths</td><td><code>List&lt;string&gt;</code></td><td></td><td>new List&lt;string&gt;()</td></tr>
+<tr><td>mapParent</td><td><code>GameObject</code></td><td><span class="badge">Header: Map</span></td><td></td></tr>
+<tr><td>editFloor</td><td><code>NewFloor</code></td><td><span class="badge">Header: Current Data</span></td><td></td></tr>
+<tr><td>selectionMode</td><td><code>bool</code></td><td><span class="badge">Header: Selection</span></td><td>true</td></tr>
+<tr><td>selectionObject</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>floorSelectCursorObject</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>wallSelectCursorObject</td><td><code>Transform</code></td><td></td><td></td></tr>
+<tr><td>statusText</td><td><code>TextMeshProUGUI</code></td><td></td><td></td></tr>
+<tr><td>tileSelection</td><td><code>NewTile</code></td><td></td><td></td></tr>
+<tr><td>nodeSelection</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>wallSelection</td><td><code>NewWall</code></td><td></td><td></td></tr>
+<tr><td>selectionCoord</td><td><code>Vector2</code></td><td></td><td>new Vector2(-1f, -1f)</td></tr>
+<tr><td>tool</td><td><code>FloorEditController.FloorEditTool</code></td><td></td><td></td></tr>
+<tr><td>wallTriggers</td><td><code>List&lt;GameObject&gt;</code></td><td></td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>floorDesignationOptions</td><td><code>RectTransform</code></td><td><span class="badge">Header: Tools</span></td><td></td></tr>
+<tr><td>floorDesignationDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>floorDesignationTypeSelection</td><td><code>NewNode.FloorTileType</code></td><td></td><td>NewNode.FloorTileType.floorAndCeiling</td></tr>
+<tr><td>editorAddressColours</td><td><code>List&lt;Color&gt;</code></td><td></td><td>new List&lt;Color&gt;()</td></tr>
+<tr><td>adddressDesignationMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>addressDesignationOptions</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>addressDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>addressTypeDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>addressSelection</td><td><code>NewAddress</code></td><td></td><td></td></tr>
+<tr><td>addressTypeSelection</td><td><code>LayoutConfiguration</code></td><td></td><td></td></tr>
+<tr><td>addressDesignationColourImage</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>addressDesignationColourImage2</td><td><code>Image</code></td><td></td><td></td></tr>
+<tr><td>roomDesignationOptions</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>roomConfigAddressDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>roomConfigsDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>roomIDsDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>roomLayoutAssignDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>roomSelection</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>wallPairsOptions</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>wallPairsDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>wallPairPresetSelection</td><td><code>DoorPairPreset</code></td><td></td><td></td></tr>
+<tr><td>forceRoomOptions</td><td><code>RectTransform</code></td><td></td><td></td></tr>
+<tr><td>forceRoomDropdown</td><td><code>TMP_Dropdown</code></td><td></td><td></td></tr>
+<tr><td>forceRoomSelection</td><td><code>RoomConfiguration</code></td><td></td><td></td></tr>
+<tr><td>forceBasementToggle</td><td><code>Toggle</code></td><td></td><td></td></tr>
+<tr><td>editorFloorMaterial</td><td><code>Material</code></td><td><span class="badge">Header: Materials</span></td><td></td></tr>
+<tr><td>editorFloorEdgeMaterial</td><td><code>Material</code></td><td></td><td></td></tr>
+<tr><td>defaultFloorMaterial</td><td><code>MaterialGroupPreset</code></td><td></td><td></td></tr>
+<tr><td>defaultMaterialKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>nullRoomType</td><td><code>RoomTypePreset</code></td><td><span class="badge">Header: Scriptable Object Data</span></td><td></td></tr>
+<tr><td>allLayoutTypes</td><td><code>List&lt;RoomTypePreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>allLayouts</td><td><code>List&lt;LayoutConfiguration&gt;</code></td><td></td><td></td></tr>
+<tr><td>allRoomConfigs</td><td><code>List&lt;RoomConfiguration&gt;</code></td><td></td><td></td></tr>
+<tr><td>allDoorPairs</td><td><code>List&lt;DoorPairPreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>selectableDoorPairs</td><td><code>List&lt;DoorPairPreset&gt;</code></td><td></td><td></td></tr>
+<tr><td>selectableRooms</td><td><code>List&lt;RoomConfiguration&gt;</code></td><td></td><td>new List&lt;RoomConfiguration&gt;()</td></tr>
+<tr><td>debugContainer</td><td><code>Transform</code></td><td><span class="badge">Header: Debugging</span></td><td></td></tr>
+<tr><td>currentlyDisplayingArea</td><td><code>GenerationDebugController</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static FloorEditController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartGame</td><td><code>void</code></td><td><span class="badge">1</span> <span class="badge">i</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateStatusText</td><td><code>void</code></td><td><span class="badge">key</span> <span class="badge">key</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>SelectNewTile</td><td><code>void</code></td><td></td><td><code>NewTile newSelect</code></td></tr>
+<tr><td>SelectNewNode</td><td><code>void</code></td><td></td><td><code>NewNode newSelect</code></td></tr>
+<tr><td>SelectNewWall</td><td><code>void</code></td><td></td><td><code>NewWall newSelect</code></td></tr>
+<tr><td>SetDisplayMode</td><td><code>void</code></td><td></td><td><code>FloorEditController.EditorDisplayMode newMode</code></td></tr>
+<tr><td>SetSelectionMode</td><td><code>void</code></td><td></td><td><code>FloorEditController.EditorSelectionMode newMode</code></td></tr>
+<tr><td>OnPauseChange</td><td><code>void</code></td><td></td><td><code>bool openDesktopMode</code></td></tr>
+<tr><td>SetTool</td><td><code>void</code></td><td></td><td><code>int newTool</code></td></tr>
+<tr><td>SetTool</td><td><code>void</code></td><td></td><td><code>FloorEditController.FloorEditTool newTool, bool forceRefresh = false</code></td></tr>
+<tr><td>NewFloorButton</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>SaveFloorButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SaveAsFloorButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>EnableSelectionMode</td><td><code>void</code></td><td></td><td><code>bool val</code></td></tr>
+<tr><td>LoadFloorButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CreateNewFloorTrigger</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CreateNewFloor</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SaveAs</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>LoadTrigger</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Load</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RecalculateAllTrigger</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SaveCurrentData</td><td><code>void</code></td><td></td><td><code>NewFloor data</code></td></tr>
+<tr><td>OnCompleteSaveData</td><td><code>void</code></td><td></td><td><code>NewFloor floor, FloorSaveData newSaveData</code></td></tr>
+<tr><td>LoadData</td><td><code>void</code></td><td></td><td><code>FloorSaveData savedData</code></td></tr>
+<tr><td>LoadEditorFloorToWorld</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPause</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnPlay</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnNewFloorDesignationSetting</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnNewAddressDesignationSelection</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnNewAddressDesignationSelection2</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnNewAddressTypeSelection</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddNewAddressButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RemoveAddress</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnNewWallDesignationSetting</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>OnNewForceRoomSetting</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateAddressLayoutButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateAddressDecorButton</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateAddressLayoutAll</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateAddressDecorAll</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RemoveAllForcedRooms</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetAllEntrances</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>UpdateAddressDropdowns</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateRoomConfigsDropdown</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>OnNewRoomVariationSelection</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateRoomDesignationIDsDropdown</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnNewRoomSelection</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>UpdateRoomLayoutAssignDropdown</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>OnAssignNewRoom</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span> <span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>SaveCurrentVariation</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SaveLoadedAddressVariation</td><td><code>void</code></td><td></td><td><code>NewAddress add</code></td></tr>
+<tr><td>AddVariationConfiguration</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RemoveVariationConfiguration</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddRoom</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RemoveRoom</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetLoadedVariation</td><td><code>AddressLayoutVariation</code></td><td></td><td><code>NewAddress forAddress</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>EditorDisplayMode</h3>
+<pre><code>normal
+displayAddressDesignation
+displayRoomSelection</code></pre>
+<h3>EditorSelectionMode</h3>
+<pre><code>tile
+wall
+node</code></pre>
+<h3>FloorEditTool</h3>
+<pre><code>none
+floorDesignation
+addressDesignation
+wallDesignation
+rotateFloor
+mainEntrance
+secondaryEntrance
+stairwell
+elevator
+forceRoom
+roomDesignation</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

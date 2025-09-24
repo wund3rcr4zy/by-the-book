@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CityEditorController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CityEditorController</h1>
+      <div class="page-meta">Source file: <span class="code">CityEditorController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CityEditorController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>OnNewCityEditorData</td><td><code>event CityEditorController.NewCityEditorData</code></td><td></td><td></td></tr>
+<tr><td>activeBuilding</td><td><code>NewBuilding</code></td><td><span class="badge">Header: References</span></td><td></td></tr>
+<tr><td>cityEditorCam</td><td><code>Camera</code></td><td></td><td></td></tr>
+<tr><td>currentMode</td><td><code>CityEditorController.CityEditorMode</code></td><td></td><td></td></tr>
+<tr><td>currentSubMode</td><td><code>CityEditorController.CityEditorSubMode</code></td><td></td><td></td></tr>
+<tr><td>canvasController</td><td><code>PrototypeDebugPanel</code></td><td></td><td></td></tr>
+<tr><td>cityEditorPostProcessingVolume</td><td><code>GameObject</code></td><td>The editor has it&#x27;s own overrides for post processing; enable/disable this along with the editor itself</td><td></td></tr>
+<tr><td>disableWhileActive</td><td><code>List&lt;GameObject&gt;</code></td><td>Disable/Reenable these objects when the city editor is active</td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>cityEditFloor</td><td><code>GameObject</code></td><td>A floor objects that acts as a collider for the mouse ray</td><td></td></tr>
+<tr><td>needsUpdatedPathfinding</td><td><code>bool</code></td><td><span class="badge">Header: State</span></td><td></td></tr>
+<tr><td>dataGenerated</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isLoading</td><td><code>bool</code></td><td>Is/should the city constructor loading something? This is mostly used to trigger the DoF effect but could be useful elsewhere</td><td></td></tr>
+<tr><td>previouslySelected</td><td><code>ButtonController</code></td><td></td><td></td></tr>
+<tr><td>canFinishLoadFromCurrentState</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>cityEditorStreetEdit</td><td><code>CityEditorStreetEdit</code></td><td></td><td></td></tr>
+<tr><td>_buildingEditor</td><td><code>CityEditorBuildingEdit</code></td><td></td><td></td></tr>
+<tr><td>_streetEditor</td><td><code>CityEditorStreetEdit</code></td><td></td><td></td></tr>
+<tr><td>_editCam</td><td><code>CityEditorInputController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Update</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetComponentReferences</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RerunPathfinder</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateNewCityEditorData</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnHaltOnEndOfLoadState</td><td><code>void</code></td><td></td><td><code>CityConstructor.LoadState haltedOnState</code></td></tr>
+<tr><td>ClearCurrentCityEditorData</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>FinishLoading</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+<tr><td>SetCityEditorWarning</td><td><code>void</code></td><td></td><td><code>string warning</code></td></tr>
+<tr><td>SetCityEditor</td><td><code>void</code></td><td></td><td><code>bool condition</code></td></tr>
+<tr><td>SwitchEditorMode</td><td><code>void</code></td><td></td><td><code>CityEditorController.CityEditorMode mode</code></td></tr>
+<tr><td>SwitchEditorSubMode</td><td><code>void</code></td><td></td><td><code>CityEditorController.CityEditorSubMode submode</code></td></tr>
+<tr><td>DeactivateEditors</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetLastSelected</td><td><code>ButtonController</code></td><td></td><td><code></code></td></tr>
+<tr><td>InitializeSelectedModeComponents</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnNewTileSelected</td><td><code>void</code></td><td></td><td><code>CityTile newSelection</code></td></tr>
+<tr><td>DoesCurrentMapMeetCityRequirements</td><td><code>bool</code></td><td></td><td><code>bool displayPopups</code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>CityEditorMode</h3>
+<pre><code>EditStreets</code></pre>
+<h3>CityEditorSubMode</h3>
+<pre><code>RenameSelection</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

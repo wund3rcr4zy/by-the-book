@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CleanupController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>CleanupController</h1>
+      <div class="page-meta">Source file: <span class="code">CleanupController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">CleanupController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>trashLimit</td><td><code>const int</code></td><td></td><td>250</td></tr>
+<tr><td>totalInteractables</td><td><code>int</code></td><td><span class="badge">Header: Interactables</span></td><td></td></tr>
+<tr><td>removedCityDataInteractables</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>removedCityDataItems</td><td><code>List&lt;int&gt;</code></td><td></td><td>new List&lt;int&gt;()</td></tr>
+<tr><td>savableCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>savablePercent</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>trashCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>trashPercent</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>trashThreshold</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>trashThresholdPercent</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>trashRemovedLastUpdate</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>breakdownSavable</td><td><code>List&lt;CleanupController.DebugInteractable&gt;</code></td><td></td><td>new List&lt;CleanupController.DebugInteractable&gt;()</td></tr>
+<tr><td>breakdownNonSavable</td><td><code>List&lt;CleanupController.DebugInteractable&gt;</code></td><td></td><td>new List&lt;CleanupController.DebugInteractable&gt;()</td></tr>
+<tr><td>breakdownTrash</td><td><code>List&lt;CleanupController.DebugInteractable&gt;</code></td><td></td><td>new List&lt;CleanupController.DebugInteractable&gt;()</td></tr>
+<tr><td>currentTrash</td><td><code>int</code></td><td><span class="badge">Header: Trash</span></td><td></td></tr>
+<tr><td>trash</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>binTrash</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>metaObjectsCount</td><td><code>int</code></td><td><span class="badge">Header: Other Objects</span></td><td></td></tr>
+<tr><td>fingerprintsCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>fingerprintThreshold</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>fingerprintThresholdPercent</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>footprintsCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>footprintThreshold</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>footprintThresholdPercent</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>cctvCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>cctvThreshold</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>cctvThresholdPercent</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>evidenceCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>factsCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static CleanupController</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>TrashUpdate</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>UpdateData</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class DebugInteractable</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>count</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>savablePercent</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>trashPercent</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>savableDetails</td><td><code>List&lt;CleanupController.SaveableBecause&gt;</code></td><td></td><td>new List&lt;CleanupController.SaveableBecause&gt;()</td></tr>
+<tr><td>contents</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+</tbody></table>
+<h3>class SaveableBecause</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>reason</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>count</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

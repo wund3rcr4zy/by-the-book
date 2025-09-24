@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EvidenceWitness — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>EvidenceWitness</h1>
+      <div class="page-meta">Source file: <span class="code">EvidenceWitness.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">EvidenceWitness</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>dialogOptions</td><td><code>Dictionary&lt;Evidence.DataKey, List&lt;EvidenceWitness.DialogOption&gt;&gt;</code></td><td></td><td>new Dictionary&lt;Evidence.DataKey, List&lt;EvidenceWitness.DialogOption&gt;&gt;()</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>AddDialogOption</td><td><code>EvidenceWitness.DialogOption</code></td><td></td><td><code>Evidence.DataKey key, DialogPreset newPreset, SideJob newSideJob = null, NewRoom roomRef = null, bool allowPresetDuplicates = true</code></td></tr>
+<tr><td>RemoveDialogOption</td><td><code>void</code></td><td><span class="badge">key</span> <span class="badge">key</span></td><td><code>Evidence.DataKey key, DialogPreset newPreset, SideJob newSideJob = null, NewRoom roomRef = null</code></td></tr>
+<tr><td>GetDialogOptions</td><td><code>List&lt;EvidenceWitness.DialogOption&gt;</code></td><td><span class="badge">key</span> <span class="badge">key</span></td><td><code>Evidence.DataKey key</code></td></tr>
+<tr><td>GetDialogOptions</td><td><code>List&lt;EvidenceWitness.DialogOption&gt;</code></td><td></td><td><code>List&lt;Evidence.DataKey&gt; keys</code></td></tr>
+<tr><td>GetTiedKeys</td><td><code>List&lt;Evidence.DataKey&gt;</code></td><td><span class="badge">override</span> <span class="badge">key</span></td><td><code>List&lt;Evidence.DataKey&gt; inputKeys</code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class DialogOption</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>DialogPreset</code></td><td></td><td></td></tr>
+<tr><td>jobRef</td><td><code>SideJob</code></td><td></td><td></td></tr>
+<tr><td>roomRef</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

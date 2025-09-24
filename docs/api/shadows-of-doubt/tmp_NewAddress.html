@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NewAddress — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>NewAddress</h1>
+      <div class="page-meta">Source file: <span class="code">NewAddress.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">NewAddress</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>saveData</td><td><code>AddressSaveData</code></td><td><span class="badge">Header: Address Contents</span></td><td></td></tr>
+<tr><td>loadedVarIndex</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>generatedInteriorEntrances</td><td><code>List&lt;NewWall&gt;</code></td><td></td><td>new List&lt;NewWall&gt;()</td></tr>
+<tr><td>protectedNodes</td><td><code>List&lt;NewNode&gt;</code></td><td></td><td>new List&lt;NewNode&gt;()</td></tr>
+<tr><td>featuresNeonSignageHorizontal</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>featuresNeonSignageVertical</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>neonFont</td><td><code>NeonSignCharacters</code></td><td></td><td></td></tr>
+<tr><td>neonColour</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>neonSignHorizontal</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>neonSignVertical</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>neonVerticalIndex</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>featuresBrokenSign</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>generatedRoomConfigs</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>vandalism</td><td><code>List&lt;NewAddress.Vandalism&gt;</code></td><td></td><td>new List&lt;NewAddress.Vandalism&gt;()</td></tr>
+<tr><td>id</td><td><code>int</code></td><td><span class="badge">Header: Details</span></td><td></td></tr>
+<tr><td>assignID</td><td><code>static int</code></td><td></td><td>1</td></tr>
+<tr><td>editorID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>assignEditorID</td><td><code>static int</code></td><td></td><td>1</td></tr>
+<tr><td>preset</td><td><code>LayoutConfiguration</code></td><td></td><td></td></tr>
+<tr><td>editorColour</td><td><code>Color</code></td><td></td><td>Color.cyan</td></tr>
+<tr><td>wood</td><td><code>Color</code></td><td></td><td></td></tr>
+<tr><td>isOutsideAddress</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>isLobbyAddress</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>normalizedLandValue</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>hiddenSpareKey</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>owners</td><td><code>List&lt;Human&gt;</code></td><td><span class="badge">Header: Inhabitants</span></td><td>new List&lt;Human&gt;()</td></tr>
+<tr><td>inhabitants</td><td><code>List&lt;Human&gt;</code></td><td></td><td>new List&lt;Human&gt;()</td></tr>
+<tr><td>favouredCustomers</td><td><code>List&lt;Human&gt;</code></td><td></td><td>new List&lt;Human&gt;()</td></tr>
+<tr><td>addressPreset</td><td><code>AddressPreset</code></td><td></td><td></td></tr>
+<tr><td>residence</td><td><code>ResidenceController</code></td><td></td><td></td></tr>
+<tr><td>company</td><td><code>Company</code></td><td></td><td></td></tr>
+<tr><td>interiorLightsEnabled</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>roomsBelongTo</td><td><code>Dictionary&lt;RoomTypePreset, Dictionary&lt;NewRoom, List&lt;Human&gt;&gt;&gt;</code></td><td></td><td>new Dictionary&lt;RoomTypePreset, Dictionary&lt;NewRoom, List&lt;Human&gt;&gt;&gt;()</td></tr>
+<tr><td>averageHumility</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>averageEmotionality</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>averageExtraversion</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>averageAgreeableness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>averageConscientiousness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>maxConscientiousness</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>averageCreativity</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>saleNote</td><td><code>Interactable</code></td><td><span class="badge">Header: For Sale</span></td><td></td></tr>
+<tr><td>alarms</td><td><code>List&lt;Interactable&gt;</code></td><td><span class="badge">Header: Alarms</span></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>sentryGuns</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>otherSecurity</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>alarmActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>targetMode</td><td><code>NewBuilding.AlarmTargetMode</code></td><td></td><td></td></tr>
+<tr><td>targetModeSetAt</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>alarmTargets</td><td><code>List&lt;Human&gt;</code></td><td></td><td>new List&lt;Human&gt;()</td></tr>
+<tr><td>alarmTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>breakerSecurityID</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>breakerDoorsID</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>breakerLightsID</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>breakerSecurity</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>breakerDoors</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>breakerLights</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>internalRoutes</td><td><code>Dictionary&lt;NewAddress.PathKey, List&lt;NewNode.NodeAccess&gt;&gt;</code></td><td><span class="badge">Header: AI Navigation</span></td><td>new Dictionary&lt;NewAddress.PathKey, List&lt;NewNode.NodeAccess&gt;&gt;()</td></tr>
+<tr><td>generatedEntranceWeights</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>accessRef</td><td><code>NativeMultiHashMap&lt;int3, int&gt;</code></td><td></td><td></td></tr>
+<tr><td>accessPositions</td><td><code>NativeHashMap&lt;int, float3&gt;</code></td><td></td><td></td></tr>
+<tr><td>toNodeReference</td><td><code>NativeHashMap&lt;int, int3&gt;</code></td><td></td><td></td></tr>
+<tr><td>noPassRef</td><td><code>NativeList&lt;int3&gt;</code></td><td></td><td></td></tr>
+<tr><td>passcode</td><td><code>GameplayController.Passcode</code></td><td><span class="badge">Header: Passwords</span></td><td></td></tr>
+<tr><td>calendar</td><td><code>EvidenceMultiPage</code></td><td></td><td></td></tr>
+<tr><td>floorEditDebugParent</td><td><code>GameObject</code></td><td><span class="badge">Header: Debug</span></td><td></td></tr>
+<tr><td>debugCompanyShifts</td><td><code>List&lt;CompanyOpenHoursPreset.CompanyShift&gt;</code></td><td></td><td>new List&lt;CompanyOpenHoursPreset.CompanyShift&gt;()</td></tr>
+<tr><td>denDecorDebug</td><td><code>MurderMO</code></td><td></td><td></td></tr>
+<tr><td>origin</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>destination</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>hasHash</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>hash</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>room</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>location</td><td><code>NewAddress.AirVent</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Setup</td><td><code>void</code></td><td></td><td><code>NewFloor newFloor, LayoutConfiguration newType, DesignStylePreset newDefaultStyle</code></td></tr>
+<tr><td>GenerateRoomConfigs</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CalculateLandValue</td><td><code>void</code></td><td><span class="badge">5</span> <span class="badge">0</span> <span class="badge">num</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">0</span> <span class="badge">num2</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span></td><td><code></code></td></tr>
+<tr><td>SetTargetMode</td><td><code>void</code></td><td></td><td><code>NewBuilding.AlarmTargetMode newMode, bool setResetTimer = true</code></td></tr>
+<tr><td>Load</td><td><code>void</code></td><td></td><td><code>CitySaveData.AddressCitySave data, NewFloor newFloor</code></td></tr>
+<tr><td>AssignPurpose</td><td><code>void</code></td><td><span class="badge">key</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>SetupNeonSigns</td><td><code>void</code></td><td><span class="badge">addressPreset2</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>GetNeon</td><td><code>int</code></td><td></td><td><code></code></td></tr>
+<tr><td>AddOwner</td><td><code>void</code></td><td><span class="badge">i</span></td><td><code>Human newOwner</code></td></tr>
+<tr><td>AddInhabitant</td><td><code>void</code></td><td></td><td><code>Human newInhabitant</code></td></tr>
+<tr><td>RemoveInhabitant</td><td><code>void</code></td><td></td><td><code>Human newInhabitant</code></td></tr>
+<tr><td>RemoveOwner</td><td><code>void</code></td><td></td><td><code>Human newOwner</code></td></tr>
+<tr><td>UpdateDesignStyle</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetName</td><td><code>void</code></td><td><span class="badge">index</span></td><td><code></code></td></tr>
+<tr><td>SetName</td><td><code>void</code></td><td></td><td><code>string newName</code></td></tr>
+<tr><td>SetAddressType</td><td><code>void</code></td><td></td><td><code>LayoutConfiguration newType</code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDoorKnockByActor</td><td><code>void</code></td><td></td><td><code>NewDoor dc, float urgency, Actor byWho</code></td></tr>
+<tr><td>CreateEvidence</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>SetupEvidence</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>CreateCalendar</td><td><code>EvidenceMultiPage</code></td><td></td><td><code></code></td></tr>
+<tr><td>GenerateSaveData</td><td><code>CitySaveData.AddressCitySave</code></td><td><span class="badge">0</span> <span class="badge">1</span> <span class="badge">num</span> <span class="badge">num</span> <span class="badge">num</span> <span class="badge">key</span> <span class="badge">num</span> <span class="badge">key</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">num2</span> <span class="badge">num2</span> <span class="badge">num2</span> <span class="badge">key2</span> <span class="badge">num2</span> <span class="badge">key2</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">j</span> <span class="badge">k</span> <span class="badge">l</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">0</span> <span class="badge">1</span></td><td><code></code></td></tr>
+<tr><td>CreateSignageHorizontal</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>CreateSignageVertical</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">i</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span> <span class="badge">k</span></td><td><code></code></td></tr>
+<tr><td>GenerateJobPathingData</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">0</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>CalculateRoomOwnership</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SelectAirVentLocations</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">j</span></td><td><code></code></td></tr>
+<tr><td>PickPassword</td><td><code>void</code></td><td><span class="badge">l</span></td><td><code></code></td></tr>
+<tr><td>SetAlarm</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span> <span class="badge">0</span></td><td><code>bool newVal, Human target</code></td></tr>
+<tr><td>GetAlarmTime</td><td><code>float</code></td><td></td><td><code></code></td></tr>
+<tr><td>IsAlarmSystemTarget</td><td><code>bool</code></td><td><span class="badge">override</span></td><td><code>Human human</code></td></tr>
+<tr><td>IsAlarmActive</td><td><code>bool</code></td><td><span class="badge">override</span></td><td><code>out float retAlarmTimer, out NewBuilding.AlarmTargetMode retTargetMode, out List&lt;Human&gt; retTargets</code></td></tr>
+<tr><td>AddSentryGun</td><td><code>void</code></td><td></td><td><code>Interactable newInteractable</code></td></tr>
+<tr><td>AddOtherSecurity</td><td><code>void</code></td><td></td><td><code>Interactable newInteractable</code></td></tr>
+<tr><td>SetBreakerSecurity</td><td><code>void</code></td><td></td><td><code>Interactable newObject</code></td></tr>
+<tr><td>SetBreakerLights</td><td><code>void</code></td><td></td><td><code>Interactable newObject</code></td></tr>
+<tr><td>SetBreakerDoors</td><td><code>void</code></td><td></td><td><code>Interactable newObject</code></td></tr>
+<tr><td>IsOutside</td><td><code>bool</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+<tr><td>GetBreakerSecurity</td><td><code>Interactable</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetBreakerLights</td><td><code>Interactable</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetBreakerDoors</td><td><code>Interactable</code></td><td></td><td><code></code></td></tr>
+<tr><td>GetDestinationNode</td><td><code>NewNode</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDisable</td><td><code>void</code></td><td><span class="badge">0</span> <span class="badge">0</span></td><td><code></code></td></tr>
+<tr><td>IsThisOpen</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>SetPlayerResidence</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>AddVandalism</td><td><code>void</code></td><td></td><td><code>Interactable interactable</code></td></tr>
+<tr><td>AddVandalism</td><td><code>void</code></td><td></td><td><code>Vector3 window</code></td></tr>
+<tr><td>AddVandalism</td><td><code>void</code></td><td></td><td><code>int fine</code></td></tr>
+<tr><td>SideJobObjectiveCheck</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>RemoveVandalism</td><td><code>void</code></td><td></td><td><code>Interactable interactable</code></td></tr>
+<tr><td>RemoveVandalism</td><td><code>void</code></td><td></td><td><code>Vector3 window</code></td></tr>
+<tr><td>GetVandalismDamage</td><td><code>int</code></td><td></td><td><code>bool includeObjects = true, bool includeWindows = true, bool includeMisc = true</code></td></tr>
+<tr><td>AddOccupant</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>Actor newOcc</code></td></tr>
+<tr><td>RemoveOccupant</td><td><code>void</code></td><td><span class="badge">override</span></td><td><code>Actor remOcc</code></td></tr>
+<tr><td>GetPassword</td><td><code>string</code></td><td></td><td><code></code></td></tr>
+<tr><td>DecorateAsDen</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>GetHashCode</td><td><code>int</code></td><td><span class="badge">override</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class Vandalism</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>time</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>fine</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>obj</td><td><code>int</code></td><td></td><td>-1</td></tr>
+<tr><td>win</td><td><code>Vector3</code></td><td></td><td>new Vector3(0f, -100f, 0f)</td></tr>
+</tbody></table>
+<h3>class AddressCalc</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>AddressPreset</code></td><td></td><td></td></tr>
+<tr><td>score</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>AirVent</h3>
+<pre><code>ceiling
+wallUpper
+wallLower</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

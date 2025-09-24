@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AudioController — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>AudioController</h1>
+      <div class="page-meta">Source file: <span class="code">AudioController.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">AudioController</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>playerListener</td><td><code>StudioListener</code></td><td></td><td></td></tr>
+<tr><td>speedOfSound</td><td><code>float</code></td><td>Speed of sound in unity (m) per (in-game) second <span class="badge">Header: Misc. Settings</span></td><td>343f</td></tr>
+<tr><td>occlusionUnitVolumeModifier</td><td><code>float</code></td><td>Each occlusion unit will decrease volume by this amount... <span class="badge">Header: Occlusion: Modifiers</span></td><td>-0.1f</td></tr>
+<tr><td>openDoorOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span></td><td></td></tr>
+<tr><td>closedDoorOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span></td><td>5</td></tr>
+<tr><td>windowOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span></td><td>4</td></tr>
+<tr><td>wallOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span></td><td>7</td></tr>
+<tr><td>ceilingOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span></td><td>8</td></tr>
+<tr><td>floorOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span></td><td>8</td></tr>
+<tr><td>floorDifferenceOcclusionUnits</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span></td><td>2</td></tr>
+<tr><td>loopingMaximum</td><td><code>int</code></td><td>Loop through this many rooms as a maximum...</td><td>32</td></tr>
+<tr><td>maxRoomDistance</td><td><code>int</code></td><td>Sounds can travel this many rooms away from the source. After that they gain +1 occlusion unit per additional room.</td><td>4</td></tr>
+<tr><td>emulationRolloff</td><td><code>AnimationCurve</code></td><td>The emulated rolloff of the sound</td><td></td></tr>
+<tr><td>aiHearingThreshold</td><td><code>float</code></td><td>Sound needs to be playing at at least this volume for the AI to register it</td><td>0.1f</td></tr>
+<tr><td>playerHearingThreshold</td><td><code>float</code></td><td>Sound needs to be playing at at least this volume for the player to register it</td><td>0.1f</td></tr>
+<tr><td>soundIconRangeUnit</td><td><code>float</code></td><td>A sound icon represents this much simulated range</td><td>5f</td></tr>
+<tr><td>updateClosestWindowTicker</td><td><code>int</code></td><td><span class="badge">Header: Ambient Sound Properties</span></td><td></td></tr>
+<tr><td>updateMixingTicker</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>updateAmbientZonesTimer</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>updateClosestWindow</td><td><code>int</code></td><td>Update closest windows and open ext door every X frames...</td><td>8</td></tr>
+<tr><td>updateMixing</td><td><code>int</code></td><td>Update closest windows and open ext door every X frames...</td><td>2</td></tr>
+<tr><td>windowAudioPosition</td><td><code>Vector3</code></td><td>Current closest window position.</td><td></td></tr>
+<tr><td>closestWindowDistance</td><td><code>float</code></td><td>Distance from player to above.</td><td></td></tr>
+<tr><td>closestWindowDistanceNormalized</td><td><code>float</code></td><td>Normalized version of above</td><td></td></tr>
+<tr><td>closestWindowDistanceMultiplier</td><td><code>float</code></td><td>Window distance multiplier (used to create normalised variable)</td><td>16f</td></tr>
+<tr><td>openMultiplierCurve</td><td><code>AnimationCurve</code></td><td>Curve used as a multiplier for the above, and based on how open the door is on X (0 = closed, 1 = open)</td><td></td></tr>
+<tr><td>ventOutdoorsIndoors</td><td><code>float</code></td><td>Interpolated outdoors/indoors transition</td><td></td></tr>
+<tr><td>nearbyVent</td><td><code>float</code></td><td>Distance to the nearest vent</td><td></td></tr>
+<tr><td>doorAudioPosition</td><td><code>Vector3</code></td><td>Current closest open external door position.</td><td></td></tr>
+<tr><td>closestDoorDistance</td><td><code>float</code></td><td>Distance from player to above.</td><td></td></tr>
+<tr><td>closestDoorDistanceNormalized</td><td><code>float</code></td><td>Normalized version of above</td><td></td></tr>
+<tr><td>closestDoorDistanceMultiplier</td><td><code>float</code></td><td>Window distance multiplier (used to create normalised variable)</td><td>16f</td></tr>
+<tr><td>edgeDistance</td><td><code>float</code></td><td>Distance from an edge tile</td><td></td></tr>
+<tr><td>edgeDistanceNormalized</td><td><code>float</code></td><td>Normalized version of above</td><td></td></tr>
+<tr><td>edgeDistanceMultiplier</td><td><code>float</code></td><td>Edge distance multiplier (used to create normalised variable)</td><td>30f</td></tr>
+<tr><td>extWallDistance</td><td><code>float</code></td><td>Distance from an exterior wall</td><td></td></tr>
+<tr><td>extWallNormalized</td><td><code>float</code></td><td>Normalized version of above</td><td></td></tr>
+<tr><td>extWallDistanceMultiplier</td><td><code>float</code></td><td>Edge distance multiplier (used to create normalised variable)</td><td>16f</td></tr>
+<tr><td>passedWind</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>passedRain</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>passedCity</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>ambientZones</td><td><code>List&lt;AudioController.AmbientZoneInstance&gt;</code></td><td><span class="badge">BoxGroup(&quot;Ambient Zones&quot;)</span></td><td>new List&lt;AudioController.AmbientZoneInstance&gt;()</td></tr>
+<tr><td>ambientZoneReference</td><td><code>Dictionary&lt;AmbientZone, AudioController.AmbientZoneInstance&gt;</code></td><td></td><td>new Dictionary&lt;AmbientZone, AudioController.AmbientZoneInstance&gt;()</td></tr>
+<tr><td>ambientFalloff</td><td><code>AnimationCurve</code></td><td>As this is a 2D sound we need to apply volume falloff manually</td><td></td></tr>
+<tr><td>ambienceWind</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>ambienceRain</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>ambiencePA</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>hapticsPlaying</td><td><code>string</code></td><td><span class="badge">Header: PS5 Haptics</span></td><td></td></tr>
+<tr><td>threatLoop</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>loopingSounds</td><td><code>List&lt;AudioController.LoopingSoundInfo&gt;</code></td><td></td><td>new List&lt;AudioController.LoopingSoundInfo&gt;()</td></tr>
+<tr><td>volumeChangingSounds</td><td><code>HashSet&lt;AudioController.LoopingSoundInfo&gt;</code></td><td></td><td>new HashSet&lt;AudioController.LoopingSoundInfo&gt;()</td></tr>
+<tr><td>delayedSound</td><td><code>List&lt;AudioController.DelayedSoundInfo&gt;</code></td><td></td><td>new List&lt;AudioController.DelayedSoundInfo&gt;()</td></tr>
+<tr><td>footstepLayerMask</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>forceFeedbackLoops</td><td><code>List&lt;AudioController.LoopingSoundInfo&gt;</code></td><td></td><td>new List&lt;AudioController.LoopingSoundInfo&gt;()</td></tr>
+<tr><td>updateAmbientZonesAction</td><td><code>Action</code></td><td></td><td></td></tr>
+<tr><td>_instance</td><td><code>static AudioController</code></td><td></td><td></td></tr>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>value</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Awake</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>OnDestroy</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>Start</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateMixing</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>StartAmbienceTracks</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PlayWorldFootstep</td><td><code>bool</code></td><td></td><td><code>AudioEvent eventPreset, Actor actor, bool rightFoot = false</code></td></tr>
+<tr><td>PlayerPlayerImpactSound</td><td><code>void</code></td><td></td><td><code>float fallCount</code></td></tr>
+<tr><td>PlayWorldOneShot</td><td><code>EventInstance</code></td><td></td><td><code>AudioEvent eventPreset, Actor who, NewNode location, Vector3 worldPosition, Interactable interactable = null, List&lt;AudioController.FMODParam&gt; parameters = null, float volumeOverride = 1f, List&lt;NewNode&gt; additionalSources = null, bool forceIgnoreOcclusion = false, AudioController.SoundMaterialOverride surfaceData = null, bool forceSuspicious = false</code></td></tr>
+<tr><td>PlayOneShotDelayed</td><td><code>void</code></td><td><span class="badge">7</span> <span class="badge">0</span> <span class="badge">num</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">num2</span> <span class="badge">6</span> <span class="badge">7</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">num7</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">6</span></td><td><code>float delay, AudioEvent eventPreset, Actor who, NewNode location, Vector3 worldPosition, List&lt;AudioController.FMODParam&gt; parameters = null, float volumeOverride = 1f, List&lt;NewNode&gt; additionalSources = null, bool forceIgnoreOcclusion = false</code></td></tr>
+<tr><td>PlayWorldLooping</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td><code>AudioEvent eventPreset, Actor who, Interactable interactable, List&lt;AudioController.FMODParam&gt; parameters = null, float volumeOverride = 1f, bool forceSuspicious = false, SessionData.TelevisionChannel isBroadcast = null, InteractablePreset.IfSwitchStateSFX newSwitchInfo = null</code></td></tr>
+<tr><td>PlayWorldLoopingStatic</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td><code>AudioEvent eventPreset, Actor who, NewNode worldNode, Vector3 worldPos, List&lt;AudioController.FMODParam&gt; parameters = null, float volumeOverride = 1f, bool forceSuspicious = false, SessionData.TelevisionChannel isBroadcast = null, InteractablePreset.IfSwitchStateSFX newSwitchInfo = null</code></td></tr>
+<tr><td>PlayWorldLooping</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td><code>AudioEvent eventPreset, Actor who, NewNode worldNode, Vector3 worldPosition, Interactable interactable = null, List&lt;AudioController.FMODParam&gt; parameters = null, float volumeOverride = 1f, bool forceSuspicious = false, SessionData.TelevisionChannel isBroadcast = null, InteractablePreset.IfSwitchStateSFX newSwitchInfo = null</code></td></tr>
+<tr><td>Play2DLooping</td><td><code>AudioController.LoopingSoundInfo</code></td><td><span class="badge">7</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">5</span> <span class="badge">num</span></td><td><code>AudioEvent eventPreset, List&lt;AudioController.FMODParam&gt; parameters = null, float volumeOverride = 1f</code></td></tr>
+<tr><td>UpdateAllLoopingSoundOcclusion</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateClosestWindowAndDoor</td><td><code>void</code></td><td><span class="badge">i</span> <span class="badge">i</span></td><td><code>bool doorCheckOnly = false</code></td></tr>
+<tr><td>UpdateDistanceFromEdge</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PassWindowDistance</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PassDistanceFromExternalDoor</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PassWeatherParams</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>PassIndoorOutdoor</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateVentIndoorOutdoor</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateDistanceToVent</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PassTimeOfDay</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PassEdgeDistance</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateClosestExteriorWall</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>PassExteriorWallDistance</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>IsSoundPlaying</td><td><code>bool</code></td><td></td><td><code>AudioController.LoopingSoundInfo sound</code></td></tr>
+<tr><td>IsSoundPlaying</td><td><code>bool</code></td><td></td><td><code>EventInstance sound</code></td></tr>
+<tr><td>StopSound</td><td><code>void</code></td><td></td><td><code>AudioController.LoopingSoundInfo loop, AudioController.StopType stop</code></td></tr>
+<tr><td>StopSound</td><td><code>void</code></td><td></td><td><code>EventInstance sound, AudioController.StopType stop</code></td></tr>
+<tr><td>Play2DSound</td><td><code>EventInstance</code></td><td></td><td><code>AudioEvent eventPreset, List&lt;AudioController.FMODParam&gt; parameters = null, float volumeOverride = 1f</code></td></tr>
+<tr><td>Play2DSoundDelayed</td><td><code>void</code></td><td></td><td><code>AudioEvent eventPreset, float delay, List&lt;AudioController.FMODParam&gt; parameters = null, float volumeOverride = 1f</code></td></tr>
+<tr><td>GetOcculusion</td><td><code>float</code></td><td></td><td><code>NewNode listenerLocation, NewNode sourceLocation, AudioEvent audioEvent, float baseVolume, Actor soundMaker, AudioController.SoundMaterialOverride detailedMaterialData, out int penetrationCount, out List&lt;AudioController.ActiveListener&gt; activeListeners, out bool isSuspicious, out List&lt;NewRoom&gt; audibleRooms, out float rangeHearing, List&lt;NewNode&gt; additionalLocations = null, bool forceSuspicious = false</code></td></tr>
+<tr><td>GetAmbientZoneOcculusion</td><td><code>float</code></td><td><span class="badge">8</span> <span class="badge">0</span> <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> <span class="badge">4</span> <span class="badge">0</span> <span class="badge">num9</span> <span class="badge">6</span> <span class="badge">7</span> <span class="badge">newRoom2</span> <span class="badge">newRoom2</span> <span class="badge">newRoom2</span> <span class="badge">newRoom2</span> <span class="badge">newRoom2</span> <span class="badge">newRoom2</span> <span class="badge">newRoom3</span> <span class="badge">newRoom3</span> <span class="badge">newRoom3</span> <span class="badge">newRoom3</span> <span class="badge">newRoom3</span> <span class="badge">newRoom3</span> <span class="badge">newRoom4</span> <span class="badge">newRoom4</span> <span class="badge">newRoom4</span> <span class="badge">newRoom4</span> <span class="badge">newRoom4</span> <span class="badge">newRoom4</span></td><td><code>NewNode listenerLocation, AudioController.AmbientZoneInstance ambientZone, out float distance, out int penetrationCount, out NewRoom audibleRoom</code></td></tr>
+<tr><td>ForceOutlineCheck</td><td><code>void</code></td><td></td><td><code>AudioEvent audioEvent, Interactable inter, bool forceOff = false</code></td></tr>
+<tr><td>GetPlayersSoundLevel</td><td><code>float</code></td><td><span class="badge">i</span> <span class="badge">i</span></td><td><code>NewNode sourceLocation, AudioEvent audioEvent, float occludedVolume, AudioController.SoundMaterialOverride detailedMaterialData</code></td></tr>
+<tr><td>UpdateAmbientZonesOnEndOfFrame</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateAmbientZones</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>ResetThis</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetVCALevel</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code>string vcaName, float value</code></td></tr>
+<tr><td>UpdateAmbientPlaybackState</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>StopAllSounds</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateVolumeChanging</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>DebugWeatherLoopDisplay</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>NextTVShow</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+<tr><td>UpdateLoopBasedControllerVibration</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class AmbientZoneInstance</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>AmbientZone</code></td><td></td><td></td></tr>
+<tr><td>playerDistance</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>penetrationCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>audibleRoom</td><td><code>NewRoom</code></td><td></td><td></td></tr>
+<tr><td>isActive</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>desiredVolume</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>actualVolume</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>desiredWalla</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>actualWalla</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>eventData</td><td><code>AudioController.LoopingSoundInfo</code></td><td></td><td></td></tr>
+<tr><td>rooms</td><td><code>HashSet&lt;NewRoom&gt;</code></td><td></td><td>new HashSet&lt;NewRoom&gt;()</td></tr>
+</tbody></table>
+<h3>class LoopingSoundInfo</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>init</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>audioEvent</td><td><code>EventInstance</code></td><td></td><td></td></tr>
+<tr><td>isValid</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>description</td><td><code>EventDescription</code></td><td></td><td></td></tr>
+<tr><td>volumeOverride</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>eventPreset</td><td><code>AudioEvent</code></td><td></td><td></td></tr>
+<tr><td>sourceLocation</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>who</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>interactable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>forceSuspicious</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>parameters</td><td><code>List&lt;AudioController.FMODParam&gt;</code></td><td></td><td></td></tr>
+<tr><td>lastUpdated</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentOcclusion</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>pauseWhenGamePaused</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>worldPos</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>state</td><td><code>PLAYBACK_STATE</code></td><td></td><td></td></tr>
+<tr><td>paused</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>audibleRooms</td><td><code>List&lt;NewRoom&gt;</code></td><td></td><td>new List&lt;NewRoom&gt;()</td></tr>
+<tr><td>isBroadcast</td><td><code>SessionData.TelevisionChannel</code></td><td></td><td></td></tr>
+<tr><td>occlusionVolume</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>fadeToVolume</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>vol</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>isActive</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>debugStoppedReason</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>interactableLoopInfo</td><td><code>InteractablePreset.IfSwitchStateSFX</code></td><td></td><td></td></tr>
+<tr><td>clipIsValid</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>clipPaused</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>clipState</td><td><code>PLAYBACK_STATE</code></td><td></td><td></td></tr>
+<tr><td>clipAudioEvent</td><td><code>EventInstance</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class ActiveListener</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>listener</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>soundLevel</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>escalationLevel</td><td><code>int</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class DelayedSoundInfo</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>delay</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>eventPreset</td><td><code>AudioEvent</code></td><td></td><td></td></tr>
+<tr><td>who</td><td><code>Actor</code></td><td></td><td></td></tr>
+<tr><td>location</td><td><code>NewNode</code></td><td></td><td></td></tr>
+<tr><td>worldPosition</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>parameters</td><td><code>List&lt;AudioController.FMODParam&gt;</code></td><td></td><td></td></tr>
+<tr><td>volumeOverride</td><td><code>float</code></td><td></td><td>1f</td></tr>
+<tr><td>additionalSources</td><td><code>List&lt;NewNode&gt;</code></td><td></td><td></td></tr>
+<tr><td>forceIgnoreOcclusion</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>is2D</td><td><code>bool</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3>class SoundMaterialOverride</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>concrete</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>wood</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>carpet</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>tile</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>plaster</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>fabric</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>metal</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>glass</td><td><code>float</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>CitizenReaction</h3>
+<pre><code>investigate
+immediatePersue
+alarm</code></pre>
+<h3>SurfaceType</h3>
+<pre><code>concrete
+woodenFloor
+tile
+carpet</code></pre>
+<h3>StopType</h3>
+<pre><code>immediate
+fade
+triggerCue</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

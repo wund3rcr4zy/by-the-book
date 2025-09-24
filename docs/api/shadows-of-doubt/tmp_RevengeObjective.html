@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RevengeObjective — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>RevengeObjective</h1>
+      <div class="page-meta">Source file: <span class="code">RevengeObjective.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">RevengeObjective</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>disabled</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>baseChance</td><td><code>int</code></td><td><span class="badge">Header: Trait Weighting</span> <span class="badge">Range(0f, 10f)</span></td><td>1</td></tr>
+<tr><td>useHEXACO</td><td><code>bool</code></td><td>Use the below hexaco values to match to personality.</td><td></td></tr>
+<tr><td>feminineMasculine</td><td><code>int</code></td><td><span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;useHEXACO&quot;)</span></td><td>5</td></tr>
+<tr><td>humility</td><td><code>int</code></td><td>Honesty-Humility (H): sincere, honest, faithful, loyal, modest/unassuming versus sly, deceitful, greedy, pretentious, hypocritical, boastful, pompous <span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;useHEXACO&quot;)</span></td><td>5</td></tr>
+<tr><td>emotionality</td><td><code>int</code></td><td>Emotionality (E): emotional, oversensitive, sentimental, fearful, anxious, vulnerable versus brave, tough, independent, self-assured, stable <span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;useHEXACO&quot;)</span></td><td>5</td></tr>
+<tr><td>extraversion</td><td><code>int</code></td><td>Extraversion (X): outgoing, lively, extraverted, sociable, talkative, cheerful, active versus shy, passive, withdrawn, introverted, quiet, reserved <span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;useHEXACO&quot;)</span></td><td>5</td></tr>
+<tr><td>agreeableness</td><td><code>int</code></td><td>Agreeableness (A): patient, tolerant, peaceful, mild, agreeable, lenient, gentle versus ill-tempered, quarrelsome, stubborn, choleric <span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;useHEXACO&quot;)</span></td><td>5</td></tr>
+<tr><td>conscientiousness</td><td><code>int</code></td><td>Conscientiousness (C): organized, disciplined, diligent, careful, thorough, precise versus sloppy, negligent, reckless, lazy, irresponsible, absent-minded <span class="badge">Range(0f, 10f)</span> <span class="badge">EnableIf(&quot;useHEXACO&quot;)</span></td><td>5</td></tr>
+<tr><td>creativity</td><td><code>int</code></td><td>Openness to Experience (O): intellectual, creative, unconventional, innovative, ironic versus shallow, unimaginative, conventional <span class="badge">EnableIf(&quot;useHEXACO&quot;)</span> <span class="badge">Range(0f, 10f)</span></td><td>5</td></tr>
+<tr><td>useTraits</td><td><code>bool</code></td><td>Use character traits to match to personality.</td><td></td></tr>
+<tr><td>characterTraitsPoster</td><td><code>List&lt;ClothesPreset.TraitPickRule&gt;</code></td><td></td><td>new List&lt;ClothesPreset.TraitPickRule&gt;()</td></tr>
+<tr><td>characterTraitsPurp</td><td><code>List&lt;ClothesPreset.TraitPickRule&gt;</code></td><td></td><td>new List&lt;ClothesPreset.TraitPickRule&gt;()</td></tr>
+<tr><td>specialConditions</td><td><code>List&lt;RevengeObjective.SpecialConditions&gt;</code></td><td></td><td>new List&lt;RevengeObjective.SpecialConditions&gt;()</td></tr>
+<tr><td>d0Name</td><td><code>string</code></td><td><span class="badge">Header: Setup</span></td><td></td></tr>
+<tr><td>d1Name</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>idTargetName</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>tag</td><td><code>JobPreset.JobTag</code></td><td></td><td></td></tr>
+<tr><td>icon</td><td><code>InterfaceControls.Icon</code></td><td></td><td>InterfaceControls.Icon.resolve</td></tr>
+<tr><td>passedNumberRange</td><td><code>Vector2</code></td><td></td><td>Vector2.zero</td></tr>
+<tr><td>rewardMultiplier</td><td><code>Vector2</code></td><td>Multiplies the rewards based on the above number</td><td>new Vector2(1f, 1.5f)</td></tr>
+<tr><td>resolveQuestionName</td><td><code>string</code></td><td>Name as part of resolve questions</td><td></td></tr>
+<tr><td>resolveQuestionNameAlternate</td><td><code>string</code></td><td></td><td></td></tr>
+<tr><td>answerMethod</td><td><code>string</code></td><td>Refers to an answer method within this script that is used to check</td><td>&quot;Vandalism&quot;</td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Vandalism</td><td><code>float</code></td><td></td><td><code>int target, int location, float amount</code></td></tr>
+<tr><td>VandalismTrash</td><td><code>float</code></td><td></td><td><code>int target, int location, float amount</code></td></tr>
+<tr><td>VandalismWindow</td><td><code>float</code></td><td></td><td><code>int target, int location, float amount</code></td></tr>
+<tr><td>Handcuff</td><td><code>bool</code></td><td></td><td><code>int target, int location, float amount</code></td></tr>
+<tr><td>BeatUp</td><td><code>bool</code></td><td></td><td><code>int target, int location, float amount</code></td></tr>
+<tr><td>KickDownDoor</td><td><code>bool</code></td><td></td><td><code>int target, int location, float amount</code></td></tr>
+<tr><td>ManualTrigger</td><td><code>bool</code></td><td></td><td><code>int target, int location, float amount</code></td></tr>
+</tbody></table>
+</section>
+
+    
+    <section id="enums">
+<h2>Enums</h2>
+<h3>SpecialConditions</h3>
+<pre><code>mustHaveWindows
+trackProgressFromAddressQuestion
+trackProgressFromNameQuestion</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

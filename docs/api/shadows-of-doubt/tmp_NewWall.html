@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NewWall — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>NewWall</h1>
+      <div class="page-meta">Source file: <span class="code">NewWall.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">NewWall</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>position</td><td><code>Vector3</code></td><td><span class="badge">Header: Transform</span></td><td></td></tr>
+<tr><td>localEulerAngles</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>physicalObject</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>node</td><td><code>NewNode</code></td><td><span class="badge">Header: Location</span></td><td></td></tr>
+<tr><td>wallOffset</td><td><code>Vector2</code></td><td></td><td></td></tr>
+<tr><td>isExterior</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>separateWall</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>id</td><td><code>int</code></td><td><span class="badge">Header: Details</span></td><td></td></tr>
+<tr><td>preventEntrance</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>foundDoorMaterialKey</td><td><code>bool</code></td><td><span class="badge">Header: Door Config</span></td><td></td></tr>
+<tr><td>doorMatKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>baseDoorStrength</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentDoorStrength</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>baseLockStrength</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>currentLockStrength</td><td><code>float</code></td><td></td><td></td></tr>
+<tr><td>preset</td><td><code>DoorPairPreset</code></td><td><span class="badge">Header: Wall Pair</span></td><td></td></tr>
+<tr><td>otherWall</td><td><code>NewWall</code></td><td></td><td></td></tr>
+<tr><td>parentWall</td><td><code>NewWall</code></td><td></td><td></td></tr>
+<tr><td>childWall</td><td><code>NewWall</code></td><td></td><td></td></tr>
+<tr><td>frontagePresets</td><td><code>List&lt;NewWall.FrontageSetting&gt;</code></td><td></td><td>new List&lt;NewWall.FrontageSetting&gt;()</td></tr>
+<tr><td>otherWallID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>parentWallID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>childWallID</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>optimizationOverride</td><td><code>bool</code></td><td><span class="badge">Header: Spawned Objects</span></td><td></td></tr>
+<tr><td>optimizationAnchor</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>nonOptimizedSegment</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>spawnedWall</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>wallPrefabRef</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>spawnedCorner</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>spawnedCoving</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>spawnedCornerCoving</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>cornerPrefabRef</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>spawnedSteps</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>editorTrigger</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>isShortWall</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>blueprint</td><td><code>GameObject</code></td><td></td><td></td></tr>
+<tr><td>lightswitchInteractable</td><td><code>Interactable</code></td><td></td><td></td></tr>
+<tr><td>door</td><td><code>NewDoor</code></td><td></td><td></td></tr>
+<tr><td>spawnedFrontage</td><td><code>List&lt;GameObject&gt;</code></td><td></td><td>new List&lt;GameObject&gt;()</td></tr>
+<tr><td>containsLightswitch</td><td><code>NewRoom</code></td><td><span class="badge">Header: Lights</span></td><td></td></tr>
+<tr><td>windowUVHorizonalPosition</td><td><code>int</code></td><td><span class="badge">Header: Windows</span></td><td>-1</td></tr>
+<tr><td>windowUV</td><td><code>BuildingPreset.WindowUVBlock</code></td><td></td><td></td></tr>
+<tr><td>placedWallFurn</td><td><code>bool</code></td><td><span class="badge">Header: Furniture</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>Setup</td><td><code>void</code></td><td></td><td><code>DoorPairPreset newPreset, NewNode newNode, Vector2 newOffset, bool newIsExterior</code></td></tr>
+<tr><td>Load</td><td><code>void</code></td><td></td><td><code>CitySaveData.WallCitySave data, NewNode newNode</code></td></tr>
+<tr><td>SetDoorStrength</td><td><code>void</code></td><td></td><td><code>float newVal</code></td></tr>
+<tr><td>SetLockStrengthBase</td><td><code>void</code></td><td></td><td><code>float newVal</code></td></tr>
+<tr><td>ResetLockStrength</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetDoorStrengthBase</td><td><code>void</code></td><td></td><td><code>float newVal</code></td></tr>
+<tr><td>ResetDoorStrength</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetCurrentLockStrength</td><td><code>void</code></td><td></td><td><code>float newVal</code></td></tr>
+<tr><td>SpawnWall</td><td><code>void</code></td><td></td><td><code>bool prepForCombinedMeshes</code></td></tr>
+<tr><td>RemoveWall</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>UpdateSegmentData</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SpawnCorner</td><td><code>void</code></td><td></td><td><code>bool prepForCombinedMeshes</code></td></tr>
+<tr><td>SpawnFrontage</td><td><code>void</code></td><td></td><td><code>bool overrideWithKey = false, Toolbox.MaterialKey keyOverride = null</code></td></tr>
+<tr><td>RemoveFrontage</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetDoorPairPreset</td><td><code>void</code></td><td><span class="badge">0</span></td><td><code>DoorPairPreset newPreset, bool enableUpdate = true, bool newIsDivider = false, bool setPair = true</code></td></tr>
+<tr><td>SelectFrontage</td><td><code>void</code></td><td></td><td><code></code></td></tr>
+<tr><td>SetWallMaterial</td><td><code>void</code></td><td></td><td><code>MaterialGroupPreset newMat, Toolbox.MaterialKey newKey</code></td></tr>
+<tr><td>SetAsLightswitch</td><td><code>void</code></td><td></td><td><code>NewRoom newRoom, bool createInteractable = true</code></td></tr>
+<tr><td>GenerateSaveData</td><td><code>CitySaveData.WallCitySave</code></td><td></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class FrontageSetting</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>preset</td><td><code>WallFrontagePreset</code></td><td></td><td></td></tr>
+<tr><td>matKey</td><td><code>Toolbox.MaterialKey</code></td><td></td><td></td></tr>
+<tr><td>colors</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>offset</td><td><code>Vector3</code></td><td></td><td></td></tr>
+<tr><td>createdInteractables</td><td><code>List&lt;Interactable&gt;</code></td><td></td><td>new List&lt;Interactable&gt;()</td></tr>
+<tr><td>mainTransform</td><td><code>Transform</code></td><td></td><td></td></tr>
+</tbody></table>
+</section>
+    
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>

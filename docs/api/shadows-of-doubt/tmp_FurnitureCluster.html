@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FurnitureCluster — Shadows of Doubt Docs</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div data-include="/partials/sidebar.html"></div>
+  <main class="content">
+    <header class="page-header">
+      <h1>FurnitureCluster</h1>
+      <div class="page-meta">Source file: <span class="code">FurnitureCluster.cs</span></div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="kv">
+        <div class="label">Type</div><div>Class <span class="code">FurnitureCluster</span></div>
+        <div class="label">Namespace</div><div>(not parsed)</div>
+      </div>
+      <p>Auto-generated from source. Fields include any available tooltip descriptions and attribute badges.</p>
+    </section>
+
+    <section id="fields">
+      <h2>Fields</h2>
+      <table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>disable</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>clusterElements</td><td><code>List&lt;FurnitureCluster.FurnitureClusterRule&gt;</code></td><td>List of rules this furniture must follow <span class="badge">Header: Rules</span></td><td>new List&lt;FurnitureCluster.FurnitureClusterRule&gt;()</td></tr>
+<tr><td>placementChance</td><td><code>float</code></td><td>Chance for skipping this cluster altogether <span class="badge">Range(0f, 1f)</span> <span class="badge">Header: Suitability</span></td><td>1f</td></tr>
+<tr><td>roomPriority</td><td><code>float</code></td><td>The ranking given to this item when choosing what to place. <span class="badge">Range(0f, 11f)</span></td><td>5f</td></tr>
+<tr><td>modifyPriorityTraits</td><td><code>List&lt;CharacterTrait.TraitPickRule&gt;</code></td><td>Modify priority with traits present. The base chance here is x10 and added to the above room priority.</td><td>new List&lt;CharacterTrait.TraitPickRule&gt;()</td></tr>
+<tr><td>modifyPlacementChanceTraits</td><td><code>List&lt;CharacterTrait.TraitPickRule&gt;</code></td><td>Modify placement chance with traits present. The base chance here is x10 and added to the above placement chance.</td><td>new List&lt;CharacterTrait.TraitPickRule&gt;()</td></tr>
+<tr><td>essentialFurniture</td><td><code>bool</code></td><td>If true this will override priority with 10 unless one already exists</td><td></td></tr>
+<tr><td>updatePreCalculated</td><td><code>bool</code></td><td><span class="badge">Header: PreCalculated Limits/Optimization</span></td><td></td></tr>
+<tr><td>calculatedMinRoomSize</td><td><code>int</code></td><td></td><td>1</td></tr>
+<tr><td>minimumZeroNodeWallCount</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>maximumZeroNodeWallCount</td><td><code>int</code></td><td></td><td>4</td></tr>
+<tr><td>zeroNodeClasses</td><td><code>List&lt;FurnitureClass&gt;</code></td><td></td><td>new List&lt;FurnitureClass&gt;()</td></tr>
+<tr><td>minimumRoomSize</td><td><code>int</code></td><td>Room must be at least this size <span class="badge">Header: Custom Limits/Optimization</span></td><td>1</td></tr>
+<tr><td>useMaximumRoomSize</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>maximumRoomSize</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useMaximumRoomSize&quot;)</span></td><td>99</td></tr>
+<tr><td>useCustomZeroNodeMinWallCount</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>customZeroNodeMinWallCount</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useCustomZeroNodeMinWallCount&quot;)</span> <span class="badge">Range(0f, 4f)</span></td><td></td></tr>
+<tr><td>useCustomZeroNodeMaxWallCount</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>customZeroNodeMaxWallCount</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useCustomZeroNodeMaxWallCount&quot;)</span> <span class="badge">Range(0f, 4f)</span></td><td></td></tr>
+<tr><td>zeroNodeWallRules</td><td><code>List&lt;FurnitureClass.FurnitureWallRule&gt;</code></td><td></td><td>new List&lt;FurnitureClass.FurnitureWallRule&gt;()</td></tr>
+<tr><td>allowedInOpenPlan</td><td><code>FurnitureCluster.AllowedOpenPlan</code></td><td>Is this allowed in open plan rooms?</td><td></td></tr>
+<tr><td>allowInResidential</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>allowInCompanies</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>allowOnStreets</td><td><code>bool</code></td><td></td><td>true</td></tr>
+<tr><td>coastalOnly</td><td><code>bool</code></td><td>This is only to be placed on coastal streets</td><td></td></tr>
+<tr><td>limitToDistricts</td><td><code>bool</code></td><td>Only allow this in certain districts</td><td></td></tr>
+<tr><td>allowedInDistricts</td><td><code>List&lt;DistrictPreset&gt;</code></td><td><span class="badge">EnableIf(&quot;limitToDistricts&quot;)</span></td><td>new List&lt;DistrictPreset&gt;()</td></tr>
+<tr><td>banFromDistricts</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>notAllowedInDistricts</td><td><code>List&lt;DistrictPreset&gt;</code></td><td><span class="badge">EnableIf(&quot;banFromDistricts&quot;)</span></td><td>new List&lt;DistrictPreset&gt;()</td></tr>
+<tr><td>skipIfNoAddressInhabitants</td><td><code>bool</code></td><td>Skip placement of this if there are no address owners</td><td></td></tr>
+<tr><td>onlySkipNoInhabitantsIfResidenceOrCompany</td><td><code>bool</code></td><td>If the above is true, will only be skipped if this is a residence or company <span class="badge">EnableIf(&quot;skipIfNoAddressInhabitants&quot;)</span></td><td>true</td></tr>
+<tr><td>dontSkipNoInhabitantsIfIn</td><td><code>List&lt;RoomClassPreset&gt;</code></td><td>If the above is true, don&#x27;t skip if within addresses of this type <span class="badge">EnableIf(&quot;skipIfNoAddressInhabitants&quot;)</span></td><td>new List&lt;RoomClassPreset&gt;()</td></tr>
+<tr><td>allowedRoomFilters</td><td><code>List&lt;RoomTypeFilter&gt;</code></td><td></td><td>new List&lt;RoomTypeFilter&gt;()</td></tr>
+<tr><td>limitPerRoom</td><td><code>bool</code></td><td>Maximum number per room</td><td>true</td></tr>
+<tr><td>maximumPerRoom</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;limitPerRoom&quot;)</span> <span class="badge">Range(1f, 20f)</span></td><td>2</td></tr>
+<tr><td>limitPerAddress</td><td><code>bool</code></td><td>Maximum number per address</td><td></td></tr>
+<tr><td>maximumPerAddress</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;limitPerAddress&quot;)</span> <span class="badge">Range(1f, 20f)</span></td><td>1</td></tr>
+<tr><td>limitToFloor</td><td><code>bool</code></td><td>Allow only on this floor</td><td></td></tr>
+<tr><td>allowedOnFloor</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;limitToFloor&quot;)</span></td><td></td></tr>
+<tr><td>limitToFloorRange</td><td><code>bool</code></td><td>Allow only between these floors <span class="badge">DisableIf(&quot;limitToFloor&quot;)</span></td><td></td></tr>
+<tr><td>allowedOnFloorRange</td><td><code>Vector2Int</code></td><td><span class="badge">EnableIf(&quot;limitToFloorRange&quot;)</span></td><td>new Vector2Int(-2, 99)</td></tr>
+<tr><td>wealthLimit</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>minimumWealth</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;wealthLimit&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td></td></tr>
+<tr><td>maximumWealth</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span> <span class="badge">EnableIf(&quot;wealthLimit&quot;)</span></td><td>1f</td></tr>
+<tr><td>useRoomGrub</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>minimumGrub</td><td><code>float</code></td><td><span class="badge">Range(0f, 1f)</span> <span class="badge">EnableIf(&quot;useRoomGrub&quot;)</span></td><td></td></tr>
+<tr><td>maximumGrub</td><td><code>float</code></td><td><span class="badge">EnableIf(&quot;useRoomGrub&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>useBuildingResidences</td><td><code>bool</code></td><td></td><td></td></tr>
+<tr><td>minimumResidences</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useBuildingResidences&quot;)</span></td><td></td></tr>
+<tr><td>maximumResidences</td><td><code>int</code></td><td><span class="badge">EnableIf(&quot;useBuildingResidences&quot;)</span></td><td>40</td></tr>
+<tr><td>addClustersOnSuccess</td><td><code>List&lt;FurnitureCluster&gt;</code></td><td>If this cluster is successfully placed, add the following cluster presets from trying to be placed <span class="badge">Header: Optimizations</span></td><td>new List&lt;FurnitureCluster&gt;()</td></tr>
+<tr><td>removeClustersOnSuccess</td><td><code>List&lt;FurnitureCluster&gt;</code></td><td>If this cluster is successfully placed, remove the following cluster presets from trying to be placed</td><td>new List&lt;FurnitureCluster&gt;()</td></tr>
+<tr><td>removeClustersOnFail</td><td><code>List&lt;FurnitureCluster&gt;</code></td><td>If this cluster fails to be placed, remove the following cluster presets from trying to be placed</td><td>new List&lt;FurnitureCluster&gt;()</td></tr>
+<tr><td>securityDoor</td><td><code>bool</code></td><td>Is this a security door? <span class="badge">Header: Misc.</span></td><td></td></tr>
+<tr><td>isBreakerBox</td><td><code>bool</code></td><td>Is this a breaker box?</td><td></td></tr>
+<tr><td>enableDebug</td><td><code>bool</code></td><td><span class="badge">Header: Debugging</span></td><td></td></tr>
+</tbody></table>
+      <p class="page-meta">Note: Descriptions come from <span class="code">[Tooltip]</span> where available. Attribute badges include <span class="code">Range</span>, <span class="code">EnableIf</span>, <span class="code">ShowIf</span>, <span class="code">DisableIf</span>, etc.</p>
+    </section>
+
+    <section id="methods">
+<h2>Methods</h2>
+<table class="table">
+<thead><tr><th>Name</th><th>Returns</th><th>Description</th><th>Parameters</th></tr></thead>
+<tbody>
+<tr><td>UpdatePreCalculatedLimits</td><td><code>void</code></td><td><span class="badge">Button(null, 0)</span></td><td><code></code></td></tr>
+</tbody></table>
+</section>
+
+    <section id="nested">
+<h2>Nested Types</h2>
+<h3>class FurnitureClusterRule</h3>
+<table class="table">
+<thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Default</th></tr></thead>
+<tbody>
+<tr><td>onlyValidIfPreviousObjectPlaced</td><td><code>bool</code></td><td>Only consider this if the last object got placed</td><td></td></tr>
+<tr><td>placements</td><td><code>List&lt;Vector2&gt;</code></td><td>If not able to be placed at the above, scan list of alternates at random to find a valid position</td><td>new List&lt;Vector2&gt;()</td></tr>
+<tr><td>furnitureClass</td><td><code>FurnitureClass</code></td><td>What should be found at this node?</td><td></td></tr>
+<tr><td>facing</td><td><code>FurnitureCluster.FurnitureFacing</code></td><td></td><td></td></tr>
+<tr><td>importantToCluster</td><td><code>bool</code></td><td>If cannot be place here, this cluster placement is invalid</td><td></td></tr>
+<tr><td>chanceOfPlacementAttempt</td><td><code>float</code></td><td>Chance this placement will be attempted: Done on a per-location basis, so often a lower number will result in a much lower placement count... <span class="badge">DisableIf(&quot;importantToCluster&quot;)</span> <span class="badge">Range(0f, 1f)</span></td><td>1f</td></tr>
+<tr><td>placementScoreBoost</td><td><code>int</code></td><td></td><td></td></tr>
+<tr><td>useFovBlock</td><td><code>bool</code></td><td>Block objects in this path</td><td></td></tr>
+<tr><td>blockDirection</td><td><code>Vector2</code></td><td>The FOV block will continue in this direction, this is before direction is applied, so 0,1 is infront for example.</td><td>new Vector2(0f, 1f)</td></tr>
+<tr><td>maxFOVBlockDistance</td><td><code>int</code></td><td></td><td>5</td></tr>
+<tr><td>localScale</td><td><code>Vector3</code></td><td>Local scale</td><td>Vector3.one</td></tr>
+<tr><td>positionOffset</td><td><code>Vector3</code></td><td>Offset</td><td>Vector3.zero</td></tr>
+</tbody></table>
+</section>
+    <section id="enums">
+<h2>Enums</h2>
+<h3>FurnitureRuleOption</h3>
+<pre><code>mustFeature
+cantFeature
+canFeature</code></pre>
+<h3>WallRule</h3>
+<pre><code>nothing
+wallNoDoor
+onlyWall
+doorway
+door
+bannister
+window</code></pre>
+<h3>FurnitureFacing</h3>
+<pre><code>down
+up
+left
+right</code></pre>
+<h3>AllowedOpenPlan</h3>
+<pre><code>yes
+no
+openPlanOnly</code></pre>
+</section>
+  </main>
+</body>
+<script src="../assets/include.js"></script>
+</html>
