@@ -13,7 +13,14 @@ namespace ByTheBook.Patches
         public class DialogExecuteHook
         {
             private static readonly Random random = new Random(Guid.NewGuid().GetHashCode());
-            private static readonly int GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL = Math.Clamp(ByTheBookPlugin.Instance.Config.Bind("SyncDisks", "guard-pass-max-chance-social-credit-level", 3).Value, 1, 8);
+            private static readonly int GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL = Math.Clamp(
+                ByTheBookPlugin.Instance.Config.Bind(
+                    "SyncDisk",
+                    "guard-pass-max-chance-social-credit-level",
+                    3,
+                    "Scales guest-pass success chance against the game's social credit thresholds. Higher tier (1-8) = stricter (lower chance)."
+                ).Value,
+                1, 8);
 
             [HarmonyPrefix]
             public static void Prefix(EvidenceWitness.DialogOption dialog, Interactable saysTo, NewNode where, Actor saidBy, ForceSuccess forceSuccess, ref bool __runOriginal)

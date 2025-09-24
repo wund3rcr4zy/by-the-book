@@ -1,3 +1,17 @@
+# 0.3.0
+
+! Breaking: Version 0.3.0 is NOT compatible with saves created on older versions (< 0.3.0). Please start a new game when upgrading to 0.3.0 or later.
+
+* Core: Migrated the Private Eye sync disk to SOD.Common (v2.1.0) using the builder + event pipeline (install/upgrade/uninstall) and PoliceAutomat sale location.
+* Compatibility: Preserved legacy DDS sync disk strings and inject them after Toolbox initialization to avoid early-initialization issues.
+* Upgrades: Reworked effect toggles to a simple flag manager (GuardGuestPass / CrimeSceneGuestPass / CrimePursuitSocialCredit) driven by SOD.Common events.
+* UI: Fixed duplicate disk entries in the Weapons Locker by deduplicating PoliceAutomat sync disks on every Toolbox.LoadAll (runs with a late Harmony priority).
+* Dialog: Kept legacy DDS-driven Guard Guest Pass dialog/preset with success/failure responses and daily replenish; maintained on‑duty “Talk To” injection for enforcers; success roll and “always pass” upgrade behavior unchanged.
+* Cleanup: Removed obsolete Sync Disk UI linker patches (UpgradesLinkerPatches.cs) that are no longer needed with SOD.Common registration.
+* Packaging: Added Thunderstore dependency `Venomaus-SODCommon-2.1.0` to the manifest.
+* Config: Renamed keys to `SyncDisk.private-eye-cost` and `SyncDisk.guard-pass-max-chance-social-credit-level` and added knobs `EnabledSideEffects.social-credit-penalty-divisor` and `EnabledSideEffects.social-credit-penalty-cap`. All options are pre-bound so they appear immediately in BepInEx config.
+* Migration: One-time migration of legacy config keys (with automatic cleanup of old entries) guarded by a side-file marker in Savestore.
+
 # 0.2.3
 
 * Feature: On-duty interaction injection for Enforcers at active crime scenes. **“Talk To”** is always surfaced; **“Inspect”** is surfaced when present. Applies when the target is the call **guard** or in the **response** list and the call state is **responding/arrived**.

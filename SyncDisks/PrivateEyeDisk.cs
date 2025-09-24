@@ -25,8 +25,18 @@ namespace ByTheBook.SyncDisks
         public static void Register()
         {
             // Config
-            _priceConfig = ByTheBookPlugin.Instance.Config.Bind("SyncDiskCosts", "private-eye", 500);
-            _enableSideEffectConfig = ByTheBookPlugin.Instance.Config.Bind("EnabledSideEffects", "private-eye", true);
+            _priceConfig = ByTheBookPlugin.Instance.Config.Bind(
+                "SyncDisk",
+                "private-eye-cost",
+                500,
+                "Purchase price for the Private Eye License sync disk."
+            );
+            _enableSideEffectConfig = ByTheBookPlugin.Instance.Config.Bind(
+                "EnabledSideEffects",
+                "private-eye",
+                true,
+                "Enable side effect: social credit penalty when pursued while fines are active."
+            );
 
             // Build the disk via SOD.Common
             var builder = Lib.SyncDisks

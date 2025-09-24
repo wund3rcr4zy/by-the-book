@@ -1,9 +1,10 @@
 {
   "name": "ByTheBook",
-  "version_number": "0.2.3",
+  "version_number": "0.3.0",
   "website_url": "https://github.com/wund3rcr4zy/by-the-book",
   "description": "Adds the 'Private Eye License' sync disk to the Weapons Locker. Allows for canvasing crime scenes without trespassing.",
   "dependencies": [
-    "BepInEx-BepInExPack_IL2CPP-6.0.667"
+    "BepInEx-BepInExPack_IL2CPP-6.0.667",
+    "Venomaus-SODCommon-2.1.0"
   ]
 }
