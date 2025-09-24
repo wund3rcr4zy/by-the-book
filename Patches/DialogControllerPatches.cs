@@ -41,16 +41,17 @@ namespace ByTheBook.Patches
                             default:
                                 double guardPassSocialCreditRequired = Convert.ToDouble(GameplayController.Instance.GetSocialCreditThresholdForLevel(GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL));
                                 double socialCreditNumerator = Math.Clamp(Convert.ToDouble(GameplayController.Instance.socialCredit), 1.0, guardPassSocialCreditRequired + 1.0);
-                                double successChance = 0.99 - Math.Clamp((socialCreditNumerator / guardPassSocialCreditRequired), 0, 0.75);
+                                // Compute a threshold to beat: higher social credit lowers the threshold, making success more likely
+                                double requiredThreshold = 0.99 - Math.Clamp((socialCreditNumerator / guardPassSocialCreditRequired), 0, 0.75);
                                 double randomDouble = random.NextDouble();
-                                success = (randomDouble >= successChance);
+                                success = (randomDouble >= requiredThreshold);
                                 // FIX: Force success only when the upgrade's ALWAYS-PASS effect is enabled.
                                 // Base disk enables GuardGuestPass (dialog available). The upgrade enables CrimeSceneGuestPass (guaranteed pass).
-                                if (ByTheBookUpgradeManager.Instance.IsEffectEnabled(SyncDisks.ByTheBookSyncEffects.CrimeSceneGuestPass))
+                                if (ByTheBookUpgradeManager.Instance.IsCrimeSceneGuestPassEnabled())
                                 {
                                     success = true;
                                 }
-                                ByTheBook.ByTheBookPlugin.Logger.LogInfo($"GuardIssueGuestPass rolled: {randomDouble} - required: {successChance}");
+                                ByTheBook.ByTheBookPlugin.Logger.LogInfo($"GuardIssueGuestPass rolled: {randomDouble} - required: {requiredThreshold}");
                                 break;
                         }
 
@@ -81,7 +82,7 @@ namespace ByTheBook.Patches
 
             private static bool IsEnforcerGuardingLatestMurderScene(Citizen saysTo)
             {
-                if (!ByTheBookUpgradeManager.Instance.IsEffectEnabled(SyncDisks.ByTheBookSyncEffects.GuardGuestPass))
+                if (!ByTheBookUpgradeManager.Instance.GuardGuestPassEnabled)
                 {
                     return false;
                 }

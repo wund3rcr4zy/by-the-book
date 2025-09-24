@@ -1,4 +1,5 @@
 using BepInEx.Configuration;
+using SOD.Common;
 using SOD.Common.Helpers;
 using SOD.Common.Helpers.SyncDiskObjects;
 using ByTheBook.Upgrades;
@@ -44,7 +45,17 @@ namespace ByTheBook.SyncDisks
 
             _syncDisk = builder.CreateAndRegister();
 
-            // Preserve legacy DDS keys alongside builder-provided texts
+            // Wire SOD.Common SyncDisk events
+            Lib.SyncDisks.OnAfterSyncDiskInstalled += OnAfterSyncDiskInstalled;
+            Lib.SyncDisks.OnAfterSyncDiskUpgraded += OnAfterSyncDiskUpgraded;
+            Lib.SyncDisks.OnAfterSyncDiskUninstalled += OnAfterSyncDiskUninstalled;
+        }
+
+        private static bool _legacyDdsAdded = false;
+        internal static void AddLegacyDdsStrings()
+        {
+            if (_legacyDdsAdded) return;
+            // Preserve legacy DDS keys alongside builder-provided texts; must run after DDS is initialized
             Lib.DdsStrings.AddOrUpdateEntries("evidence.syncdisks",
                 ("private-eye", DiskDisplayName),
                 ("private-eye_effect1_name", Effect1Name),
@@ -52,11 +63,7 @@ namespace ByTheBook.SyncDisks
                 ("private-eye_upgrade1_description", Upgrade1Description),
                 ("private-eye_side-effect_description", SideEffectDescription)
             );
-
-            // Wire SOD.Common SyncDisk events
-            Lib.SyncDisks.OnAfterSyncDiskInstalled += OnAfterSyncDiskInstalled;
-            Lib.SyncDisks.OnAfterSyncDiskUpgraded += OnAfterSyncDiskUpgraded;
-            Lib.SyncDisks.OnAfterSyncDiskUninstalled += OnAfterSyncDiskUninstalled;
+            _legacyDdsAdded = true;
         }
 
         private static bool IsOurDisk(SyncDisk disk) => disk != null && disk.Name == DiskDisplayName;
@@ -107,4 +114,3 @@ namespace ByTheBook.SyncDisks
         }
     }
 }
-

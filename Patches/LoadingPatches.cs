@@ -1,5 +1,6 @@
 ﻿using ByTheBook.AIActions;
 using ByTheBook.Dialog;
+using ByTheBook.SyncDisks;
 using HarmonyLib;
 using Il2CppInterop.Runtime;
 using Il2CppSystem.Collections.Generic;
@@ -76,19 +77,51 @@ namespace ByTheBook.Patches
             private static bool presetsLoaded = false;
 
             [HarmonyPostfix]
+            [HarmonyPriority(Priority.Last)]
             public static void Postfix()
             {
                 ByTheBookPlugin.Logger.LogDebug($"Toolbox Post LoadAll.");
 
-                if (!presetsLoaded)
-                {
-                    AddPrivateEyeSyncDiskToWeaponsLocker();
-                    presetsLoaded = true;
-                }
+                // Ensure legacy DDS keys are present once DDS is initialized
+                if (!presetsLoaded) { PrivateEyeDisk.AddLegacyDdsStrings(); presetsLoaded = true; }
+
+                // Always dedupe on each load to counter repeated injections by other patches
+                DeduplicatePoliceAutomatSyncDisks();
             }
 
-            // Sale locations are handled via SOD.Common builder registration.
-            private static void AddPrivateEyeSyncDiskToWeaponsLocker() { }
+            // Remove duplicate sync disk entries for the PoliceAutomat menu
+            private static void DeduplicatePoliceAutomatSyncDisks()
+            {
+                var policeVendingMenus = Resources.FindObjectsOfTypeAll<MenuPreset>()
+                    .Where(preset => preset.GetPresetName() == "PoliceAutomat")
+                    .ToList();
+
+                foreach (var menu in policeVendingMenus)
+                {
+                    try
+                    {
+                        var seen = new System.Collections.Generic.HashSet<string>(System.StringComparer.OrdinalIgnoreCase);
+                        var unique = new Il2CppSystem.Collections.Generic.List<SyncDiskPreset>();
+
+                        foreach (var disk in menu.syncDisks)
+                        {
+                            var key = disk?.name ?? disk?.presetName;
+                            if (key == null) continue;
+                            if (seen.Add(key))
+                                unique.Add(disk);
+                        }
+
+                        if (unique.Count != menu.syncDisks.Count)
+                        {
+                            menu.syncDisks.Clear();
+                            foreach (var disk in unique)
+                                menu.syncDisks.Add(disk);
+                            ByTheBookPlugin.Logger.LogInfo($"Deduplicated PoliceAutomat sync disks: {unique.Count} unique entries.");
+                        }
+                    }
+                    catch { /* Best-effort cleanup */ }
+                }
+            }
         }
     }
 }
