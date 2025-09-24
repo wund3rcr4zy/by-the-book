@@ -20,6 +20,7 @@
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
     <PackageReference Include="JsonDiffPatch" Version="2.0.61" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SOD.Common" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
