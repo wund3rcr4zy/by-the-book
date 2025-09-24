@@ -1,5 +1,4 @@
-﻿using ByTheBook.SyncDisks;
-using ByTheBook.Upgrades;
+﻿using ByTheBook.Upgrades;
 using HarmonyLib;
 using System;
 
@@ -20,7 +19,7 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix(Actor __instance)
             {
-                if (!__instance.isPlayer || !ByTheBookUpgradeManager.Instance.IsEffectEnabled(ByTheBookSyncEffects.CrimePersuitSocialCredit))
+                if (!__instance.isPlayer || !ByTheBookUpgradeManager.Instance.IsCrimePursuitSocialCreditEnabled())
                 {
                     return;
                 }
@@ -58,7 +57,7 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix()
             {
-                if (!ByTheBookUpgradeManager.Instance.IsEffectEnabled(ByTheBookSyncEffects.CrimeSceneGuestPass))
+                if (!ByTheBookUpgradeManager.Instance.IsCrimeSceneGuestPassEnabled())
                 {
                     return;
                 }

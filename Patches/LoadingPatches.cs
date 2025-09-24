@@ -1,6 +1,5 @@
 ﻿using ByTheBook.AIActions;
 using ByTheBook.Dialog;
-using ByTheBook.SyncDisks;
 using HarmonyLib;
 using Il2CppInterop.Runtime;
 using Il2CppSystem.Collections.Generic;
@@ -56,10 +55,8 @@ namespace ByTheBook.Patches
                 }
             }
 
-            private static void LoadSyncDisks(List<ScriptableObject> data)
-            {
-                data.Add(PrivateEyeSyncDiskPreset.Instance);
-            }
+            // SOD.Common handles registering custom SyncDisks; no manual injection needed.
+            private static void LoadSyncDisks(List<ScriptableObject> data) { }
 
             private static void LoadDialogs(List<ScriptableObject> data)
             {
@@ -90,17 +87,8 @@ namespace ByTheBook.Patches
                 }
             }
 
-            private static void AddPrivateEyeSyncDiskToWeaponsLocker() 
-            {
-                var policeVendingMenu = Resources.FindObjectsOfTypeAll<MenuPreset>()
-                    .Where(preset => preset.GetPresetName() == "PoliceAutomat");
-
-                foreach (var pv in policeVendingMenu)
-                {
-                    ByTheBookPlugin.Logger.LogInfo($"Attempted to add PrivateEye SyncDisk to WeaponsLocker.");
-                    pv.syncDisks.Add(PrivateEyeSyncDiskPreset.Instance);
-                }
-            }
+            // Sale locations are handled via SOD.Common builder registration.
+            private static void AddPrivateEyeSyncDiskToWeaponsLocker() { }
         }
     }
 }

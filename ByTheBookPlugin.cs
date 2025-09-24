@@ -4,6 +4,8 @@ using BepInEx.Unity.IL2CPP;
 using ByTheBook.Dialog;
 using HarmonyLib;
 using Il2CppInterop.Runtime.Injection;
+using SOD.Common.Helpers;
+using ByTheBook.SyncDisks;
 
 namespace ByTheBook
 {
@@ -31,6 +33,9 @@ namespace ByTheBook
             Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
             
             RegisterTypes();
+
+            // Register custom sync disks via SOD.Common
+            PrivateEyeDisk.Register();
 
             PerformHarmonyPatches();
         }
