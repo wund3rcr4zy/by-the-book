@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>ByTheBook</AssemblyName>
     <Description>A collection of modifications for the more scrupulous detective.</Description>
-    <Version>0.2.3</Version>
+    <Version>0.3.0</Version>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
@@ -20,6 +20,7 @@
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
     <PackageReference Include="JsonDiffPatch" Version="2.0.61" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SOD.Common" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>

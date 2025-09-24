@@ -1,5 +1,5 @@
-﻿using ByTheBook.SyncDisks;
-using ByTheBook.Upgrades;
+﻿using ByTheBook.Upgrades;
+using BepInEx.Configuration;
 using HarmonyLib;
 using System;
 
@@ -10,17 +10,29 @@ namespace ByTheBook.Patches
         [HarmonyPatch(typeof(Actor), nameof(Actor.AddPersuedBy))]
         public class ActorPersuedByHook
         {
-            /// <summary>
-            ///  0.75 %
-            /// </summary>
-            private const int CRIME_PENALTY_DIVISOR = 150;
+            // Configurable knobs for the pursuit social credit penalty
+            private static readonly int CRIME_PENALTY_DIVISOR = Math.Clamp(
+                ByTheBookPlugin.Instance.Config.Bind(
+                    "EnabledSideEffects",
+                    "social-credit-penalty-divisor",
+                    150,
+                    "Divisor used to scale pursuit social credit penalty: deduction = total fines / divisor."
+                ).Value,
+                1, int.MaxValue);
 
-            private const int MAXIMUM_SOCIAL_CREDIT_PENALTY = 100;
+            private static readonly int MAXIMUM_SOCIAL_CREDIT_PENALTY = Math.Clamp(
+                ByTheBookPlugin.Instance.Config.Bind(
+                    "EnabledSideEffects",
+                    "social-credit-penalty-cap",
+                    100,
+                    "Maximum social credit deducted once at the start of a pursuit episode."
+                ).Value,
+                0, int.MaxValue);
 
             [HarmonyPrefix]
             public static void Prefix(Actor __instance)
             {
-                if (!__instance.isPlayer || !ByTheBookUpgradeManager.Instance.IsEffectEnabled(ByTheBookSyncEffects.CrimePersuitSocialCredit))
+                if (!__instance.isPlayer || !ByTheBookUpgradeManager.Instance.IsCrimePursuitSocialCreditEnabled())
                 {
                     return;
                 }
@@ -58,7 +70,7 @@ namespace ByTheBook.Patches
             [HarmonyPrefix]
             public static void Prefix()
             {
-                if (!ByTheBookUpgradeManager.Instance.IsEffectEnabled(ByTheBookSyncEffects.CrimeSceneGuestPass))
+                if (!ByTheBookUpgradeManager.Instance.IsCrimeSceneGuestPassEnabled())
                 {
                     return;
                 }

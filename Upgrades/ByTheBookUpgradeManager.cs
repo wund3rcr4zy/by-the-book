@@ -1,7 +1,4 @@
 ﻿using ByTheBook.Dialog;
-using ByTheBook.SyncDisks;
-using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
 using UnityEngine;
 
@@ -24,36 +21,26 @@ namespace ByTheBook.Upgrades
             }
         }
 
-        public Dictionary<string, SyncDiskPreset> byTheBookSyncDisks = new Dictionary<string, SyncDiskPreset>();
+        // Direct boolean flags toggled by SOD.Common events
+        public bool GuardGuestPassEnabled { get; private set; }
+        public bool CrimeSceneGuestPassEnabled { get; private set; }
+        public bool CrimePursuitSocialCreditEnabled { get; private set; }
 
-        // preset name, upgrade options
-        private Dictionary<string, ImmutableList<ByTheBookSyncEffects>> byTheBookSyncUpgrades = new Dictionary<string, ImmutableList<ByTheBookSyncEffects>>();
-
-        private HashSet<ByTheBookSyncEffects> enabledUpgrades = new HashSet<ByTheBookSyncEffects>();
-
-        public bool TryGetSyncUpgrades(string upgradeName, out ImmutableList<ByTheBookSyncEffects> upgradeEffects)
+        public void SetGuardGuestPass(bool enabled)
         {
-            return byTheBookSyncUpgrades.TryGetValue(upgradeName, out upgradeEffects);
+            if (GuardGuestPassEnabled == enabled) return;
+            GuardGuestPassEnabled = enabled;
+            PrivateEyeUpgradeStatusChanged(enabled);
         }
 
-        public void AddSyncUpgradeEffects(string upgradeName, SyncDiskPreset syncDiskPreset, ImmutableList<ByTheBookSyncEffects> upgradeEffects)
+        public void SetCrimeSceneGuestPass(bool enabled)
         {
-            byTheBookSyncDisks.Add(upgradeName, syncDiskPreset);
-            byTheBookSyncUpgrades.Add(upgradeName, upgradeEffects);
+            CrimeSceneGuestPassEnabled = enabled;
         }
 
-        public void EnableEffect(ByTheBookSyncEffects effect)
+        public void SetCrimePursuitSocialCredit(bool enabled)
         {
-            enabledUpgrades.Add(effect);
-
-            // TODO: there is certainly a better way of organizing where this code happens.
-            // Need it to be somewhere where it happens once
-            switch (effect) 
-            {
-                case ByTheBookSyncEffects.GuardGuestPass:
-                    PrivateEyeUpgradeStatusChanged(enabled: true);
-                    break;
-            }
+            CrimePursuitSocialCreditEnabled = enabled;
         }
 
         private void PrivateEyeUpgradeStatusChanged(bool enabled)
@@ -77,31 +64,7 @@ namespace ByTheBook.Upgrades
             }    
         }
 
-        public void DisableEffect(ByTheBookSyncEffects effect)
-        {
-            enabledUpgrades.Remove(effect);
-
-            // TODO: there is certainly a better way of organizing where this code happens.
-            // Need it to be somewhere where it happens once as the EvidenceWitness is setup and it should be available after load.
-            switch (effect)
-            {
-                case ByTheBookSyncEffects.GuardGuestPass:
-                    PrivateEyeUpgradeStatusChanged(enabled: false);
-                    break;
-            }
-        }
-
-        public void DisableAllEffects()
-        {
-            foreach (var effect in enabledUpgrades) 
-            {
-                DisableEffect(effect);
-            }
-        }
-
-        public bool IsEffectEnabled(ByTheBookSyncEffects effect)
-        {
-            return Game.Instance.giveAllUpgrades || enabledUpgrades.Contains(effect);
-        }
+        public bool IsCrimeSceneGuestPassEnabled() => Game.Instance.giveAllUpgrades || CrimeSceneGuestPassEnabled;
+        public bool IsCrimePursuitSocialCreditEnabled() => Game.Instance.giveAllUpgrades || CrimePursuitSocialCreditEnabled;
     }
 }

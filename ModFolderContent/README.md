@@ -1,20 +1,36 @@
-# Wund3rcr4zy's ByTheBook
+# By-The-Book — Private Eye License (Shadows of Doubt)
 
-Adds a new SyncDisk "Private Eye License" to the Weapons Locker purchase options.
-This disk provides the following features:
+## IMPORTANT SAVE WARNING
+- **Version 0.3.0+ is NOT compatible** with saves created with older versions (< 0.3.0). Please start a new game after upgrading.
 
-### Main Effect
-#### Option1: 'Detective Consultant' 
-* On Install: The Enforcer guard on duty at a crime scene can be asked for a guest pass.
-  * Higher social credit affects the odds of success up to a 75% success rate.
-  * The "guard" is usually found standing against a wall after crime scene tape has been put up.
-* On Upgrade 1: Walking into a crime scene will always grant a guest pass if required.
+## Overview
+- Adds the **Private Eye License** sync disk (PoliceAutomat / Weapons Locker).
+- Ask the **on-duty enforcer** guarding an active crime scene for a **guest pass** (daily cooldown; chance scales with social credit).
+- **Upgrade:** Always receive a guest pass when entering a crime scene.
+- **Optional side effect:** When pursued while you have active fines, reduce social credit (scaled by the fines).
 
-# Manual Installation
+## Requirements
+- **BepInEx Pack IL2CPP 6.x**
+- **SOD.Common 2.1.0**
 
-* Ensure you have BepInEx BE installed
-* Extract the mod to ".\BepInEx\plugins\", so you should have ".\BepInEx\plugins\ByTheBook\ByTheBook.dll"
+## Install
+- Install via **Thunderstore / R2Modman**, or copy this folder and the plugin DLL into your **BepInEx** profile for *Shadows of Doubt*.
 
-# Source:
+## Usage
+- Buy the disk from the **Weapons Locker**.
+- With the disk installed, talk to the **on-duty enforcer** at the taped-off crime scene to request a guest pass (**once per in-game day**).
+- With the upgrade installed, **entering a crime scene (indoors) auto-grants a guest pass**.
 
-https://github.com/wund3rcr4zy/by-the-book
+## Config (BepInEx)
+- `SyncDisk.private-eye-cost` *(int)*: price *(default: 500)*
+- `EnabledSideEffects.private-eye` *(bool)*: enable pursuit social credit penalty *(default: true)*
+- `SyncDisk.guard-pass-max-chance-social-credit-level` *(1–8)*: success‑chance scaling tier *(default: 3)* — compared to the game’s social credit thresholds; a higher tier is stricter (lower chance).
+- `EnabledSideEffects.social-credit-penalty-divisor` *(int)*: divisor to scale penalty; deduction = total fines / divisor *(default: 150)*
+- `EnabledSideEffects.social-credit-penalty-cap` *(int)*: maximum one‑time deduction at pursuit start *(default: 100)*
+
+## Notes
+- The mod **deduplicates multiple disk entries** in the PoliceAutomat after hot-loads.
+- Dialog uses the mod’s **bundled DDS assets**; no user action required.
+
+## Credits
+- ColePowered Games, Ven0maus (*SOD.Common*), Piepieonline (*DDSLoader*)

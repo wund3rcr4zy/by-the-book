@@ -13,7 +13,14 @@ namespace ByTheBook.Patches
         public class DialogExecuteHook
         {
             private static readonly Random random = new Random(Guid.NewGuid().GetHashCode());
-            private static readonly int GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL = Math.Clamp(ByTheBookPlugin.Instance.Config.Bind("SyncDisks", "guard-pass-max-chance-social-credit-level", 3).Value, 1, 8);
+            private static readonly int GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL = Math.Clamp(
+                ByTheBookPlugin.Instance.Config.Bind(
+                    "SyncDisk",
+                    "guard-pass-max-chance-social-credit-level",
+                    3,
+                    "Scales guest-pass success chance against the game's social credit thresholds. Higher tier (1-8) = stricter (lower chance)."
+                ).Value,
+                1, 8);
 
             [HarmonyPrefix]
             public static void Prefix(EvidenceWitness.DialogOption dialog, Interactable saysTo, NewNode where, Actor saidBy, ForceSuccess forceSuccess, ref bool __runOriginal)
@@ -41,16 +48,17 @@ namespace ByTheBook.Patches
                             default:
                                 double guardPassSocialCreditRequired = Convert.ToDouble(GameplayController.Instance.GetSocialCreditThresholdForLevel(GUARD_PASS_MAX_CHANCE_SOCIAL_LEVEL));
                                 double socialCreditNumerator = Math.Clamp(Convert.ToDouble(GameplayController.Instance.socialCredit), 1.0, guardPassSocialCreditRequired + 1.0);
-                                double successChance = 0.99 - Math.Clamp((socialCreditNumerator / guardPassSocialCreditRequired), 0, 0.75);
+                                // Compute a threshold to beat: higher social credit lowers the threshold, making success more likely
+                                double requiredThreshold = 0.99 - Math.Clamp((socialCreditNumerator / guardPassSocialCreditRequired), 0, 0.75);
                                 double randomDouble = random.NextDouble();
-                                success = (randomDouble >= successChance);
+                                success = (randomDouble >= requiredThreshold);
                                 // FIX: Force success only when the upgrade's ALWAYS-PASS effect is enabled.
                                 // Base disk enables GuardGuestPass (dialog available). The upgrade enables CrimeSceneGuestPass (guaranteed pass).
-                                if (ByTheBookUpgradeManager.Instance.IsEffectEnabled(SyncDisks.ByTheBookSyncEffects.CrimeSceneGuestPass))
+                                if (ByTheBookUpgradeManager.Instance.IsCrimeSceneGuestPassEnabled())
                                 {
                                     success = true;
                                 }
-                                ByTheBook.ByTheBookPlugin.Logger.LogInfo($"GuardIssueGuestPass rolled: {randomDouble} - required: {successChance}");
+                                ByTheBook.ByTheBookPlugin.Logger.LogInfo($"GuardIssueGuestPass rolled: {randomDouble} - required: {requiredThreshold}");
                                 break;
                         }
 
@@ -81,7 +89,7 @@ namespace ByTheBook.Patches
 
             private static bool IsEnforcerGuardingLatestMurderScene(Citizen saysTo)
             {
-                if (!ByTheBookUpgradeManager.Instance.IsEffectEnabled(SyncDisks.ByTheBookSyncEffects.GuardGuestPass))
+                if (!ByTheBookUpgradeManager.Instance.GuardGuestPassEnabled)
                 {
                     return false;
                 }
